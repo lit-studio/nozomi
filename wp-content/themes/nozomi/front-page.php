@@ -71,17 +71,35 @@ get_header();
                     <div class="about-middle">
                         <div class="about-middle-row">
                             <div class="about-middle-col">
-    
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"
+                                        src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-01-min.jpg"
+                                        alt=""/>
+                                    </div>
+                                </div>
                             </div>
                             <div class="about-middle-col">
-    
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"
+                                        src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-02-min.jpg"
+                                        alt=""/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="about-bottom">
                         <div class="about-bottom-row">
                             <div class="about-bottom-col">
-    
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"
+                                        src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-03-min.jpg"
+                                        alt=""/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -89,26 +107,52 @@ get_header();
         </section>
         <section class="perspective">
                 <div class="perspective-wrap">
-                    <div class="perspective-title">
-                        <div class="perspective-title--title">
-                        Different perspectives with one passionЗаписатися на діагностику
+                    <div class="perspective-content">
+                        <div class="perspective-cursive">
+                            <div class="about-cursive--cursive">
+                                Who we are
+                            </div>
                         </div>
-                    </div>
-                    <div class="perspective-desc">
-                        <div class="perspective-desc--desc">
-                            Залиште свої контакти нижче і наші адміністратори зв'яжуться з вами найближчим часом.
+                        <div class="perspective-title">
+                            <div class="perspective-title--title">
+                            Different perspectives with one passionЗаписатися на діагностику
+                            </div>
                         </div>
-                    </div>
-                    <div class="perspective-btns">
-                        <div class="about-btns-btn">
-                            <button class="btn btn-blue btn-modal--js" data-modal="c-modal-form">More about us</button>
+                        <div class="perspective-desc">
+                            <div class="perspective-desc--desc">
+                                Nozomi Health is a team of researchers, designers and software engineers who helps people believe that digital health innovations can and will help them. We partnering with a Digital Health companies to solve the most important challenges that will lead us to life healthier and happier life.
+                            </div>
                         </div>
+                        <div class="perspective-btns">
+                            <div class="about-btns-btn">
+                                <button class="btn  btn-modal--js" data-modal="c-modal-form">More about us</button>
+                            </div>
+                        </div>     
                     </div>
                     <div class="perspective-img">
-                            <img class="img"
-                                                 src="<?php echo get_template_directory_uri() ?>/assets/images/home/illustration-bird.svg"
-                                                 alt=""/>
-                    </div>
+                                <img class="img"
+                                src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-perspective-01-min.jpg"
+                                alt=""/>
+                        </div>
+                </div>
+                <div class="perspective-bg">
+                    <svg id="demoPerspective" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="100%" height="100%" viewBox="0 0 2560 1600">
+                        <defs>
+                        <radialGradient id="maskGradientPerspective">
+                            <stop offset="50%" stop-color="#fff"/>
+                            <stop offset="100%" stop-color="#000"/>
+                        </radialGradient>
+                        <mask id="theMaskPerspective">
+                            <circle id="maskerPerspective" r="150" fill="url(#maskGradientPerspective)" cx="800" cy="450" />
+                        </mask>
+                        </defs> 
+                            <image id="linesPerspective" xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/about-bg-min.jpg" x="0" y="0" width="100%" height="100%" />
+                            <g id="maskRevealPerspective" mask="url(#theMaskPerspective)" > 
+                                <image id="regularPerspective" xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/about-bg-hover-min.jpg" x="0" y="0" width="100%" height="100%" />
+                            </g>
+                            <!-- <circle id="ring" r="20" fill="none" stroke="#D54242" stroke-width="2" cx="800" cy="450" /> -->
+                            <circle id="dotPerspective" r="4" fill="#D54242" cx="800" cy="450" />
+                    </svg>
                 </div>
         </section>
         <section class="work">
