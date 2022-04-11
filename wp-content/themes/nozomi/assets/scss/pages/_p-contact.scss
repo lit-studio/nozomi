@@ -1,0 +1,120 @@
+.p-contact{
+  .site-width{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contact{
+    &-desc{ 
+      &-wrap{
+        // max-width: 320px;
+        text-align: center;
+      }
+      &-block{
+
+      }
+    }
+    &-img{
+      padding-top: 40px;
+      &-wrap{
+
+      }
+      &-block{
+
+      }
+    }
+  }
+  .section-form{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include tablet{
+      padding-top: 30px;
+    }
+    &-wrap{
+      display: flex;
+      flex-wrap:  nowrap;
+      @include tablet{
+        flex-wrap: wrap;
+      }
+    }
+    &-left{
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include tablet{
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    &-right{
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include tablet{
+        padding-top: 50px;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      form .form-item-pair {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0;
+        flex: 0 0 100%;
+        padding: 0;
+      }
+    }
+    .item{
+      &-address{
+        
+        &-item{
+          max-width: 350px;
+          padding-top: 20px;
+          font-size: 22px;
+          font-weight: var(--font-w-bold);
+        }
+        &-time{
+          padding-top: 30px;
+          font-size: 22px;
+          @include tablet{
+            padding-top: 20px;
+          }
+        }
+        &-mail{
+          padding-top: 30px;
+          font-size: 22px;
+          @include tablet{
+            padding-top: 20px;
+          }
+        }
+      }
+      &-contact{
+        &-phones{
+          padding-top: 30px;
+          font-size: 22px;
+          @include tablet{
+            padding-top: 20px;
+          }
+        }
+        &-phone{
+          padding-top: 10px;
+          &--link{
+            font-size: 22px;
+          }
+        }
+        &-social{
+          padding-top: 30px;
+          display: flex;
+          @include tablet{
+            padding-top: 20px;
+          }
+          &-item{
+
+          }
+          &-link{
+
+          }
+        }
+      }
+
+    }
+  }
+}

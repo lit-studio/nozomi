@@ -1,0 +1,23 @@
+//base styles for project
+@import 'reset';
+@import 'fonts';
+@import 'vars';
+@import 'grid';
+@import 'colors';
+@import 'base';
+@import 'buttons';
+@import 'form';
+@import 'modal-block';
+@import 'custom-slick';
+
+@import 'components/c-header';
+@import 'components/c-footer';
+
+// Pages
+@import 'pages/p-page';
+@import 'pages/p-home';
+@import 'pages/p-about';
+@import 'pages/p-contact';
+
+
+// External styles

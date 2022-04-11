@@ -11,7 +11,7 @@ wp-content/*
 wp-content/uploads
 !wp-content/plugins
 wp-content/themes/*
-!wp-content/themes/lumos
+!wp-content/themes/nozomi
 !package.json
 !webpack.mix.js
 package-lock.json

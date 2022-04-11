@@ -1,0 +1,53 @@
+.p-page{
+  .p-page-title{
+    max-width: 100%;
+    padding: 80px 0;
+    @include desktop-normal{
+      padding: 60px 0;
+    }
+    @include desktop-note-big{
+      padding: 40px 0;
+    }
+    @include desktop-block{
+      padding: 60px 20px;
+    }
+    @include phone{
+      padding: 30px 10px;
+    }
+    .title-block{
+      text-align: center;
+      .title{
+ 
+      }
+    }
+  }
+
+
+}
+.p-404{
+  text-align: center;
+  .p-page-content{
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .title{
+    &-block{
+
+    }
+    &-desc{
+      padding-top: 40px;
+      &--desc{
+        max-width: 360px;
+        margin: 0 auto;
+        font-size: 20px;
+      }
+    }
+    &-btns{
+      padding-top: 80px;
+      &--btns{
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

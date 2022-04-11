@@ -1,0 +1,403 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--color-black);
+}
+
+body {
+  min-height: 100%;
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color:var(--color-black);
+  width: 100%;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  &-main{
+    width: 100%;
+  }
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 1;
+}
+
+
+
+
+p {
+  font-size: 20px;
+  line-height: 150%;
+  font-family: var(--font-regular);
+  //color: var(--color-black);
+  padding-top: 20px;
+  @include desktop-normal{
+    font-size: 18px;
+  }
+  @include desktop-note-big{
+    font-size: 16px;
+  }
+  @include phone{
+    font-size: 14px;
+  }
+  &:first-of-type{
+    padding-top: 0;
+  }
+}
+
+h1{
+  font-size: 64px;
+  line-height: 120%;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+  font-weight: var(--font-w-semi);
+  @include desktop-note-big {
+    font-size: 64px;
+  }
+  @include phone {
+    font-size: 34px;
+  }
+}
+
+h2 {
+  font-size: 64px;
+  line-height: 120%;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+  font-weight: var(--font-w-semi);
+  @include desktop-note-big {
+    font-size: 64px;
+  }
+  @include phone {
+    font-size: 34px;
+  }
+}
+
+h3{
+font-size: 64px;
+line-height: 120%;
+font-family: var(--font-family);
+word-wrap: break-word;
+font-weight: var(--font-w-semi);
+@include desktop-note-big {
+  font-size: 64px;
+}
+@include phone {
+  font-size: 34px;
+}
+}
+
+
+
+h4 {
+  font-size: 64px;
+  line-height: 120%;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+  font-weight: var(--font-w-semi);
+  @include desktop-note-big {
+    font-size: 64px;
+  }
+  @include phone {
+    font-size: 34px;
+  }
+}
+h5 {
+  font-size: 44px;
+  line-height: 130%;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+  font-weight: var(--font-w-semi);
+  @include desktop-note-big {
+    font-size: 24px;
+    line-height: 140%;
+  }
+}
+h6,
+.title-h6 {
+  font-size: 32px;
+  line-height: 130%;
+  font-family: var(--font-family);
+  word-wrap: break-word;
+}
+
+
+//.lottie-cursor {
+//  position: fixed;
+//  pointer-events: none;
+//  user-select: none;
+//  left: 0;
+//  top: 0;
+//  z-index: 20;
+//
+//  &-icon {
+//    position: absolute;
+//    left: 0;
+//    top: 0;
+//
+//    &.hero-section {
+//      width: 120px;
+//      height: 40px;
+//    }
+//
+//    &.more-section {
+//      width: 202px;
+//      height: 40px;
+//    }
+//
+//    &.modal-section {
+//      width: 150px;
+//      height: 40px;
+//    }
+//    &.video-section {
+//      width: 120px;
+//      height: 40px;
+//    }
+//  }
+//}
+
+.btn-modal-js {
+  cursor: pointer;
+}
+.open-modal {
+  padding-right: 16px;
+}
+
+
+
+@keyframes custom {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(0, 5px) scale(1.2);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes custom2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(0, 5px) scale(1.2);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+
+
+.item-edit{
+  a{
+    color: var(--color-red);
+    text-decoration: underline;
+    font-family: var(--font-bold);
+    cursor: pointer;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  p{
+    padding-top: 20px;
+    @include phone{
+      padding-top: 15px;
+    }
+    &:first-of-type{
+      padding-top: 0;
+    }
+  }
+
+}
+
+.page-fixed{
+  .c-scrollbar{
+    opacity: 0;
+  }
+}
+
+.c-article-content{
+  padding-top: 70px;
+  @include desktop-normal{
+    padding-top: 40px;
+  }
+  @include desktop-note-big{
+    padding-top: 20px;
+  }
+  @include desktop-block{
+
+  }
+  h1,h2,h3,h4,h5{
+    padding-top: 80px;
+    line-height: 120%;
+    @include desktop-note-big{
+      padding-top: 60px;
+    }
+  }
+  h1{
+    font-size: 120px;
+    @include desktop-normal{
+      font-size: 100px;
+    }
+    @include desktop-note-big{
+      font-size: 82px;
+    }
+    @include phone {
+      font-size: 46px;
+    }
+  }
+  h2{
+    font-size: 96px;
+    @include desktop-normal{
+      font-size: 60px;
+    }
+    @include desktop-note-big{
+      font-size: 46px;
+    }
+    @include phone{
+      font-size: 40px;
+    }
+  }
+  h3{
+    font-size: 60px;
+    @include desktop-normal{
+      font-size: 46px;
+    }
+    @include desktop-note-big{
+      font-size: 40px;
+    }
+    @include phone{
+      font-size: 28px;
+    }
+  }
+  h4{
+    font-size: 40px;
+    @include desktop-normal{
+      font-size: 32px;
+    }
+    @include desktop-note-big{
+      font-size: 28px;
+    }
+    @include phone{
+      font-size: 20px;
+    }
+  }
+  h5{
+    font-size: 36px;
+    @include desktop-normal{
+      font-size: 30px;
+    }
+    @include desktop-note-big{
+      font-size: 24px;
+    }
+    @include phone{
+      font-size: 18px;
+    }
+  }
+  h6{
+    font-size: 30px;
+    @include desktop-normal{
+      font-size: 24px;
+    }
+    @include desktop-note-big{
+      font-size: 18px;
+    }
+    @include phone{
+      font-size: 16px;
+    }
+  }
+
+  p{
+    padding-top: 40px;
+    font-size: 20px;
+    @include desktop-normal{
+      font-size: 18px;
+    }
+    @include phone{
+      font-size: 14px;
+    }
+  }
+  ul{
+    padding-top: 30px;
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 20px;
+  }
+  ol{
+    padding-top: 30px;
+    list-style-type: decimal;
+    list-style-position: outside;
+    padding-left: 20px;
+  }
+  li{
+    padding-top: 25px;
+  }
+  a{
+    color: var(--color-red);
+    text-decoration: underline;
+    font-family: var(--font-bold);
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  strong{
+    font-family: var(--font-bold);
+  }
+  em{
+    font-style: italic;
+  }
+}
+
+.p-content{
+  overflow: hidden;
+}
+
+
+// antispam
+.agree {display:none}

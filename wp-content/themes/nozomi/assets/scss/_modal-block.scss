@@ -1,0 +1,157 @@
+body {
+    &.open-modal {
+        overflow: hidden;
+        padding-right: 18px;
+        @include desktop-block {
+            padding-right: 0;
+        }
+        & .modal-bg {
+            display: block;
+        }
+    }
+    .site {
+        position: relative;
+    }
+    &.page-fixed{
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+    }
+}
+
+.section-modal {
+    display: none;
+    //display: flex;
+    justify-content: center;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    &.show-modal {
+        display: flex;
+    }
+    & .modal {
+        &-wrap {
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            @include phone{
+                padding-top: 80px;
+                align-items: flex-start;
+            }
+        }
+        &-block {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            //display: flex;
+            &.open {
+                display: flex;
+            }
+        }
+        &-info {
+            max-width: 560px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            padding: 40px 45px;
+            background-color: var(--color-white);
+            @include phone{
+                padding: 20px;
+            }
+        }
+        &-title {
+            font-size: 36px;
+            //text-transform: uppercase;
+            text-align: center;
+            font-weight: var(--font-semi-bold);
+        }
+        &-desc {
+            padding-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 20;
+            & .btn {
+                padding: 0;
+                font-size: 0;
+                width: 23px;
+                height: 23px;
+                border: 0 none;
+                background-color: transparent;
+                background-image: url("./assets/icons/icon-close.svg");
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: contain;
+                background-position: center center;
+                cursor: pointer;
+            }
+        }
+
+    }
+    & .form-block {
+        padding-top: 30px;
+        width: 100%;
+        .form-item-pair {
+            margin-left: -10px;
+            margin-right: -10px;
+            &-actions {}
+        }
+        .form-label {
+            font-size: 12px;
+        }
+        .form-item {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .form-actions {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            .wpcf7-spinner{
+                display: none;
+            }
+        }
+    }
+}
+
+.modal-bg {
+    position: absolute;
+    //display: none;
+    width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    //cursor: pointer;
+    background-color: rgba(0,0,0, 0.3);
+    display: block;
+    &.open {
+        display: block;
+    }
+}
+
+
