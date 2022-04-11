@@ -29,10 +29,10 @@ package-lock.json
 !wp-signup.php
 !wp-trackback.php
 !xmlrpc.php
-wp-content/themes/lumos/front.js.LICENSE.txt
-wp-content/themes/lumos/mix-manifest.json
-wp-content/themes/lumos/front.css
-wp-content/themes/lumos/front.js
+wp-content/themes/nozomi/front.js.LICENSE.txt
+wp-content/themes/nozomi/mix-manifest.json
+wp-content/themes/nozomi/front.css
+wp-content/themes/nozomi/front.js
 /wp-config.php
 wp-content/plugins/all-in-one-wp-migration/storage/error.log
 
