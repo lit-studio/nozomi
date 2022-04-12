@@ -62,31 +62,31 @@
 input[type="submit"]{
   font-size: 16px;
 }
-.btn-border {
-  background-color: var(--color-grey);
-  font-size: 20px;
-  font-weight: var(--font-w-semi);
-  color: var(--color-blue);
-  border-radius: 4px;
-  border: 2px solid var(--color-blue);
-  padding: 17px;
-  width: 100%;
-  max-width: 360px;
-  text-transform: uppercase;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-  @include desktop-block {
-    font-size: 16px;
-  }
-  @include phone{
-  }
-  &:hover {
-    border: 2px solid var(--color-black);
-    background-color: var(--color-grey);
-  }
-}
+// .btn-border {
+//   background-color: var(--color-grey);
+//   font-size: 20px;
+//   font-weight: var(--font-w-semi);
+//   color: var(--color-blue);
+//   border-radius: 4px;
+//   border: 2px solid var(--color-blue);
+//   padding: 17px;
+//   width: 100%;
+//   max-width: 360px;
+//   text-transform: uppercase;
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   line-height: 1;
+//   @include desktop-block {
+//     font-size: 16px;
+//   }
+//   @include phone{
+//   }
+//   &:hover {
+//     border: 2px solid var(--color-black);
+//     background-color: var(--color-grey);
+//   }
+// }
 
 .btn-link{
   border: 0 none;
