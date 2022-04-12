@@ -19,7 +19,7 @@ get_header();
                                 <div class="item-content-wrap">
                                     <div class="item-title">
                                         <div class="item-title--title">
-                                        We make people believe in digital health innovations
+                                            We make people with chronic conditions believe in digital health innovations
                                         </div>
                                     </div>
                                     <div class="item-img">
@@ -236,8 +236,11 @@ get_header();
                         </div>
                         <div class="work-content-right">
                             <div class="work-img">
-                                <img class="img"
+                                <img class="img img-desk"
                                 src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers-min.png"
+                                alt=""/>
+                                <img class="img img-mobile"
+                                src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers-mobile.png"
                                 alt=""/>
                         </div>
                         </div>

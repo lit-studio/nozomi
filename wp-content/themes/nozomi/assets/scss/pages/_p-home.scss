@@ -27,6 +27,7 @@
       width: 100%;
       height: 100%;
       max-width: 2560px;
+
     }
     .item{
       width: 100%;
@@ -54,6 +55,7 @@
         width: 100%;
         height: 100%;
         position: relative;
+
       }
       &-content{
         position: absolute;
@@ -66,10 +68,31 @@
         align-items: flex-start;
         z-index: 1;
         cursor: none;
+        padding-left: 65px;
+        padding-right: 65px;
+        @include phone{ 
+          padding-left: 20px;
+          padding-right: 20px;
+        }
         &-wrap{
-          max-width: 1040px;
+          max-width: 1320px;
           width: 100%;
           text-align: center;
+          @include desktop-normal{
+            max-width: 1020px;
+          }
+          @include desktop-note-big{
+
+          }
+          @include desktop-block{
+            max-width: 840px;
+          }
+          @include tablet{
+            max-width: 640px;
+          }
+          @include phone{ 
+            max-width: 640px;
+          }
         }
       }
 
@@ -168,34 +191,34 @@
           cursor: none;
           position: absolute;
         }
-        // &:after{
-        //   position: absolute;
-        //   left: 0;
-        //   bottom: 0;
-        //   width: 100%;
-        //   content: '';
-        //   height: pxVw(288,2560); 
-        //   background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(229,229,229,1) 100%); 
-        //   background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%); 
-        //   background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%);
-        //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#e5e5e5',GradientType=0 );
-        //   @include desktop-normal{
-        //     height: pxVw(288,1920); 
-        //   }
-        //   @include desktop-note-big{
-        //     height: pxVw(160,1440); 
-        //   }
-        //   @include desktop-block{
-        //     height: pxVw(160,1024); 
-        //   }
-        //   @include tablet{
-        //     height: pxVw(160,768);
-        //   }
-        //   @include phone{
-        //     height: pxVw(160,375); 
-        //   }
+        &:after{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          content: '';
+          height: pxVw(288,2560); 
+          background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(229,229,229,1) 100%); 
+          background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%); 
+          background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#e5e5e5',GradientType=0 );
+          @include desktop-normal{
+            height: pxVw(288,1920); 
+          }
+          @include desktop-note-big{
+            height: pxVw(160,1440); 
+          }
+          @include desktop-block{
+            height: pxVw(160,1024); 
+          }
+          @include tablet{
+            height: pxVw(160,768);
+          }
+          @include phone{
+            height: pxVw(160,375); 
+          }
           
-        // }
+        }
       }
     }
 
@@ -204,14 +227,38 @@
   .about{
     padding-top: 120px; 
     padding-bottom: 220px;
-    background-color: var(--color-grey-6);
+    background-color: var(--color-beage);
     overflow: hidden;
-    
+    @include desktop-normal{
+      padding-bottom: 180px;
+    }
+    @include desktop-note-big{
+      padding-bottom: 160px;
+    }
+    @include desktop-block{
+
+    }
+    @include tablet{
+      padding-bottom: 150px;
+    }
+    @include phone{
+      padding-bottom: 120px;
+    }    
     &-wrap{
       max-width: 1800px;
       margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
+      @include desktop-normal{
+        max-width: 1440px;
+      }
+      @include desktop-note-big{
+
+        padding-left: 45px;
+        padding-right: 45px;
+      }
+      @include desktop-block{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
     }
     &-cursive{
       text-align: center;
@@ -221,45 +268,184 @@
         font-weight: var(--font-w-regular);
         line-height: 1.2;
         color:var(--color-red);
+        @include desktop-normal{
+          font-size: 24px;
+        }
+        @include desktop-note-big{
+          font-size: 20px;
+        }
+        @include desktop-block{
+
+        }
+        @include tablet{
+
+        }
+        @include phone{
+          font-size: 16px;
+        }
       }
     }
     &-desc{
       padding-top: 50px;
       max-width: 800px;
       margin: 0 auto;
+      @include desktop-normal{
+        max-width: 660px;
+      }
+      @include desktop-note-big{
+        max-width: 520px;
+      }
+      @include desktop-block{
+
+      }
+      @include tablet{
+
+      }
+      @include phone{
+
+      }
       &--desc{
         text-align: center;
         font-size: 24px;
         line-height: 150%;
-        // font-weight: var(--font-w-bold);
-        // color:var(--color-black);
+        @include desktop-normal{
+          font-size: 20px;
+        }
+        @include desktop-note-big{
+          font-size: 16px;
+        }
+        @include desktop-block{
+
+        }
+        @include tablet{
+
+        }
+        @include phone{
+          font-size: 15px;
+        }
       }
     }
     &-middle{
       padding-top: 220px;
+      @include desktop-normal{
+        padding-top: 180px;
+      }
+      @include desktop-note-big{
+        padding-top: 160px;
+      }
+      @include desktop-block{
+
+      }
+      @include tablet{
+
+      }
+      @include phone{
+        padding-top: 120px;
+      }
       &-row{
           display: flex;
           margin:0 -40px;
+          justify-content: center;
+          @include desktop-normal{
+            margin:0 -28px;
+          }
+          @include desktop-note-big{
+            margin:0 -22px;
+          }
+          @include desktop-block{
+            margin:0 -13px;
+          }
+          @include tablet{
+    
+          }
+          @include phone{
+            flex-wrap: wrap;
+            margin: 0;
+          }
       }
       &-col{
         flex: 0 0 50%;
         max-width: 50%;
         padding-left: 40px;
         padding-right: 40px;
+        @include desktop-normal{
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+        @include desktop-note-big{
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+        @include desktop-block{
+          padding-left: 13px;
+          padding-right: 13px;
+        }
+        @include tablet{
+  
+        }
+        @include phone{
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 20px 0 0;
+        }
       }
 
     }
     &-bottom{
       padding-top: 80px;
+      @include desktop-normal{
+        padding-top: 56px;
+      }
+      @include desktop-note-big{
+        padding-top: 44px;
+      }
+      @include desktop-block{
+        padding-top: 26px;
+      }
+      @include tablet{
+        padding-top: 20px;
+      }
+      @include phone{
+
+      }
       &-row{
         margin:0 -40px;
+        @include desktop-normal{
+          margin:0 -28px;
+        }
+
+        @include desktop-block{
+  
+        }
+        @include tablet{
+  
+        }
+        @include phone{
+          flex-wrap: wrap;
+          margin: 0;
+        }
       }
       &-col{
         flex: 0 0 100%;
         max-width: 100%;
         padding-left: 40px;
         padding-right: 40px;
+        @include desktop-normal{
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+        @include desktop-note-big{
 
+        }
+        @include desktop-block{
+  
+        }
+        @include tablet{
+  
+        }
+        @include phone{
+            padding: 0;
+        }
         .item{
           width: 100%;
           padding: 94px;
@@ -295,8 +481,10 @@
       width: 100%;
       max-width: 2560px;
       margin: 0 auto;
-      padding-left: 100px;
-      padding-right: 100px;
+      // padding-left: 100px;
+      // padding-right: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
     &-content{
       max-width: 1200px;
@@ -340,6 +528,26 @@
       margin: 0 auto;
       width: pxVw(2360,2560);
       height: pxVw(1574,2560);
+      @include desktop-normal{
+        width: pxVw(1800,1920);
+        height: pxVw(1200,1920);
+      }
+      @include desktop-note-big{
+        width: pxVw(1350,1440);
+        height: pxVw(900,1440);
+      }
+      @include desktop-block{
+        width: pxVw(974,1024);
+        height: pxVw(650,1024);
+      }
+      @include tablet{
+        width: pxVw(714,768);
+        height: pxVw(480,768);
+      }
+      @include phone{
+        width: pxVw(335,375);
+        height: pxVw(224,375);
+      }
       img{
         width: 100%;
         height: 100%;
@@ -371,6 +579,14 @@
       margin: 0 auto;
       padding-left: 100px;
       padding-right: 100px;
+      @include desktop-block{
+        padding-left: 65px;
+        padding-right: 65px;
+      }
+      @include phone{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     &-top{
       max-width: 1200px;
@@ -383,15 +599,40 @@
       flex-wrap: nowrap;
       padding-top: 80px;
       justify-content: space-between;
+      @include phone{
+        flex-wrap: wrap;
+      }
       &-left{
         // flex: 0 0 50%;
         // max-width: 50%;
         flex: 1;
         padding-right: 40px;
+        @include phone{
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
       &-right{
         flex: 0 0 384px;
         max-width: 384px;
+        @include desktop-normal{
+          flex: 0 0 306px;
+          max-width: 306px;
+        }
+        @include desktop-note-big{
+          flex: 0 0 264px;
+          max-width: 264px;
+        }
+        @include desktop-block{
+
+        }
+        @include tablet{
+
+        }
+        @include phone{
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
       &-list{
         max-width: 662px;
@@ -464,10 +705,23 @@
     &-img{
       max-width: 384px;
       height: auto;
-      img{
+      .img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        &-desk{
+            display: block;
+          @include phone{
+            display: none;
+          }
+        }
+        &-mobile{
+            display: none;
+          @include phone{
+              display: block;
+          }
+        }
+
       }
     }
 
@@ -491,6 +745,7 @@
       margin: 0 -40px;
       @include tablet{
         flex-wrap: wrap;
+        margin: 0;
       }
     }
     &-col{
@@ -502,6 +757,7 @@
       @include tablet{
         flex: 0 0 100%;
         max-width: 100%;
+        padding: 0 0 40px;
       }
       .item{
         &-img{

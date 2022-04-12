@@ -165,11 +165,10 @@
 
 
   &-btns{
-    // border-left: 1px solid var(--color-black);
     display: none;
-    @include desktop-block{
-     display: flex;
-    }
+    // @include desktop-block{
+    //  display: flex;
+    // }
     &-wrap{
       position: relative;
     }
