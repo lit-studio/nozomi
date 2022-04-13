@@ -1,11 +1,12 @@
 <?php
-/*
- * Template name: page
-*/
+
 get_header();
 ?>
     <main id="primary" class="site-main">
-        Contact page
+        <?php
+
+        get_header();
+        ?>
     </main><!-- #main -->
 
 <?php

@@ -36,7 +36,7 @@
         <div class="c-header-mobile-wrap">
             <div class="c-header-mobile-top">
                 <div class="block-menu">
-                <?php  wp_nav_menu(array('theme_location' => 'primary1', 'fallback_cb' => '', 'items_wrap' => '<ul>%3$s</ul>', 'container' => ''));  ?>
+                <?php  wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => '', 'items_wrap' => '<ul>%3$s</ul>', 'container' => ''));  ?>
                 </div>
             </div>
         </div>

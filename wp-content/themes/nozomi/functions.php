@@ -25,8 +25,7 @@ function change_menu_label()
 register_nav_menus(
     array(
         'primary' => __('Menu header'),
-        'primary1' => __('Menu footer 1'),
-        'primary2' => __('Menu footer 2'),
+        'primary1' => __('Menu footer'),
     )
 );
 add_action('admin_menu', 'change_menu_label');
@@ -102,8 +101,8 @@ add_action('wp_enqueue_scripts', function () {
     ];
     if (is_page()) $nozomiData['page'] = 'page';
     if (is_front_page()) $nozomiData['page'] = 'home';
-    if (is_page_template('page-about.php')) $nozomiData['page'] = 'about';
-    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
+//    if (is_page_template('page-about.php')) $nozomiData['page'] = 'about';
+//    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
 
 
 
@@ -115,8 +114,8 @@ add_action('wp_enqueue_scripts', function () {
 add_filter('body_class', function ($classes) {
     if (is_404()) array_push($classes, 'p-404');
     if (is_front_page()) array_push($classes, 'p-home');
-    if (is_page_template('page-about.php')) array_push($classes, 'p-about');
-    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
+//    if (is_page_template('page-about.php')) array_push($classes, 'p-about');
+//    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
     if (is_page()) array_push($classes, 'p-page');
 
     if (isset($classes['class-to-remove'])) {
@@ -177,13 +176,50 @@ function show_svg_in_media_library( $response ) {
 
     return $response;
 }
+
+add_action('admin_init', 'remove_acf_options_page', 99);
+function remove_acf_options_page() {
+    remove_menu_page('acf-options');
+}
 if( function_exists('acf_add_options_page') ) {
 
-    acf_add_options_page();
 
-    acf_add_options_sub_page('General');
-    acf_add_options_sub_page('Header');
-    acf_add_options_sub_page('Footer');
+
+//    acf_add_options_sub_page('General');
+//    acf_add_options_sub_page('Header');
+    acf_add_options_page('Footer');
 
 }
 remove_action('wp_head', 'wp_generator');
+
+
+add_action('init', 'create_portfolio');
+function create_portfolio()
+{
+    $labels   = array(
+        'name'               => _x('Portfolio', 'post type general name'),
+        'singular_name'      => _x('Portfolio', 'post type singular name'),
+        'add_new'            => __('Add item'),
+        'add_new_item'       => __('Add item'),
+        'edit_item'          => __('Edit item'),
+        'new_item'           => __('Add item'),
+        'view_item'          => __('View item'),
+        'search_items'       => __('Search Portfolio'),
+        'not_found'          => __('No Portfolio found'),
+        'not_found_in_trash' => __('No Portfolio found in Trash'),
+        'parent_item_colon'  => ''
+    );
+    $supports = array('title', 'editor');
+    register_post_type(
+        'object',
+        array(
+            'labels'       => $labels,
+            'hierarchical' => true,
+            'public'       => true,
+            'supports'     => $supports,
+            'rewrite'      => array('slug' => 'object-item'),
+        )
+    );
+}
+add_image_size('home_1', '840', '9999', false);
+add_image_size('home_2', '2360', '9999', false);
