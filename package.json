@@ -5,6 +5,7 @@
   "main": "webpack.mix.js",
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.11.3",
+    "@vimeo/player": "^2.16.4",
     "cross-env": "^7.0.2",
     "gsap": "^3.5.1",
     "howler": "^2.2.3",

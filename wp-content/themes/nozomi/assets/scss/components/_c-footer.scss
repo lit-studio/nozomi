@@ -4,19 +4,41 @@
   padding-bottom: 24px;
   &-top{
     padding-top: 120px;
+    padding-bottom: 60px;
+    @include desktop-normal{
+      padding-top: 100px;
+      padding-bottom: 40px; 
+    }
+    @include desktop-note-big{
+      padding-top: 70px;
+      padding-bottom: 53px;
+    }
+    @include phone{
+      padding-bottom: 42px;
+    }
     &-wrap{
       display: flex;
       flex-wrap: nowrap;
       max-width: 1324px;
       margin: 0 auto;
       @include desktop-normal{
+        max-width: 1148px;
+      }
+      @include desktop-note-big{
+        max-width: 1000px;
+      }
+      @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
       }
-      @include desktop-block{
-        flex-wrap: wrap;
+      @include tablet{
+        padding-left: 25px;
+        padding-right: 25px;
       }
-
+      @include phone{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     &-item{
       .item{
@@ -26,12 +48,39 @@
             font-family: var(--font-bold);
             line-height: 125%;
             font-size: 64px;
+            @include desktop-normal{
+              font-size: 54px;
+            }
+            @include desktop-note-big{
+              font-size: 48px;
+            }
+            @include phone{
+              font-size: 32px;
+            }
           }
         }
         &-btns{
           padding-top: 40px;
-          .btn{
-
+          @include desktop-note-big{
+            padding-top: 25px;
+          }
+          @include phone{
+            padding-top: 30px;
+          }
+          &-btn{
+            max-width: 246px;
+            @include desktop-normal{
+              max-width: 224px;
+            }
+            @include desktop-note-big{
+              max-width: 214px;
+            }
+            @include phone{
+              max-width: 192px;
+            }
+            .btn{
+                padding: 0;
+            }
           }
         }
       }
@@ -41,39 +90,81 @@
   }
   &-middle{
     padding-top: 60px;
+    @include desktop-normal{
+      padding-top: 40px;
+    }
     &-wrap{
       display: flex;
       justify-content: space-between;
       max-width: 1324px;
       margin: 0 auto;
       @include desktop-normal{
+        max-width: 1148px;
+      }
+      @include desktop-note-big{
+        max-width: 1000px;
+      }
+      @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
       }
+      @include tablet{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      @include phone{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     &-left{
-      flex: 0 0 40%;
-      max-width: 735px;
+      flex: 0 0 635px;
+      max-width: 635px;
     }
     &-right{
         flex: 1;
+        // padding-left: 350px;
     }
   }
   &-bottom{
     padding-top: 100px;
-
+    @include desktop-normal{
+      padding-top: 85px;
+    }
+    @include desktop-note-big{
+      padding-top: 60px;
+    }
+    @include desktop-block{
+      padding-top: 52px;
+    }
+    @include tablet{
+      padding-top: 40px;
+    }
     &-wrap{ 
       max-width: 1324px;
       margin: 0 auto;
       @include desktop-normal{
+        max-width: 1148px;
+      }
+      @include desktop-note-big{
+        max-width: 1000px;
+      }
+      @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
+      }
+      @include tablet{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      @include phone{
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   }
 
   &-social{
-    padding-top: 30px;
     display: flex;
     flex-wrap: nowrap;
     margin-left: -15px;
@@ -81,43 +172,85 @@
     &-item{
       padding-left: 15px;
       padding-right: 15px
-      &-link{
 
+    }
+    &-link{
+
+      &.linkedin,&.instagram{
+        path{
+          fill: var(--color-grey-4);
+        }
+        &:hover{
+          path{
+            fill: var(--color-beage);
+          }
+        }
       }
+      &.dribble{
+        stroke: var(--color-grey-4);
+        &:hover{
+          path{
+            stroke: var(--color-beage);
+          }
+        }
+      }
+
     }
   }
   &-desc{
-    padding-top: 20px;
-    &--desc{
-
-    }
+    // padding-top: 20px;
+    max-width: 385px;
     .item{
       &-title{
         &--title{
           color: var(--color-white);
           font-size: 32px;
+          @include desktop-normal{
+            font-size: 24px;
+          }
+          @include desktop-note-big{
+            font-size: 20px;
+          }
+
         }
       }
       &-desc{
+        padding-top: 5px;
         &--desc{
           color:var(--color-grey-4);
           font-size: 18px;
+          @include desktop-normal{
+            font-size: 16px;
+          }
+          @include desktop-note-big{
+            font-size: 14px;
+          }
         }
       }
 
     }
   }
-  &-title{
-    &--title{
-      text-transform: uppercase;
-      color: var(--color-black);
-      font-weight: var(--font-w-semi);
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-  }
+  // &-title{
+  //   &--title{
+  //     text-transform: uppercase;
+  //     color: var(--color-black);
+  //     font-weight: var(--font-w-semi);
+  //     font-size: 14px;
+  //     letter-spacing: 1px;
+  //     @include desktop-normal{
+  //       font-size: 54px;
+  //     }
+  //     @include desktop-note-big{
+  //       font-size: 48px;
+  //     }
+  //     @include phone{
+  //       font-size: 32px;
+  //     }
+  //   }
+  // }
   &-menu{
-    padding-top: 14px;
+    // padding-top: 14px;
+    transform: translateX(100px);
     ul{
       display: flex;
       justify-content: flex-start;
@@ -128,11 +261,43 @@
       font-size: 15px;
       letter-spacing: 0.5px;
       padding-bottom: 10px;
-      flex: 0 0 33.33%;
-      max-width: 260px;
+      flex: 0 0 33%;
+      max-width: 230px;
+      // margin-left: 100px;
+      // flex: 0 0 33.33%;
+      // max-width: 260px;
+      // &:nth-of-type(2), &:nth-of-type(5){
+      //     padding-left: 100px;
+      //     padding-right: 100px;
+      // }
+      
       &.current-menu-item{
         a{
+          // color: var(--color-red);
+        }
+      }
+      &.menu-item-34{
+        a{
           color: var(--color-red);
+          &:after{
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 150px;
+            height: 100px;
+            background-color: transparent;
+            background-image: url('#{$assetsPath}/images/home/giphy.gif');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: contain;
+            opacity: 0;
+          }
+          &:hover{
+            &:after{
+              opacity: 1;
+            }
+          }
         }
       }
     }
@@ -142,27 +307,45 @@
       font-size: 20px;
       line-height: 150%;
       letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      position: relative;
+      @include desktop-normal{
+        font-size: 18px;
+      }
+      @include desktop-note-big{
+        font-size: 16px;
+      }
+      &:after{
+        content: '';
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: var(--color-red);
+        opacity: 0;
+      }
       &:hover{
-        color: var(--color-red);
+        // color: var(--color-red);
+        &:after{
+          opacity: 1;
+        }
       }
     }
   }
-  &-desc{
-    padding-top: 14px;
-    color: var(--color-white);
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    &-item{
-      padding-top:20px;
-      &:first-of-type{
-        padding-top: 0;
-      }
-    }
-    &-time{
-      max-width: 150px;
-    }
-  }
-
-
-
+  // &-desc{
+  //   padding-top: 14px;
+  //   color: var(--color-white);
+  //   font-size: 15px;
+  //   letter-spacing: 0.5px;
+  //   &-item{
+  //     padding-top:20px;
+  //     &:first-of-type{
+  //       padding-top: 0;
+  //     }
+  //   }
+  //   &-time{
+  //     max-width: 150px;
+  //   }
+  // }
 }
