@@ -3,7 +3,7 @@
   .index {
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     // height: 1380px;
     // @include desktop-normal{
@@ -22,19 +22,19 @@
     //   height: 814px;
     // }
     &-wrap {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      max-width: 2560px;
+      // position: relative;
+      // z-index: 1;
+      // width: 100%;
+      // height: 100%;
+      // max-width: 2560px;
 
     }
     .item{
-      width: 100%;
-      position: relative;
-      max-width: 2560px;
-      height: 100%;
-      min-height: 100vh;
+      // width: 100%;
+      // position: relative;
+      // max-width: 2560px;
+      // height: 100%;
+      // min-height: 100vh;
       // height: 1380px;
       // @include desktop-normal{
       //   height: 1220px;
@@ -54,6 +54,7 @@
       &-wrap{
         width: 100%;
         height: 100%;
+        min-height: 100vh;
         position: relative;
 
       }
@@ -134,7 +135,7 @@
         
           }
           @include phone{
-            font-size: 48px;
+            font-size: 40px;
           }
         }
       }
@@ -159,16 +160,17 @@
         //   padding-top: pxVw(180,375);
         // }
         &-item{
-          width: 158px;
-          height: 134px;
+          // width: 158px;
+          // height: 134px;
+          max-width: 250px;
           position: relative;
           @include desktop-normal{
-            width: 131px;
-            height: 111px;
+            // width: 131px;
+            // height: 111px;
           }
           @include desktop-note-big{
-            width: 106px;
-            height: 90px;
+            // width: 106px;
+            // height: 90px;
           }
           @include desktop-block{
 
@@ -177,15 +179,20 @@
 
           }
           @include phone{
-            width: 86px;
-            height: 73px;
+            // width: 86px;
+            // height: 73px;
+            max-width: 150px;
           }
+          &-lottie{
+            width: 100%;
         }
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
         }
+
+        // img{
+        //   width: 100%;
+        //   height: 100%;
+        //   object-fit: contain;
+        // }
 
       }
       &-bg{
@@ -595,32 +602,41 @@
   }
   .about{
     padding-top: 220px; 
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
     position: relative;
     overflow: hidden;
     cursor: none;
-
+    background-color: transparent;
+    background-image: url('#{$assetsPath}/images/home/about-bg-min.jpg');
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-size: cover;
     &-wrap{
       position: relative;
       z-index: 1;
       width: 100%;
       max-width: 2560px;
       margin: 0 auto;
+
       // padding-left: 100px;
       // padding-right: 100px;
-      padding-left: 20px;
-      padding-right: 20px;
+      // padding-left: 20px;
+      // padding-right: 20px;
     }
     &-content{
       max-width: 1200px;
       margin: 0 auto;
       color: var(--color-white);
       text-align: center;
+      padding-bottom: 120px;
       @include desktop-normal{
         max-width: 980px;
+        padding-bottom: 100px;
       }
       @include desktop-note-big{
         max-width: 880px;
+        padding-bottom: 80px; 
       }
       @include desktop-block{
 
@@ -629,7 +645,7 @@
         max-width: 640px;
       }
       @include phone{
-
+        padding-bottom: 50px;
       }
     }
     &-cursive{
@@ -744,19 +760,23 @@
       }
     }
     &-middle{
-      padding-top: 120px;
-      @include desktop-normal{
-        padding-top: 100px;
-      }
-      @include desktop-note-big{
-       padding-top: 80px; 
-      }
-      @include phone{
-        padding-top: 50px;
+      // background-color: transparent;
+      // background-image: url('#{$assetsPath}/images/home/about-bg-min.jpg');
+      // background-position: center;
+      // background-repeat: no-repeat;
+      // background-attachment: scroll;
+      // background-size: cover;
+      &-wrap{
+
+        padding-bottom: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+
       }
     }
     &-img{
       margin: 0 auto;
+      overflow: hidden;
       width: pxVw(2360,2560);
       height: pxVw(1574,2560);
       @include desktop-normal{
@@ -779,6 +799,10 @@
         width: pxVw(335,375);
         height: pxVw(224,375);
       }
+      &-block{
+        width: 100%;
+        height: 100%;
+      }
       img{
         width: 100%;
         height: 100%;
@@ -787,7 +811,9 @@
     }
     &-bg{
       width: 100%;
-      height: 100%;
+      height: 100vh;
+      // height: 100%;
+      // position: relative;
       position: absolute;
       left: 0;
       top: 0;
@@ -876,6 +902,68 @@
             border-top: none;
             padding-top: 40px;
           }
+          &:nth-of-type(2n+1){
+            .item-link--link{
+              &:before{
+                width: 24px;
+                height: 24px;
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: transparent;
+                background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: contain;
+                @include desktop-normal{
+                  width: 20px;
+                  height: 20px;
+                }
+                @include desktop-note-big{
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+              &:hover{
+                &:before{
+                  background-image: url('#{$assetsPath}/icons/icon-link-play.svg');
+                }
+              }
+            }
+          }
+          &:nth-of-type(2n){
+            .item-link--link{
+              &:before{
+                width: 24px;
+                height: 24px;
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background-color: transparent;
+                background-image: url('#{$assetsPath}/icons/icon-link-play.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: contain;
+                @include desktop-normal{
+                  width: 20px;
+                  height: 20px;
+                }
+                @include desktop-note-big{
+                  width: 18px;
+                  height: 18px;
+                }
+              }
+              &:hover{
+                &:before{
+                  background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+                }
+              }
+            }
+          }
           &-title{
             &--title{
               color: var(--color-grey);
@@ -911,24 +999,23 @@
             padding-top: 25px;
             &--link{
               color: var(--color-grey);
-              font-size: 15px;
+              font-size: 20px;
               line-height: 120%;
               font-family: var(--font-bold);
+              padding-left: 34px;
+              position: relative;
               @include desktop-normal{
- 
+                font-size: 18px;
+                padding-left: 30px;
               }
               @include desktop-note-big{
+                font-size: 15px;
+                padding-left: 28px;
+              }
+              &:hover{
+                color: var(--color-red);
+              }
 
-              }
-              @include desktop-block{
-      
-              }
-              @include tablet{
-      
-              }
-              @include phone{
-   
-              }
             }
           }
         }
@@ -1049,6 +1136,10 @@
       padding-top: 80px; 
       padding-bottom: 160px;
     }
+    @include phone{
+      padding-top: 50px; 
+      padding-bottom: 120px;
+    }
 
     &-wrap{
       max-width: 1800px;
@@ -1137,10 +1228,20 @@
         }
         &-tag{
           padding-top: 25px;
+          @include desktop-note-big{
+            padding-top: 20px;
+          }
           &--tag{
               text-transform: uppercase;
               color: var(--color-grey-3);
               font-size: 20px;
+              @include desktop-normal{
+                font-size: 16px;
+              }
+              @include desktop-note-big{
+                font-size: 14px;
+              }
+ 
           }
         }
         &-title{
@@ -1148,6 +1249,15 @@
           &--title{
             color: var(--color-grey);
             font-size: 32px;
+            @include desktop-normal{
+              font-size: 28px;
+            }
+            @include desktop-note-big{
+              font-size: 24px;
+            }
+            @include phone{
+              font-size: 22px;
+            }
           }
         }
       }

@@ -1,19 +1,37 @@
 import { gsap } from "gsap";
-
+import lottie from "lottie-web";
 
 export default function () {
   console.log( 'header' );
   let   $body = $("body"),
     $window = $(window),
     $header = $(".c-header--js"),
-    $mobileMenuBtn = $header.find(".btn-menu--js"),
-    $mobileMenuBg = $header.find(".c-header-mobile-bg--js"),
-    $mobileMenu = $header.find(".c-header-mobile--js"),
-    $mobileMenuWrap = $header.find(".c-header-mobile-wrap");
+    $menuBtn = $header.find(".btn-menu--js"),
+    $menuBg = $header.find(".c-header-mobile-bg--js"),
+    $menuBlock = $header.find(".c-header-mobile--js"),
+    $menuWrap = $header.find(".c-header-mobile-wrap");
 
+    let menuBtn = document.querySelector(".btn-menu--js");
+    const menuBtnAnim = lottie.loadAnimation({
+      container: menuBtn,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: nozomiData.rootUrl + "/assets/lottie/btn_menu.json"
+    });
+    function menuBtnHover() {
+      if (!menuBtn.querySelector("svg")) {
+          menuBtn.addEventListener("mouseenter", () => {
+            menuBtnAnim.playSegments([0, 30], true);
+          });
+    
+          menuBtn.addEventListener("mouseleave", () => {
+            menuBtnAnim.playSegments([30, 0], true);
+          }); 
+      }
 
-
-
+    }
+    menuBtnHover();
 
 
   function mobileMenu() {
@@ -48,6 +66,6 @@ export default function () {
 
   }
 
-  mobileMenu();
+  // mobileMenu();
 
 }

@@ -30,6 +30,7 @@
       @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
+        max-width: 100%;
       }
       @include tablet{
         padding-left: 25px;
@@ -107,6 +108,7 @@
       @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
+        max-width: 100%;
       }
       @include tablet{
         padding-left: 25px;
@@ -115,15 +117,39 @@
       @include phone{
         padding-left: 20px;
         padding-right: 20px;
+        flex-wrap: wrap;
       }
     }
     &-left{
-      flex: 0 0 635px;
-      max-width: 635px;
+      // flex: 0 0 635px;
+      // max-width: 635px;
+      flex: 0 0 50%;
+      max-width: 50%;
+      @include desktop-normal{
+
+      }
+      @include desktop-note-big{
+
+      }
+      @include desktop-block{
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+      @include tablet{
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+      @include phone{
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
     &-right{
-        flex: 1;
-        // padding-left: 350px;
+      @include phone{
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 60px;
+      }
     }
   }
   &-bottom{
@@ -140,6 +166,9 @@
     @include tablet{
       padding-top: 40px;
     }
+    @include phone{
+      padding-top: 50px;
+    }
     &-wrap{ 
       max-width: 1324px;
       margin: 0 auto;
@@ -152,6 +181,7 @@
       @include desktop-block{
         padding-left: 65px;
         padding-right: 65px;
+        max-width: 100%;
       }
       @include tablet{
         padding-left: 25px;
@@ -200,6 +230,21 @@
   &-desc{
     // padding-top: 20px;
     max-width: 385px;
+    @include desktop-normal{
+      max-width: 340px;
+    }
+    @include desktop-note-big{
+      max-width: 300px;
+    }
+    @include desktop-block{
+
+    }
+    @include tablet{
+      max-width: 200px;
+    }
+    @include phone{
+      max-width: 100%;
+    }
     .item{
       &-title{
         &--title{
@@ -230,47 +275,33 @@
 
     }
   }
-  // &-title{
-  //   &--title{
-  //     text-transform: uppercase;
-  //     color: var(--color-black);
-  //     font-weight: var(--font-w-semi);
-  //     font-size: 14px;
-  //     letter-spacing: 1px;
-  //     @include desktop-normal{
-  //       font-size: 54px;
-  //     }
-  //     @include desktop-note-big{
-  //       font-size: 48px;
-  //     }
-  //     @include phone{
-  //       font-size: 32px;
-  //     }
-  //   }
-  // }
   &-menu{
-    // padding-top: 14px;
-    transform: translateX(100px);
     ul{
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
+      // display: flex;
+      // justify-content: flex-start;
+      // flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 230px 230px 130px;
+      @include desktop-normal{
+        grid-template-columns: 220px 220px 120px;
+      }
+      @include desktop-note-big{
+        grid-template-columns: 175px 175px 105px;
+      }
+      @include tablet{
+        grid-template-columns: 155px 155px 105px;
+      }
+      @include phone{
+        grid-template-columns: 1fr  1fr;
+      }
     }
     li{
       color: var(--color-white);
       font-size: 15px;
       letter-spacing: 0.5px;
       padding-bottom: 10px;
-      flex: 0 0 33%;
-      max-width: 230px;
-      // margin-left: 100px;
-      // flex: 0 0 33.33%;
-      // max-width: 260px;
-      // &:nth-of-type(2), &:nth-of-type(5){
-      //     padding-left: 100px;
-      //     padding-right: 100px;
-      // }
-      
+      // flex: 0 0 33%;
+      // max-width: 230px;  
       &.current-menu-item{
         a{
           // color: var(--color-red);
@@ -323,29 +354,17 @@
         height: 2px;
         width: 100%;
         background-color: var(--color-red);
-        opacity: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: right;
       }
       &:hover{
-        // color: var(--color-red);
         &:after{
-          opacity: 1;
+          transform-origin: left;
+          transform: scaleX(1);
+          transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
         }
       }
     }
   }
-  // &-desc{
-  //   padding-top: 14px;
-  //   color: var(--color-white);
-  //   font-size: 15px;
-  //   letter-spacing: 0.5px;
-  //   &-item{
-  //     padding-top:20px;
-  //     &:first-of-type{
-  //       padding-top: 0;
-  //     }
-  //   }
-  //   &-time{
-  //     max-width: 150px;
-  //   }
-  // }
 }

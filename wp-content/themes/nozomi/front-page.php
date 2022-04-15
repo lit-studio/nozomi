@@ -21,9 +21,12 @@ get_header();
                                     <?php } ?>
                                     <div class="item-img">
                                         <div class="item-img-item">
-                                            <img class="img"
+                                            <div id='hand_bird' class="item-img-item-lottie">
+        
+                                            </div>
+                                            <!-- <img class="img"
                                                  src="<?php echo get_template_directory_uri() ?>/assets/images/home/illustration-bird.svg"
-                                                 alt=""/>
+                                                 alt=""/> -->
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +200,7 @@ get_header();
                             <div class="about-btns">
                                 <div class="about-btns-btn">
                                     <a href="<?php echo $button_link_block_2; ?>" class="btn  btn-about--js"
-                                       data-modal="c-modal-form">
+                                       >
                                         <?php /* echo $button_text_block_2; 
                                         <!-- <svg width="264" height="64" viewBox="0 0 264 64" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -217,17 +220,21 @@ get_header();
                     $image_block_2 = get_field('image_block_2');
                     if ($image_block_2) { ?>
                         <div class="about-middle">
-                            <div class="about-img">
-                                <img class="img"
-                                     src="<?php echo $image_block_2['sizes']['home_2']; ?>"
-                                     alt=""/>
+                            <div class="about-middle-wrap">
+                                <div class="about-img">
+                                    <div class="about-img-block parallax-img-block--js">
+                                        <img class="img img--js"
+                                            src="<?php echo $image_block_2['sizes']['home_2']; ?>"
+                                            alt=""/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php } ?>
                 </div>
                 <div class="about-bg">
                     <svg id="demoPerspective" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
-                         width="100%" height="100%" viewBox="0 0 2560 2450">
+                         width="100%" height="100%" viewBox="0 0 2560 1600">
                         <defs>
                             <radialGradient id="maskGradientPerspective">
                                 <stop offset="50%" stop-color="#fff"/>
@@ -286,68 +293,71 @@ get_header();
                         <div class="work-content-left">
                             <div class="work-content-list">
                                 <div class="item">
-                                    <?php
-                                    $text_4_block_3 = get_field('text_4_block_3');
-                                    if ($text_4_block_3) { ?>
-                                        <div class="item-title">
-                                            <div class="item-title--title">
-                                                <?php echo $text_4_block_3; ?>
+                                    <div class="item-wrap item-wrap--js">
+                                        <?php
+                                        $text_4_block_3 = get_field('text_4_block_3');
+                                        if ($text_4_block_3) { ?>
+                                            <div class="item-title">
+                                                <div class="item-title--title">
+                                                    <?php echo $text_4_block_3; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php
-                                    $text_5_block_3 = get_field('text_5_block_3');
-                                    if ($text_5_block_3) { ?>
-                                        <div class="item-desc">
-                                            <div class="item-desc--desc">
-                                                <?php echo $text_5_block_3; ?>
+                                        <?php } ?>
+                                        <?php
+                                        $text_5_block_3 = get_field('text_5_block_3');
+                                        if ($text_5_block_3) { ?>
+                                            <div class="item-desc">
+                                                <div class="item-desc--desc">
+                                                    <?php echo $text_5_block_3; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php
-                                    $link_1_block_3 = get_field('link_1_block_3');
-                                    if ($link_1_block_3) { ?>
-                                        <div class="item-link">
-                                            <a href='<?php echo $link_1_block_3['url']; ?>'
-                                               target="<?php echo $link_1_block_3['target']; ?>"
-                                               class="item-link--link">
-                                                <?php echo $link_1_block_3['title']; ?>
-                                            </a>
-                                        </div>
-                                    <?php } ?>
+                                        <?php } ?>
+                                        <?php
+                                        $link_1_block_3 = get_field('link_1_block_3');
+                                        if ($link_1_block_3) { ?>
+                                            <div class="item-link">
+                                                <a href='<?php echo $link_1_block_3['url']; ?>'
+                                                target="<?php echo $link_1_block_3['target']; ?>"
+                                                class="item-link--link">
+                                                    <?php echo $link_1_block_3['title']; ?>
+                                                </a>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                                 <div class="item">
-                                    <?php
-                                    $text_6_block_3 = get_field('text_6_block_3');
-                                    if ($text_6_block_3) { ?>
-                                        <div class="item-title">
-                                            <div class="item-title--title">
-                                                <?php echo $text_6_block_3; ?>
+                                    <div class="item-wrap item-wrap--js">
+                                        <?php
+                                        $text_6_block_3 = get_field('text_6_block_3');
+                                        if ($text_6_block_3) { ?>
+                                            <div class="item-title">
+                                                <div class="item-title--title">
+                                                    <?php echo $text_6_block_3; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php
-                                    $text_7_block_3 = get_field('text_7_block_3');
-                                    if ($text_7_block_3) { ?>
-                                        <div class="item-desc">
-                                            <div class="item-desc--desc">
-                                                <?php echo $text_7_block_3; ?>
+                                        <?php } ?>
+                                        <?php
+                                        $text_7_block_3 = get_field('text_7_block_3');
+                                        if ($text_7_block_3) { ?>
+                                            <div class="item-desc">
+                                                <div class="item-desc--desc">
+                                                    <?php echo $text_7_block_3; ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php
-                                    $link_2_block_3 = get_field('link_2_block_3');
-                                    if ($link_2_block_3) { ?>
-                                        <div class="item-link">
-                                            <a href='<?php echo $link_2_block_3['url']; ?>'
-                                               target="<?php echo $link_2_block_3['target']; ?>"
-                                               class="item-link--link">
-                                                <?php echo $link_2_block_3['title']; ?>
-                                            </a>
-                                        </div>
-                                    <?php } ?>
+                                        <?php } ?>
+                                        <?php
+                                        $link_2_block_3 = get_field('link_2_block_3');
+                                        if ($link_2_block_3) { ?>
+                                            <div class="item-link">
+                                                <a href='<?php echo $link_2_block_3['url']; ?>'
+                                                target="<?php echo $link_2_block_3['target']; ?>"
+                                                class="item-link--link">
+                                                    <?php echo $link_2_block_3['title']; ?>
+                                                </a>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="work-content-right">

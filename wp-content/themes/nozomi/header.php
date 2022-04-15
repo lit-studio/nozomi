@@ -20,14 +20,9 @@
         </div>
         <div class="c-header-right">
             <div class="c-header-btns">
-                <div class="c-header-btns-wrap">
-                    <div class="c-header-btns-btn">
-                        <button class="btn burger btn-menu btn-menu--js">s
-                            <div class="br br-1"></div>
-                            <div class="br br-2"></div>
-                            <div class="br br-3"></div>
-                        </button>
-                    </div>
+                <div class="c-header-btns-btn">
+                    <button class="btn btn-menu btn-menu--js">
+                    </button>
                 </div>
             </div>
         </div>

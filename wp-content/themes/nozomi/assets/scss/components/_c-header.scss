@@ -1,10 +1,11 @@
 .c-header {
-  padding: 5px 105px;
+  padding: 63px 105px;
   width: 100%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 10;
+  cursor: none;
   // @include desktop-note-big{
   //   padding: 5px 30px;
   // }
@@ -21,7 +22,7 @@
     // flex-wrap: wrap;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   &-left{
@@ -58,29 +59,27 @@
     @include desktop-block{
       padding: 5px;
     }
-    &-btn{
-      display: flex;
-      justify-content: flex-end;
-      .btn{
-        height: 40px;
-        width: 100%;
-        max-width: 175px;
-        padding: 10px;
-        font-size: 14px;
-        @include phone{
-          height: 30px;
-          padding: 0 10px;
-          font-size: 12px
-        }
-      }
-    }
+    // &-btn{
+    //   display: flex;
+    //   justify-content: flex-end;
+    //   .btn{
+    //     height: 40px;
+    //     width: 100%;
+    //     max-width: 175px;
+    //     padding: 10px;
+    //     font-size: 14px;
+    //     @include phone{
+    //       height: 30px;
+    //       padding: 0 10px;
+    //       font-size: 12px
+    //     }
+    //   }
+    // }
   }
   &-logo {
-    width: 100%;
-
+    // width: 100%;
     &-item {
       display: block;
-      height: 100px;
       position: relative;
       height: 63px;
       width: 82px;
@@ -104,16 +103,7 @@
 
 
   }
-  &-social{
-    display: flex;
-    &-item{
-      padding-left: 2px;
-      padding-right: 2px;
-    }
-    &-link{
-      display: block;
-    }
-  }
+
 
   &-menu {
 
@@ -165,7 +155,7 @@
 
 
   &-btns{
-    display: none;
+    // display: none;
     // @include desktop-block{
     //  display: flex;
     // }
@@ -173,93 +163,34 @@
       position: relative;
     }
     &-btn{
-      height: 100%;
-      width: 100%;
+      // height: 100%;
+      // width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    & .burger {
-      z-index: 1005;
-      padding: 0;
-      transition: 0.3s padding-right linear;
-      display: none;
-      @include desktop-block {
-        display: block;
-      }
-  
-      .br {
-        width: 38px;
-        height: 3px;
-        margin: 6px 0;
-        background-color: var(--color-black);
-        transition: 0.3s all linear;
-  
-        &:first-of-type {
-          margin-top: 0;
-        }s
-  
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-  
-  
-      }
-  
-      .br-1 {
-  
-      }
-  
-      .br-2 {
-        transition: none;
-      }
-  
-      .br-3 {
-  
-      }
-  
-      &.open {
-        .br-1 {
-          margin: 0;
-          transform: rotate(45deg) translateX(12px);
-          width: 38px;
-        }
-  
-        .br-2 {
-          width: 0;
-        }
-  
-        .br-3 {
-          margin: 0;
-          transform: rotate(-45deg) translateX(12px);
-          width: 38px;
-        }
-      }
-    }
+
   
     .btn-menu{
-      padding-left: 30px;
-      padding-right: 30px;
-      width: 100px;
-      height: 30px;
+      padding: 0;
+      width: 40px;
+      height: 40px;
       font-size: 13px;
       text-transform: uppercase;
       font-weight: var(--font-w-medium);
       color: var(--color-black);
-      @include phone{
-        width: 60px;
-        padding-left: 20px;
-        padding-right: 0;
+      cursor: pointer;
+      // @include phone{
+      //   width: 60px;
+      //   padding-left: 20px;
+      //   padding-right: 0;
+      // }
+      svg{
+        width: 100%;
+        height: 100%;
       }
       &.open{
-        .btn-menu-menu{
-          opacity: 0;
-          visibility: hidden;
-        }
-        .btn-menu-close{
-          opacity: 1;
-          visibility: visible;
-        }
+
       }
       &-menu{
         position: absolute;

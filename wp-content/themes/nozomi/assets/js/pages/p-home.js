@@ -12,18 +12,42 @@ export default function () {
   console.log("home page");
 
   let $body = $('body'),
-
+  $indexSection = $body.find(".index"),
+  $indexSectionTitle = $indexSection.find(".item-title"),
   $homeMainSlider = $body.find(".index-slider--js");
 
   function homeIndexFunc() {
     // console.clear();
     console.log('index');
+
+    const handBirdAnim = lottie.loadAnimation({
+      container: document.getElementById('hand_bird'),
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      path: nozomiData.rootUrl + "/assets/lottie/hand_bird.json"
+    });
+
+    let indexSectionGsap =  gsap.timeline({
+      paused: true,
+    })
+        .from($indexSectionTitle, 2, {  autoAlpha: 0, ease: "Power4.easeOut" },'')
+        .from($indexSectionTitle, 2, { yPercent: 50, ease: "Power4.easeOut",
+        onComplete: () => {
+          handBirdAnim.play();
+
+        } 
+    },'<')
+  ;
+  indexSectionGsap.play();
+
+
     const svg = document.querySelector("#demo");
     const tl = gsap.timeline();
     // const tl = gsap.timeline({onUpdate:onUpdate});
     let pt = svg.createSVGPoint();
     // let data = document.querySelector(".tlProgress");
-    let counter = document.querySelector("#counter");
+    // let counter = document.querySelector("#counter");
     const ratio = 0.5625;
     
     gsap.set("#instructions, #dial", {xPercent: -50});
@@ -72,6 +96,61 @@ export default function () {
   }
   homeIndexFunc();
 
+  let $aboutSection = $body.find('.about'),
+  $aboutSectionImg = $aboutSection.find('.parallax-img-block--js'),
+  $parallaxBlock = $body.find('.parallax-img-block--js')
+  ;
+
+  
+  // if ($parallaxBlock.length > 0) {
+  //   $parallaxBlock.each(function() {
+  //       ScrollTrigger.create({
+  //           // scroller: "#site",
+  //           trigger: $(this),
+  //           animation: gsap
+  //               .timeline()
+                
+  //               .fromTo(
+  //                   $(this),
+  //                   { yPercent: 5, duration: 1 },
+  //                   { yPercent: -5, duration: 1 }
+  //               )
+  //               .fromTo(
+  //                   $(this).find('img'),
+  //                   { scale: 1, duration: 1 },
+  //                   { scale: 1.15, duration: 1 }, "<"
+  //               ),
+  //           start: "top center",
+  //           end: "bottom top",
+  //           // start: "top 120%",
+  //           // end: "bottom -20%",
+  //           scrub: true,
+  //           toggleActions: "play reverse none reverse",
+  //           markers: true
+  //       });
+  //   });
+  // }
+
+  function imageScaleFunc() {
+    ScrollTrigger.create({
+        trigger: $aboutSectionImg,
+        animation: gsap
+            .timeline()
+            .fromTo(
+              $aboutSectionImg,
+                { yPercent: -10,scale: 1, duration: 2 },
+                { yPercent: -5,scale: 1.2, duration: 2 }
+            ),
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        toggleActions: "play reverse none reverse",
+        markers: false
+    });
+  }
+
+  imageScaleFunc();
+
   function homePerspectiveFunc() {
     // console.clear();
     console.log('perspective');
@@ -80,7 +159,7 @@ export default function () {
     // const tl = gsap.timeline({onUpdate:onUpdate});
     let ptPerspective = svg.createSVGPoint();
     // let data = document.querySelector(".tlProgress");
-    let counter = document.querySelector("#counterPerspective");
+    // let counter = document.querySelector("#counterPerspective");
     const ratioPerspective = 0.5625;
     
     gsap.set("#instructionsPerspective, #dialPerspective", {xPercent: -50});
@@ -128,6 +207,7 @@ export default function () {
     window.addEventListener("resize", newSizePerspective);
   }
   homePerspectiveFunc();
+
   function btnLottieFunc() {
     let btnPortfolio = document.querySelector(".btn-portfolio--js");
     let btnAbout = document.querySelector(".btn-about--js");
@@ -206,6 +286,7 @@ export default function () {
     }
   }
   btnLottieFunc();
+
   function controlVideos() {
     let $iframes = $('.video--js');
     $iframes.each(function () {
@@ -248,6 +329,6 @@ export default function () {
         // });
   });
 }
-controlVideos();
-
+// controlVideos();
+  
 }
