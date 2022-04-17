@@ -98,7 +98,10 @@ export default function () {
 
   let $aboutSection = $body.find('.about'),
   $aboutSectionImg = $aboutSection.find('.parallax-img-block--js'),
+  $portfolioSection = $body.find('.portfolio'),
+  $portfolioSectionImg = $portfolioSection.find('.parallax-img-block--js'),
   $parallaxBlock = $body.find('.parallax-img-block--js')
+  // $parallaxBlockImg = $parallaxBlock.find('img')
   ;
 
   
@@ -130,26 +133,88 @@ export default function () {
   //       });
   //   });
   // }
-
-  function imageScaleFunc() {
-    ScrollTrigger.create({
-        trigger: $aboutSectionImg,
-        animation: gsap
-            .timeline()
-            .fromTo(
-              $aboutSectionImg,
-                { yPercent: -10,scale: 1, duration: 2 },
-                { yPercent: -5,scale: 1.2, duration: 2 }
-            ),
-        start: "top bottom",
+  if ($('.parallax-img-block--js').length > 0) {
+    gsap.utils.toArray('.parallax-img-block--js img').forEach(sectionImg => {
+      ScrollTrigger.create({
+        trigger: sectionImg,
+        onEnter: () => {
+          gsap.to(sectionImg, {
+            autoAlpha: 1,
+            duration: 1,
+          });
+          gsap.to(sectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
+        },
+        start: "top center",
         end: "bottom top",
-        scrub: true,
-        toggleActions: "play reverse none reverse",
+        pin: false,
+        scrub: false,
+        toggleActions: "play none none none",
         markers: false
+      });
+    });
+  }
+  function portfolioScaleFunc() {
+    ScrollTrigger.create({
+      trigger: $portfolioSectionImg,
+      animation: 
+      gsap
+          .timeline()
+          .fromTo(
+            $portfolioSectionImg,
+              { yPercent: -10,scale: 1, duration: 2 },
+              { yPercent: -5,scale: 1.2, duration: 2 }
+          ),
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      toggleActions: "play reverse none reverse",
+      markers: false
     });
   }
 
-  imageScaleFunc();
+  portfolioScaleFunc();
+
+  function aboutScaleFunc() {
+    ScrollTrigger.create({
+      trigger: $aboutSectionImg,
+      animation: 
+      gsap
+          .timeline()
+          .fromTo(
+            $aboutSectionImg,
+              { yPercent: -10,scale: 1, duration: 2 },
+              { yPercent: -5,scale: 1.2, duration: 2 }
+          ),
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      toggleActions: "play reverse none reverse",
+      markers: false
+    });
+  }
+  aboutScaleFunc();
+
+  if ($('.item-wrap--js').length > 0) {
+    gsap.utils.toArray('.item-wrap--js').forEach(itemWrap => {
+      ScrollTrigger.create({
+        trigger: itemWrap,
+        onEnter: () => {
+          gsap.to(itemWrap, {
+            autoAlpha: 1,
+            duration: 2,
+          });
+          gsap.from(itemWrap, 2, {xPercent: -20, ease: "Power4.easeOut"},'<');
+        },
+        start: "top 70%",
+        end: "bottom top",
+        pin: false,
+        scrub: false,
+        toggleActions: "play none none none",
+        markers: false
+      });
+    });
+  }
+
 
   function homePerspectiveFunc() {
     // console.clear();

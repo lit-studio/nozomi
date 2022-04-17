@@ -19,14 +19,21 @@
             </a>
         </div>
         <div class="c-header-right">
-            <div class="c-header-btns">
-                <div class="c-header-btns-btn">
-                    <button class="btn btn-menu btn-menu--js">
-                    </button>
+            <div class="c-header-right-wrap">
+                <div class="c-header-menu c-header-menu--js">
+                    <?php  wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => '', 'items_wrap' => '<ul>%3$s</ul>', 'container' => ''));  ?>
+                </div>
+                <div class="c-header-btns">
+                    <div class="c-header-btns-btn">
+                        <button class="btn btn-menu btn-menu--js">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="c-header-bg c-header-bg--js"></div>
+    <?php /*
     <div class="c-header-mobile c-header-mobile--js">
         <div class="c-header-mobile-wrap">
             <div class="c-header-mobile-top">
@@ -36,6 +43,6 @@
             </div>
         </div>
     </div>
+    */ ?>
 </header>
-
-
+<div class="c-header-trigger c-header-trigger--js"></div>

@@ -105,8 +105,8 @@ get_header();
                             if ($image_block_1) { ?>
                                 <div class="portfolio-middle-col">
                                     <div class="item">
-                                        <div class="item-img">
-                                            <img class="img"
+                                        <div class="item-img parallax-img-block--js">
+                                            <img class="img img--js"
                                                  src="<?php echo $image_block_1['sizes']['home_1']; ?>"
                                                  alt=""/>
                                         </div>
