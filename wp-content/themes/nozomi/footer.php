@@ -66,7 +66,6 @@
             <div class="c-footer-middle-right ">
                 <div class="c-footer-menu">
                     <?php wp_nav_menu(array('theme_location' => 'primary1', 'fallback_cb' => '', 'items_wrap' => '<ul>%3$s</ul>', 'container' => '')); ?>
-
                 </div>
             </div>
         </div>
@@ -121,7 +120,7 @@
         </div>
     </div>
 </footer>
-
+<!-- <div id='cursor' class="cursor"><div  class="cursor-dot"></div></div> -->
 </div>
 
 

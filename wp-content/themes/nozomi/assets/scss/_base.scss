@@ -23,8 +23,31 @@ body {
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  cursor:  url('#{$assetsPath}/images/cursor-dot.png') 4 12, auto;
+  // cursor: none;
+  // a,button,.btn{
+  //   cursor: pointer!important;
+  // }
+  .cursor{
+    width: 10px;
+    height: 20px;
+    position: fixed;
+    left: -7px;
+    top: -7px;
+    z-index: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #ccc;
 
-
+    &-dot{
+      width: 7px;
+      height: 7px;
+      background-color: var(--color-red);
+      border-radius: 7px;
+      display: block;
+    }
+  }
 }
 
 a {

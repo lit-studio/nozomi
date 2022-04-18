@@ -40,7 +40,7 @@ get_header();
                                             <stop offset="100%" stop-color="#000"/>
                                         </radialGradient>
                                         <mask id="theMask">
-                                            <circle id="masker" r="150" fill="url(#maskGradient)" cx="800" cy="450"/>
+                                            <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
                                         </mask>
                                     </defs>
                                     <image id="lines"
@@ -52,7 +52,7 @@ get_header();
                                                x="0" y="0" width="100%" height="100%"/>
                                     </g>
                                     <!-- <circle id="ring" r="20" fill="none" stroke="#D54242" stroke-width="2" cx="800" cy="450" /> -->
-                                    <circle id="dot" r="4" fill="#D54242" cx="800" cy="450"/>
+                                    <!-- <circle id="dot" r="4" fill="#D54242" cx="800" cy="450"/> -->
                                 </svg>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ get_header();
                                 <stop offset="100%" stop-color="#000"/>
                             </radialGradient>
                             <mask id="theMaskPerspective">
-                                <circle id="maskerPerspective" r="150" fill="url(#maskGradientPerspective)" cx="800"
+                                <circle id="maskerPerspective" r="300" fill="url(#maskGradientPerspective)" cx="800"
                                         cy="450"/>
                             </mask>
                         </defs>
@@ -254,7 +254,7 @@ get_header();
                                    x="0" y="0" width="100%" height="100%"/>
                         </g>
                         <!-- <circle id="ring" r="20" fill="none" stroke="#D54242" stroke-width="2" cx="800" cy="450" /> -->
-                        <circle id="dotPerspective" r="4" fill="#D54242" cx="800" cy="450"/>
+                        <!-- <circle id="dotPerspective" r="4" fill="#D54242" cx="800" cy="450"/> -->
                     </svg>
                 </div>
             </section>

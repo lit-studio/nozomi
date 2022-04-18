@@ -44,14 +44,15 @@ export default function () {
 
     const svg = document.querySelector("#demo");
     const tl = gsap.timeline();
-    // const tl = gsap.timeline({onUpdate:onUpdate});
     let pt = svg.createSVGPoint();
+    // const tl = gsap.timeline({onUpdate:onUpdate});
+
     // let data = document.querySelector(".tlProgress");
     // let counter = document.querySelector("#counter");
     const ratio = 0.5625;
     
     gsap.set("#instructions, #dial", {xPercent: -50});
-    gsap.set("#progressRing", {drawSVG:0});
+    // gsap.set("#progressRing", {drawSVG:0});
     
     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
     tl.reversed(true);
@@ -68,7 +69,7 @@ export default function () {
     
     function mouseMoveIndex(evt) {
       let newPoint = getPointIndex(evt);
-      gsap.set("#dot", {attr:{cx:newPoint.x, cy:newPoint.y}});
+      // gsap.set("#dot", {attr:{cx:newPoint.x, cy:newPoint.y}});
       gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
      }
     
@@ -101,38 +102,9 @@ export default function () {
   $portfolioSection = $body.find('.portfolio'),
   $portfolioSectionImg = $portfolioSection.find('.parallax-img-block--js'),
   $parallaxBlock = $body.find('.parallax-img-block--js')
-  // $parallaxBlockImg = $parallaxBlock.find('img')
+
   ;
 
-  
-  // if ($parallaxBlock.length > 0) {
-  //   $parallaxBlock.each(function() {
-  //       ScrollTrigger.create({
-  //           // scroller: "#site",
-  //           trigger: $(this),
-  //           animation: gsap
-  //               .timeline()
-                
-  //               .fromTo(
-  //                   $(this),
-  //                   { yPercent: 5, duration: 1 },
-  //                   { yPercent: -5, duration: 1 }
-  //               )
-  //               .fromTo(
-  //                   $(this).find('img'),
-  //                   { scale: 1, duration: 1 },
-  //                   { scale: 1.15, duration: 1 }, "<"
-  //               ),
-  //           start: "top center",
-  //           end: "bottom top",
-  //           // start: "top 120%",
-  //           // end: "bottom -20%",
-  //           scrub: true,
-  //           toggleActions: "play reverse none reverse",
-  //           markers: true
-  //       });
-  //   });
-  // }
   if ($('.parallax-img-block--js').length > 0) {
     gsap.utils.toArray('.parallax-img-block--js img').forEach(sectionImg => {
       ScrollTrigger.create({
@@ -161,8 +133,8 @@ export default function () {
           .timeline()
           .fromTo(
             $portfolioSectionImg,
-              { yPercent: -10,scale: 1, duration: 2 },
-              { yPercent: -5,scale: 1.2, duration: 2 }
+              { scale: 1.2, duration: 2 },
+              { scale: 1, duration: 2 }
           ),
       start: "top bottom",
       end: "bottom top",
@@ -182,8 +154,8 @@ export default function () {
           .timeline()
           .fromTo(
             $aboutSectionImg,
-              { yPercent: -10,scale: 1, duration: 2 },
-              { yPercent: -5,scale: 1.2, duration: 2 }
+              { yPercent: -5,scale: 1.2, duration: 2 },
+              { yPercent: 5,scale: 1, duration: 2 }
           ),
       start: "top bottom",
       end: "bottom top",
@@ -245,7 +217,7 @@ export default function () {
     
     function mouseMovePerspective(evt) {
       let newPointPerspective = getPointPerspective(evt);
-      gsap.set("#dotPerspective", {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}});
+      // gsap.set("#dotPerspective", {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}});
       gsap.to("#maskerPerspective", 0.88, {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}, ease:"power2.out"});
      }
     
@@ -273,84 +245,7 @@ export default function () {
   }
   homePerspectiveFunc();
 
-  function btnLottieFunc() {
-    let btnPortfolio = document.querySelector(".btn-portfolio--js");
-    let btnAbout = document.querySelector(".btn-about--js");
-    let btnBook = document.querySelector(".btn-book--js");
-    if (!btnPortfolio.querySelector("svg")) {
-      function btnPortfolioHover() {
-        const btnPortfolioAnim = lottie.loadAnimation({
-          container: btnPortfolio,
-          renderer: "svg",
-          loop: false,
-          autoplay: false,
-          path: nozomiData.rootUrl + "/assets/lottie/button_portfolio.json"
-        });
-  
-        btnPortfolio.addEventListener("mouseenter", () => {
-          btnPortfolioAnim.playSegments([0, 30], true);
-        });
-  
-        btnPortfolio.addEventListener("mouseleave", () => {
-          btnPortfolioAnim.playSegments([31, 60], true);
-        });
-  
-  
-      }
-      if (btnPortfolio !== null) {
-        btnPortfolioHover();
-      }
-    }
-    if (!btnAbout.querySelector("svg")) {
-      function btnAboutHover() {
-        const btnAboutAnim = lottie.loadAnimation({
-          container: btnAbout,
-          renderer: "svg",
-          loop: false,
-          autoplay: false,
-          path: nozomiData.rootUrl + "/assets/lottie/button_about.json"
-        });
-  
-        btnAbout.addEventListener("mouseenter", () => {
-          btnAboutAnim.playSegments([0, 30], true);
-        });
-  
-        btnAbout.addEventListener("mouseleave", () => {
-          btnAboutAnim.playSegments([31, 60], true);
-        });
-  
-  
-      }
-      if (btnAbout !== null) {
-        btnAboutHover();
-      }
-    }
-    if (!btnBook.querySelector("svg")) {
-      function btnBookHover() {
-        const btnBookAnim = lottie.loadAnimation({
-          container: btnBook,
-          renderer: "svg",
-          loop: false,
-          autoplay: false,
-          path: nozomiData.rootUrl + "/assets/lottie/button_book.json"
-        });
-  
-        btnBook.addEventListener("mouseenter", () => {
-          btnBookAnim.playSegments([0, 30], true);
-        });
-  
-        btnBook.addEventListener("mouseleave", () => {
-          btnBookAnim.playSegments([31, 60], true);
-        });
-  
-  
-      }
-      if (btnBook !== null) {
-        btnBookHover();
-      }
-    }
-  }
-  btnLottieFunc();
+
 
   function controlVideos() {
     let $iframes = $('.video--js');
@@ -394,6 +289,6 @@ export default function () {
         // });
   });
 }
-// controlVideos();
+controlVideos();
   
 }
