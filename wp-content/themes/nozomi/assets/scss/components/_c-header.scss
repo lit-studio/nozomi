@@ -272,6 +272,16 @@
       &.open{
 
       }
+      &.inversion{
+        path{
+          fill: var(--color-bg);
+        }
+        &.open{
+          path{
+            fill: var(--color-grey);
+          }
+        }
+      }
       // &-menu{
       //   position: absolute;
       //   left: 0;

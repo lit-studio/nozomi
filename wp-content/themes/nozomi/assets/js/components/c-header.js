@@ -14,6 +14,7 @@ export default function () {
     $menuBg = $header.find(".c-header-bg--js"),
     $menuBlock = $header.find(".c-header-menu--js"),
     $headerTrigger = $header.find(".c-header-trigger--js"),
+    $aboutTrigger = $body.find(".about-trigger--js"),
     menuBtn = document.querySelector(".btn-menu--js");
 
     let logoHeaderAnim = gsap
@@ -112,12 +113,14 @@ export default function () {
 
     $(document).on('click', function(e) {
       if (!$(e.target).closest(".c-header--js").length) {
-        menuBtnAnim.playSegments([63, 30], true);
-        $menuBtn.removeClass("open");
-        $header.removeClass("open");
-        modalMenuAnim.reverse();
-        if ($header.hasClass('header-fixed')) {
-          logoHeaderAnim.play();
+        if ($menuBtn.hasClass('open')) {
+          menuBtnAnim.playSegments([63, 30], true);
+          $menuBtn.removeClass("open");
+          $header.removeClass("open");
+          modalMenuAnim.reverse();
+          if ($header.hasClass('header-fixed')) {
+            logoHeaderAnim.play();
+          }
         }
       }
       e.stopPropagation();
@@ -137,6 +140,18 @@ export default function () {
   //   });
   //  }
   // window.addEventListener("mousemove", mouseMoveCursor);
-
-
+  function burgerChange() {
+    console.log( 'start bg animation' );
+    ScrollTrigger.create({
+      trigger: $aboutTrigger,
+      scroller: "body",
+      start: "top 80px",
+      end: "bottom 80px",
+      scrub: true,
+      toggleActions: "play reverse none reverse",
+      toggleClass: {className: 'inversion', targets: '.btn-menu--js'},
+      markers: false
+    });
+  }
+  burgerChange();
 }

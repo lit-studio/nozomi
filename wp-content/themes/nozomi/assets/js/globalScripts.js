@@ -89,11 +89,15 @@ export default function () {
             });
       
             btnBook.addEventListener("mouseenter", () => {
+
               btnBookAnim.playSegments([0, 30], true);
+
             });
       
             btnBook.addEventListener("mouseleave", () => {
+
               btnBookAnim.playSegments([31, 60], true);
+
             });
       
       
@@ -104,5 +108,7 @@ export default function () {
         }
       }
       btnLottieFunc();
-
+    window.addEventListener("resize", () => {
+        location.reload()
+    });
 }

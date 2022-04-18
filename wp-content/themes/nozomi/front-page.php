@@ -162,9 +162,8 @@ get_header();
 
                 </div>
             </section>
-            <section class="about">
+            <section class="about ">
                 <div class="about-wrap">
-
                     <div class="about-content">
                         <?php
                         $text_1_block_2 = get_field('text_1_block_2');
@@ -231,6 +230,7 @@ get_header();
                             </div>
                         </div>
                     <?php } ?>
+                    <div class="about-trigger about-trigger--js"></div>
                 </div>
                 <div class="about-bg">
                     <svg id="demoPerspective" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
@@ -363,10 +363,10 @@ get_header();
                         <div class="work-content-right">
                             <div class="work-img">
                                 <img class="img img-desk"
-                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers-min.png"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers.svg"
                                      alt=""/>
                                 <img class="img img-mobile"
-                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers-mobile.png"
+                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-flowers-mobile.svg"
                                      alt=""/>
                             </div>
                         </div>
