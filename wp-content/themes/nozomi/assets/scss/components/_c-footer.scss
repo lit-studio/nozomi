@@ -368,6 +368,7 @@
       &.menu-item-34{
         a{
           color: var(--color-red);
+          font-family: var(--font-bold);
           &:after{
             position: absolute;
             top: 25px;
@@ -381,7 +382,7 @@
             background-attachment: scroll;
             background-size: contain;
             opacity: 0;
-            transition: opacity 0.3s linear;
+            // transition: opacity 0.3s linear;
           }
           &:hover{
             &:after{

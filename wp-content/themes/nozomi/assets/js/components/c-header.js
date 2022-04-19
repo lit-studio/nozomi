@@ -114,7 +114,7 @@ export default function () {
     $(document).on('click', function(e) {
       if (!$(e.target).closest(".c-header--js").length) {
         if ($menuBtn.hasClass('open')) {
-          menuBtnAnim.playSegments([63, 30], true);
+          menuBtnAnim.playSegments([63, 0], true);
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           modalMenuAnim.reverse();

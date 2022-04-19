@@ -88,10 +88,9 @@ get_header();
                                         <?php
                                         $video_1_link_id_block_1 = get_field('video_1_link_id_block_1');
                                         if ($video_1_link_id_block_1) { ?>
-                                            <div class="item-video video--js vimeo"
+                                            <div class="item-video video--js video-little--js"
                                                  data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
-                                            <span class="item-video--layout item-video--layout--js">
-                                                <!-- <span class="item-video--layout-btn"></span> -->
+                                            <span class="item-video--layout video-little--layout--js">
                                             </span>
                                             </div>
                                         <?php } ?>
@@ -122,9 +121,9 @@ get_header();
                                         <?php
                                         $video_2_link_id_block_1 = get_field('video_2_link_id_block_1');
                                         if ($video_2_link_id_block_1) { ?>
-                                            <div class="item-video video--js vimeo"
+                                            <div class="item-video video--js  video-big--js"
                                                  data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
-                                                <span class="item-video--layout item-video--layout--js">
+                                                <span class="item-video--layout video-big--layout--js">
                                                 </span>
                                             </div>
                                         <?php } ?>

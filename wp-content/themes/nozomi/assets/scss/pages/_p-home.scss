@@ -90,26 +90,10 @@
       }
 
       &-title{
-        // padding-top: pxVw(526, 2560);
-        // @include desktop-normal{
-        //   padding-top: pxVw(390, 1920);
-        // }
-        // @include desktop-note-big{
-        //   padding-top: pxVw(330, 1440);
-        // }
-        // @include desktop-block{
-        //   padding-top: pxVw(260, 1024);
-        // }
-        // @include tablet{
-        //   padding-top: pxVw(330, 768);
-        // }
-        // @include phone{ 
-        //   padding-top: pxVw(290,375);
-        // }
-
         &--title{
           font-family: var(--font-bold);
           font-size: 98px;
+          color: var(--color-grey);
           @include desktop-normal{
             font-size: 76px;
           }     
@@ -628,6 +612,8 @@
       color: var(--color-white);
       text-align: center;
       padding-bottom: 120px;
+      position: relative;
+      z-index: 1;
       @include desktop-normal{
         max-width: 980px;
         padding-bottom: 100px;
@@ -689,7 +675,8 @@
       &--title{
         font-size: 64px;
         line-height: 125%;
-        font-weight: var(--font-bold);
+        font-family: var(--font-bold);
+
         @include desktop-normal{
           font-size: 54px;
         }
@@ -763,12 +750,27 @@
       }
     }
     &-middle{
+      position: relative;
+      z-index: 1;
       &-wrap{
-
         padding-bottom: 100px;
         padding-left: 20px;
         padding-right: 20px;
+        @include desktop-normal{
+          padding-bottom: 60px;
+        }
+        @include desktop-note-big{
+          padding-bottom: 45px;
+        }
+        @include desktop-block{
+          padding-bottom: 25px;
+        }
+        @include tablet{
 
+        }
+        @include phone{
+          padding-bottom: 20px;
+        }
       }
     }
     &-img{
@@ -942,9 +944,9 @@
                 }
               }
               &:hover{
-                &:before{
-                  background-image: url('#{$assetsPath}/icons/icon-link-play.svg');
-                }
+                // &:before{
+                //   background-image: url('#{$assetsPath}/icons/icon-link-play.svg');
+                // }
               }
             }
           }
@@ -972,20 +974,20 @@
                   height: 18px;
                 }
               }
-              &:hover{
-                &:before{
-                  background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
-                }
-              }
+              // &:hover{
+              //   &:before{
+              //     background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+              //   }
+              // }
             }
           }
           &-wrap{
-            opacity: 0;
+            // opacity: 0;
           }
           &-title{
             &--title{
               color: var(--color-grey);
-              font-family: var(--font-bold);
+              // font-family: var(--font-bold);
               font-size: 44px;
               line-height: 130%;
               @include desktop-normal{
