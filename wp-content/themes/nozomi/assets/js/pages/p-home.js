@@ -13,8 +13,7 @@ export default function () {
 
   let $body = $('body'),
   $indexSection = $body.find(".index"),
-  $indexSectionTitle = $indexSection.find(".item-title"),
-  $homeMainSlider = $body.find(".index-slider--js");
+  $indexSectionTitle = $indexSection.find(".item-title--title--js");
 
   function homeIndexFunc() {
     // console.clear();
@@ -31,9 +30,11 @@ export default function () {
     let indexSectionGsap =  gsap.timeline({
       paused: true,
     })
+        // .from($indexSectionTitle, 2, {  autoAlpha: 0, ease: "Power4.easeOut" },'')
         .from($indexSectionTitle, 2, {  autoAlpha: 0, ease: "Power4.easeOut" },'')
-        .from($indexSectionTitle, 2, { yPercent: 50, ease: "Power4.easeOut",
-        },'<')
+        .from($indexSectionTitle, 2, { yPercent: 100, ease: "Power4.easeOut" },'<')
+        // .from($indexSectionTitle, 2, {autoAlpha: 0, yPercent: 50
+        // },'<')
         .from('.item-img-item', 1, {  autoAlpha: 0, 
           onComplete: () => {
             handBirdAnim.setSpeed(2)

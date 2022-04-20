@@ -14,7 +14,7 @@ get_header();
                                     $text_1_block_1 = get_field('text_1_block_1');
                                     if ($text_1_block_1) { ?>
                                         <div class="item-title">
-                                            <div class="item-title--title">
+                                            <div class="item-title--title item-title--title--js">
                                                 <?php echo $text_1_block_1; ?>
                                             </div>
                                         </div>
@@ -391,7 +391,7 @@ get_header();
                                     </div>
                                     <div class="item-title">
                                         <div class="item-title--title">
-                                            Co-creating new era of health
+                                            Key UX principals in the Health & Fitness mobile industry in 2022
                                         </div>
                                     </div>
                                 </div>

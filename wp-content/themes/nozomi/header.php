@@ -15,7 +15,7 @@
     <div class="c-header-wrap">
         <div class="c-header-logo">
             <a  class="c-header-logo-item" href="<?php echo home_url('/'); ?>" title="<?php echo bloginfo('name'); ?>" rel="home">
-                <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt=""/>
+                <img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt=""/>
             </a>
         </div>
         <div class="c-header-right">

@@ -108,7 +108,19 @@ export default function () {
         }
       }
       btnLottieFunc();
-    window.addEventListener("resize", () => {
-        location.reload()
-    });
+      function screenReload() {
+        let widthScreen = screen.width;
+        // console.log('widthScreen '+ widthScreen );
+        let  widthScreenNew;  
+        window.addEventListener("resize", () => {
+          widthScreenNew = screen.width;
+          // console.log('widthScreenNew '+ widthScreenNew );
+          if (widthScreenNew !== widthScreen) {
+            location.reload();
+          }
+            // 
+        });
+      }
+      screenReload();
+
 }

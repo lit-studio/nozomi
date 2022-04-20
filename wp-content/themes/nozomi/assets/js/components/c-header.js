@@ -131,15 +131,17 @@ export default function () {
   mobileMenu();
 
   
-  // function mouseMoveCursor(e) {
-  //   gsap.to("#cursor", {    
-  //     css: {
-  //       left: e.clientX,
-  //       top: e.clientY
-  //     }
-  //   });
-  //  }
-  // window.addEventListener("mousemove", mouseMoveCursor);
+  function mouseMoveCursor(e) {
+    gsap.to("#cursor", 0.8,{    
+      css: {
+        left: e.clientX + 10,
+        top: e.clientY + 10
+      }
+      , ease:"power2.out"
+    });
+   }
+  window.addEventListener("mousemove", mouseMoveCursor);
+
   function burgerChange() {
     console.log( 'start bg animation' );
     ScrollTrigger.create({

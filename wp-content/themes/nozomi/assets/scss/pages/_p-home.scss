@@ -13,7 +13,7 @@
     @include desktop-note-big{
       min-height: 560px;
     }
-    @include tablet{
+    @include desktop-block{
       min-height: 720px;
     }
     @include phone{
@@ -37,7 +37,7 @@
         @include desktop-note-big{
           min-height: 560px;
         }
-        @include tablet{
+        @include desktop-block{
           min-height: 720px;
         }
         @include phone{
@@ -62,7 +62,8 @@
           padding-right: 20px;
         }
         &-wrap{
-          max-width: 1320px;
+          // max-width: 1320px;
+          max-width: pxVw(1320,2560);
           width: 100%;
           text-align: center;
           display: flex;
@@ -72,20 +73,24 @@
           align-items: center;
           height: 100%;
           @include desktop-normal{
-            max-width: 1020px;
+            // max-width: 1020px;
+            max-width: pxVw(1020,1920);
           }
           @include desktop-note-big{
-
+            max-width: pxVw(1020,1440);
           }
           @include desktop-block{
-            max-width: 840px;
+            // max-width: 894px;
+            max-width: pxVw(894,1024);
           }
           @include tablet{
-            max-width: 640px;
+            // max-width: 638px;
+            max-width: pxVw(638,768);
           }
-          @include phone{ 
+          @include phone{
+            max-width: pxVw(335,375);
+          }
 
-          }
         }
       }
 
@@ -170,34 +175,34 @@
         #demo {
           position: absolute;
         }
-        // &:after{
-        //   position: absolute;
-        //   left: 0;
-        //   bottom: 0;
-        //   width: 100%;
-        //   content: '';
-        //   height: pxVw(288,2560); 
-        //   background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(229,229,229,1) 100%); 
-        //   background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%); 
-        //   background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(229,229,229,1) 100%);
-        //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#e5e5e5',GradientType=0 );
-        //   @include desktop-normal{
-        //     height: pxVw(288,1920); 
-        //   }
-        //   @include desktop-note-big{
-        //     height: pxVw(160,1440); 
-        //   }
-        //   @include desktop-block{
-        //     height: pxVw(160,1024); 
-        //   }
-        //   @include tablet{
-        //     height: pxVw(160,768);
-        //   }
-        //   @include phone{
-        //     height: pxVw(160,375); 
-        //   }
+        &:after{
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          content: '';
+          height: pxVw(288,2560); 
+          background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(242, 240, 237, 1) 100%); 
+          background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%); 
+          background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#F2F0ED',GradientType=0 );
+          @include desktop-normal{
+            height: pxVw(288,1920); 
+          }
+          @include desktop-note-big{
+            height: pxVw(160,1440); 
+          }
+          @include desktop-block{
+            height: pxVw(160,1024); 
+          }
+          @include tablet{
+            height: pxVw(160,768);
+          }
+          @include phone{
+            height: pxVw(160,375); 
+          }
           
-        // }
+        }
       }
     }
 
@@ -607,22 +612,26 @@
       z-index: 0;
     }
     &-content{
-      max-width: 1200px;
+      // max-width: 1200px;
       margin: 0 auto;
       color: var(--color-white);
       text-align: center;
       padding-bottom: 120px;
       position: relative;
       z-index: 1;
+      max-width: pxVw(1200,2560);
       @include desktop-normal{
-        max-width: 980px;
+        // max-width: 980px;
+        max-width: pxVw(980,1920);
         padding-bottom: 100px;
       }
       @include desktop-note-big{
-        max-width: 880px;
+        // max-width: 880px;
+        max-width: pxVw(880,1440);
         padding-bottom: 80px; 
       }
       @include desktop-block{
+        max-width: 100%;
         padding-left: 72px;
         padding-right: 72px;
       }
@@ -690,14 +699,25 @@
     }
     &-desc{
       padding-top: 50px;
+      max-width: pxVw(1200,2560);
+      margin: 0 auto;
       @include desktop-normal{
         font-size: 54px;
+        max-width: pxVw(980,1920);
       }
       @include desktop-note-big{
         padding-top: 35px;
+        max-width: pxVw(800,1440);
+      }
+      @include desktop-block{
+        max-width: pxVw(894,1024);
+      }
+      @include tablet{
+        max-width: pxVw(638,768);
       }
       @include phone{
         padding-top: 20px;
+        max-width: pxVw(335,375);
       }
       &--desc{
         text-align: center;
@@ -881,7 +901,11 @@
         // max-width: 50%;
         flex: 1;
         padding-right: 40px;
+        @include tablet{
+          padding-right: 5px;
+        }
         @include phone{
+          padding-right: 0;
           flex: 0 0 100%;
           max-width: 100%;
         }
@@ -1003,6 +1027,20 @@
           }
           &-desc{
             padding-top: 15px;
+            @include desktop-normal{
+              max-width: 574px;
+            }
+            @include desktop-note-big{
+            }
+            @include desktop-block{
+              max-width: 500px;
+            }
+            @include tablet{
+              max-width: 365px;
+            }
+            @include phone{ 
+              max-width: pxVw(335,375);
+            }
             &--desc{
               color: var(--color-grey-2);
               font-size: 18px;
@@ -1093,7 +1131,27 @@
     &-desc{
       padding-top: 35px;
       text-align: center;
+      max-width: pxVw(1200,2560);
+      margin: 0 auto;
+      @include desktop-normal{
+        max-width: pxVw(980,1920);
 
+      }
+      @include desktop-note-big{
+
+        max-width: pxVw(880,1440);
+
+      }
+      @include desktop-block{
+        max-width: 100%;
+
+      }
+      @include tablet{
+
+      }
+      @include phone{
+
+      }
       &--desc{
         text-align: center;
         font-size: 24px;
@@ -1120,6 +1178,9 @@
     &-img{
       max-width: 384px;
       height: auto;
+      @include tablet{
+        max-width: 264px;
+      }
       @include phone{
         margin: 0 auto;
       }
