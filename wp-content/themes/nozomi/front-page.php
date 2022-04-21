@@ -22,7 +22,7 @@ get_header();
                                     <div class="item-img">
                                         <div class="item-img-item">
                                             <div id='hand_bird' class="item-img-item-lottie">
-        
+
                                             </div>
                                             <!-- <img class="img"
                                                  src="<?php echo get_template_directory_uri() ?>/assets/images/home/illustration-bird.svg"
@@ -43,12 +43,16 @@ get_header();
                                             <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
                                         </mask>
                                     </defs>
+                                    <?php
+                                    $bg_block_1 = get_field('bg_block_1');
+                                    $bg_hover_block_1 = get_field('bg_hover_block_1');
+                                    ?>
                                     <image id="lines"
-                                           xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
+                                           xlink:href="<?php echo $bg_block_1; ?>"
                                            x="0" y="0" width="100%" height="100%"/>
                                     <g id="maskReveal" mask="url(#theMask)">
                                         <image id="regular"
-                                               xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
+                                               xlink:href="<?php echo $bg_hover_block_1; ?>"
                                                x="0" y="0" width="100%" height="100%"/>
                                     </g>
                                     <!-- <circle id="ring" r="20" fill="none" stroke="#D54242" stroke-width="2" cx="800" cy="450" /> -->
@@ -85,16 +89,16 @@ get_header();
                         <div class="portfolio-middle-row">
                             <div class="portfolio-middle-col">
                                 <div class="item">
-                                        <?php
-                                        $video_1_link_id_block_1 = get_field('video_1_link_id_block_1');
-                                        if ($video_1_link_id_block_1) { ?>
-                                            <div class="item-video video--js video-little--js"
-                                                 data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
+                                    <?php
+                                    $video_1_link_id_block_1 = get_field('video_1_link_id_block_1');
+                                    if ($video_1_link_id_block_1) { ?>
+                                        <div class="item-video video--js video-little--js"
+                                             data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
                                             <span class="item-video--layout video-little--layout--js">
                                             </span>
-                                            </div>
-                                        <?php } ?>
-                                        <!-- <img class="img"
+                                        </div>
+                                    <?php } ?>
+                                    <!-- <img class="img"
                                              src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-01-min.jpg"
                                              alt=""/> -->
                                 </div>
@@ -115,8 +119,8 @@ get_header();
                                                  alt=""/>
                                                  */ ?>
                                             <img class="img"
-                                             src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-02-2x-min.jpg"
-                                             alt=""/> 
+                                                 src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-02-2x-min.jpg"
+                                                 alt=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -127,17 +131,17 @@ get_header();
                         <div class="portfolio-bottom-row">
                             <div class="portfolio-bottom-col">
                                 <div class="item">
-                                        <?php
-                                        $video_2_link_id_block_1 = get_field('video_2_link_id_block_1');
-                                        if ($video_2_link_id_block_1) { ?>
-                                            <div class="item-video video--js  video-big--js"
-                                                 data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
+                                    <?php
+                                    $video_2_link_id_block_1 = get_field('video_2_link_id_block_1');
+                                    if ($video_2_link_id_block_1) { ?>
+                                        <div class="item-video video--js  video-big--js"
+                                             data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
                                                 <span class="item-video--layout video-big--layout--js">
                                                 </span>
-                                            </div>
-                                        <?php } ?>
+                                        </div>
+                                    <?php } ?>
 
-                                        <!-- <img class="img"
+                                    <!-- <img class="img"
                                              src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-case-03-min.jpg"
                                              alt=""/> -->
 
@@ -150,7 +154,7 @@ get_header();
                     $button_text_block_1 = get_field('button_text_block_1');
                     if ($button_link_block_1 || $button_text_block_1) { ?>
                         <div class="portfolio-btns">
-                            <div class="portfolio-btns-btn">    
+                            <div class="portfolio-btns-btn">
                                 <a href="<?php echo $button_link_block_1; ?>" class="btn btn-border btn-portfolio--js">
                                 </a>
                             </div>
@@ -196,7 +200,7 @@ get_header();
                             <div class="about-btns">
                                 <div class="about-btns-btn">
                                     <a href="<?php echo $button_link_block_2; ?>" class="btn  btn-about--js"
-                                       >
+                                    >
                                         <?php /* echo $button_text_block_2; 
                                         <!-- <svg width="264" height="64" viewBox="0 0 264 64" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -220,8 +224,8 @@ get_header();
                                 <div class="about-img">
                                     <div class="about-img-block parallax-img-block--js">
                                         <img class="img img--js"
-                                            src="<?php echo $image_block_2['sizes']['home_2']; ?>"
-                                            alt=""/>
+                                             src="<?php echo $image_block_2['sizes']['home_2']; ?>"
+                                             alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -242,15 +246,21 @@ get_header();
                                         cy="450"/>
                             </mask>
                         </defs>
+
+                        <?php
+                        $bg_block_2 = get_field('bg_block_2');
+                        $bg_hover_block_2 = get_field('bg_hover_block_2');
+                        ?>
+
                         <image id="linesPerspective"
-                               xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/about-bg-min.jpg"
+                               xlink:href="<?php echo $bg_block_2; ?>"
                                x="0" y="0" width="100%" height="100%"/>
                         <g id="maskRevealPerspective" mask="url(#theMaskPerspective)">
                             <image id="regularPerspective"
-                                   xlink:href="<?php echo get_template_directory_uri() ?>/assets/images/home/about-bg-hover-min.jpg"
+                                   xlink:href="<?php echo $bg_hover_block_2; ?>"
                                    x="0" y="0" width="100%" height="100%"/>
                         </g>
-                   </svg>
+                    </svg>
                 </div>
             </section>
             <section class="work">
@@ -312,8 +322,8 @@ get_header();
                                         if ($link_1_block_3) { ?>
                                             <div class="item-link">
                                                 <a href='<?php echo $link_1_block_3['url']; ?>'
-                                                target="<?php echo $link_1_block_3['target']; ?>"
-                                                class="item-link--link">
+                                                   target="<?php echo $link_1_block_3['target']; ?>"
+                                                   class="item-link--link">
                                                     <?php echo $link_1_block_3['title']; ?>
                                                 </a>
                                             </div>
@@ -345,8 +355,8 @@ get_header();
                                         if ($link_2_block_3) { ?>
                                             <div class="item-link">
                                                 <a href='<?php echo $link_2_block_3['url']; ?>'
-                                                target="<?php echo $link_2_block_3['target']; ?>"
-                                                class="item-link--link">
+                                                   target="<?php echo $link_2_block_3['target']; ?>"
+                                                   class="item-link--link">
                                                     <?php echo $link_2_block_3['title']; ?>
                                                 </a>
                                             </div>
