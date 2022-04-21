@@ -132,15 +132,22 @@ export default function () {
 
   
   function mouseMoveCursor(e) {
-    gsap.to("#cursor", 0.8,{    
-      css: {
-        left: e.clientX + 10,
-        top: e.clientY + 10
-      }
+    gsap.to("#cursor", 0.8,{ x : e.clientX + 10 , y : e.clientY + 10
+      // css: {
+      //   left: e.clientX,
+      //   top: e.clientY
+      //   // left: e.clientX + 10,
+      //   // top: e.clientY + 10
+      // }
       , ease:"power2.out"
     });
    }
-  window.addEventListener("mousemove", mouseMoveCursor);
+
+
+  if (screen.width > 1024) {
+    console.log('mouseMoveCursor(e)');
+    window.addEventListener("mousemove", mouseMoveCursor);
+  }
 
   function burgerChange() {
     console.log( 'start bg animation' );
@@ -156,4 +163,5 @@ export default function () {
     });
   }
   burgerChange();
+
 }

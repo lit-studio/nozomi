@@ -37,7 +37,7 @@ export default function () {
         // },'<')
         .from('.item-img-item', 1, {  autoAlpha: 0, 
           onComplete: () => {
-            handBirdAnim.setSpeed(2)
+            handBirdAnim.setSpeed(1.8);
             handBirdAnim.play();
           } 
       },'-=2')

@@ -120,7 +120,7 @@
         </div>
     </div>
 </footer>
-<div id='cursor' class="cursor"><div class="cursor-dot"></div></div>
+<span id='cursor' class="cursor"><span class="cursor-dot"></span></span>
 </div>
 
 

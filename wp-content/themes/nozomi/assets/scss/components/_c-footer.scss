@@ -326,6 +326,13 @@
       padding-bottom: 10px;
       // flex: 0 0 33%;
       // max-width: 230px;  
+      &:first-of-type{
+        padding-left: 0;
+        &>a{
+          pointer-events:all;
+        }
+
+      }
       &.current-menu-item{
         a{
           // color: var(--color-red);
@@ -337,8 +344,9 @@
         font-size: 20px;
         line-height: 150%;
         letter-spacing: 0.5px;
-        padding-bottom: 2px;
+        padding-bottom: 3px;
         position: relative;
+        pointer-events: none;
         @include desktop-normal{
           font-size: 18px;
         }
@@ -350,9 +358,15 @@
           left: 0;
           bottom: 0;
           position: absolute;
-          height: 2px;
+          height: 3px;
           width: 100%;
-          background-color: var(--color-red);
+          // background-color: var(--color-red);
+          background-color: transparent;
+          background-image: url('#{$assetsPath}/icons/icon-underline.svg');
+          background-position: left;
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: cover;
           transform: scaleX(0);
           transition: transform 0.3s ease-in-out;
           transform-origin: right;

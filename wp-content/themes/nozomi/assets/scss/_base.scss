@@ -29,12 +29,13 @@ body {
   //   cursor: pointer!important;
   // }
   .cursor{
-    width: 10px;
-    height: 20px;
+    width: 7px;
+    height: 7px;
     position: fixed;
-    left: -7px;
-    top: -7px;
-    z-index: 1000;
+    transform: translate(-7px,-7px);
+    left: 0;
+    top: 0;
+    z-index: 1;
     // display: flex;
     // align-items: flex-start;
     // justify-content: flex-start;
@@ -46,6 +47,7 @@ body {
       background-color: var(--color-red);
       border-radius: 7px;
       display: block;
+      // transform: translate(-20px,-20px);
     }
   }
 }

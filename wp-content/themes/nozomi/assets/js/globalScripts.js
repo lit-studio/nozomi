@@ -3,28 +3,24 @@ import lottie from "lottie-web";
 
 import header from "./components/c-header";
 import footer from "./components/c-footer";
-import modal from "./components/c-modal";
 import tabAccordeon from "./components/c-tab";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
-// import "jquery-mask-plugin";
 export default function () {
-    let $body = $("body"),
-        $formBlock = $body.find('.form-block'),
-        $formBlockPhone = $formBlock.find('.your-tel'),
-        $phoneInput = $formBlockPhone.find('input');
 
-
-    // function phoneMask() {
-    //     $('.agree').prop('checked', false);
-    //     $phoneInput.on("click", function() {
-    //         $phoneInput.mask('+38(000) 000-00-00');
-    //     });
-    // }
     header();
     footer();
-    modal();
     tabAccordeon();
-    // phoneMask();
+
+    gsap.to(window, 1,{scrollTo:{y:0}});
+
+    function targetBlankLink() {
+      $('.menu-item-86 a').attr('target','_blank');
+      $('.menu-item-85 a').attr('target','_blank');
+    }
+    targetBlankLink();
+
     function btnLottieFunc() {
         let btnPortfolio = document.querySelector(".btn-portfolio--js");
         let btnAbout = document.querySelector(".btn-about--js");
@@ -106,21 +102,22 @@ export default function () {
             btnBookHover();
           }
         }
-      }
-      btnLottieFunc();
-      function screenReload() {
-        let widthScreen = screen.width;
-        // console.log('widthScreen '+ widthScreen );
-        let  widthScreenNew;  
-        window.addEventListener("resize", () => {
-          widthScreenNew = screen.width;
-          // console.log('widthScreenNew '+ widthScreenNew );
-          if (widthScreenNew !== widthScreen) {
-            location.reload();
-          }
-            // 
-        });
-      }
-      screenReload();
+    }
+    btnLottieFunc();
+    
+    function screenReload() {
+      let widthScreen = screen.width;
+      // console.log('widthScreen '+ widthScreen );
+      let  widthScreenNew;  
+      window.addEventListener("resize", () => {
+        widthScreenNew = screen.width;
+        // console.log('widthScreenNew '+ widthScreenNew );
+        if (widthScreenNew !== widthScreen) {
+          location.reload();
+        }
+          // 
+      });
+    }
+    screenReload();
 
 }

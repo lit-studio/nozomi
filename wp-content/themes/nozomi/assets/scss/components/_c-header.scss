@@ -83,22 +83,22 @@
     &-item {
       display: block;
       position: relative;
-      width: 82px;
+      // width: 82px;
       height: 63px;
       @include desktop-normal{
-        width: 78px;
+        // width: 78px;
         height: 58px;
       }
       @include desktop-note-big{
-        width: 66px;
+        // width: 66px;
         height: 50px;
       }
       @include desktop-block{
-        width: 44px;
+        // width: 44px;
         height: 33px;
       }
       @include phone{
-        width: 33px;
+        // width: 33px;
         height: 26px;
       }
     }
@@ -106,9 +106,9 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      position: absolute;
-      left: 0;
-      top: 0;
+      // position: absolute;
+      // left: 0;
+      // top: 0;
       opacity: 1;
       transition: opacity 0.3s linear;
     }
@@ -172,6 +172,9 @@
         }
         &:first-of-type{
           padding-left: 0;
+          &>a{
+            pointer-events:all;
+          }
 
         }
         &:last-of-type{
@@ -182,6 +185,7 @@
         &.say-hello{
           & > a {
             color: var(--color-red);  
+            font-family: var(--font-bold);
           }
         }
         & > a {
@@ -190,7 +194,8 @@
           color: var(--color-black);
           font-size: 20px;
           position: relative;
-          padding-bottom: 2px;
+          padding-bottom: 3px;
+          pointer-events: none;
           @include desktop-normal{
             font-size: 18px;
           }
@@ -202,9 +207,15 @@
             left: 0;
             bottom: 0;
             position: absolute;
-            height: 2px;
+            height: 3px;
             width: 100%;
-            background-color: var(--color-red);
+            // background-color: var(--color-red);
+            background-color: transparent;
+            background-image: url('#{$assetsPath}/icons/icon-underline.svg');
+            background-position: left;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
             transform: scaleX(0);
             transition: transform 0.3s ease-in-out;
             transform-origin: right;
@@ -250,7 +261,6 @@
       padding: 0;
       width: 40px;
       height: 40px;
-      cursor: pointer;
       @include desktop-normal{
         width: 34px;
         height: 34px; 
