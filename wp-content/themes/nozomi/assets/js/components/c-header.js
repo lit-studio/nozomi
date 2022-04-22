@@ -108,6 +108,9 @@ export default function () {
         if ($header.hasClass('header-fixed')) {
           logoHeaderAnim.play();
         }
+        if (screen.width < 1024) {
+          menuBtnAnim.playSegments([63, 0], true);
+        }
       }
     });
 
@@ -121,6 +124,7 @@ export default function () {
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }
+
         }
       }
       e.stopPropagation();

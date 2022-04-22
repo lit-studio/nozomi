@@ -100,41 +100,60 @@ export default function () {
   homeIndexFunc();
 
   let $aboutSection = $body.find('.about'),
-  $aboutSectionImg = $aboutSection.find('.parallax-img-block--js'),
+  $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
+  $aboutSectionImg = $aboutSectionBlock.find('img'),
   $portfolioSection = $body.find('.portfolio'),
-  $portfolioSectionImg = $portfolioSection.find('.parallax-img-block--js'),
+  $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
+  $portfolioSectionImg = $portfolioSectionblock.find('img'),
   $parallaxBlock = $body.find('.parallax-img-block--js')
 
   ;
 
-  if ($('.parallax-img-block--js').length > 0) {
-    gsap.utils.toArray('.parallax-img-block--js img').forEach(sectionImg => {
+  // if ($('.parallax-img-block--js').length > 0) {
+  //   gsap.utils.toArray('.parallax-img-block--js img').forEach(sectionImg => {
+  //     ScrollTrigger.create({
+  //       trigger: sectionImg,
+  //       onEnter: () => {
+  //         gsap.to(sectionImg, {
+  //           autoAlpha: 1,
+  //           duration: 1,
+  //         });
+  //         gsap.to(sectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
+  //       },
+  //       start: "top 80%",
+  //       end: "bottom top",
+  //       pin: false,
+  //       scrub: false,
+  //       toggleActions: "play none none none",
+  //       markers: true
+  //     });
+  //   });
+  // }
+
+  function portfolioScaleFunc() {
       ScrollTrigger.create({
-        trigger: sectionImg,
+        trigger: $portfolioSectionImg ,
         onEnter: () => {
-          gsap.to(sectionImg, {
+          gsap.to($portfolioSectionImg, {
             autoAlpha: 1,
             duration: 1,
           });
-          gsap.to(sectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
+          gsap.to($portfolioSectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
         },
-        start: "top center",
+        start: "top 80%",
         end: "bottom top",
         pin: false,
         scrub: false,
         toggleActions: "play none none none",
         markers: false
       });
-    });
-  }
-  function portfolioScaleFunc() {
     ScrollTrigger.create({
-      trigger: $portfolioSectionImg,
+      trigger: $portfolioSectionblock,
       animation: 
       gsap
           .timeline()
           .fromTo(
-            $portfolioSectionImg,
+            $portfolioSectionblock,
               { scale: 1.2, duration: 2 },
               { scale: 1, duration: 2 }
           ),
@@ -150,12 +169,28 @@ export default function () {
 
   function aboutScaleFunc() {
     ScrollTrigger.create({
-      trigger: $aboutSectionImg,
+      trigger: $aboutSectionImg ,
+      onEnter: () => {
+        gsap.to($aboutSectionImg, {
+          autoAlpha: 1,
+          duration: 1,
+        });
+        gsap.to($aboutSectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
+      },
+      start: "top center",
+      end: "bottom top",
+      pin: false,
+      scrub: false,
+      toggleActions: "play none none none",
+      markers: false
+    });
+    ScrollTrigger.create({
+      trigger: $aboutSectionBlock,
       animation: 
       gsap
           .timeline()
           .fromTo(
-            $aboutSectionImg,
+            $aboutSectionBlock,
               { yPercent: -5,scale: 1.2, duration: 2 },
               { yPercent: 5,scale: 1, duration: 2 }
           ),
@@ -259,6 +294,7 @@ export default function () {
           width: '100%',
           height: '100%',
           muted:	true,
+          loop: true,
           controls:	false,
           quality:	false
         });
@@ -271,6 +307,7 @@ export default function () {
           width: '100%',
           height: '100%',
           muted:	true,
+          loop: true,
           controls:	false,
           quality:	false
         });

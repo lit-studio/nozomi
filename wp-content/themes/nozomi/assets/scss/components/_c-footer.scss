@@ -330,6 +330,7 @@
         padding-left: 0;
         &>a{
           pointer-events:all;
+          opacity:1;
         }
 
       }
@@ -347,6 +348,7 @@
         padding-bottom: 3px;
         position: relative;
         pointer-events: none;
+        opacity: 0.5;
         @include desktop-normal{
           font-size: 18px;
         }
@@ -379,10 +381,12 @@
           }
         }
       }
-      &.menu-item-34{
+      &.join-us{
         a{
           color: var(--color-red);
           font-family: var(--font-bold);
+          pointer-events: all;
+          opacity:1;
           &:after{
             position: absolute;
             top: 25px;

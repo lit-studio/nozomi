@@ -15,11 +15,11 @@ export default function () {
 
     gsap.to(window, 1,{scrollTo:{y:0}});
 
-    function targetBlankLink() {
-      $('.menu-item-86 a').attr('target','_blank');
-      $('.menu-item-85 a').attr('target','_blank');
-    }
-    targetBlankLink();
+    // function targetBlankLink() {
+    //   $('.menu-item-86 a').attr('target','_blank');
+    //   $('.menu-item-85 a').attr('target','_blank');
+    // }
+    // targetBlankLink();
 
     function btnLottieFunc() {
         let btnPortfolio = document.querySelector(".btn-portfolio--js");

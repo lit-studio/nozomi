@@ -79,7 +79,8 @@
             max-width: 985px;
           }
           @include desktop-note-big{
-            max-width: 790px;
+            // max-width: 790px;
+            max-width: 775px;
           }
           @include middle-tablet{
             max-width: 638px;
@@ -100,7 +101,8 @@
             font-size: 76px;
           }     
           @include desktop-note-big{
-            font-size: 62px;
+            // font-size: 62px;
+            font-size: 58px;
           }
           @include desktop-block{
 
@@ -122,18 +124,17 @@
         bottom: 0;
         width: 100%;
         @include phone{
-          padding-bottom: 100px;
+          // padding-bottom: 100px;
+          padding-bottom: 80px;
         }
         &-item{
           max-width: 250px;
           position: relative;
           @include desktop-normal{
-            // width: 131px;
-            // height: 111px;
+            max-width: 225px;
           }
           @include desktop-note-big{
-            // width: 106px;
-            // height: 90px;
+            max-width: 157px;
           }
           @include desktop-block{
 
@@ -196,15 +197,17 @@
 
   }
   .portfolio{
-    padding-top: 120px; 
+    padding-top: 100px; 
     padding-bottom: 220px;
     overflow: hidden;
     // display: none;
 
     @include desktop-normal{
+      padding-top: 80px;
       padding-bottom: 180px;
     }
     @include desktop-note-big{
+      padding-top: 60px;  
       padding-bottom: 160px;
     }
     @include desktop-block{
@@ -214,6 +217,7 @@
       padding-bottom: 150px;
     }
     @include phone{
+      padding-top: 30px;  
       padding-bottom: 120px;
     }    
     &-wrap{
@@ -376,9 +380,11 @@
             overflow: hidden;
             position: relative;
             height: 100%;
-            background-color: var(--color-grey-6);
             @include tablet{
               transform: scale(1.15);
+            }
+            @include phone{
+              background-color: var(--color-grey-6);
             }
             &--layout {
               position: absolute;
@@ -423,7 +429,7 @@
       @include desktop-note-big{
         padding-top: 44px;
       }
-      @include desktop-block{
+      @include desktop-block{ 
         padding-top: 26px;
       }
       @include tablet{
@@ -477,6 +483,42 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+
+          @include desktop-block{
+            padding: 40px;
+          }
+          @include phone{
+            padding: 20px;
+          }
+          &::before{
+            z-index: 1;
+            content: '';
+            position: absolute;
+            transform: translateY(-20px);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 25px;
+            background-color: transparent;
+            background-image: url('#{$assetsPath}/images/video-top-bg.png');
+            background-position: left;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+            @include desktop-block{
+              height: 17px;
+              transform: translateY(-15px);
+            }
+            @include tablet{
+              height: 13px; 
+              transform: translateY(-10px);
+            }
+            @include phone{
+              height: 6px; 
+              transform: translateY(-4px);
+            }
+          }
           // &-img{
           //   width: 100%;
           //   margin:0 auto;
@@ -556,7 +598,7 @@
           max-width: 192px;
         }
         .btn{
-
+          display: block;
         }
       }
     }
