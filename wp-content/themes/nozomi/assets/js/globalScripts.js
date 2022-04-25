@@ -120,4 +120,23 @@ export default function () {
     }
     screenReload();
 
+    // let   $body = $("body"),
+    // $videoBlock = $body.find(".item-video--layout"),
+    // $cursoreBlock = $body.find(".cursor-dot");
+
+    // function videoBlockHover() {
+    //   $videoBlock.hover(() => {
+    //     if (!$cursoreBlock.hasClass('video')) {
+    //       $cursoreBlock.addClass("video");
+    //       console.log('cursore video');
+    //     }
+    //   }, () => {
+    //     if ($cursoreBlock.hasClass('video')) {
+    //       $cursoreBlock.removeClass("video");
+    //       console.log('cursore video cick');
+    //     }
+    //   });
+    // }
+    // videoBlockHover();
+
 }

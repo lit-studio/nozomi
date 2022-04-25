@@ -61,6 +61,18 @@ body {
         display: block;
       }
       // transform: translate(-20px,-20px);
+      &.video{
+        &::before{
+          width: 12px;
+          height: 12px;
+          background-color: transparent;
+          background-image: url('#{$assetsPath}/images/cursor-play.svg');
+          background-position: left;
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: contain;
+        }
+      }
     }
   }
 }

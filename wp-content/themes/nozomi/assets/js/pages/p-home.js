@@ -302,6 +302,7 @@ export default function () {
         let iframesBig = document.querySelector('.video-big--js');
         let videoPlayerLayoutBig = document.querySelector('.video-big--layout--js');
         let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
+        let  $cursoreBlock = $body.find(".cursor-dot");
         let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
           id: videoIdBig,
           width: '100%',
@@ -317,6 +318,10 @@ export default function () {
     if (screen.width > 1024) {
       console.log('desk');
       videoPlayerLayoutLittle.addEventListener("mouseenter", () => {
+        if (!$cursoreBlock.hasClass('video')) {
+          $cursoreBlock.addClass("video");
+          console.log('cursore video');
+        }
         // console.log('first play');
         vimeoPlayerLittle.play().then(function() {
           // the video was played
@@ -340,6 +345,10 @@ export default function () {
 
       videoPlayerLayoutLittle.addEventListener("mouseleave", () => {
         // console.log('first pause');
+        if ($cursoreBlock.hasClass('video')) {
+          $cursoreBlock.removeClass("video");
+          console.log('cursore video cick');
+        }
         vimeoPlayerLittle.pause().then(function() {
           // the video was played
         }).catch(function(error) {
@@ -362,6 +371,10 @@ export default function () {
 
       videoPlayerLayoutBig.addEventListener("mouseenter", () => {
         // console.log('second play');
+        if (!$cursoreBlock.hasClass('video')) {
+          $cursoreBlock.addClass("video");
+          console.log('cursore video');
+        }
         vimeoPlayerBig.play().then(function() {
           // the video was played
         }).catch(function(error) {
@@ -384,6 +397,10 @@ export default function () {
 
       videoPlayerLayoutBig.addEventListener("mouseleave", () => {
         // console.log('second pause');
+        if ($cursoreBlock.hasClass('video')) {
+          $cursoreBlock.removeClass("video");
+          console.log('cursore video cick');
+        }
         vimeoPlayerBig.pause().then(function() {
           // the video was played
         }).catch(function(error) {

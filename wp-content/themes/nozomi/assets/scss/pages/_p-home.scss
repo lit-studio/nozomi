@@ -197,17 +197,20 @@
 
   }
   .portfolio{
-    padding-top: 100px; 
+    // padding-top: 100px; 
+    padding-top: 60px; 
     padding-bottom: 220px;
     overflow: hidden;
     // display: none;
 
     @include desktop-normal{
-      padding-top: 80px;
+      // padding-top: 80px;
+      padding-top: 45px;
       padding-bottom: 180px;
     }
     @include desktop-note-big{
-      padding-top: 60px;  
+      // padding-top: 60px;  
+      padding-top: 35px;
       padding-bottom: 160px;
     }
     @include desktop-block{
@@ -396,7 +399,7 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              cursor:  url('#{$assetsPath}/images/cursor-play.svg') 4 12, auto;
+              // cursor:  url('#{$assetsPath}/images/cursor-play.svg') 4 12, auto;
             }
             iframe {
               bottom: 0;
@@ -422,21 +425,26 @@
 
     }
     &-bottom{
-      padding-top: 80px;
+      // padding-top: 80px;
+      padding-top: 100px;
       @include desktop-normal{
-        padding-top: 56px;
+        // padding-top: 56px;
+        padding-top: 72px;
       }
       @include desktop-note-big{
-        padding-top: 44px;
+        // padding-top: 44px;
+        padding-top: 64px;
       }
       @include desktop-block{ 
-        padding-top: 26px;
+        // padding-top: 26px;
+        padding-top: 41px;
       }
       @include tablet{
-        padding-top: 20px;
+        // padding-top: 20px;
+        padding-top: 36px;
       }
       @include phone{
-
+        padding-top: 24px;
       }
       &-row{
         margin:0 -40px;
@@ -565,7 +573,7 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              cursor:  url('#{$assetsPath}/images/cursor-play.svg') 4 12, auto;
+              // cursor:  url('#{$assetsPath}/images/cursor-play.svg') 4 12, auto;
             }
             iframe {
               position: absolute;

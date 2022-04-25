@@ -141,7 +141,7 @@ get_header();
                     if ($button_link_block_1 || $button_text_block_1) { ?>
                         <div class="portfolio-btns">
                             <div class="portfolio-btns-btn">
-                                <a href="<?php echo $button_link_block_1; ?>" class="btn btn-border btn-portfolio--js">
+                                <a href="https://portfolio.remdev.pro/" target='_blank' class="btn btn-border btn-portfolio--js">
                                 </a>
                             </div>
                         </div>
@@ -360,20 +360,20 @@ get_header();
                     <div class="news-block">
                         <div class="news-row">
                             <div class="news-col">
-                                <a class="item" target='_blank' href='https://medium.com/remdevstudio/key-ux-principals-in-the-health-fitness-mobile-industry-in-2022-f684a43217b6'>
+                                <a class="item" target='_blank' href='https://medium.com/remdevstudio/behind-the-rebrand-8-main-questions-to-max-ceo-founder-at-nozomi-health-b734d162db97'>
                                     <div class="item-img">
                                         <img class="img"
-                                             src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-article-1-min.jpg"
+                                             src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-article-3.png"
                                              alt=""/>
                                     </div>
                                     <div class="item-tag">
                                         <div class="item-tag--tag">
-                                            DESIGN
+                                            Lifestyle
                                         </div>
                                     </div>
                                     <div class="item-title">
                                         <div class="item-title--title">
-                                            Key UX principals in the Health & Fitness mobile industry in 2022
+                                            Behind the rebrand: 8 main questions to Max, CEO & Founder at Nozomi Health
                                         </div>
                                     </div>
                                 </a>

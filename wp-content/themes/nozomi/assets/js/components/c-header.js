@@ -21,7 +21,7 @@ export default function () {
     .timeline({
       paused: true
     })
-    .to($logoHeader, 0.3, { yPercent: -200, ease: "linear" });
+    .to($logoHeader, 0.3, { yPercent: -300, ease: "linear" });
 
     const menuBtnAnim = lottie.loadAnimation({
       container: menuBtn,
