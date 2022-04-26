@@ -23,6 +23,7 @@ body {
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+
   // cursor:  url('#{$assetsPath}/images/cursor-dot.png') 4 12, auto;
   // cursor: none;
   // a,button,.btn{
@@ -36,6 +37,8 @@ body {
     left: 0;
     top: 0;
     z-index: 1000;
+    user-select: none;
+    pointer-events: none;
     // display: flex;
     // align-items: flex-start;
     // justify-content: flex-start;
@@ -46,12 +49,10 @@ body {
       height: 7px;
       display: block;
       position: relative;
-      // background-color: var(--color-red);
-      // border-radius: 7px;
       &::before{
         position: absolute;
         content: '';
-        transform: translate(-20px,-20px);
+        transform: translate(-5px,-5px);
         left: 0;
         top: 0;
         width: 7px;
@@ -60,11 +61,11 @@ body {
         border-radius: 7px;
         display: block;
       }
-      // transform: translate(-20px,-20px);
       &.video{
         &::before{
-          width: 12px;
-          height: 12px;
+          transform: translate(-15px,-15px);
+          width: 34px;
+          height: 34px;
           background-color: transparent;
           background-image: url('#{$assetsPath}/images/cursor-play.svg');
           background-position: left;
@@ -76,7 +77,18 @@ body {
     }
   }
 }
-
+// #cursor{
+//   width: 7px;
+//   height: 7px;
+//   position: absolute;
+//   // transform: translate(-7px,-7px);
+//   z-index: 10000;
+//   background-color: var(--color-red);
+//   border-radius: 100%;
+//   transition: .5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, .2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+//   user-select: none;
+//   pointer-events: none;
+// }
 a {
   color: inherit;
   text-decoration: none;

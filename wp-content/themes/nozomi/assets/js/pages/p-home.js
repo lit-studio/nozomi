@@ -14,7 +14,7 @@ export default function () {
   let $body = $('body'),
   $indexSection = $body.find(".index"),
   $indexSectionTitle = $indexSection.find(".item-title--title--js");
-
+  let $cursorBlock = $body.find(".cursor-dot");
   function homeIndexFunc() {
     // console.clear();
     console.log('index');
@@ -30,9 +30,8 @@ export default function () {
     let indexSectionGsap =  gsap.timeline({
       paused: true,
     })
-        // .from($indexSectionTitle, 2, {  autoAlpha: 0, ease: "Power4.easeOut" },'')
-        .from($indexSectionTitle, 2, {  autoAlpha: 0, ease: "Power4.easeOut" },'')
-        .from($indexSectionTitle, 2, { yPercent: 100, ease: "Power4.easeOut" },'<')
+        .from($indexSectionTitle, 2, {  autoAlpha: 0 },'')
+        .from($indexSectionTitle, 2, { yPercent: 100 },'<')
         // .from($indexSectionTitle, 2, {autoAlpha: 0, yPercent: 50
         // },'<')
         .from('.item-img-item', 1, {  autoAlpha: 0, 
@@ -53,7 +52,7 @@ export default function () {
     // let counter = document.querySelector("#counter");
     const ratio = 0.5625;
     
-    gsap.set("#instructions, #dial", {xPercent: -50});
+    // gsap.set("#instructions, #dial", {xPercent: -50});
     // gsap.set("#progressRing", {drawSVG:0});
     
     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
@@ -109,26 +108,6 @@ export default function () {
 
   ;
 
-  // if ($('.parallax-img-block--js').length > 0) {
-  //   gsap.utils.toArray('.parallax-img-block--js img').forEach(sectionImg => {
-  //     ScrollTrigger.create({
-  //       trigger: sectionImg,
-  //       onEnter: () => {
-  //         gsap.to(sectionImg, {
-  //           autoAlpha: 1,
-  //           duration: 1,
-  //         });
-  //         gsap.to(sectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
-  //       },
-  //       start: "top 80%",
-  //       end: "bottom top",
-  //       pin: false,
-  //       scrub: false,
-  //       toggleActions: "play none none none",
-  //       markers: true
-  //     });
-  //   });
-  // }
 
   function portfolioScaleFunc() {
       ScrollTrigger.create({
@@ -226,19 +205,12 @@ export default function () {
 
 
   function homePerspectiveFunc() {
-    // console.clear();
     console.log('perspective');
     const svg = document.querySelector("#demoPerspective");
     const tlPer = gsap.timeline();
-    // const tl = gsap.timeline({onUpdate:onUpdate});
     let ptPerspective = svg.createSVGPoint();
-    // let data = document.querySelector(".tlProgress");
-    // let counter = document.querySelector("#counterPerspective");
     const ratioPerspective = 0.5625;
-    
-    gsap.set("#instructionsPerspective, #dialPerspective", {xPercent: -50});
-    gsap.set("#progressRingPerspective", {drawSVG:0});
-    
+   
     tlPer.to("#maskerPerspective", {duration: 2, attr:{r:2400}, ease:"power2.in"});
     tlPer.reversed(true);
     
@@ -254,7 +226,6 @@ export default function () {
     
     function mouseMovePerspective(evt) {
       let newPointPerspective = getPointPerspective(evt);
-      // gsap.set("#dotPerspective", {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}});
       gsap.to("#maskerPerspective", 0.88, {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}, ease:"power2.out"});
      }
     
@@ -285,7 +256,12 @@ export default function () {
 
 
   function controlVideos() {
-    
+        let $videoIdLittleBg = $('.video-little-bg--js');
+        let videoIdLittleBgGsap =  gsap.timeline({
+          paused: true,
+        })
+            .to($videoIdLittleBg, 0.3, {  autoAlpha: 0 },'')
+        ;
         let iframesLittle = document.querySelector('.video-little--js');
         let  videoPlayerLayoutLittle = document.querySelector('.video-little--layout--js');
         let videoIdLittle = iframesLittle.getAttribute('data-set-vimeo-id');
@@ -302,7 +278,6 @@ export default function () {
         let iframesBig = document.querySelector('.video-big--js');
         let videoPlayerLayoutBig = document.querySelector('.video-big--layout--js');
         let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
-        let  $cursoreBlock = $body.find(".cursor-dot");
         let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
           id: videoIdBig,
           width: '100%',
@@ -318,9 +293,10 @@ export default function () {
     if (screen.width > 1024) {
       console.log('desk');
       videoPlayerLayoutLittle.addEventListener("mouseenter", () => {
-        if (!$cursoreBlock.hasClass('video')) {
-          $cursoreBlock.addClass("video");
-          console.log('cursore video');
+        videoIdLittleBgGsap.play();        
+        if (!$cursorBlock.hasClass('video')) {
+          $cursorBlock.addClass("video");
+          // console.log('cursor video');
         }
         // console.log('first play');
         vimeoPlayerLittle.play().then(function() {
@@ -344,12 +320,12 @@ export default function () {
       });
 
       videoPlayerLayoutLittle.addEventListener("mouseleave", () => {
-        // console.log('first pause');
-        if ($cursoreBlock.hasClass('video')) {
-          $cursoreBlock.removeClass("video");
-          console.log('cursore video cick');
+        videoIdLittleBgGsap.reverse();
+        if ($cursorBlock.hasClass('video')) {
+          $cursorBlock.removeClass("video");
+          // console.log('cursor video hidden');
         }
-        vimeoPlayerLittle.pause().then(function() {
+        vimeoPlayerLittle.unload().then(function() {
           // the video was played
         }).catch(function(error) {
             switch (error.name) {
@@ -371,9 +347,9 @@ export default function () {
 
       videoPlayerLayoutBig.addEventListener("mouseenter", () => {
         // console.log('second play');
-        if (!$cursoreBlock.hasClass('video')) {
-          $cursoreBlock.addClass("video");
-          console.log('cursore video');
+        if (!$cursorBlock.hasClass('video')) {
+          $cursorBlock.addClass("video");
+          // console.log('cursor video1');
         }
         vimeoPlayerBig.play().then(function() {
           // the video was played
@@ -396,12 +372,11 @@ export default function () {
       });
 
       videoPlayerLayoutBig.addEventListener("mouseleave", () => {
-        // console.log('second pause');
-        if ($cursoreBlock.hasClass('video')) {
-          $cursoreBlock.removeClass("video");
-          console.log('cursore video cick');
+        if ($cursorBlock.hasClass('video')) {
+          $cursorBlock.removeClass("video");
+          // console.log('cursor video hidden1');
         }
-        vimeoPlayerBig.pause().then(function() {
+        vimeoPlayerBig.unload().then(function() {
           // the video was played
         }).catch(function(error) {
             switch (error.name) {
@@ -431,6 +406,7 @@ export default function () {
         scrub: true,
         toggleActions: "play reverse none reverse",
         onEnter: () => {
+          videoIdLittleBgGsap.play();  
           vimeoPlayerLittle.play().then(function() {
             // the video was played
           }).catch(function(error) {
@@ -451,6 +427,7 @@ export default function () {
           });
         },
         onEnterBack: () => {
+          videoIdLittleBgGsap.play();  
           vimeoPlayerLittle.play().then(function() {
             // the video was played
           }).catch(function(error) {
@@ -471,7 +448,8 @@ export default function () {
           });
         },
         onLeave: () => {
-          vimeoPlayerLittle.pause().then(function() {
+          videoIdLittleBgGsap.reverse();
+          vimeoPlayerLittle.unload().then(function() {
             // the video was paused
         }).catch(function(error) {
             switch (error.name) {
@@ -491,7 +469,8 @@ export default function () {
         });
         },
         onLeaveBack: () => {
-          vimeoPlayerLittle.pause().then(function() {
+          videoIdLittleBgGsap.reverse();
+          vimeoPlayerLittle.unload().then(function() {
             // the video was paused
         }).catch(function(error) {
             switch (error.name) {

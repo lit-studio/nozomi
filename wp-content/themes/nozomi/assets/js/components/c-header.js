@@ -17,6 +17,33 @@ export default function () {
     $aboutTrigger = $body.find(".about-trigger--js"),
     menuBtn = document.querySelector(".btn-menu--js");
 
+    let $links = $menuBlock.find('.menu-item');
+    
+    let linksAnim = gsap
+    .timeline({
+      paused: true
+    })
+    .from($links, {
+      duration: 1,
+      opacity: 0,
+      y: -50,
+      stagger: 0.1,
+      ease: 'expo.inOut',
+    }, "-=0.5");
+
+    linksAnim.reverse();
+    // let tl = gsap.timeline({ paused: true });
+
+    // tl.from($links, {
+    //   duration: 1,
+    //   opacity: 0,
+    //   yPercent: -10,
+    //   stagger: 0.1,
+    //   ease: 'power2.easeOut',
+    // }, "-=0.5");
+    
+    // tl.reverse();
+    
     let logoHeaderAnim = gsap
     .timeline({
       paused: true
@@ -81,6 +108,7 @@ export default function () {
     scrollHeader();
 
   function mobileMenu() {
+
     let modalMenuAnim = gsap
         .timeline({
           paused: true
@@ -91,11 +119,15 @@ export default function () {
 
 
     $menuBtn.on("click", function () {
+      linksAnim.reversed(!linksAnim.reversed());
+
       if (!$menuBtn.hasClass('open')) {
         menuBtnAnim.playSegments([30, 63], true);
         $menuBtn.addClass("open");
         $header.addClass("open");
         modalMenuAnim.play();
+        linksAnim.restart();
+        // linksAnim.play();
         if ($header.hasClass('header-fixed')) {
           logoHeaderAnim.reverse();
         }
@@ -105,6 +137,7 @@ export default function () {
         $menuBtn.removeClass("open");
         $header.removeClass("open");
         modalMenuAnim.reverse();
+        // linksAnim.reverse();
         if ($header.hasClass('header-fixed')) {
           logoHeaderAnim.play();
         }
@@ -121,6 +154,7 @@ export default function () {
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           modalMenuAnim.reverse();
+          // linksAnim.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }
@@ -136,7 +170,7 @@ export default function () {
 
   
   function mouseMoveCursor(e) {
-    gsap.to("#cursor", 0.8,{ x : e.clientX + 10 , y : e.clientY + 10
+    gsap.to("#cursor", 0.8,{ x : e.clientX , y : e.clientY
       // css: {
       //   left: e.clientX,
       //   top: e.clientY
@@ -149,7 +183,7 @@ export default function () {
 
 
   if (screen.width > 1024) {
-    console.log('mouseMoveCursor(e)');
+    // console.log('mouseMoveCursor(e)');
     window.addEventListener("mousemove", mouseMoveCursor);
   }
 

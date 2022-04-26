@@ -15,11 +15,7 @@ export default function () {
 
     gsap.to(window, 1,{scrollTo:{y:0}});
 
-    // function targetBlankLink() {
-    //   $('.menu-item-86 a').attr('target','_blank');
-    //   $('.menu-item-85 a').attr('target','_blank');
-    // }
-    // targetBlankLink();
+
 
     function btnLottieFunc() {
         let btnPortfolio = document.querySelector(".btn-portfolio--js");
@@ -107,36 +103,16 @@ export default function () {
     
     function screenReload() {
       let widthScreen = screen.width;
-      // console.log('widthScreen '+ widthScreen );
       let  widthScreenNew;  
       window.addEventListener("resize", () => {
         widthScreenNew = screen.width;
-        // console.log('widthScreenNew '+ widthScreenNew );
+
         if (widthScreenNew !== widthScreen) {
           location.reload();
         }
-          // 
+
       });
     }
     screenReload();
-
-    // let   $body = $("body"),
-    // $videoBlock = $body.find(".item-video--layout"),
-    // $cursoreBlock = $body.find(".cursor-dot");
-
-    // function videoBlockHover() {
-    //   $videoBlock.hover(() => {
-    //     if (!$cursoreBlock.hasClass('video')) {
-    //       $cursoreBlock.addClass("video");
-    //       console.log('cursore video');
-    //     }
-    //   }, () => {
-    //     if ($cursoreBlock.hasClass('video')) {
-    //       $cursoreBlock.removeClass("video");
-    //       console.log('cursore video cick');
-    //     }
-    //   });
-    // }
-    // videoBlockHover();
 
 }

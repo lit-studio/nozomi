@@ -11,6 +11,7 @@
 
 <body  <?php body_class(); ?>>
 <div id="site" class="site">
+<!-- <div id='cursor' class="cursor"></div> -->
 <header class="c-header c-header--js">
     <div class="c-header-wrap">
         <div class="c-header-logo">
