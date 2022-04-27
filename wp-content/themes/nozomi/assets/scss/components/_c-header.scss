@@ -5,7 +5,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   @include desktop-normal{
     padding: 37px 68px;
   }
@@ -174,13 +174,9 @@
       padding-top: 50px;
       width: 100%;
     }
-    // @include tablet{
-    //   align-items: flex-start;
-    //   padding-top: 50px;
-    //   width: 100%;
-    // }
     @include phone{
-      padding-top: 40px;
+      // padding-top: 40px;
+      padding-top: 38px;
     }
     & ul{
       display: flex;
@@ -251,6 +247,9 @@
           @include desktop-block{
             padding-bottom: 15px;
           }
+          @include phone{
+            padding-bottom: 0;
+          }
         }
         &.say-hello{
           & > a {
@@ -277,6 +276,9 @@
           }
           @include desktop-note-big{
             font-size: 16px;
+          }
+          @include desktop-block{
+            line-height: 150%;
           }
           &:after{
             content: '';
@@ -411,13 +413,15 @@
     opacity: 0;
     @include desktop-block{
       opacity: 1;
-      height: pxVw(320, 1024);
+      // height: pxVw(337, 1024);
+      height: 337px;
     }
     @include tablet{
-      height: pxVw(300, 768);
+      // height: pxVw(337, 768);
     }
     @include phone{
-      height: pxVw(280, 375);
+      // height: pxVw(280, 375);
+      height: 324px;
     }
     &.open{
       opacity: 1;

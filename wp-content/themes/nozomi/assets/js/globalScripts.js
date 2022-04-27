@@ -3,18 +3,32 @@ import lottie from "lottie-web";
 
 import header from "./components/c-header";
 import footer from "./components/c-footer";
-import tabAccordeon from "./components/c-tab";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
+
+// import ScrollToPlugin from "gsap/ScrollToPlugin";
+// gsap.registerPlugin(ScrollToPlugin);
 
 export default function () {
+  let $body = $('body'),
+  $preloaderBlock = $body.find('.preloader--js');
 
+    function preloaderFunc() {
+      window.addEventListener("load", function(){     
+        setTimeout(function(){
+          $(window).scrollTop(0);
+          $preloaderBlock.fadeOut(1000);
+      }, 1);
+      });
+    }
+    preloaderFunc();
     header();
     footer();
-    tabAccordeon();
 
-    gsap.to(window, 1,{scrollTo:{y:0}});
+    
 
+    // gsap.to(window, 0,{scrollTo:{y:0}});
+    // $(document).on('load', function () {
+    //   $(window).scrollTop(0);
+    // });
 
 
     function btnLottieFunc() {
@@ -33,13 +47,25 @@ export default function () {
             });
       
             btnPortfolio.addEventListener("mouseenter", () => {
-              btnPortfolioAnim.playSegments([0, 30], true);
+              if(!btnPortfolio.classList.contains("active")){
+                btnPortfolio.classList.add("active");
+                btnPortfolioAnim.playSegments([0, 30], true);
+              }
             });
       
             btnPortfolio.addEventListener("mouseleave", () => {
-              btnPortfolioAnim.playSegments([31, 60], true);
+              if(btnPortfolio.classList.contains("active")){
+                btnPortfolio.classList.remove("active");
+                btnPortfolioAnim.playSegments([31, 60], true);
+              }
             });
-      
+
+            btnPortfolio.addEventListener("click", () => {
+              if(btnPortfolio.classList.contains("active")){
+                btnPortfolio.classList.remove("active");
+                btnPortfolioAnim.playSegments([31, 60], true);
+              }
+            });    
       
           }
           if (btnPortfolio !== null) {
@@ -57,13 +83,24 @@ export default function () {
             });
       
             btnAbout.addEventListener("mouseenter", () => {
-              btnAboutAnim.playSegments([0, 30], true);
+              if(!btnAbout.classList.contains("active")){
+                btnAbout.classList.add("active");
+                btnAboutAnim.playSegments([0, 30], true);
+              }
             });
       
             btnAbout.addEventListener("mouseleave", () => {
-              btnAboutAnim.playSegments([31, 60], true);
+              if(btnAbout.classList.contains("active")){
+                btnAbout.classList.remove("active");
+                btnAboutAnim.playSegments([31, 60], true);
+              }
             });
-      
+            btnAbout.addEventListener("click", () => {
+              if(btnAbout.classList.contains("active")){
+                btnAbout.classList.remove("active");
+                btnAboutAnim.playSegments([31, 60], true);
+              }
+            });
       
           }
           if (btnAbout !== null) {
@@ -81,17 +118,25 @@ export default function () {
             });
       
             btnBook.addEventListener("mouseenter", () => {
-
-              btnBookAnim.playSegments([0, 30], true);
-
+              if(!btnBook.classList.contains("active")){
+                btnBook.classList.add("active");
+                btnBookAnim.playSegments([0, 30], true);
+              }
             });
       
             btnBook.addEventListener("mouseleave", () => {
-
-              btnBookAnim.playSegments([31, 60], true);
-
+              if(btnBook.classList.contains("active")){
+                btnBook.classList.remove("active");
+                btnBookAnim.playSegments([31, 60], true);
+              }
             });
-      
+
+            btnBook.addEventListener("click", () => {
+              if(btnBook.classList.contains("active")){
+                btnBook.classList.remove("active");
+                btnBookAnim.playSegments([31, 60], true);
+              }
+            });
       
           }
           if (btnBook !== null) {

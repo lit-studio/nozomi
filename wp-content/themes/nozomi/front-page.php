@@ -91,7 +91,7 @@ get_header();
                                              data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
                                             <span class="item-video--layout video-little--layout--js">
                                                 <img class="item-video-bg video-little-bg--js"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-little-video-bg.jpg"
+                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-little-video-bg.png"
                                                     alt=""/> 
                                             </span>
                                         </div>
@@ -131,6 +131,9 @@ get_header();
                                         <div class="item-video video--js  video-big--js"
                                              data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
                                                 <span class="item-video--layout video-big--layout--js">
+                                                    <img class="item-video-bg video-big-bg--js"
+                                                        src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-big-video-bg.png"
+                                                        alt=""/> 
                                                 </span>
                                         </div>
                                     <?php } ?>

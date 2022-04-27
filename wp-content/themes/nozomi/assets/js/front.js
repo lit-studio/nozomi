@@ -7,9 +7,9 @@ import globalScripts from "./globalScripts";
 import home from "./pages/p-home";
 import page from "./pages/p-page";
 import about from "./pages/p-about";
-import service from "./pages/p-service";
 
 (function ($) {
+
   globalScripts();
 
   console.log('nozomi site');

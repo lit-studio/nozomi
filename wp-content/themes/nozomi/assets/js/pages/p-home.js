@@ -16,7 +16,6 @@ export default function () {
   $indexSectionTitle = $indexSection.find(".item-title--title--js");
   let $cursorBlock = $body.find(".cursor-dot");
   function homeIndexFunc() {
-    // console.clear();
     console.log('index');
 
     const handBirdAnim = lottie.loadAnimation({
@@ -30,10 +29,8 @@ export default function () {
     let indexSectionGsap =  gsap.timeline({
       paused: true,
     })
-        .from($indexSectionTitle, 2, {  autoAlpha: 0 },'')
-        .from($indexSectionTitle, 2, { yPercent: 100 },'<')
-        // .from($indexSectionTitle, 2, {autoAlpha: 0, yPercent: 50
-        // },'<')
+        .from($indexSectionTitle, 1, {  autoAlpha: 0, ease:"power2.easeOut" },'')
+        .from($indexSectionTitle, 1, { yPercent: 50, ease:"power2.easeOut" },'<')
         .from('.item-img-item', 1, {  autoAlpha: 0, 
           onComplete: () => {
             handBirdAnim.setSpeed(1.8);
@@ -41,25 +38,25 @@ export default function () {
           } 
       },'-=2')
   ;
-  indexSectionGsap.play();
+  setTimeout(function(){
+    indexSectionGsap.play();
+  }, 1);
+
 
 
     const svg = document.querySelector("#demo");
     const tl = gsap.timeline();
     let pt = svg.createSVGPoint();
-    // const tl = gsap.timeline({onUpdate:onUpdate});
-    // let data = document.querySelector(".tlProgress");
-    // let counter = document.querySelector("#counter");
+
     const ratio = 0.5625;
     
-    // gsap.set("#instructions, #dial", {xPercent: -50});
-    // gsap.set("#progressRing", {drawSVG:0});
+
     
     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
     tl.reversed(true);
     
     function mouseHandlerIndex() {
-      // tl.reversed(!tl.reversed());
+      tl.reversed(!tl.reversed());
     }
     
     function getPointIndex(evt){
@@ -70,7 +67,6 @@ export default function () {
     
     function mouseMoveIndex(evt) {
       let newPoint = getPointIndex(evt);
-      // gsap.set("#dot", {attr:{cx:newPoint.x, cy:newPoint.y}});
       gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
      }
     
@@ -262,6 +258,12 @@ export default function () {
         })
             .to($videoIdLittleBg, 0.3, {  autoAlpha: 0 },'')
         ;
+        let $videoIdBigBg = $('.video-big-bg--js');
+        let videoIdBigBgGsap =  gsap.timeline({
+          paused: true,
+        })
+            .to($videoIdBigBg, 0.3, {  autoAlpha: 0 },'')
+        ;
         let iframesLittle = document.querySelector('.video-little--js');
         let  videoPlayerLayoutLittle = document.querySelector('.video-little--layout--js');
         let videoIdLittle = iframesLittle.getAttribute('data-set-vimeo-id');
@@ -347,6 +349,7 @@ export default function () {
 
       videoPlayerLayoutBig.addEventListener("mouseenter", () => {
         // console.log('second play');
+        videoIdBigBgGsap.play();
         if (!$cursorBlock.hasClass('video')) {
           $cursorBlock.addClass("video");
           // console.log('cursor video1');
@@ -372,6 +375,7 @@ export default function () {
       });
 
       videoPlayerLayoutBig.addEventListener("mouseleave", () => {
+        videoIdBigBgGsap.reverse();
         if ($cursorBlock.hasClass('video')) {
           $cursorBlock.removeClass("video");
           // console.log('cursor video hidden1');
@@ -499,6 +503,7 @@ export default function () {
         scrub: true,
         toggleActions: "play reverse none reverse",
         onEnter: () => {
+          videoIdBigBgGsap.play();
           vimeoPlayerBig.play().then(function() {
             // the video was played
           }).catch(function(error) {
@@ -519,6 +524,7 @@ export default function () {
           });
         },
         onEnterBack: () => {
+          videoIdBigBgGsap.play();
           vimeoPlayerBig.play().then(function() {
             // the video was played
           }).catch(function(error) {
@@ -540,8 +546,8 @@ export default function () {
         },
         onLeave: () => {
           
-
-          vimeoPlayerBig.pause().then(function() {
+          videoIdBigBgGsap.reverse();
+          vimeoPlayerBig.unload().then(function() {
             // the video was paused
         }).catch(function(error) {
             switch (error.name) {
@@ -561,8 +567,8 @@ export default function () {
         });
         },
         onLeaveBack: () => {
-          // $iframesLittle.removeClass('play');
-          vimeoPlayerBig.pause().then(function() {
+          videoIdBigBgGsap.reverse();
+          vimeoPlayerBig.unload().then(function() {
             // the video was paused
         }).catch(function(error) {
             switch (error.name) {
