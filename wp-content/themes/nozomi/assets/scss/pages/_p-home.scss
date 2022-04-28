@@ -17,7 +17,9 @@
       min-height: 720px;
     }
     @include phone{
-      min-height: 480px;
+      // min-height: 480px;
+      min-height: 550px;
+      height: auto;
     }
 
     &-wrap {
@@ -41,7 +43,9 @@
           min-height: 720px;
         }
         @include phone{
-          min-height: 480px;
+          // min-height: 480px;
+          min-height: 550px;
+          height: auto;
         }
 
       }
@@ -126,7 +130,8 @@
         width: 100%;
         @include phone{
           // padding-bottom: 100px;
-          padding-bottom: 80px;
+          // padding-bottom: 80px;
+          padding-bottom: 12px;
         }
         &-item{
           max-width: 250px;
@@ -194,7 +199,35 @@
         }
       }
     }
+    &.mobile-middle{
+      @include phone{
+        min-height: 600px;
+        height: auto;
+      }
+      .item{
+        &-wrap{
+          @include phone{
+            min-height: 600px;
+            height: auto;
+          }
+        }
+      }
+    }
+    &.mobile-height{
+      @include phone{
 
+        min-height: 700px;
+        height: auto;
+      }
+      .item{
+        &-wrap{
+          @include phone{
+            min-height: 700px;
+            height: auto;
+          }
+        }
+      }
+    }
 
   }
   .portfolio{
@@ -389,13 +422,14 @@
               // transform: scale(1.15);
             }
             @include phone{
-              background-color: var(--color-grey-6);
+              // background-color: var(--color-grey-6);
             }
             &-bg{
               // opacity: 0;
               width: 100%;
               height: 100%;
               object-fit: cover;
+              opacity: 1;
             }
             &--layout {
               position: absolute;
@@ -407,6 +441,8 @@
               display: flex;
               align-items: center;
               justify-content: center;
+              background-color: var(--color-white);
+              opacity: 1;
             }
             iframe {
               bottom: 0;
@@ -574,6 +610,7 @@
               width: 100%;
               height: 100%;
               object-fit: cover;
+              opacity: 1;
             }
             &--layout {
               position: absolute;
@@ -582,10 +619,11 @@
               z-index: 10;
               height: 100%;
               width: 100%;
-              // opacity: 0;
               display: flex;
               align-items: center;
               justify-content: center;
+              background-color: var(--color-white);
+              opacity: 1;
               // cursor:  url('#{$assetsPath}/images/cursor-play.svg') 4 12, auto;
             }
             iframe {

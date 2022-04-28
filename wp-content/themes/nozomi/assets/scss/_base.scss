@@ -64,14 +64,15 @@ body {
       &.video{
         &::before{
           transform: translate(-15px,-15px);
-          width: 34px;
-          height: 34px;
+          width: 20px;
+          height: 16px;
           background-color: transparent;
           background-image: url('#{$assetsPath}/images/cursor-play.svg');
           background-position: left;
           background-repeat: no-repeat;
           background-attachment: scroll;
           background-size: contain;
+          border-radius: 0;
         }
       }
     }

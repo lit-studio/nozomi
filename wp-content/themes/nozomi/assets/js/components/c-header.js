@@ -26,12 +26,12 @@ export default function () {
     .from($links, {
       duration: 1,
       opacity: 0,
-      y: -50,
+      yPercent: -10,
       stagger: 0.1,
-      ease: 'expo.inOut',
-    }, "-=0.5");
+      ease: 'expo.easeOut',
+    }, "-=3");
 
-    linksAnim.reverse();
+    // linksAnim.reverse();
     // let tl = gsap.timeline({ paused: true });
 
     // tl.from($links, {
@@ -119,8 +119,8 @@ export default function () {
 
 
     $menuBtn.on("click", function () {
-      linksAnim.reversed(!linksAnim.reversed());
-
+      // linksAnim.reversed(!linksAnim.reversed());
+      linksAnim.play();
       if (!$menuBtn.hasClass('open')) {
         menuBtnAnim.playSegments([30, 63], true);
         $menuBtn.addClass("open");
@@ -137,7 +137,7 @@ export default function () {
         $menuBtn.removeClass("open");
         $header.removeClass("open");
         modalMenuAnim.reverse();
-        // linksAnim.reverse();
+        linksAnim.reverse();
         if ($header.hasClass('header-fixed')) {
           logoHeaderAnim.play();
         }
@@ -154,7 +154,7 @@ export default function () {
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           modalMenuAnim.reverse();
-          // linksAnim.reverse();
+          linksAnim.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }

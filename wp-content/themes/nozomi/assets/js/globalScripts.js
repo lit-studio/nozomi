@@ -12,13 +12,43 @@ export default function () {
   $preloaderBlock = $body.find('.preloader--js');
 
     function preloaderFunc() {
+      // window.scrollTo(0, 0);
+      // $(window).scrollTop(0);
+      // setTimeout(function(){
+      //   // $(window).scrollTop(0);
+      //   $preloaderBlock.fadeOut(1000);
+      // }, 100);
+
+      // window.addEventListener("load", function(){     
+      //   $(window).scrollTop(0);
+      //   setTimeout(function(){
+      //     // $(window).scrollTop(0);
+      //     $preloaderBlock.fadeOut(1000);
+      //   }, 100);
+      // });
+
       window.addEventListener("load", function(){     
         setTimeout(function(){
-          $(window).scrollTop(0);
-          $preloaderBlock.fadeOut(1000);
-      }, 1);
+          $('html,body').scrollTop(0);
+          $preloaderBlock.fadeOut(500);
+      }, 500);
       });
     }
+    let $window = $(window),
+    $indexHome = $('.index-home'),
+    winHeight = $window.height(),
+    winHeightScreen = screen.height;
+    console.log('winHeightScreen ' + winHeightScreen );
+    console.log('winHeight ' + winHeight );
+    if (winHeight > 560) {
+      if (winHeight > 700) {
+        $indexHome.addClass('mobile-height');
+      }
+      else{
+        $indexHome.addClass('mobile-middle');
+      }
+    }
+
     preloaderFunc();
     header();
     footer();

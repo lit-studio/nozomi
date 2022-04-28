@@ -29,7 +29,7 @@ export default function () {
     let indexSectionGsap =  gsap.timeline({
       paused: true,
     })
-        .from($indexSectionTitle, 1, {  autoAlpha: 0, ease:"power2.easeOut" },'')
+        .from($indexSectionTitle, 1, {  autoAlpha: 0, ease:"power2.easeOut" },'+=1.5')
         .from($indexSectionTitle, 1, { yPercent: 50, ease:"power2.easeOut" },'<')
         .from('.item-img-item', 1, {  autoAlpha: 0, 
           onComplete: () => {
@@ -98,6 +98,7 @@ export default function () {
   $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
   $aboutSectionImg = $aboutSectionBlock.find('img'),
   $portfolioSection = $body.find('.portfolio'),
+  aboutSectionImgTrigger="top center",
   $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
   $portfolioSectionImg = $portfolioSectionblock.find('img'),
   $parallaxBlock = $body.find('.parallax-img-block--js')
@@ -143,6 +144,12 @@ export default function () {
   portfolioScaleFunc();
 
   function aboutScaleFunc() {
+    if (screen.width > 1024) {
+      aboutSectionImgTrigger="top center";
+    }
+    else{
+      aboutSectionImgTrigger="top 80%";
+    }
     ScrollTrigger.create({
       trigger: $aboutSectionImg ,
       onEnter: () => {
@@ -152,7 +159,7 @@ export default function () {
         });
         gsap.to($aboutSectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
       },
-      start: "top center",
+      start: aboutSectionImgTrigger,
       end: "bottom top",
       pin: false,
       scrub: false,
@@ -253,16 +260,20 @@ export default function () {
 
   function controlVideos() {
         let $videoIdLittleBg = $('.video-little-bg--js');
+        let $videoIdLittleLayout = $('.video-little--layout--js');
         let videoIdLittleBgGsap =  gsap.timeline({
           paused: true,
         })
-            .to($videoIdLittleBg, 0.3, {  autoAlpha: 0 },'')
+            .to($videoIdLittleBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
+            .to($videoIdLittleLayout, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
         ;
         let $videoIdBigBg = $('.video-big-bg--js');
+        let $videoIdBigLayout = $('.video-big--layout--js');
         let videoIdBigBgGsap =  gsap.timeline({
           paused: true,
         })
-            .to($videoIdBigBg, 0.3, {  autoAlpha: 0 },'')
+            .to($videoIdBigBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
+            .to($videoIdBigLayout, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
         ;
         let iframesLittle = document.querySelector('.video-little--js');
         let  videoPlayerLayoutLittle = document.querySelector('.video-little--layout--js');
@@ -405,9 +416,9 @@ export default function () {
       console.log('mobile');
       ScrollTrigger.create({
         trigger:  iframesLittle,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: false,
         toggleActions: "play reverse none reverse",
         onEnter: () => {
           videoIdLittleBgGsap.play();  
@@ -498,10 +509,11 @@ export default function () {
       });
       ScrollTrigger.create({
         trigger:  iframesBig,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: false,
         toggleActions: "play reverse none reverse",
+        markers: true,
         onEnter: () => {
           videoIdBigBgGsap.play();
           vimeoPlayerBig.play().then(function() {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#EFEBE5">
+    <meta name="theme-color" content="#F2F0ED">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <?php wp_head(); ?>
 </head>
