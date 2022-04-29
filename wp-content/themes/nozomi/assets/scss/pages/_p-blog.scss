@@ -1,0 +1,271 @@
+.p-blog {
+    &-content{
+        padding-bottom: 180px;
+    }
+    &-wrap{
+        display: flex;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .index{
+
+        &-wrap{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-blog{
+            height: 100vh;
+            .item{
+                max-width: 1300px;
+                padding-left: 25px;
+                padding-right: 25px;
+                @include desktop-normal{
+                    max-width: 950px;
+                  }
+                @include desktop-note-big{
+                    max-width: 810px;
+                }
+                @include tablet{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    max-width: 678px;
+                }
+                @include phone{
+                    max-width: 375px;
+                }
+                &-title{
+                    text-align: center;
+                    &--title{
+                        font-family: var(--font-bold);
+                        font-size: 98px;
+                        line-height: 120%;
+                        @include desktop-normal{
+                            font-size: 76px;
+                        }
+                        @include desktop-note-big{
+                            font-size: 62px;
+                        }
+                        @include phone{
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sidebar{
+        width: 326px;
+        padding-right: 20px;
+        @include desktop-normal{
+            width: 240px;
+        }
+        @include desktop-note-big{
+            width: 175px;
+        }
+        @include desktop-block{
+            display: none;
+        }
+
+        &-wrap{
+            ul{
+
+            }
+            li{
+                padding-bottom: 16px;
+            }
+            a{
+                line-height: 1;
+                font-family: var(--font-medium);
+                color: var(--color-black);
+                font-size: 20px;
+                position: relative;
+                padding-bottom: 3px;
+                z-index: 0;
+                text-transform: uppercase;
+                @include desktop-normal{
+                  font-size: 18px;
+                }
+                @include desktop-note-big{
+                  font-size: 14px;
+                }
+                @include desktop-block{
+
+                }
+                &:after{
+                  content: '';
+                  left: 0;
+                  bottom: 0;
+                  position: absolute;
+                  height: 3px;
+                  width: 100%;
+                  background-color: transparent;
+                  background-image: url('#{$assetsPath}/icons/icon-underline.svg');
+                  background-position: left;
+                  background-repeat: no-repeat;
+                  background-attachment: scroll;
+                  background-size: cover;
+                  transform: scaleX(0);
+                  transition: transform 0.3s ease-in-out;
+                  transform-origin: right;
+                }
+                &:hover{
+                    color: var(--color-red);
+                    &:after{
+                        transform-origin: left;
+                        transform: scaleX(1);
+                        transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+                    }
+                }
+            }
+        }
+
+    
+    }
+    .blogs{
+        &-wrap{
+
+        }
+        &-list{
+
+        }
+        .item{
+            padding-top: 70px;
+            padding-bottom: 70px;
+            border-bottom: 1px solid var(--color-grey-5);
+            @include desktop-normal{
+                padding-top: 50px;
+                padding-bottom: 50px;
+              }
+            @include desktop-note-big{
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            @include tablet{
+
+            }
+            @include phone{
+
+            }
+            &:first-of-type{
+                padding-top: 0;
+            }
+            &-wrap{
+                display: flex;
+                @include desktop-block{
+                    flex-wrap: wrap;
+                }
+
+            }
+            &-left{
+                flex: 0 0 574px;
+                max-width: 574px;
+            }
+            &-img{
+                img{
+
+                }
+            }
+            &-right{
+                padding-left: 100px; 
+                padding-right: 34px;
+                @include desktop-normal{
+
+                  }
+                &-wrap{
+                    @include desktop-normal{
+
+                      }
+                }
+                &-top{
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-grey-3);
+                    font-size: 20px;
+                    @include desktop-normal{
+                        font-size: 16px;
+                      }
+                      @include desktop-note-big{
+                        font-size: 14px;
+                    }
+                   @include desktop-block{
+                        padding-top: 15px;
+                    }
+                    @include phone{
+                        font-size: 13px;
+                    }
+                    
+                }
+            }
+            &-tag{
+                padding-right: 60px;
+                @include desktop-note-big{
+                    padding-right: 40px;
+                }
+                &-time{
+                    display: flex;
+                    justify-content: flex-start;
+                }
+                &--tag{
+                    text-transform: uppercase;
+
+                }
+            }
+            &-time{
+                @include desktop-normal{
+
+                  }
+                &--times{
+                    @include desktop-normal{
+
+                      }
+                }
+            }
+            &-date{
+                @include desktop-normal{
+                    font-size: 18px;
+                  }
+                &--date{
+                    @include desktop-normal{
+                        font-size: 18px;
+                      }
+                }
+            }
+            &-title{
+                padding-top: 20px;
+                @include desktop-normal{
+                    font-size: 18px;
+                  }
+                &--title{
+                    @include desktop-normal{
+                        font-size: 18px;
+                      }
+                }
+            }
+            &-desc{
+                padding-top: 15px;
+                @include desktop-normal{
+                    font-size: 18px;
+                  }
+                &--desc{
+                    @include desktop-normal{
+                        font-size: 18px;
+                      }
+                }
+            }
+            &-link{
+                padding-top: 40px;
+                @include desktop-normal{
+                    font-size: 18px;
+                  }
+                &--link{
+
+                }
+            }
+        }
+    }
+
+  
+  }

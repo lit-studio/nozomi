@@ -186,20 +186,22 @@ export default function () {
     // console.log('mouseMoveCursor(e)');
     window.addEventListener("mousemove", mouseMoveCursor);
   }
-
-  function burgerChange() {
-    console.log( 'start bg animation' );
-    ScrollTrigger.create({
-      trigger: $aboutTrigger,
-      scroller: "body",
-      start: "top 80px",
-      end: "bottom 80px",
-      scrub: true,
-      toggleActions: "play reverse none reverse",
-      toggleClass: {className: 'inversion', targets: '.btn-menu--js'},
-      markers: false
-    });
+  if ($aboutTrigger.length > 0) {
+    function burgerChange() {
+      console.log( 'start bg animation' );
+      ScrollTrigger.create({
+        trigger: $aboutTrigger,
+        scroller: "body",
+        start: "top 80px",
+        end: "bottom 80px",
+        scrub: true,
+        toggleActions: "play reverse none reverse",
+        toggleClass: {className: 'inversion', targets: '.btn-menu--js'},
+        markers: false
+      });
+    }
+    burgerChange();
   }
-  burgerChange();
+
 
 }

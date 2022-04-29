@@ -117,6 +117,7 @@ add_action('wp_enqueue_scripts', function () {
     ];
     if (is_page()) $nozomiData['page'] = 'page';
     if (is_front_page()) $nozomiData['page'] = 'home';
+    if (is_page_template('page-blog.php')) $nozomiData['page'] = 'blog';
 //    if (is_page_template('page-about.php')) $nozomiData['page'] = 'about';
 //    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
 
@@ -130,6 +131,7 @@ add_action('wp_enqueue_scripts', function () {
 add_filter('body_class', function ($classes) {
     if (is_404()) array_push($classes, 'p-404');
     if (is_front_page()) array_push($classes, 'p-home');
+    if (is_page_template('page-blog.php')) array_push($classes, 'p-blog');
 //    if (is_page_template('page-about.php')) array_push($classes, 'p-about');
 //    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
     if (is_page()) array_push($classes, 'p-page');
