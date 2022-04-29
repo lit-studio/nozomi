@@ -14,11 +14,12 @@
                     <?php } ?>
                     <?php
                     $button_text_footer = get_field('button_text_footer', 'options');
+                    $button_link_footer = get_field('button_link_footer', 'options');
                     if ($button_text_footer) { ?>
                         <div class="item-btns">
                             <div class="item-btns-btn">
-                                <button class="btn btn-book--js">
-                                </button>
+                                <a href="<?php echo $button_link_footer; ?>" target="_blank" class="btn btn-book--js">
+                                </a>
                             </div>
                         </div>
                     <?php } ?>
