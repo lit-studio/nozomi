@@ -1,23 +1,66 @@
 .p-blog {
     &-content{
-        padding-bottom: 180px;
+        padding-bottom: 180px;        
+        padding-left: 100px;
+        padding-right: 100px;
+        @include desktop-normal{
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        @include desktop-note-big{
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+        @include  desktop-block{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        @include tablet{
+            padding-left: 65px;
+            padding-right: 65px;
+        }
+        @include phone{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
     &-wrap{
-        display: flex;
-        padding-left: 60px;
-        padding-right: 60px;
+        position: relative;
     }
-
+    &-blogs{
+        display: flex;
+    }
     .index{
-
         &-wrap{
-            height: 100%;
+            // height: 100%;
             display: flex;
-            align-items: center;
+            // align-items: center;
             justify-content: center;
+            padding-top: pxVw(410, 2560);
+            padding-bottom: pxVw(350, 2560);
+            @include desktop-normal{
+                padding-top: pxVw(325, 1920);
+                padding-bottom: pxVw(180, 1920);
+            }
+            @include desktop-note-big{
+                padding-top: pxVw(240, 1440);
+                padding-bottom: pxVw(180, 1440);
+            }
+            @include desktop-block{
+                padding-top: pxVw(240, 1024);
+                padding-bottom: pxVw(66, 1024);
+            }
+            @include tablet{
+                padding-top: pxVw(300, 768);
+                padding-bottom: pxVw(66, 768);
+            }
+            @include phone{
+                padding-top: pxVw(200, 375);
+                padding-bottom: pxVw(120, 375);
+            }
         }
         &-blog{
-            height: 100vh;
+            // height: 80vh;
             .item{
                 max-width: 1300px;
                 padding-left: 25px;
@@ -56,9 +99,19 @@
             }
         }
     }
-    .sidebar{
-        width: 326px;
-        padding-right: 20px;
+    .nav{
+        // width: 326px;
+        width: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        @include desktop-normal{
+            width: 240px;
+        }
         @include desktop-normal{
             width: 240px;
         }
@@ -66,15 +119,69 @@
             width: 175px;
         }
         @include desktop-block{
-            display: none;
+            height: 400px;
+            left: 50%;
+            top: pxVw(650,1024);
+            display: block;
+            // transform: translateX(-50%);
+            
         }
 
         &-wrap{
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // height: 100vh;
+            // display: flex;
+            // align-items: flex-end;
+            // padding-bottom: 20px;
+        }
+        &-menu{
+            width: 400px;
+            @include desktop-normal{
+                width: 240px;
+            }
+            @include desktop-normal{
+                width: 240px;
+            }
+            @include desktop-note-big{
+                width: 175px;
+            }
+            @include desktop-block{
+                // display: none;
+                width: 185px;
+                padding: 15px;
+                background-color: var(--color-beage);
+                height: 48px;
+                overflow: hidden;
+            }
             ul{
 
+                @include desktop-block{
+                    width: 100%;
+
+                    display: flex;
+                    // flex-direction: column-reverse;
+                    flex-wrap: wrap;
+                }
             }
             li{
                 padding-bottom: 16px;
+                @include desktop-block{
+                    text-align: center;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    &.current-menu-item, &.active{
+                        &>a{
+                            color: var(--color-red);
+                            &:after{
+                                transform-origin: left;
+                                transform: scaleX(1);
+                                transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+                            }
+                        }
+                      }
+                }
             }
             a{
                 line-height: 1;
@@ -92,7 +199,7 @@
                   font-size: 14px;
                 }
                 @include desktop-block{
-
+                    font-size: 12px;
                 }
                 &:after{
                   content: '';
@@ -125,11 +232,23 @@
     
     }
     .blogs{
+        width: 100%;
+        padding-top: 20px;
+        padding-left: 400px;
+        @include desktop-normal{
+            padding-lefth: 240px;
+        }
+        @include desktop-note-big{
+            padding-lefth: 175px;
+        }
+        @include desktop-block{
+            padding-left: 0;
+        }
         &-wrap{
-
+            width: 100%;
         }
         &-list{
-
+            width: 100%;
         }
         .item{
             padding-top: 70px;
@@ -140,8 +259,8 @@
                 padding-bottom: 50px;
               }
             @include desktop-note-big{
-                padding-top: 40px;
-                padding-bottom: 40px;
+                padding-top: 35px;
+                padding-bottom: 35px;
             }
             @include tablet{
 
@@ -160,20 +279,59 @@
 
             }
             &-left{
-                flex: 0 0 574px;
-                max-width: 574px;
+                flex: 0 0 780px;
+                max-width: 780px;
+                @include desktop-normal{
+                    max-width: 574px;
+                    flex: 0 0 574px;
+                }
+                @include desktop-note-big{
+                    max-width: 500px;
+                    flex: 0 0 500px;
+                } 
+                @include desktop-block{
+                    max-width: 487px;
+                    flex: 0 0 50%;
+                }
+                @include tablet{
+                    max-width: 100%;
+                    flex: 0 0 100%;
+                }
+                @include phone{
+    
+                }
             }
             &-img{
+                width: 100%;
                 img{
-
+                    object-fit: cover;
                 }
             }
             &-right{
                 padding-left: 100px; 
-                padding-right: 34px;
+                padding-right: 100px;
+                flex: 1;
                 @include desktop-normal{
+                  padding-left: 60px;
+                  padding-right: 84px;
+                }
+                @include desktop-note-big{
+                    padding-left: 40px;
+                    padding-right: 60px;
+                }
+               @include desktop-block{
+                padding-left: 25px;
+                padding-right: 40px;
+                }
+                @include tablet{
+                    padding-left: 0;
+                    padding-right: 0;
+                    max-width: 100%;
+                    flex: 0 0 100%;
+                }
+                @include phone{
 
-                  }
+                }
                 &-wrap{
                     @include desktop-normal{
 
@@ -184,6 +342,7 @@
                     justify-content: space-between;
                     color: var(--color-grey-3);
                     font-size: 20px;
+                    font-family: var(--font-family);
                     @include desktop-normal{
                         font-size: 16px;
                       }
@@ -225,43 +384,102 @@
             }
             &-date{
                 @include desktop-normal{
-                    font-size: 18px;
+
                   }
                 &--date{
                     @include desktop-normal{
-                        font-size: 18px;
+
                       }
                 }
             }
             &-title{
                 padding-top: 20px;
-                @include desktop-normal{
-                    font-size: 18px;
-                  }
+                @include desktop-note-big{
+                    padding-top: 15px;
+                }
+                @include desktop-block{
+                    padding-top: 10px; 
+                }
+                @include phone{
+                    padding-top: 11px;
+                }
                 &--title{
+                    color: var(--color-grey);
+                    font-size: 44px;
                     @include desktop-normal{
-                        font-size: 18px;
-                      }
+                        font-size: 36px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 32px;
+                    }
+                    @include phone{
+                        font-size: 26px; 
+                    }
                 }
             }
             &-desc{
                 padding-top: 15px;
-                @include desktop-normal{
-                    font-size: 18px;
-                  }
+                @include desktop-note-big{
+                    padding-top: 10px;
+                }
                 &--desc{
+                    color: var(--color-grey-2);
+                    font-size: 24px;
                     @include desktop-normal{
-                        font-size: 18px;
-                      }
+                        font-size: 20px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 16px;
+                    }
+                    @include phone{
+                        font-size: 15px; 
+                    }
                 }
             }
             &-link{
-                padding-top: 40px;
+                padding-top: 50px;
                 @include desktop-normal{
-                    font-size: 18px;
-                  }
+                    padding-top: 40px;
+                }
+                @include desktop-note-big{
+                    padding-top: 35px;
+                }
                 &--link{
-
+                    color: var(--color-grey);
+                    font-family: var(--font-semibold);
+                    padding-left: 34px;
+                    font-size: 20px;
+                    position: relative;
+                    @include desktop-normal{
+                        font-size: 18px;
+                        padding-left: 30px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 15px;
+                        padding-left: 28px;
+                    }
+                    &:before{
+                        width: 24px;
+                        height: 24px;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        background-color: transparent;
+                        background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-attachment: scroll;
+                        background-size: contain;
+                        @include desktop-normal{
+                          width: 20px;
+                          height: 20px;
+                        }
+                        @include desktop-note-big{
+                          width: 18px;
+                          height: 18px;
+                        }
+                    }
                 }
             }
         }

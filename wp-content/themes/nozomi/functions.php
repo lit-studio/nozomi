@@ -129,12 +129,13 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_filter('body_class', function ($classes) {
+    if (is_page()) array_push($classes, 'p-page');
     if (is_404()) array_push($classes, 'p-404');
     if (is_front_page()) array_push($classes, 'p-home');
     if (is_page_template('page-blog.php')) array_push($classes, 'p-blog');
 //    if (is_page_template('page-about.php')) array_push($classes, 'p-about');
 //    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
-    if (is_page()) array_push($classes, 'p-page');
+
 
     if (isset($classes['class-to-remove'])) {
         unset($classes['class-to-remove']);
