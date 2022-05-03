@@ -233,14 +233,18 @@ get_header();
                 </div>
                 <section class="nav">
                     <div class="nav-wrap">
-                        <div class="nav-menu">
+                        <div class="nav-mobile-btns">
+                            <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span></button>
+                        </div>
+                        <div class="nav-menu nav-menu--js">
                             <ul>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'><a href="#">All posts</a></li>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">Lifestyle</a></li>
+                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">All posts</a></li>
+                                <li class='menu-item menu-item-type-custom menu-item-object-custom  current-menu-item'><a href="#">Lifestyle</a></li>
                                 <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">How to</a></li>
                                 <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">Research lab</a></li>                            
                             </ul>
                         </div>
+                        <div class="nav-menu-bg nav-menu-bg--js"></div>
                     </div>
                 </section>
             </div>

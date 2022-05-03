@@ -185,27 +185,6 @@ export default function () {
   }
   aboutScaleFunc();
 
-  // if ($('.item-wrap--js').length > 0) {
-  //   gsap.utils.toArray('.item-wrap--js').forEach(itemWrap => {
-  //     ScrollTrigger.create({
-  //       trigger: itemWrap,
-  //       onEnter: () => {
-  //         gsap.to(itemWrap, {
-  //           autoAlpha: 1,
-  //           duration: 2,
-  //         });
-  //         gsap.from(itemWrap, 2, {xPercent: -20, ease: "Power4.easeOut"},'<');
-  //       },
-  //       start: "top 70%",
-  //       end: "bottom top",
-  //       pin: false,
-  //       scrub: false,
-  //       toggleActions: "play none none none",
-  //       markers: false
-  //     });
-  //   });
-  // }
-
 
   function homePerspectiveFunc() {
     console.log('perspective');
@@ -610,8 +589,6 @@ controlVideos();
 function btnLottieFunc() {
   let btnPortfolio = document.querySelector(".btn-portfolio--js");
   let btnAbout = document.querySelector(".btn-about--js");
-  let btnBook = document.querySelector(".btn-book--js");
-  // let btnBookItem = document.querySelector(".btn-book--js .btn-item");
   if (btnPortfolio) {
     function btnPortfolioHover() {
       const btnPortfolioAnim = lottie.loadAnimation({
@@ -681,42 +658,6 @@ function btnLottieFunc() {
     }
     if (btnAbout !== null) {
       btnAboutHover();
-    }
-  }
-  if (btnBook) {
-    function btnBookHover() {
-      const btnBookAnim = lottie.loadAnimation({
-        container: btnBook,
-        renderer: "svg",
-        loop: false,
-        autoplay: false,
-        path: nozomiData.rootUrl + "/assets/lottie/button_book.json"
-      });
-
-      btnBook.addEventListener("mouseenter", () => {
-        if(!btnBook.classList.contains("active")){
-          btnBook.classList.add("active");
-          btnBookAnim.playSegments([0, 30], true);
-        }
-      });
-
-      btnBook.addEventListener("mouseleave", () => {
-        if(btnBook.classList.contains("active")){
-          btnBook.classList.remove("active");
-          btnBookAnim.playSegments([31, 60], true);
-        }
-      });
-
-      btnBook.addEventListener("click", () => {
-        if(btnBook.classList.contains("active")){
-          btnBook.classList.remove("active");
-          btnBookAnim.playSegments([31, 60], true);
-        }
-      });
-
-    }
-    if (btnBook !== null) {
-      btnBookHover();
     }
   }
 }
