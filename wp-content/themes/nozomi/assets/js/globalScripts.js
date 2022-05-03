@@ -38,8 +38,8 @@ export default function () {
     $indexHome = $('.index-home'),
     winHeight = $window.height(),
     winHeightScreen = screen.height;
-    console.log('winHeightScreen ' + winHeightScreen );
-    console.log('winHeight ' + winHeight );
+    // console.log('winHeightScreen ' + winHeightScreen );
+    // console.log('winHeight ' + winHeight );
     if (winHeight > 560) {
       if (winHeight > 700) {
         $indexHome.addClass('mobile-height');

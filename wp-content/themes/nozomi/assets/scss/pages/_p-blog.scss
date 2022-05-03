@@ -561,3 +561,370 @@
 
   
   }
+.p-single-blog{
+    &-content{
+        padding-bottom: 180px;        
+        @include desktop-note-big{
+            padding-bottom: 160px;
+        }
+        @include phone{
+            padding-bottom: 140px;   
+        }
+    }
+    .index{
+        &-wrap{
+            // height: 100%;
+            display: flex;
+            // align-items: center;
+            justify-content: center;
+            padding-top: pxVw(410, 2560);
+            padding-bottom: pxVw(350, 2560);
+            @include desktop-normal{
+                padding-top: pxVw(325, 1920);
+                padding-bottom: pxVw(180, 1920);
+            }
+            @include desktop-note-big{
+                padding-top: pxVw(240, 1440);
+                padding-bottom: pxVw(180, 1440);
+            }
+            @include desktop-block{
+                padding-top: pxVw(240, 1024);
+                padding-bottom: pxVw(66, 1024);
+            }
+            @include tablet{
+                padding-top: pxVw(300, 768);
+                padding-bottom: pxVw(66, 768);
+            }
+            @include phone{
+                padding-top: pxVw(200, 375);
+                padding-bottom: pxVw(120, 375);
+            }
+        }
+        &-blog{
+            // height: 80vh;
+            .item{
+                max-width: 1300px;
+                padding-left: 25px;
+                padding-right: 25px;
+                @include desktop-normal{
+                    max-width: 950px;
+                  }
+                @include desktop-note-big{
+                    max-width: 810px;
+                }
+                @include tablet{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    max-width: 678px;
+                }
+                @include phone{
+                    max-width: 375px;
+                }
+                &-title{
+                    text-align: center;
+                    &--title{
+                        font-family: var(--font-bold);
+                        font-size: 98px;
+                        line-height: 120%;
+                        @include desktop-normal{
+                            font-size: 76px;
+                        }
+                        @include desktop-note-big{
+                            font-size: 62px;
+                        }
+                        @include phone{
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .posts{
+        &-title{
+            text-align: center;
+            &--title{
+                font-family: var(--font-bold);
+                font-size: 64px;
+                @include desktop-normal{
+                    font-size: 54px;
+                }
+                @include desktop-note-big{
+                    font-size: 48px;
+                }
+                @include phone{
+                    font-size: 32px;
+                }
+            }
+        }
+        &-wrap{
+            max-width: 1560px;
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 65px;
+            padding-right: 65px;
+            @include desktop-normal{
+                padding-top: 50px;
+                padding-bottom: 50px;
+              }
+            @include desktop-note-big{
+                max-width: 1175px;
+            }
+            @include desktop-block{
+                padding-left: 25px;
+                padding-right: 25px;
+                max-width: 100%;
+            }
+            @include tablet{
+                padding-left: 65px;
+                padding-right: 65px;
+            }
+            @include phone{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        &-list{
+            width: 100%;
+            padding-top: 120px;
+            @include desktop-normal{
+                padding-top: 100px;
+            }
+            @include desktop-note-big{
+                padding-top: 80px;
+            }
+            @include phone{
+                padding-top: 50px;
+            }
+        }
+        .item{
+
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid var(--color-grey-5);
+            @include desktop-note-big{
+                padding-top: 40px;
+                padding-bottom: 40px;
+  
+            }
+            @include phone{
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            &:first-of-type{
+                padding-top: 0;
+            }
+            &-wrap{
+                display: flex;
+                @include desktop-block{
+                    flex-wrap: wrap;
+                }
+
+            }
+            &-left{
+                flex: 0 0 780px;
+                max-width: 780px;
+                @include desktop-normal{
+                    max-width: 574px;
+                    flex: 0 0 574px;
+                }
+                @include desktop-note-big{
+                    max-width: 500px;
+                    flex: 0 0 500px;
+                } 
+                @include desktop-block{
+                    max-width: 487px;
+                    flex: 0 0 50%;
+                }
+                @include tablet{
+                    max-width: 100%;
+                    flex: 0 0 100%;
+                }
+                @include phone{
+    
+                }
+            }
+            &-img{
+                width: 100%;
+                img{
+                    object-fit: cover;
+                }
+            }
+            &-right{
+                padding-left: 100px; 
+                padding-right: 100px;
+                flex: 1;
+                @include desktop-normal{
+                  padding-left: 60px;
+                  padding-right: 84px;
+                }
+                @include desktop-note-big{
+                    padding-left: 40px;
+                    padding-right: 60px;
+                }
+               @include desktop-block{
+                padding-left: 25px;
+                padding-right: 40px;
+                }
+                @include tablet{
+                    padding-left: 0;
+                    padding-right: 0;
+                    max-width: 100%;
+                    flex: 0 0 100%;
+                }
+                @include phone{
+
+                }
+                &-wrap{
+                    @include desktop-normal{
+
+                      }
+                }
+                &-top{
+                    display: flex;
+                    justify-content: space-between;
+                    color: var(--color-grey-3);
+                    font-size: 20px;
+                    font-family: var(--font-family);
+                    @include desktop-normal{
+                        font-size: 16px;
+                      }
+                      @include desktop-note-big{
+                        font-size: 14px;
+                    }
+                   @include desktop-block{
+                        padding-top: 15px;
+                    }
+                    @include phone{
+                        font-size: 13px;
+                    }
+                    
+                }
+            }
+            &-tag{
+                padding-right: 60px;
+                @include desktop-note-big{
+                    padding-right: 40px;
+                }
+                &-time{
+                    display: flex;
+                    justify-content: flex-start;
+                }
+                &--tag{
+                    text-transform: uppercase;
+
+                }
+            }
+            &-time{
+                @include desktop-normal{
+
+                  }
+                &--times{
+                    @include desktop-normal{
+
+                      }
+                }
+            }
+            &-date{
+                @include desktop-normal{
+
+                  }
+                &--date{
+                    @include desktop-normal{
+
+                      }
+                }
+            }
+            &-title{
+                padding-top: 20px;
+                @include desktop-note-big{
+                    padding-top: 15px;
+                }
+                @include desktop-block{
+                    padding-top: 10px; 
+                }
+                @include phone{
+                    padding-top: 11px;
+                }
+                &--title{
+                    color: var(--color-grey);
+                    font-size: 44px;
+                    @include desktop-normal{
+                        font-size: 36px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 32px;
+                    }
+                    @include phone{
+                        font-size: 26px; 
+                    }
+                }
+            }
+            &-desc{
+                padding-top: 15px;
+                @include desktop-note-big{
+                    padding-top: 10px;
+                }
+                &--desc{
+                    color: var(--color-grey-2);
+                    font-size: 24px;
+                    @include desktop-normal{
+                        font-size: 20px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 16px;
+                    }
+                    @include phone{
+                        font-size: 15px; 
+                    }
+                }
+            }
+            &-link{
+                padding-top: 50px;
+                @include desktop-normal{
+                    padding-top: 40px;
+                }
+                @include desktop-note-big{
+                    padding-top: 35px;
+                }
+                &--link{
+                    color: var(--color-grey);
+                    font-family: var(--font-semibold);
+                    padding-left: 34px;
+                    font-size: 20px;
+                    position: relative;
+                    @include desktop-normal{
+                        font-size: 18px;
+                        padding-left: 30px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 15px;
+                        padding-left: 28px;
+                    }
+                    &:before{
+                        width: 24px;
+                        height: 24px;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        background-color: transparent;
+                        background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-attachment: scroll;
+                        background-size: contain;
+                        @include desktop-normal{
+                          width: 20px;
+                          height: 20px;
+                        }
+                        @include desktop-note-big{
+                          width: 18px;
+                          height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
