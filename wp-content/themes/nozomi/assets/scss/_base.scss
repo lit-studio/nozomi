@@ -325,137 +325,7 @@ h6,
   }
 }
 
-.c-article-content{
-  padding-top: 70px;
-  @include desktop-normal{
-    padding-top: 40px;
-  }
-  @include desktop-note-big{
-    padding-top: 20px;
-  }
-  @include desktop-block{
 
-  }
-  h1,h2,h3,h4,h5{
-    padding-top: 80px;
-    line-height: 120%;
-    @include desktop-note-big{
-      padding-top: 60px;
-    }
-  }
-  h1{
-    font-size: 120px;
-    @include desktop-normal{
-      font-size: 100px;
-    }
-    @include desktop-note-big{
-      font-size: 82px;
-    }
-    @include phone {
-      font-size: 46px;
-    }
-  }
-  h2{
-    font-size: 96px;
-    @include desktop-normal{
-      font-size: 60px;
-    }
-    @include desktop-note-big{
-      font-size: 46px;
-    }
-    @include phone{
-      font-size: 40px;
-    }
-  }
-  h3{
-    font-size: 60px;
-    @include desktop-normal{
-      font-size: 46px;
-    }
-    @include desktop-note-big{
-      font-size: 40px;
-    }
-    @include phone{
-      font-size: 28px;
-    }
-  }
-  h4{
-    font-size: 40px;
-    @include desktop-normal{
-      font-size: 32px;
-    }
-    @include desktop-note-big{
-      font-size: 28px;
-    }
-    @include phone{
-      font-size: 20px;
-    }
-  }
-  h5{
-    font-size: 36px;
-    @include desktop-normal{
-      font-size: 30px;
-    }
-    @include desktop-note-big{
-      font-size: 24px;
-    }
-    @include phone{
-      font-size: 18px;
-    }
-  }
-  h6{
-    font-size: 30px;
-    @include desktop-normal{
-      font-size: 24px;
-    }
-    @include desktop-note-big{
-      font-size: 18px;
-    }
-    @include phone{
-      font-size: 16px;
-    }
-  }
-
-  p{
-    padding-top: 40px;
-    font-size: 20px;
-    @include desktop-normal{
-      font-size: 18px;
-    }
-    @include phone{
-      font-size: 14px;
-    }
-  }
-  ul{
-    padding-top: 30px;
-    list-style-type: disc;
-    list-style-position: outside;
-    padding-left: 20px;
-  }
-  ol{
-    padding-top: 30px;
-    list-style-type: decimal;
-    list-style-position: outside;
-    padding-left: 20px;
-  }
-  li{
-    padding-top: 25px;
-  }
-  a{
-    color: var(--color-red);
-    text-decoration: underline;
-    font-family: var(--font-bold);
-    &:hover{
-      text-decoration: none;
-    }
-  }
-  strong{
-    font-family: var(--font-bold);
-  }
-  em{
-    font-style: italic;
-  }
-}
 
 .p-content{
   overflow: hidden;
@@ -473,4 +343,255 @@ h6,
   height: 100vh;
   background-color: var(--color-bg);
   z-index: 10000;
+}
+
+.c-article-content{
+  & > *{
+    width: 100%;
+    max-width: 830px;
+    margin: 0 auto;
+    @include desktop-normal{
+      max-width: 780px;
+    }
+    @include desktop-note-big{
+      max-width: 638px;
+    }
+  }
+  & > img{
+    max-width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    @include desktop-normal{
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+    @include desktop-note-big{
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    @include phone{
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+  }
+  h1,h2,h3,h4,h5,h6{
+    padding-top: 100px;
+    line-height: 150%;
+    font-family: var(--font-bold);
+    @include desktop-normal{
+      padding-top: 70px;
+    }
+    @include desktop-note-big{
+      padding-top: 60px;
+    }
+    @include phone{
+      padding-top: 45px;
+    }
+  }
+  h1{
+    font-size: 44px;
+    @include desktop-normal{
+      font-size: 36px;
+    }
+    @include desktop-note-big{
+      font-size: 32px;
+    }
+    @include phone{
+      font-size: 26px;
+    }
+  }
+  h2{
+    font-size: 44px;
+    @include desktop-normal{
+      font-size: 36px;
+    }
+    @include desktop-note-big{
+      font-size: 32px;
+    }
+    @include phone{
+      font-size: 26px;
+    }
+  }
+  h3{
+    font-size: 44px;
+    @include desktop-normal{
+      font-size: 36px;
+    }
+    @include desktop-note-big{
+      font-size: 32px;
+    }
+    @include phone{
+      font-size: 26px;
+    }
+  }
+  h4{
+    font-size: 32px;
+    @include desktop-normal{
+      font-size: 28px;
+    }
+    @include desktop-note-big{
+      font-size: 24px;
+    }
+    @include phone{
+      font-size: 22px;
+    }
+  }
+  h5{
+    font-size: 32px;
+    @include desktop-normal{
+      font-size: 28px;
+    }
+    @include desktop-note-big{
+      font-size: 24px;
+    }
+    @include phone{
+      font-size: 22px;
+    }
+  }
+  h6{
+    font-size: 32px;
+    @include desktop-normal{
+      font-size: 28px;
+    }
+    @include desktop-note-big{
+      font-size: 24px;
+    }
+    @include phone{
+      font-size: 22px;
+    }
+  }
+
+  p{
+    padding-top: 40px;
+    font-size: 24px;
+    line-height: 150%;
+    @include desktop-normal{
+      font-size: 20px;
+    }
+    @include desktop-note-big{
+      font-size: 16px;
+    }
+    @include desktop-block{
+      font-size: 16px;
+    }
+    @include phone{
+     font-size: 15px;
+    }
+  }
+  ul{
+    list-style-type: disc;
+    list-style-position: outside;
+    line-height: 160%;
+  }
+  ol{
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-left: 20px;
+    color: var(--color-red);
+    font-size: 24px;
+    line-height: 150%;
+    @include desktop-normal{
+      font-size: 20px;
+    }
+    @include desktop-note-big{
+      font-size: 16px;
+    }
+    @include desktop-block{
+      font-size: 16px;
+    }
+    @include phone{
+     font-size: 15px;
+    }
+    li{
+      color: var(--color-red);
+    }
+  }
+  li{
+    padding-top: 16px;
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--color-grey);
+    @include desktop-normal{
+      font-size: 20px;
+    }
+    @include desktop-note-big{
+      font-size: 16px;
+    }
+    @include desktop-block{
+      font-size: 16px;
+    }
+    @include phone{
+     font-size: 15px;
+    }
+    &:list-style-type{
+      padding-top: 0;
+    }
+  }
+  a{
+    color: var(--color-red);
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  strong{
+    font-weight: var(--font-w-bold);
+  }
+  em{
+    font-style: italic;
+  }
+
+  blockquote{
+    color: var(--color-red);
+    font-size: 28px;
+    line-height: 150%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 30px 50px;
+    position: relative;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 56px;
+      height: 38px;
+      content: '';
+      background-color: transparent;
+      background-image: url('#{$assetsPath}/icons/icon-blockquote-left.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: contain;
+    }
+    &:after{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 56px;
+      height: 38px;
+      content: '';
+      background-color: transparent;
+      background-image: url('#{$assetsPath}/icons/icon-blockquote-right.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: contain;
+    }
+    @include desktop-normal{
+      font-size: 28px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    @include desktop-note-big{
+      font-size: 24px;
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+    @include phone{
+     font-size: 22px;
+     margin-top: 40px;
+     margin-bottom: 40px; 
+     padding: 15px;
+    }
+  }
 }

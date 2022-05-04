@@ -21,10 +21,10 @@ get_header();
                         </div>
                         <div class="item-date">
                             <div class="item-date-wrap">
-                                <div class="item-date-date">
+                                <div class="item-date--date">
                                     Dec 1, 2021
                                 </div>
-                                <div class="item-date-read">
+                                <div class="item-date--read">
                                     9 min read
                                 </div>
                             </div>
@@ -36,11 +36,9 @@ get_header();
                 <div class="blog-top">
                     <div class="blog-top-wrap">
                         <div class="blog-top-nav blog-top-nav-left">
-                            <a class="blog-top-link" href="/">back to blog</a>
+                            <a class="blog-top-nav-link" href="/">back to blog</a>
                         </div>
-                        <div class="blog-top-nav blog-top-nav-right">
-                            <a class="blog-top-link" href="/">next article</a>
-                        </div>
+
                         <div class="blog-top-center">
                             <div class="blog-top-autor">
                                 <div class="item-img">
@@ -48,11 +46,26 @@ get_header();
                                             src="<?php echo get_template_directory_uri() ?>/assets/images/blog/blog-autor.jpg"
                                             alt=""/>   
                                 </div>
+                                <div class="item-desc">
+                                    <div class="item-name">
+                                        <div class="item-name--name">
+                                            Margo Rogatsevich
+                                        </div>
+                                    </div>
+                                    <div class="item-status">
+                                        <div class="item-status--status">
+                                            Art Director
+                                        </div>
+                                    </div>  
+                                </div> 
                             </div>
                             <div class="blog-top-share">
     
                             </div>  
                         </div> 
+                        <div class="blog-top-nav blog-top-nav-right">
+                            <a class="blog-top-nav-link" href="/">next article</a>
+                        </div>
                     </div>
                 </div>
                 <div class="blog-img">
@@ -74,7 +87,7 @@ get_header();
                         <div class="c-article-content">
                             <p>There is no secret that the mobile app industry is now booming, putting other sectors aside. According to Statista, there are over 2 million apps on App Store as of the first quarter of 2021 compared to just 500 apps in 2008. Each year it’s becoming harder and harder to compete in the mobile industry. So, how to stand out from the ever-expanding number of similar apps? Product and UI/UX design plays a huge role here.</p>
                             <p>We highlighted the key UX principals that help to combat the competition in one of the most complicated and diverse industries — Health & Fitness. Design here is not about simple assembling and editing, it is all about value, help, simplifying and making the world a better place. More than that, design in H&F is about empathy and the connection between humans and apps. Before, most healthcare apps were poorly designed, resulting in a bad user experience and possibly making life seem even more complicated. It’s great to see the major change in the industry now, with people attaching more importance to design. As a result, more and more H&F apps started to look aesthetic and change people’s lives for the better.</p>
-                            <blockquote>The aesthetics of your product speaks out for you just as much as the functionality, because if the functionality is no longer unique, guess what steps in? The beauty.</<blockquote>
+                            <blockquote>The aesthetics of your product speaks out for you just as much as the functionality, because if the functionality is no longer unique, guess what steps in? The beauty.</blockquote>
                             <p>So, here are 3 main UX principals— Engagement, Trust and Emotions. We have identified them based on the analysis of the health and wellness market, as well as the applications of our partners in this industry. Today I’d like to dwell on the ways of implementing these principals. They could be used not only in the H&F sector but also in mobile applications in general.</p>    
                             <h3>Engagement</h3>
                             <p>Getting people to download your mobile app is one thing, keeping those people engaged is another thing, engaging users in the long run — is almost impossible. But there is a trend that spans across industries and motivates users to take meaningful actions, again and again.</p>
@@ -102,23 +115,39 @@ get_header();
                             <h3>Trust</h3>
                             <p>Trust is a fundamental element in the healthcare industry. If patients do not trust their clinicians, they will not be willing to follow their diagnoses and recommended treatments. The same thing with apps in the H&F industry. Brands compete to gain trust among the users and offer the one-off solution to cater to their needs.</p> 
                             <p>Here’re the ways that help H&F apps build trust among their users:</p> 
-                            <ul>
-                                <ol>
+                            <ol>
+                                <li>
                                 Content personalisation
-                                </ol>
-                                <ol>
+                                </li>
+                                <li>
                                 Social proofs
-                                </ol>
-                                <ol>
+                                </li>
+                                <li>
                                 Content personalisation
-                                </ol>
-                                <ol>
+                                </li>
+                                <li>
                                 Social proofs
-                                </ol>                
-                            </ul>
+                                </li>                
+                            </ol>
                             <h4>
                             1. Content personalisation
                             </h4>
+                            <p> I think you already know what personalisation means. The simplest example is your name included in targeted email newsletters sent by brands. Another example is your name highlighted on the home screen — something like “Good morning, Nella” — greeting you every time you launch the app once you have indicated your personal details when signing up. These are very simple examples of personalisation, but even with them, brands can increase their conversion rate and trust dramatically.</p> 
+                            <p> One of the best examples of how effective personalisation might be is 8fit, a popular health and fitness app that has raised $7 million in Series A funding thanks to the tailored workouts and meal plans they offer. What kind of personalisation they use?</p> 
+                            <p><strong>Personalised workout plans.</strong></p>
+                            <p>The first thing the 8fit app does to make your program personalised is asking you a bunch of questions regarding your goals, gender, age, height, weight, current body fat, targeted body fat and more. And after you’re all set — it suggests the best workout program based on your answers.</p>
+                            <p><strong>Personalised nutrition plans.</strong></p>  
+                            <p>Apart from casual questions like what’s your diet, they also suggest selecting ingredients you want to leave out, choosing the recipe’s complexity and meals variety.</p>
+                            <h4>2. Social proofs</h4>
+                            <p>The concept of social proof is closely related to the concept of trust, which, as we have already found out, is a key term in the healthcare industry. Something new always causes distrust. Before buying something new, we all often read reviews and look for confirmation that people liked it. To gain user trust, apps are trying to embed social proofs showing how helpful the app was to others or how certified were the nutritionists who tailored the meal plan.</p>
+                            <blockquote>
+                            The dominant social force that drives our thinking and our actions is the unconscious search and need for social proof.
+                            </blockquote>
+                            <p>There are 2 types of proofs that can be used in H&F apps:</p>
+                            <p><strong>1.Positive stories of users who’re using this app.</strong></p>
+                            <p>Companies usually make blocks with positive stories from users on the onboarding or paywall sections, showing how the app solved the exact problem for other users.</p>
+                            <p><strong>2. Lists of experts, who created the content. </strong></p>
+                            <p>This type of social proof is widely used in Mental Health, Nutrition and Fitness apps to prove that content was created by certified psychologists, nutritionists or fitness coaches.</p>
                         </div>
                     </div>
                 </div>
