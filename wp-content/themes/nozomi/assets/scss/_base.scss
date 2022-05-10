@@ -106,13 +106,14 @@ p {
 }
 
 .site {
-  display: flex;
+  // display: flex;
   min-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
+  // flex-direction: column;
+  // justify-content: space-between;
   position: relative;
   &-main{
     width: 100%;
+    min-height: 80vh;
   }
 
 }

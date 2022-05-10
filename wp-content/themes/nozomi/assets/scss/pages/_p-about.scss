@@ -1,85 +1,1041 @@
 .p-about {
+    &-content{
 
-    .about{
-        &-text{
-            &-wrap{
-                max-width: 760px;
-                margin: 0 auto;
+    }
+    &-wrap{
+
+    }
+    .index{
+
+        &-wrap{
+            display: flex;
+            justify-content: center;
+            padding-top: pxVw(410, 2560);
+            padding-bottom: pxVw(124, 2560);
+            position: relative;
+            z-index: 1;
+            @include desktop-normal{
+                padding-top: pxVw(325, 1920);
+                padding-bottom: pxVw(173, 1920);
             }
-            &-block{
-
+            @include desktop-note-big{
+                padding-top: pxVw(240, 1440); 
+                padding-bottom: pxVw(134, 1440);
+            }
+            @include desktop-block{
+                padding-top: pxVw(240, 1024);
+                padding-bottom: pxVw(140, 1024);
+            }
+            @include tablet{
+                padding-top: pxVw(300, 768);
+                padding-bottom: pxVw(215, 768);
+            }
+            @include phone{
+                padding-top: pxVw(200, 375);
+                padding-bottom: pxVw(106, 375);
             }
         }
-        &-img{
-            &-big{
-                &-wrap{
-
+        &-about{
+            background-color: transparent;
+            background-image: url('#{$assetsPath}/images/about/about-values.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: cover;
+            position: relative;
+            &:after{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                content: '';
+                height: pxVw(288,2560); 
+                background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(242, 240, 237, 1) 100%); 
+                background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%); 
+                background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#F2F0ED',GradientType=0 );
+                @include desktop-normal{
+                  height: pxVw(288,1920); 
                 }
-                &-row{
-
+                @include desktop-note-big{
+                  height: pxVw(160,1440); 
                 }
-                &-col{
-                    padding-bottom: 30px;
-                    .item{
-                        &-img{
-                            width: 100%;
-                            height: 800px;
-                            @include tablet{
-                                height: 600px;
-                            }
-                            @include phone{
-                                height: 480px;
-                            }
+                @include desktop-block{
+                  height: pxVw(160,1024); 
+ 
+                  height: pxVw(160,768);
+                }
+                @include phone{
+                  height: pxVw(160,375); 
+                }
+                
+              }
+            .item{
+                max-width: 1300px;
+                padding-left: 25px;
+                padding-right: 25px;
+                @include desktop-normal{
+                    max-width: 950px;
+                  }
+                @include desktop-note-big{
+                    max-width: 810px;
+                }
+                @include tablet{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    max-width: 678px;
+                }
+                @include phone{
+                    max-width: 375px;
+                }
+                &-title{
+                    text-align: center;
+                    &--title{
+                        font-family: var(--font-bold);
+                        font-size: 98px;
+                        line-height: 120%;
+                        @include desktop-normal{
+                            font-size: 76px;
                         }
-                    }
-                    img{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        @include desktop-note-big{
+                            font-size: 62px;
+                        }
+                        @include phone{
+                            font-size: 40px;
+                        }
                     }
                 }
             }
-            &-little{
-                padding-top: 80px;
-                padding-bottom: 80px;
-                &-wrap{
+        }
+    }
+    .infographic{
+        background-color: var(--color-bg);
+        &-top{
+            &-img{
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
 
+        &-bottom{
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow: hidden;
+            @include phone{
+                flex-wrap: wrap;  
+            }
+            .item-img{
+                width: 100%;
+                max-width: 680px;
+                @include desktop-normal{
+                    max-width: 510px;
                 }
-                &-row{
-                   display: flex;
-                   justify-content: center;
-                   flex-wrap: wrap; 
-                   margin: 0 -20px; 
-                   @include tablet{
-                       margin: 0;
-                   }  
+                @include desktop-note-big{
+                    max-width: 382px;
                 }
-                &-col{
-                    flex: 0 0 33.33%;
-                    max-width: 33.33%;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    padding-bottom: 30px;
-                    @include phone{
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        padding-left: 0;
-                        padding-right: 0;
+                @include desktop-block{
+                    max-width: 220px;
+                }
+                @include tablet{
+    
+                }
+                @include phone{
+                    max-width: 160x;
+                }
+                img{
+                    width: 100%;
+                    @include tablet{
+                        transform-origin: right;
+                        transform: scale(1.4);
                     }
-                    .item{
-                        &-img{
-                            width: 100%;
-                            height: 360px;
+                    @include phone{
+                        transform: scale(1);
+                    }
+                }
+            }
+            &-left{
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+                display: flex;
+                justify-content: flex-start;
+                @include desktop-block{
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                } 
+                @include tablet{
+                    flex: 0 0 160px;
+                    max-width: 160px;
+                }
+                @include phone{
+                    flex: 0 0 50%;
+                    max-width:  50%;
+                    order: -1;
+                }
+            }
+            &-right{
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+                display: flex;
+                justify-content: flex-end;
+                @include desktop-block{
+                    flex: 0 0 25%;
+                    max-width: 25%;
+                }
+                @include tablet{
+                    flex: 0 0 160px;
+                    max-width: 160px;
+                }
+                @include phone{
+                    flex: 0 0 50%;
+                    max-width:  50%;
+                    order: -1;
+                }
+                .item-img{
+                    img{
+                        @include tablet{
+                            transform-origin: left;
+                        }
+                        
+                    }
+                }
+
+            }
+
+        }
+        &-wrap{
+            max-width: 760px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0 auto;
+            flex: 1;
+            @include desktop-normal{
+                max-width: 640px;
+            }
+            @include desktop-note-big{
+                max-width: 580px;
+            }
+            @include desktop-block{
+                max-width: 540px;
+            }
+            @include tablet{
+                max-width: 420px;
+                flex: 0 0 60%;
+            }
+            @include phone {
+                max-width: 100%;  
+                flex: 0 0 100%;
+                order: 1;
+            }
+        }
+        .item{
+            &-desc{
+                padding-top: 35px;
+
+
+                max-width: pxVw(1200,2560);
+                margin: 0 auto;
+                @include desktop-normal{
+                    max-width: pxVw(980,1920);
+            
+                }
+                @include desktop-note-big{
+            
+                    max-width: pxVw(880,1440);
+            
+                }
+                @include desktop-block{
+                    max-width: 100%;
+            
+                }
+                @include tablet{
+            
+                }
+                @include phone{
+            
+                }
+                &--desc{
+                    text-align: left;
+                    p{
+                        padding-top: 30px;
+                        font-size: 32px;
+                        line-height: 150%;
+                        color:var(--color-grey-2);
+                        @include desktop-normal{
+                            font-size: 28px;
+                        }
+                        @include desktop-note-big{
+                            font-size: 24px;
+    
+                        }
+                        @include desktop-block{
+                
+                        }
+                        @include tablet{
+                
+                        }
+                        @include phone{
+                        font-size: 15px;
+                        }
+
+                        &:first-of-type{
+                            padding-top: 0;
                         }
                     }
-                    img{
+                }
+            }
+        }
+    }
+    .about{
+        background-color: var(--color-bg);
+        padding-top: 80px;
+        position: relatives;
+        // &:after{
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 100%;
+        //     content: '';
+        //     height: pxVw(288,2560); 
+        //     background: -moz-linear-gradient(top, rgba(242, 240, 237, 1) 100%, rgba(229,229,229,0) 1%, rgba(229,229,229,0) 0%); 
+        //     background: -webkit-linear-gradient(top, rgba(242, 240, 237, 1) 100%, rgba(229,229,229,0) 1%, rgba(229,229,229,0) 0%); 
+        //     background: linear-gradient(to bottom,  rgba(242, 240, 237, 1) 100%,rgba(229,229,229,0) 1%,rgba(229,229,229,0) 0%);
+        //     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#F2F0ED',GradientType=0 );
+        //     @include desktop-normal{
+        //       height: pxVw(288,1920); 
+        //     }
+        //     @include desktop-note-big{
+        //       height: pxVw(160,1440); 
+        //     }
+        //     @include desktop-block{
+        //       height: pxVw(160,1024); 
+
+        //       height: pxVw(160,768);
+        //     }
+        //     @include phone{
+        //       height: pxVw(160,375); 
+        //     }
+            
+        //   }
+        &-top{
+            &-wrap{
+                max-width: 1320px;
+                margin: 0 auto;
+                @include desktop-normal{
+                    max-width: 1148px;
+                }
+                @include desktop-note-big{
+                    max-width: 1000px;
+                }
+                @include desktop-block{
+                  padding-left: 65px;
+                  padding-right: 65px;
+                }
+                @include phone{
+                  padding-left: 20px;
+                  padding-right: 20px;
+                }
+            }
+        }
+
+        &-cursive{
+        text-align: center;
+        &--cursive{
+            font-family: var(--font-gloria);
+            font-size: 28px;
+            line-height: 1.2;
+            color:var(--color-red);
+            @include desktop-normal{
+            font-size: 24px;
+            }
+            @include desktop-note-big{
+            font-size: 20px;
+            }
+            @include desktop-block{
+    
+            }
+            @include tablet{
+    
+            }
+            @include phone{
+            font-size: 16px;
+            }
+        }
+        }
+        &-title{
+        text-align: center;
+        padding-top: 35px;
+        &--title{
+            font-size: 64px;
+            line-height: 125%;
+            font-family: var(--font-bold);
+            color:var(--color-grey);
+            @include desktop-normal{
+            font-size: 54px;
+            }
+            @include desktop-note-big{
+            font-size: 48px;
+            }
+            @include desktop-block{
+    
+            }
+            @include tablet{
+    
+            }
+            @include phone{
+            font-size: 32px;
+            }
+        }
+        }
+        &-desc{
+        padding-top: 35px;
+        text-align: center;
+        max-width: pxVw(1200,2560);
+        margin: 0 auto;
+        @include desktop-normal{
+            max-width: pxVw(980,1920);
+    
+        }
+        @include desktop-note-big{
+    
+            max-width: pxVw(880,1440);
+    
+        }
+        @include desktop-block{
+            max-width: 100%;
+    
+        }
+        @include tablet{
+    
+        }
+        @include phone{
+    
+        }
+        &--desc{
+            text-align: center;
+            font-size: 24px;
+            line-height: 150%;
+            color:var(--color-grey-2);
+            @include desktop-normal{
+            font-size: 20px;
+            }
+            @include desktop-note-big{
+            font-size: 16px;
+            }
+            @include desktop-block{
+    
+            }
+            @include tablet{
+    
+            }
+            @include phone{
+            font-size: 15px;
+            }
+        }
+        }
+        &-gallery{
+            padding-top: 30px;
+            @include desktop-normal{
+                padding-top: 100px;
+            }
+            @include desktop-note-big{
+                padding-top: 80px;
+            }
+            @include desktop-block{
+
+            }
+            @include phone{
+                padding-top: 50px;
+            }
+            &-wrap{
+                max-width: 100%;
+                margin: 0 auto;
+                padding-left: 100px;
+                padding-right: 100px;
+                @include desktop-normal{
+                    padding-left: 60px;
+                    padding-right: 60px;
+                }
+                @include desktop-note-big{
+                    padding-left: 45px;
+                    padding-right: 45px;
+                }
+                @include desktop-block{
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+                @include phone{
+                    padding-left: 8px;
+                    padding-right: 8px;
+                }
+            }
+            &-list{
+                display: flex;
+                margin-left: -6px;
+                margin-right: -6px;
+                flex-wrap: wrap;
+                @include desktop-note-big{
+                    margin-left: -5px;
+                    margin-right: -5px;
+                } 
+                @include tablet{
+                    margin-left: -4px;
+                    margin-right: -4px;
+                }
+                @include phone{
+                    margin: 0;
+                }
+            }
+            &-col{
+                padding: 6px;
+                flex: 0 0 25%;
+                max-width: 25%;
+                @include desktop-note-big{
+                    padding: 5px;
+                }
+                @include tablet{
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding: 4px;
+                  }
+                @include phone{
+                    padding: 2px;
+                }
+                .item{
+                    &-img{
+                        height: auto;
                         width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                        overflow: hidden;
+                        // width: pxVw(581,2560);
+                        // height: pxVw(581,2560);
+                        // overflow: hidden;
+                        // @include desktop-normal{
+                        //     width: pxVw(441,1920);
+                        //     height: pxVw(441,1920);
+    
+                        //   }
+                        //   @include desktop-note-big{
+                        //     width: pxVw(330,1440);
+                        //     height: pxVw(330,1440);
+    
+                        //   }
+                        //   @include desktop-block{
+                        //     width: pxVw(236,1024);
+                        //     height: pxVw(236 ,1024);
+                        //   }
+                        //   @include tablet{
+                        //     width: pxVw(355,768);
+                        //     height: pxVw(355,768);
+                        //   }
+                        //   @include phone{
+                        //     width: pxVw(175,375);
+                        //     height: pxVw(175,375);
+                        //   }
+                        img{
+                            // width: 100%;
+                            // height: 100%;
+                            // object-fit: cover;
+                            // @include desktop-block{
+                            //     object-fit: contain;
+                            //     he
+                            // }
+                        }
                     }
                 }
             }
         }
     }
 
+    .values{
+        // background: linear-gradient(180deg, rgba(248, 246, 243, 0) 0%, #F8F6F3 30.14%);
+        background-color: transparent;
+        background-image: url('#{$assetsPath}/images/about/about-values.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+        padding-top: 220px;
+        padding-bottom: 100px;
+        position: relative;
+        @include desktop-normal{
+            padding-top: 180px;
+        }
+        @include desktop-note-big{
+            padding-top: 160px;
+        }
+        @include desktop-block{
+            padding-bottom: 80px;
+        }
+        @include phone{
+            padding-top: 140px;
+        }
+        &:after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            content: '';
+            height: pxVw(288,2560); 
+            background: -moz-linear-gradient(top,  rgba(242,240,237,1) 0%, rgba(125,185,232,0) 100%); 
+            background: -webkit-linear-gradient(top,  rgba(242,240,237,1) 0%,rgba(125,185,232,0) 100%); 
+            background: linear-gradient(to bottom,  rgba(242,240,237,1) 0%,rgba(125,185,232,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f0ed', endColorstr='#007db9e8',GradientType=0 );
+            @include desktop-normal{
+              height: pxVw(288,1920); 
+            }
+            @include desktop-note-big{
+              height: pxVw(160,1440); 
+            }
+            @include desktop-block{
+              height: pxVw(160,1024); 
+
+              height: pxVw(160,768);
+            }
+            @include phone{
+              height: pxVw(160,375); 
+            }
+            
+          }
+        &-wrap{
+            margin: 0 auto;
+            max-width: 1324px;
+            position: relative;
+            z-index: 1;
+            @include desktop-normal{
+                max-width: 1148px; 
+            }
+            @include desktop-note-big{
+                max-width: 1000px; 
+            }
+            @include desktop-block{
+                padding-left: 35px;
+                padding-right: 35px;
+                max-width: 100%; 
+            } 
+            @include tablet{
+
+            }
+            @include phone{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        &-list{
+            margin: 0 -61px;
+            flex-wrap: wrap; 
+            display: flex;
+            @include desktop-normal{
+                margin: 0 -74px;
+            }
+            @include desktop-note-big{
+                // margin: 0 -60px;
+                margin: 0;
+            }
+            @include desktop-block{
+                margin: 0;
+            } 
+            @include tablet{
+
+            }
+            @include phone{
+
+            }
+        }
+        &-col{
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-left: 61px;
+            padding-right: 61px;
+            padding-bottom: 120px;
+            @include desktop-normal{
+                padding-bottom: 100px;
+                padding-left: 74px;
+                padding-right: 74px;
+            }
+            @include desktop-note-big{
+                padding-left: 60px;
+                padding-right: 60px; 
+                padding-bottom: 80px;
+            }
+            @include desktop-block{
+                padding-left: 35px;
+                padding-right: 35px;
+            } 
+            @include tablet{
+   
+            } 
+            @include phone{
+                padding-bottom: 50px;
+                padding-left: 0;
+                padding-right: 0;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            &:last-of-type{
+                padding-bottom: 0;
+            }
+            .item{
+                max-width: 600px;
+                @include desktop-normal{
+                    max-width: 500px;
+                }
+                @include desktop-note-big{
+                    max-width: 440px;
+                }
+                @include desktop-block{
+                    max-width: 400px;
+                }
+                @include tablet{
+                    max-width: 270px;
+                }
+                @include phone{
+                    max-width: 100%
+                }
+                &-cursive{
+                    &--cursive{
+                        font-family: var(--font-gloria);
+                        font-size: 28px;
+                        line-height: 1.2;
+                        color:var(--color-red);
+                        @include desktop-normal{
+                        font-size: 24px;
+                        }
+                        @include desktop-note-big{
+                        font-size: 20px;
+                        }
+                        @include desktop-block{
+                
+                        }
+                        @include tablet{
+                
+                        }
+                        @include phone{
+                        font-size: 16px;
+                        }
+                    }
+                }
+                &-img{
+                    max-width: 160px;
+                    height: 132px;
+                    width: 100%;
+                    @include desktop-normal{
+    
+                    }
+                    @include desktop-note-big{
+                        max-width: 134px;
+                        height: 110px;
+                    }
+                     @include phone{
+                        max-width: 160px;
+                        height: 132px;
+                    }
+                    img{
+                        object-fit: contain;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }  
+                &-title{
+                    padding-top: 45px;
+                    @include desktop-normal{
+                        padding-top: 40px;
+                    }
+                    @include desktop-note-big{
+                        padding-top: 20px;
+                    }
+                     @include phone{
+                        padding-top: 10px;
+                    }
+                    &--title{
+                        font-size: 44px;
+                        line-height: 130%;
+                        color:var(--color-grey);
+                        @include desktop-normal{
+                            font-size: 36px;
+                        }
+                        @include desktop-note-big{
+                            font-size: 32px;
+                        }
+                        @include desktop-block{
+                
+                        }
+                        @include tablet{
+                
+                        }
+                        @include phone{
+                            font-size: 26px;
+                        }
+                    }
+                }
+                &-desc{
+                    padding-top: 20px;
+                    @include phone{
+                        padding-top: 10px;                
+                    }
+                &--desc{
+                    font-size: 20px;
+                    line-height: 150%;
+                    color:var(--color-grey-2);
+                    @include desktop-normal{
+                    font-size: 16px;
+                    }
+                    @include desktop-note-big{
+                    font-size: 14px;
+                    }
+                    @include desktop-block{
+            
+                    }
+                    @include tablet{
+            
+                    }
+                    @include phone{
+                    }
+                }
+                }
+            }
+            &-title{
+                @include tablet{
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+                .item{
+                    @include tablet{
+                        max-width: 100%;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
+    .positions{
+        padding-top: 220px;
+        padding-bottom: 120px;
+        @include desktop-normal{
+            padding-top: 180px;
+            padding-bottom: 80px;
+        } 
+        @include desktop-note-big{
+            padding-top: 160px;
+        }
+        @include phone{
+            padding-top: 145px;
+            padding-bottom: 60px;
+        }
+        &-wrap{
+            max-width: 1800px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            @include desktop-normal{
+                max-width: 1460px;
+            }
+            @include desktop-note-big{
+                max-width: 1200px;
+            }
+            @include desktop-block{
+                padding-left: 25px;
+                padding-right: 25px;
+                max-width: 100%;
+            }
+        }
+        &-title{
+
+        }
+        &-cursive{
+            text-align: center;
+            &--cursive{
+                font-family: var(--font-gloria);
+                font-size: 28px;
+                line-height: 1.2;
+                color:var(--color-red);
+                text-align: center;
+                @include desktop-normal{
+                font-size: 24px;
+                }
+                @include desktop-note-big{
+                font-size: 20px;
+                }
+                @include desktop-block{
+        
+                }
+                @include tablet{
+        
+                }
+                @include phone{
+                font-size: 16px;
+                }
+            }
+            }
+        &-list{
+            padding-top: 50px;
+            @include desktop-normal{
+                padding-top: 40px;
+            }
+            @include desktop-note-big{
+                padding-top: 35px;
+            }
+            @include phone{
+                padding-top: 25px; 
+            }
+            .item{
+                border-top: 1px solid var(--color-grey-5);
+                padding-top: 50px;
+                padding-bottom: 50px;
+                @include desktop-normal{
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                }
+                @include desktop-note-big{
+                    padding-top: 35px;
+                    padding-bottom: 35px;
+                }
+                @include phone{
+                    padding-top: 25px; 
+                    padding-bottom: 25px;
+                }
+                &:last-of-type{
+                    border-bottom: 1px solid var(--color-grey-5);
+                }
+                &-wrap{
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-left: 45px;
+                    padding-right: 45px; 
+                    max-width: 1324px;
+                    margin: 0 auto; 
+                    @include desktop-normal{
+                        max-width: 1148px;
+                    }
+                    @include desktop-note-big{
+                        max-width: 1000px
+                    }
+                    @include desktop-block{
+                        max-width: 894px
+                    }
+                    @include tablet{
+                        max-width: 100%;
+                    }
+                    @include phone{
+                        padding-left: 30px;
+                        padding-right: 30px; 
+                        flex-wrap: wrap;
+                    }
+                }
+                &-left{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    @include phone{
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        justify-content: space-between;
+                    }
+                }
+                &-title{
+                    &--title{
+                        font-size: 44px;
+                        line-height: 130%;
+                        color:var(--color-grey);
+                        @include desktop-normal{
+                        font-size: 36px;
+                        }
+                        @include desktop-note-big{
+                        font-size: 32px;
+                        }
+                        @include desktop-block{
+                
+                        }
+                        @include tablet{
+                
+                        }
+                        @include phone{
+                            font-size: 26px;
+                        }
+                    }
+                }
+                &-location{
+                    padding-left: 23px;
+                    @include desktop-note-big{
+                        padding-left: 20px;
+                     }
+                    &--location{
+                        font-size: 24px;
+                        line-height: 150%;
+                        color:var(--color-grey-4);
+                        @include desktop-normal{
+                        font-size: 20px;
+                        }
+                        @include desktop-note-big{
+                        font-size: 16px;
+                        }
+                        @include desktop-block{
+                
+                        }
+                        @include tablet{
+                
+                        }
+                        @include phone{
+                        font-size: 15px;
+                        }
+                    }
+                }
+                &-link{
+                    @include phone{
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding-top: 10px;
+                    }
+                    &--link{
+                        color: var(--color-grey);
+                        font-family: var(--font-semibold);
+                        padding-left: 34px;
+                        font-size: 20px;
+                        position: relative;
+                          @include desktop-normal{
+                            font-size: 18px;
+                            padding-left: 30px;
+                        }
+                        @include desktop-note-big{
+                            font-size: 15px;
+                            padding-left: 28px;
+                        }
+                        &:hover{
+                            color:var(--color-red);
+                        }
+                        &:before{
+                            width: 24px;
+                            height: 24px;
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            background-color: transparent;
+                            background-image: url('#{$assetsPath}/icons/icon-link-star.svg');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-attachment: scroll;
+                            background-size: contain;
+                            @include desktop-normal{
+                              width: 20px;
+                              height: 20px;
+                            }
+                            @include desktop-note-big{
+                              width: 18px;
+                              height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 }

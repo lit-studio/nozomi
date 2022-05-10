@@ -1,7 +1,7 @@
 .c-footer {
   background-color: var(--color-grey);
   position: relative;
-  padding-bottom: 24px;
+  // padding-bottom: 24px;
   &-logo{
     &-item{
       width: 100%;
@@ -21,6 +21,7 @@
     }
   }
   &-top{
+    background-color: var(--color-grey);
     padding-top: 120px;
     padding-bottom: 60px;
     @include desktop-normal{
@@ -124,9 +125,10 @@
 
   }
   &-middle{
-    padding-top: 60px;
+    background-color: var(--color-grey);
+    padding-top: 80px;
     @include desktop-normal{
-      padding-top: 40px;
+      padding-top: 50px;
     }
     &-wrap{
       display: flex;
@@ -191,6 +193,8 @@
     }
   }
   &-bottom{
+    background-color: var(--color-grey);
+    padding-bottom: 24px;
     padding-top: 100px;
     @include desktop-normal{
       padding-top: 85px;
@@ -429,5 +433,171 @@
       }
     }
 
+  }
+}
+.join{
+  padding-top: 100px;
+  &-bg{
+    background-color: var(--color-beage);
+    padding-top: 120px;
+    padding-bottom: 140px;
+    @include desktop-normal{
+      padding-top: 100px;
+      padding-bottom: 120px;
+    }
+    @include desktop-note-big{
+
+    } 
+    @include desktop-block{
+
+    }
+
+    @include tablet{
+      // padding-top: 160px;
+      padding-top: 0;
+      padding-bottom: 80px;
+    }
+    @include phone{
+      // padding-top: 140px;
+      padding-bottom: 56px;
+    }
+  }
+  &-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 2000px;
+    margin: 0 auto;
+    position: relative;
+    @include desktop-normal{
+      max-width: 1694px;
+    }
+    @include desktop-note-big{
+      max-width: 1296px;
+    }
+    @include desktop-block{
+      padding-left: 53px;
+      padding-right: 53px;
+      // max-width: 918px;
+      max-width: 100%;
+
+    }
+
+    @include tablet{
+      flex-wrap: wrap;
+      padding-left: 65px;
+      padding-right: 65px;
+    }
+
+    @include phone{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &-item{
+    padding-left: pxVw(335,2560);
+    padding-right: 20px;
+    @include desktop-normal{
+      padding-left: pxVw(274,1920);
+    }
+    @include desktop-note-big{
+      padding-left: pxVw(148,1440);
+    }
+    @include desktop-block{
+      padding-left: pxVw(12,1024);
+    }
+    @include tablet{
+      padding-left: 0;
+      order: 1;
+      padding-right: 0;
+    }
+    .item{
+      &-desc{
+        max-width: 740px;
+        @include desktop-normal{
+
+        }
+        @include desktop-note-big{
+          max-width: 640px;
+        }
+        @include desktop-block{
+          max-width: 527px;
+        }
+        @include tablet{
+          max-width: 100%;
+        }
+        @include phone{
+
+        }
+        &--desc{
+          color: var(--color-grey);
+          line-height: 130%;
+          font-size: 36px;
+          @include desktop-note-big{
+            font-size: 32px;
+          }
+          @include phone{
+            font-size: 26px;
+          }
+        }
+        a{
+          color: var(--color-red);
+        }
+      }
+
+
+    }
+
+  }
+  &-svg{
+    flex: 1;
+    @include tablet{
+      flex: 0 0 100%;
+      max-width: 100%;
+      height: pxVw(160,768);
+    }
+    @include phone{
+      height: pxVw(140,375);
+    }
+    .item{
+      &-img{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: pxVw(425,2560);
+        height: pxVw(427,2560);
+        transform: translate(0,- pxVw(220,2560));
+        @include desktop-normal{
+          width: pxVw(425,1920);
+          height: pxVw(427,1920);
+          transform: translate(0,- pxVw(220,1920));
+        }
+        @include desktop-note-big{
+          width: pxVw(362,1440);
+          height: pxVw(364,1440);
+          transform: translate(0,- pxVw(180,1440)); 
+        }
+        @include desktop-block{
+          width: pxVw(290,1024);
+          height: pxVw(292,1024);
+          transform: translate(0,- pxVw(180,1024)); 
+        }
+        @include tablet{
+          width: pxVw(235,768);
+          height: pxVw(237,768);
+          transform: translate(- pxVw(53,768),- pxVw(80,768)); 
+          // position: relative;
+        }
+        @include phone{
+          width: pxVw(157,375);
+          height: pxVw(158,375);
+          transform: translate(- pxVw(43,375),- pxVw(50,375)); 
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
   }
 }
