@@ -28,27 +28,30 @@ get_header();
                                 <div class="item">
                                     <div class="item-wrap">
                                         <div class="item-img">
-                                            <img class="img"
-                                                src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg"
-                                                alt=""/>                                              
+                                            <picture class="picture">
+                                                <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01@mobile.jpg" media="(max-width: 768px)">
+                                                <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg">
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="item-wrap">
                                         <div class="item-img">
-                                            <img class="img"
-                                                src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg"
-                                                alt=""/>                                              
+                                            <picture class="picture">
+                                                <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02@mobile.jpg" media="(max-width: 768px)">
+                                                <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg">
+                                            </picture>                                            
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="item-wrap">
                                         <div class="item-img">
-                                            <img class="img"
-                                                src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03.jpg"
-                                                alt=""/>                                              
+                                            <picture class="picture">
+                                                    <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03@mobile.jpg" media="(max-width: 768px)">
+                                                    <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03.jpg">
+                                                </picture>                                             
                                         </div>
                                     </div>
                                 </div>
