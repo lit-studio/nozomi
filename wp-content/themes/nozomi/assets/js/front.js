@@ -9,6 +9,7 @@ import page from "./pages/p-page";
 import about from "./pages/p-about";
 import blog from "./pages/p-blog";
 import singleBlog from "./pages/p-single-blog";
+import portfolio from "./pages/p-portfolio";
 
 (function ($) {
 
@@ -20,5 +21,7 @@ import singleBlog from "./pages/p-single-blog";
   if (window.nozomiData.page === 'about') about();
   if (window.nozomiData.page === 'blog') blog();
   if (window.nozomiData.page === 'single-blog') singleBlog();
+  if (window.nozomiData.page === 'portfolio') portfolio();
+
 }(jQuery))
 
