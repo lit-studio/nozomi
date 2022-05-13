@@ -191,7 +191,7 @@ get_header();
                         if ($button_link_block_2 || $button_text_block_2) { ?>
                             <div class="about-btns">
                                 <div class="about-btns-btn">
-                                    <a href="<?php echo $button_link_block_2; ?>" class="btn  btn-about--js"
+                                    <a href="/" class="btn  btn-about--js"
                                     >
                                     </a>
                                 </div>
