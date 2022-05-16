@@ -376,3 +376,9 @@ function my_acf_admin_head()
 }
 
 add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+// Remove tags support from posts
+function myprefix_unregister_tags() {
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action('init', 'myprefix_unregister_tags');
