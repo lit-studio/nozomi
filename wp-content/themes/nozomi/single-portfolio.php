@@ -1,7 +1,4 @@
 <?php
-/*
- * Template name: Single Porfolio
-*/
 get_header();
 ?>
     <main id="primary" class="site-main">
