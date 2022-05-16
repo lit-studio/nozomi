@@ -62,43 +62,53 @@ get_header();
                     <div class="specification-wrap">
                         <div class="specification-ul">
                             <div class="specification-li">
-                                <div class="specification-title">
-                                    client
-                                </div>
-                                <div class="specification-desc">
-                                    Remdev Studio
+                                <div class="item">                                
+                                    <div class="item-title">
+                                        client
+                                    </div>
+                                    <div class="item-desc">
+                                        Remdev Studio
+                                    </div>
                                 </div>
                             </div>
                             <div class="specification-li">
-                                <div class="specification-title">
+                                <div class="item">                                
+                                    <div class="item-title">
                                     services
-                                </div>
-                                <div class="specification-desc">
+                                    </div>
+                                    <div class="item-desc">
                                     UX/UI Design, Branding, Content Development, Development
+                                    </div>
                                 </div>
                             </div>
                             <div class="specification-li">
-                                <div class="specification-title">
-                                    Platforms
-                                </div>
-                                <div class="specification-desc">
-                                    Android, iOS
-                                </div>
-                            </div>
-                            <div class="specification-li">
-                                <div class="specification-title">
-                                    link
-                                </div>
-                                <div class="specification-desc">
-                                    Google Play, App Store
+                                <div class="item">
+                                    <div class="item-title">
+                                        Platforms
+                                    </div>
+                                    <div class="item-desc">
+                                        Android, iOS
+                                    </div>
                                 </div>
                             </div>
                             <div class="specification-li">
-                                <div class="specification-title">
-                                    year
+                                <div class="item">
+                                    <div class="item-title">
+                                        link
+                                    </div>
+                                    <div class="item-desc">
+                                        Google Play, App Store
+                                    </div>
                                 </div>
-                                <div class="specification-desc">
-                                    2021
+                            </div>
+                            <div class="specification-li">
+                                <div class="item">
+                                    <div class="item-title">
+                                        year
+                                    </div>
+                                    <div class="item-desc">
+                                        2021
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +125,7 @@ get_header();
                                 </div>
                                 <div class="item-quote">
                                     <div class="item-quote--quote">
-                                        Mental Mirror is the contribution of each member of our team to raising awareness about mental health
+                                       Mental Mirror is the contribution of each member of our team to raising awareness about mental health
                                     </div>
                                 </div>
                             </div>

@@ -640,6 +640,16 @@
         }
     }
     .specification{
+        padding-top: 120px;
+        @include desktop-normal{
+            padding-top: 100px;
+        }
+        @include desktop-note-big{
+            padding-top: 80px;
+        }
+        @include phone{
+            padding-top: 50px;
+        }
         &-wrap{
             padding-left: 65px;
             padding-right: 65px;
@@ -655,12 +665,20 @@
                 padding-right: 0;
             }
         }
-        &-title{
-
+        .item{
+            max-width: 360px;
+            &-title{
+                text-transform: uppercase;
+                font-size: 20px;
+                color: var(--color-grey-4);
+            }
+            &-desc{
+                padding-top: 10px;
+                font-size: 24px;
+                color: var(--color-grey);
+            }
         }
-        &-desc{
 
-        }
     }
     .about{
         padding-top: 220px;
@@ -676,14 +694,35 @@
         &-top{
             .item{
                 text-align: center;
+                max-width: 1320px;
+                margin: 0 auto;
                 &-cursive{
                     &--cursive{
                     
                     }
                 }
                 &-quote{
+                    padding-top: 50px;
                     &--quote  {
+                        font-size: 64px;
                         position: relative;
+                        font-family: var(--font-bold);
+                        &:before{
+                            content: '"';
+                            position: relative;
+                            color: var(--color-red);
+                            font-size: 64px;
+                            padding-right: 5px;
+                            font-family: var(--font-bold);
+                        }
+                        &:after{
+                            content: '"';
+                            position: relative;
+                            color: var(--color-red);
+                            font-size: 64px;
+                            padding-left: 5px;
+                            font-family: var(--font-bold);
+                        }
                     }
                 }
             }
@@ -700,7 +739,10 @@
         }
     }
     .problem{
-        padding-top: 160px;
+        padding-top: 220  px;
+        @include desktop-normal{
+            padding-top: 160px;
+        }
         &-wrap{
             .item{
                 &-cursive{
@@ -709,11 +751,13 @@
                     }
                 }
                 &-title{
+                    padding-top: 50px;
                     &--title  {
                     
                     }
                 }
                 &-desc{
+                    padding-top: 30px;
                     &--desc  {
                     
                     }
@@ -722,6 +766,7 @@
         }
     }
     .vision{
+        padding-top: 100px;
         &-wrap{
 
         }
@@ -733,6 +778,7 @@
                     }
                 }
                 &-desc{
+                    padding-top: 30px;
                     &--desc  {
                     
                     }
