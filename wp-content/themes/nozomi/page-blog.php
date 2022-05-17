@@ -7,226 +7,122 @@ get_header();
     <main id="primary" class="site-main">
 
         <div class="p-blog-content">
-            
+
             <div class="p-blog-wrap">
-                <section class="index-blog">
-                    <div class="index-wrap">
-                        <div class="item">
-                            <div class="item-title">
-                                <div class="item-title--title">
-                                    We believe the transparency is a key and share our life here
-                                    <?php /*
-                                        the_title();
-                                        */ ?>
+
+                <?php
+                $text_blog = get_field('text_blog', 15);
+                if ($text_blog) { ?>
+                    <section class="index-blog">
+                        <div class="index-wrap">
+                            <div class="item">
+                                <div class="item-title">
+                                    <div class="item-title--title">
+                                        <?php echo $text_blog; ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                <?php } ?>
                 <div class="p-blog-blogs">
 
                     <section class="blogs">
                         <div class="blogs-wrap">
                             <div class="blogs-list">
-                                <div class="item">
-                                    <div class="item-wrap">
-                                        <div class="item-left">
-                                            <div class="item-img">
-                                                <img class="img"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/blog/blog-1.jpg"
-                                                    alt=""/>                                              
-                                            </div>
-                                        </div>
-                                        <div class="item-right">
-                                            <div class="item-right-wrap">
-                                                <div class="item-right-top">
-                                                    <div class="item-tag-time">
-                                                        <div class="item-tag">
-                                                            <div class="item-tag--tag">
-                                                                research lab
-                                                            </div>
-                                                        </div>
-                                                        <div class="item-time">
-                                                            <div class="item-time--time">
-                                                                17 min read
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-date">
-                                                        <div class="item-date--date">
-                                                        02.07.2021
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-title">
-                                                    <div class="item-title--title">
-                                                        Key UX principals in the Health & Fitness mobile industry in 2022
-                                                    </div> 
-                                                </div> 
-                                                <div class="item-desc">
-                                                    <div class="item-desc--desc">
-                                                        There is no secret that the mobile app industry is now booming, putting other sectors aside.
-                                                    </div>  
-                                                </div> 
-                                                <div class="item-link">
-                                                    <a href='/'
-                                                    target=""
-                                                    class="item-link--link">
-                                                    Dive into
-                                                    </a>
+
+                                <?php
+
+                                query_posts(
+
+                                    array('post_type' => 'post',
+                                        'nopaging' => true,
+                                    )
+                                );
+                                if (have_posts()) {
+
+                                    ?>
+                                    <?php
+                                    while (have_posts()) {
+                                        the_post();
+
+                                        ?>
+                                    <div class="item">
+                                        <div class="item-wrap">
+                                    <?php
+                                    $blog_image = get_field('image');
+
+                                    if ($blog_image) { ?>
+                                            <div class="item-left">
+                                                <div class="item-img">
+                                                    <img class="img"
+                                                         src="<?php echo $blog_image['sizes']['blog_min']; ?>"
+                                                         alt=""/>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-wrap">
-                                        <div class="item-left">
-                                            <div class="item-img">
-                                                <img class="img"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/blog/blog-2.jpg"
-                                                    alt=""/>                                              
-                                            </div>
-                                        </div>
-                                        <div class="item-right">
-                                            <div class="item-right-wrap">
-                                                <div class="item-right-top">
-                                                    <div class="item-tag-time">
-                                                        <div class="item-tag">
-                                                            <div class="item-tag--tag">
-                                                            Lifestyle
+                                    <?php } ?>
+                                            <div class="item-right">
+                                                <div class="item-right-wrap">
+                                                    <div class="item-right-top">
+                                                        <div class="item-tag-time">
+                                                            <div class="item-tag">
+                                                                <div class="item-tag--tag">
+                                                                    <?php
+                                                                    $category = get_the_category();
+                                                                    $firstCategory = $category[0]->cat_name;
+                                                                    echo $firstCategory; ?>
+                                                                </div>
                                                             </div>
+                                                            <?php
+                                                            $min_read = get_field('read');
+
+
+                                                            if ($min_read) { ?>
+                                                                <div class="item-time">
+                                                                    <div class="item-time--time">
+                                                                        <?php echo $min_read; ?> min read
+                                                                    </div>
+                                                                </div>
+                                                            <?php } ?>
                                                         </div>
-                                                        <div class="item-time">
-                                                            <div class="item-time--time">
-                                                            31 min read
+                                                        <div class="item-date">
+                                                            <div class="item-date--date">
+                                                                <?php the_time('d.m.Y'); ?>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item-date">
-                                                        <div class="item-date--date">
-                                                        02.07.2021
+                                                    <div class="item-title">
+                                                        <div class="item-title--title">
+                                                            <?php the_title(); ?>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="item-title">
-                                                    <div class="item-title--title">
-                                                    Someone’s podcast with our CEO Maxim
-                                                    </div> 
-                                                </div> 
-                                                <div class="item-desc">
-                                                    <div class="item-desc--desc">
-                                                    Someone invited Maxim to talk about mindfullness apps perspectives
-                                                    </div>  
-                                                </div> 
-                                                <div class="item-link">
-                                                    <a href='/'
-                                                    target=""
-                                                    class="item-link--link">
-                                                    Dive into
-                                                    </a>
+                                                    <?php
+                                                    $desc = get_field('small_text');
+
+
+                                                    if ($desc) { ?>
+                                                        <div class="item-desc">
+                                                            <div class="item-desc--desc">
+                                                                <?php echo $desc; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                    <div class="item-link">
+                                                        <a href='<?php the_permalink(); ?>'
+                                                           target=""
+                                                           class="item-link--link">
+                                                            Dive into
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-wrap">
-                                        <div class="item-left">
-                                            <div class="item-img">
-                                                <img class="img"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/blog/blog-3.jpg"
-                                                    alt=""/>                                              
-                                            </div>
-                                        </div>
-                                        <div class="item-right">
-                                            <div class="item-right-wrap">
-                                                <div class="item-right-top">
-                                                    <div class="item-tag-time">
-                                                        <div class="item-tag">
-                                                            <div class="item-tag--tag">
-                                                            Lifestyle
-                                                            </div>
-                                                        </div>
-                                                        <div class="item-time">
-                                                            <div class="item-time--time">
-                                                            4 min read
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-date">
-                                                        <div class="item-date--date">
-                                                        02.07.2021
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-title">
-                                                    <div class="item-title--title">
-                                                            How we moved to 4-day working week and how it affects team productivity
-                                                    </div> 
-                                                </div> 
-                                                <div class="item-desc">
-                                                    <div class="item-desc--desc">
-                                                    Interview with our team members about how to do more while working less
-                                                    </div>  
-                                                </div> 
-                                                <div class="item-link">
-                                                    <a href='/'
-                                                    target=""
-                                                    class="item-link--link">
-                                                    Dive into
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-wrap">
-                                        <div class="item-left">
-                                            <div class="item-img">
-                                                <img class="img"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/blog/blog-1.jpg"
-                                                    alt=""/>                                              
-                                            </div>
-                                        </div>
-                                        <div class="item-right">
-                                            <div class="item-right-wrap">
-                                                <div class="item-right-top">
-                                                    <div class="item-tag-time">
-                                                        <div class="item-tag">
-                                                            <div class="item-tag--tag">
-                                                            how to
-                                                            </div>
-                                                        </div>
-                                                        <div class="item-time">
-                                                            <div class="item-time--time">
-                                                            9 min read
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-date">
-                                                        <div class="item-date--date">
-                                                        02.07.2021
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-title">
-                                                    <div class="item-title--title">
-                                                        Nozomi just released new fitness app. This is a story how we did it
-                                                    </div> 
-                                                </div> 
-                                                <div class="item-link">
-                                                    <a href='/'
-                                                    target=""
-                                                    class="item-link--link">
-                                                    Dive into
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php }
+                                    ?>
+                                <?php }
+                                wp_reset_query(); ?>
+
                             </div>
                         </div>
                     </section>
@@ -234,15 +130,36 @@ get_header();
                 <section class="nav">
                     <div class="nav-wrap">
                         <div class="nav-mobile-btns">
-                            <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span></button>
+                            <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
+                            </button>
                         </div>
                         <div class="nav-menu nav-menu--js">
-                            <ul>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">All posts</a></li>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom  current-menu-item'><a href="#">Lifestyle</a></li>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">How to</a></li>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a href="#">Research lab</a></li>                            
-                            </ul>
+
+                            <?php
+                            $curr_id = get_queried_object()->term_id;
+                            $terms = get_terms('category');
+
+                            if ($terms && !is_wp_error($terms)) {
+                                echo "<ul>";
+                                ?>
+                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a
+                                            href="<?php echo get_permalink(15); ?>">All
+                                        posts</a></li>
+                                <?php
+
+                                foreach ($terms as $term) {
+
+                                    ?>
+                                    <li class='menu-item menu-item-type-custom menu-item-object-custom <?php if ($term->term_id == $curr_id) { ?> current-menu-item<?php } ?> '>
+                                        <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
+                                    </li>
+
+                                <?php }
+
+                                echo "</ul>";
+                            }
+                            ?>
+
                         </div>
                         <div class="nav-menu-bg nav-menu-bg--js"></div>
                     </div>
