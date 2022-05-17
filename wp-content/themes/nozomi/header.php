@@ -13,6 +13,9 @@
 <div id="site" class="site">
 <!-- <div id='cursor' class="cursor"></div> -->
 <header class="c-header c-header--js">
+    <div class="c-header-progress">
+        <div class="c-header-progress-line c-header-progress--js" ></div>
+    </div>
     <div class="c-header-wrap">
         <div class="c-header-logo">
             <a  class="c-header-logo-item" href="<?php echo home_url('/'); ?>" title="<?php echo bloginfo('name'); ?>" rel="home">
