@@ -162,17 +162,15 @@ get_header();
                 </section>
                 <section class="vision">
                     <div class="vision-wrap">
-                        <div class="vision-top">
-                            <div class="item">
-                                <div class="item-title">
-                                    <div class="item-title--title">
-                                        The Vision
-                                    </div>
+                        <div class="item">
+                            <div class="item-title">
+                                <div class="item-title--title">
+                                    The Vision
                                 </div>
-                                <div class="item-desc">
-                                    <div class="item-desc--desc">
-                                    Mental Mirror gives you the ability to train your mind like you’re training your body in the gym. By using it periodically you develop the right skills to face the unpredictable world around you.
-                                    </div>
+                            </div>
+                            <div class="item-desc">
+                                <div class="item-desc--desc">
+                                Mental Mirror gives you the ability to train your mind like you’re training your body in the gym. By using it periodically you develop the right skills to face the unpredictable world around you.
                                 </div>
                             </div>
                         </div>
@@ -180,9 +178,9 @@ get_header();
                 </section>
                 <section class="design">
                         <div class="design-top">
-                            <div class="design-wrap">
-                                <div class="design-row">
-                                    <div class="design-col design-img">
+                            <div class="design-top-wrap">
+                                <div class="design-top-row">
+                                    <div class="design-top-col design-img">
                                         <div class="item">
                                             <div class="item-img">
                                                 <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design.jpg">
@@ -190,21 +188,21 @@ get_header();
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="design-col design-desc">
+                                    <div class="design-top-col design-top-desc">
                                         <div class="item">
                                             <div class="item-cursive">
                                                 <div class="item-cursive--cursive">
-                                                    Overview
+                                                    Phase 1
                                                 </div>
                                             </div>
                                             <div class="item-title">
                                                 <div class="item-title--title">
-                                                    The Vision
+                                                    Design 
                                                 </div>
                                             </div>
                                             <div class="item-desc">
                                                 <div class="item-desc--desc">
-                                                Mental Mirror gives you the ability to train your mind like you’re training your body in the gym. By using it periodically you develop the right skills to face the unpredictable world around you.
+                                                    Breathing life into the product by developing the interface that users enjoy. It’s about those little interactive touches, or micro-copy, that make users smile with surprise or appreciation.
                                                 </div>
                                             </div>
                                         </div>
@@ -213,8 +211,8 @@ get_header();
                             </div>
                         </div>
                         <div class="design-middle">
-                            <div class="design-wrap">
-                                <div class="design-col design-img">
+                            <div class="design-middle-wrap">
+                                <div class="design-img">
                                     <div class="item">
                                         <div class="item-img">
                                             <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design-gallery.jpg">
@@ -244,28 +242,51 @@ get_header();
                 </section>
                 <section class="development">
                     <div class="development-wrap">
-                        <div class="development-img">
-                            <div class="item">
-                                <div class="item-img">
-                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-development.jpg">
+                        <div class="development-row">
+                            <div class="development-col development-img">
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-development.jpg">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="development-desc">
-                            <div class="item">
-                                <div class="item-cursive">
-                                    <div class="item-cursive--cursive">
-                                        Overview
+                            <div class="development-col development-desc">
+                                <div class="item">
+                                    <div class="item-cursive">
+                                        <div class="item-cursive--cursive">
+                                            Phase 2
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item-title">
-                                    <div class="item-title--title">
-                                        The Vision
+                                    <div class="item-title">
+                                        <div class="item-title--title">
+                                            Development
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="item-desc">
-                                    <div class="item-desc--desc">
-                                    Mental Mirror gives you the ability to train your mind like you’re training your body in the gym. By using it periodically you develop the right skills to face the unpredictable world around you.
+                                    <div class="item-desc">
+                                        <div class="item-desc--desc">
+                                            We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines
+                                        </div>
+                                    </div>
+                                    <div class="item-technology">
+                                        <div class="item-technology-list">
+                                            <div class="item-technology-li">
+                                                <div class="item-technology-title">
+                                                    Mobile
+                                                </div>
+                                                <div class="item-technology-desc">
+                                                    React Native
+                                                </div>
+                                            </div>
+                                            <div class="item-technology-li">
+                                                <div class="item-technology-title">
+                                                Backend
+                                                </div>
+                                                <div class="item-technology-desc">
+                                                NodeJs, HBase
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -321,6 +342,13 @@ get_header();
                 </section>
                 <section class="voice">
                     <div class="voice-wrap">
+                        <div class="voice-img">
+                            <div class="item">
+                                <div class="item-img">
+                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-voice-video.jpg">
+                                </div>
+                            </div>
+                        </div>
                         <div class="voice-desc">
                             <div class="item">
                                 <div class="item-cursive">
@@ -341,10 +369,29 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="voice-img">
-                            <div class="item">
-                                <div class="item-img">
-                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-voice-video.jpg">
+                    </div>
+                </section>
+                <section class="review">
+                    <div class="review-wrap">
+                        <div class="review-row">
+                            <div class="voice-col">
+                                <div class="item">
+                                    <div class="item-cursive">
+                                        <div class="item-cursive--cursive">
+                                        Result
+                                        </div>
+                                    </div>
+                                    <div class="item-title">
+                                        <div class="item-title--title">
+                                        Voice of the customer
+                                        </div>
+                                    </div>
+                                    <div class="item-desc">
+                                        <div class="item-desc--desc">
+                                            <p>User testing is the key part of the UX design process. It allows us to measure the effectiveness and efficiency of our design solutions by testing our assumptions on real users.</p>
+                                            <p>With product idea validatiion in mind, we focused on the target audience and ran the tests on prototypes.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
