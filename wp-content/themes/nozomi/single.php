@@ -253,7 +253,9 @@ if( $featured_posts ): ?>
 <?php endif; ?>
         </div>
     </main><!-- #main -->
-
+    <div class="c-header-progress">
+        <div class="c-header-progress-line c-header-progress--js" ></div>
+    </div>
 <?php
 
 get_footer();
