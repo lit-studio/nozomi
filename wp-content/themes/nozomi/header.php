@@ -7,9 +7,22 @@
     <meta name="theme-color" content="#F2F0ED">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <?php wp_head(); ?>
+    <style>
+        .preloader {
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-bg);
+        z-index: 10000;
+        opacity: 1;
+        }
+    </style>
 </head>
 
 <body  <?php body_class(); ?>>
+<div class="preloader preloader--js"></div>
 <div id="site" class="site">
 <!-- <div id='cursor' class="cursor"></div> -->
 <header class="c-header c-header--js">

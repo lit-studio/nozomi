@@ -138,7 +138,7 @@
     </div>
 </footer>
 <span id='cursor' class="cursor"><span class="cursor-dot"></span></span>
-<div class="preloader preloader--js"></div>
+
 </div>
 
 

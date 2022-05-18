@@ -19,7 +19,7 @@ export default function () {
     .timeline({
       paused: true
     })
-    .from($section, 0.5, { opacity: 0 },'')
+    .from($section, 0.5, { opacity: 0 , delay: 1},'')
     .from($section, 1, { y: 200 },'<');
 
   let sectionToGsap = gsap
@@ -27,9 +27,11 @@ export default function () {
       paused: true
     })
     .to($section, 0.5, { opacity: 0 },'')
-    .to($section, 1, { y: -200 },'<');
+    .to($section, 1, { y: -200 },'<')
+    .to('.c-header--js', 0.5, { opacity: 0 },'<')
+    ;
 
-  sectionFromGsap.delay(1).play();
+  sectionFromGsap.play();
 
   if (screen.width > 1024) {
     function navScrollFunc() {
@@ -77,6 +79,6 @@ export default function () {
     sectionToGsap.play();
     setTimeout(() => {
       window.location = $(this).attr("href");
-    }, 1000);
+    }, 800);
   });
 }

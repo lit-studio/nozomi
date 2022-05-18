@@ -30,8 +30,9 @@ export default function () {
       window.addEventListener("load", function(){     
         setTimeout(function(){
           $('html,body').scrollTop(0);
-          $preloaderBlock.fadeOut(500);ы
-      }, 500);
+          // $preloaderBlock.fadeOut(500);
+          gsap.to($preloaderBlock, 0.5, { autoAlpha: 0 },'');
+      }, 1000);
       });
     }
     let $window = $(window),
