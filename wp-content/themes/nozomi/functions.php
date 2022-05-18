@@ -276,6 +276,7 @@ add_image_size('home_2', '2360', '9999', false);
 add_image_size('author', '144', '144', true);
 add_image_size('blog', '5120', '9999', false);
 add_image_size('blog_min', '780', '440', true);
+add_image_size('join_us', '581', '581', true);
 
 function acf_select_author_choices($field)
 {

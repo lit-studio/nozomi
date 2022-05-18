@@ -19,7 +19,7 @@ export default function () {
       //   $preloaderBlock.fadeOut(1000);
       // }, 100);
 
-      // window.addEventListener("load", function(){     
+      // window.addEventListener("load", function(){
       //   $(window).scrollTop(0);
       //   setTimeout(function(){
       //     // $(window).scrollTop(0);
@@ -27,7 +27,7 @@ export default function () {
       //   }, 100);
       // });
 
-      window.addEventListener("load", function(){     
+      window.addEventListener("load", function(){
         setTimeout(function(){
           $('html,body').scrollTop(0);
           // $preloaderBlock.fadeOut(500);
@@ -53,10 +53,10 @@ export default function () {
     preloaderFunc();
     header();
     footer();
-    
+
     function screenReload() {
       let widthScreen = screen.width;
-      let  widthScreenNew;  
+      let  widthScreenNew;
       window.addEventListener("resize", () => {
         widthScreenNew = screen.width;
 

@@ -91,8 +91,8 @@ get_header();
                                              data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
                                             <span class="item-video--layout video-little--layout--js">
                                                 <img class="item-video-bg video-little-bg--js"
-                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-little-video-bg-v3.png"
-                                                    alt=""/> 
+                                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-little-video-bg-v3.png"
+                                                     alt=""/>
                                             </span>
                                         </div>
                                     <?php } ?>
@@ -113,8 +113,8 @@ get_header();
                                                  alt=""/>
                                                  */ ?>
                                             <img class="img img--js"
-                                                 src="<?php echo $image_block_1; ?>"
-                                                 alt=""/>                                                
+                                                 src="<?php echo $image_block_1['url']; ?>"
+                                                 alt=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -132,8 +132,8 @@ get_header();
                                              data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
                                                 <span class="item-video--layout video-big--layout--js">
                                                     <img class="item-video-bg video-big-bg--js"
-                                                        src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-big-video-bg.png"
-                                                        alt=""/> 
+                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-big-video-bg.png"
+                                                         alt=""/>
                                                 </span>
                                         </div>
                                     <?php } ?>
@@ -147,7 +147,8 @@ get_header();
                     if ($button_link_block_1 || $button_text_block_1) { ?>
                         <div class="portfolio-btns">
                             <div class="portfolio-btns-btn">
-                                <a href="https://portfolio.remdev.pro/" target='_blank' class="btn btn-border btn-portfolio--js">
+                                <a href="https://portfolio.remdev.pro/" target='_blank'
+                                   class="btn btn-border btn-portfolio--js">
                                 </a>
                             </div>
                         </div>
@@ -361,52 +362,50 @@ get_header();
 
                 </div>
             </section>
-            <section class="news">
-                <div class="news-wrap">
-                    <div class="news-block">
-                        <div class="news-row">
-                            <div class="news-col">
-                                <a class="item" target='_blank' href='https://medium.com/remdevstudio/behind-the-rebrand-8-main-questions-to-max-ceo-founder-at-nozomi-health-b734d162db97'>
-                                    <div class="item-img">
-                                        <img class="img"
-                                             src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-article-3.png"
-                                             alt=""/>
+            <?php
+            $featured_posts = get_field('select_articles');
+            if ($featured_posts) { ?>
+                <section class="news">
+                    <div class="news-wrap">
+                        <div class="news-block">
+                            <div class="news-row">
+                                <?php foreach ($featured_posts as $post) {
+
+                                    ?>
+                                    <div class="news-col">
+                                        <a class="item" href='<?php the_permalink(); ?>'>
+                                            <?php
+                                            $blog_image = get_field('image');
+
+                                            if ($blog_image) { ?>
+                                                <div class="item-img">
+                                                    <img class="img"
+                                                         src="<?php echo $blog_image['sizes']['blog_min']; ?>"
+                                                         alt=""/>
+                                                </div>
+                                            <?php } ?>
+                                            <div class="item-tag">
+                                                <div class="item-tag--tag">
+                                                    <?php
+                                                    $category = get_the_category();
+                                                    $firstCategory = $category[0]->cat_name;
+                                                    echo $firstCategory; ?>
+                                                </div>
+                                            </div>
+                                            <div class="item-title">
+                                                <div class="item-title--title">
+                                                    <?php the_title(); ?>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="item-tag">
-                                        <div class="item-tag--tag">
-                                            Lifestyle
-                                        </div>
-                                    </div>
-                                    <div class="item-title">
-                                        <div class="item-title--title">
-                                            Behind the rebrand: 8 main questions to Max, CEO & Founder at Nozomi Health
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news-col">
-                                <a class="item" target='_blank' href='https://medium.com/remdevstudio/remdev-studio-jumping-into-2022-62859bed4190'>
-                                    <div class="item-img">
-                                        <img class="img"
-                                             src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-article-2-min.jpg"
-                                             alt=""/>
-                                    </div>
-                                    <div class="item-tag">
-                                        <div class="item-tag--tag">
-                                            Lifestyle
-                                        </div>
-                                    </div>
-                                    <div class="item-title">
-                                        <div class="item-title--title">
-                                            Remdev Studio. Jumping into 2022
-                                        </div>
-                                    </div>
-                                </a>
+                                <?php } ?>
+
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            <?php } ?>
         </div>
 
     </main><!-- #main -->
