@@ -19,7 +19,7 @@ export default function () {
     .timeline({
       paused: true
     })
-    .from($section, 0.5, { opacity: 0 , delay: 1},'')
+    .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
     .from($section, 1, { y: 200 },'<');
 
   let sectionToGsap = gsap
@@ -28,7 +28,6 @@ export default function () {
     })
     .to($section, 0.5, { opacity: 0 },'')
     .to($section, 1, { y: -200 },'<')
-    .to('.c-header--js', 0.5, { opacity: 0 },'<')
     ;
 
   sectionFromGsap.play();

@@ -533,6 +533,9 @@
                         font-size: 15px;
                         padding-left: 28px;
                     }
+                    &:hover{
+                        color: var(--color-red);
+                    }
                     &:before{
                         width: 24px;
                         height: 24px;

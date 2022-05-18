@@ -32,7 +32,7 @@ export default function () {
           $('html,body').scrollTop(0);
           // $preloaderBlock.fadeOut(500);
           gsap.to($preloaderBlock, 0.5, { autoAlpha: 0 },'');
-      }, 1000);
+      }, 500);
       });
     }
     let $window = $(window),
