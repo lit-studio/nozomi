@@ -113,7 +113,7 @@ get_header();
                                                  alt=""/>
                                                  */ ?>
                                             <img class="img img--js"
-                                                 src="<?php echo $image_block_1; ?>"
+                                                 src="<?php echo $image_block_1['url']; ?>"
                                                  alt=""/>
                                         </div>
                                     </div>
