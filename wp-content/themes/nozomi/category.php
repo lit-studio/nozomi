@@ -12,7 +12,7 @@ get_header();
                 if ($text_blog) { ?>
                     <section class="index-blog">
                         <div class="index-wrap">
-                            <div class="item">
+                            <div class="item gsap-anim--js">
                                 <div class="item-title">
                                     <div class="item-title--title">
                                         <?php echo $text_blog; ?>
@@ -26,7 +26,7 @@ get_header();
 
                     <section class="blogs">
                         <div class="blogs-wrap">
-                            <div class="blogs-list">
+                            <div class="blogs-list gsap-anim--js">
 
                                 <?php
                                 global $query_string;
@@ -126,7 +126,7 @@ get_header();
                             <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
                             </button>
                         </div>
-                        <div class="nav-menu nav-menu--js">
+                        <div class="nav-menu nav-menu--js gsap-anim--js">
 
                             <?php
                             $curr_id = get_queried_object()->term_id;

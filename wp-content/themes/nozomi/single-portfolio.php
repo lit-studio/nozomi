@@ -339,39 +339,15 @@ get_header();
                 </section>
                 <section class="voice">
                     <div class="voice-wrap">
-                        <div class="voice-img">
-                            <div class="item">
-                                <div class="item-img">
-                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-voice-video.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-desc">
-                            <div class="item">
-                                <div class="item-cursive">
-                                    <div class="item-cursive--cursive">
-                                    Result
-                                    </div>
-                                </div>
-                                <div class="item-title">
-                                    <div class="item-title--title">
-                                    Voice of the customer
-                                    </div>
-                                </div>
-                                <div class="item-desc">
-                                    <div class="item-desc--desc">
-                                        <p>User testing is the key part of the UX design process. It allows us to measure the effectiveness and efficiency of our design solutions by testing our assumptions on real users.</p>
-                                        <p>With product idea validatiion in mind, we focused on the target audience and ran the tests on prototypes.</p>
+                        <div class="voice-row">
+                            <div class="voice-col voice-img">
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-voice-video.jpg">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="review">
-                    <div class="review-wrap">
-                        <div class="review-row">
-                            <div class="voice-col">
+                            <div class="voice-col voice-desc">
                                 <div class="item">
                                     <div class="item-cursive">
                                         <div class="item-cursive--cursive">
@@ -394,18 +370,63 @@ get_header();
                         </div>
                     </div>
                 </section>
-                <section class="next">
-                    <div class="next-wrap">
-                        <div class="item">
-                            <div class="item-cursive">
-                                <div class="item-cursive--cursive">
-                                    Next case
+                <section class="review">
+                    <div class="review-wrap">
+                        <div class="review-row">
+                            <div class="review-col">
+                                <div class="item">
+                                    <div class="item-cursive">
+                                        <div class="item-cursive--cursive">
+                                        Client’s review
+                                        </div>
+                                    </div>
+                                    <div class="item-wrap">
+                                        <div class="item-desc">
+                                            <div class="item-desc--desc">
+                                                Nozomi guys did the great work! This product has to become first step toward contributing to digital healthcare development.
+                                            </div>
+                                        </div>
+                                        <div class="item-autor">
+                                            <div class="item-img">
+
+                                            </div>
+                                            <div class="item-name">
+                                                <div class="item-name--name">
+                                                Client Name
+                                                </div>
+                                                <div class="item-name--status">
+                                                Founder and CEO of Product
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="item-title">
-                                <div class="item-title--title">
-                                    Incorpro
+                        </div>
+                    </div>
+                </section>
+                <section class="next">
+                    <div class="next-wrap">
+                        <div class="next-desc">
+                            <div class="next-desc-wrap">
+                                <div class="item">
+                                    <div class="item-cursive">
+                                        <div class="item-cursive--cursive">
+                                            Next case
+                                        </div>
+                                    </div>
+                                    <div class="item-title">
+                                        <div class="item-title--title">
+                                            Incorpro
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="next-img">
+                            <div class="item-img">
+                                <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first-screen-01.png">
                             </div>
                         </div>
                     </div>
@@ -414,7 +435,9 @@ get_header();
         
         </div>
     </main><!-- #main -->
-
+    <div class="c-header-progress">
+        <div class="c-header-progress-line c-header-progress--js" ></div>
+    </div>
 <?php
 
 get_footer();

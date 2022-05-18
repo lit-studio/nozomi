@@ -12,11 +12,24 @@ export default function () {
     $navMobileBtnText = $navMobileBtn.find('.nav-mobile-btn-text'),
     $navMobileBlock = $navSection.find('.nav-menu--js'),
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
+    $section = $navTrigger.find('.gsap-anim--js'),
     navMobileActive
   ;
+  let sectionFromGsap = gsap
+    .timeline({
+      paused: true
+    })
+    .from($section, 0.5, { opacity: 0 },'')
+    .from($section, 1, { y: 200 },'<');
 
+  let sectionToGsap = gsap
+    .timeline({
+      paused: true
+    })
+    .to($section, 0.5, { opacity: 0 },'')
+    .to($section, 1, { y: -200 },'<');
 
-
+  sectionFromGsap.delay(1).play();
 
   if (screen.width > 1024) {
     function navScrollFunc() {
@@ -56,4 +69,14 @@ export default function () {
     }
     navMobileFunc();
   }
+
+  let $sidebarLink = $navMobileBlock.find('a');
+  $sidebarLink.on("click", function(event) {
+    console.log('click');
+    event.preventDefault();
+    sectionToGsap.play();
+    setTimeout(() => {
+      window.location = $(this).attr("href");
+    }, 1000);
+  });
 }
