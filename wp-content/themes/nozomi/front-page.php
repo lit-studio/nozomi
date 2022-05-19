@@ -89,11 +89,15 @@ get_header();
                                     if ($video_1_link_id_block_1) { ?>
                                         <div class="item-video video--js video-little--js"
                                              data-set-vimeo-id="<?php echo $video_1_link_id_block_1; ?>">
+                                        <?php
+                                        $video_1_bg_block_1 = get_field('video_background_1');
+                                        if ($video_1_bg_block_1) { ?>
                                             <span class="item-video--layout video-little--layout--js">
                                                 <img class="item-video-bg video-little-bg--js"
-                                                     src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-little-video-bg-v3.png"
+                                                     src="<?php echo $video_1_bg_block_1['sizes']['home_2']; ?>"
                                                      alt=""/>
                                             </span>
+                                        <?php } ?>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -130,11 +134,15 @@ get_header();
                                     if ($video_2_link_id_block_1) { ?>
                                         <div class="item-video video--js  video-big--js"
                                              data-set-vimeo-id="<?php echo $video_2_link_id_block_1; ?>">
+                                        <?php
+                                        $video_2_bg_block_1 = get_field('video_background_2');
+                                        if ($video_2_bg_block_1) { ?>
                                                 <span class="item-video--layout video-big--layout--js">
                                                     <img class="item-video-bg video-big-bg--js"
-                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/home/home-big-video-bg.png"
+                                                         src="<?php echo $video_2_bg_block_1['sizes']['blog']; ?>"
                                                          alt=""/>
                                                 </span>
+                                        <?php } ?>
                                         </div>
                                     <?php } ?>
                                 </div>
