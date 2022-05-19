@@ -83,7 +83,7 @@ get_header();
                                                 </svg>
                                             </a>
                                         </li>
-                                        <li class="blog-top-share-li">
+                                        <!-- <li class="blog-top-share-li">
                                             <a class="blog-top-share-link inst" href="https://www.instagram.com/?url=<?php the_permalink(); ?>"
                                                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=375');return false;"
                                                target="_blank" title="Share on Instagram">
@@ -96,7 +96,7 @@ get_header();
                                                           fill="#E3DCD1"/>
                                                 </svg>
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li class="blog-top-share-li">
 
 
