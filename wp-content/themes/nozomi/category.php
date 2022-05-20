@@ -47,11 +47,11 @@ get_header();
 
                                                 if ($blog_image) { ?>
                                                     <div class="item-left">
-                                                        <div class="item-img">
+                                                        <a href="<?php the_permalink(); ?>" class="item-img">
                                                             <img class="img"
                                                                  src="<?php echo $blog_image['sizes']['blog_min']; ?>"
                                                                  alt=""/>
-                                                        </div>
+                                                        </a>
                                                     </div>
                                                 <?php } ?>
                                                 <div class="item-right">

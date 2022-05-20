@@ -6,6 +6,7 @@ export default function () {
   
     let $body = $('body'),
     $navSection = $body.find('.nav'),
+    $navSectionItem = $navSection.find('.menu-item'),
     $navTrigger = $body.find('.p-blog-content'),
     $navWrap = $navSection.find('.nav-wrap'),
     $navMobileBtn = $navSection.find('.nav-mobile-btn--js'),
@@ -58,7 +59,13 @@ export default function () {
     ;
 
     function navMobileFunc() {
-      navMobileActive = $navMobileBlock.find('.current-menu-item').text();
+
+      if ($navSectionItem.hasClass('current-menu-item')) {
+        navMobileActive = $navMobileBlock.find('.current-menu-item a').text();
+      }
+      else{
+        navMobileActive = 'All posts';
+      }
       console.log(navMobileActive);
       $navMobileBtnText.html(navMobileActive);
       $navMobileBtn.on("click", function () {
