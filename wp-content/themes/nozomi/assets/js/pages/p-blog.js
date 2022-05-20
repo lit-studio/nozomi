@@ -14,22 +14,50 @@ export default function () {
     $navMobileBlock = $navSection.find('.nav-menu--js'),
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
     $section = $navTrigger.find('.gsap-anim--js'),
-    navMobileActive
+    $sectionNav = $navTrigger.find('.gsap-nav--js'),
+    navMobileActive,sectionFromGsap,sectionToGsap
   ;
-  let sectionFromGsap = gsap
-    .timeline({
-      paused: true
-    })
-    .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-    .from($section, 1, { y: 200 },'<');
 
-  let sectionToGsap = gsap
-    .timeline({
-      paused: true
-    })
-    .to($section, 0.5, { opacity: 0 },'')
-    .to($section, 1, { y: -200 },'<')
-    ;
+    if (screen.width > 1024) {
+
+      sectionToGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .to($section, 0.5, { opacity: 0 },'')
+      .to($section, 1, { y: -200 },'<')
+      .to($sectionNav, 0.5, { opacity: 0 },'')
+      .to($sectionNav, 1, { y: -200 },'<')
+      ;
+      sectionFromGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 1, { y: 200 },'<')
+      .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($sectionNav, 1, { y: 200 },'<')
+      ;
+    }
+    else{
+
+      sectionToGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .to($section, 0.5, { opacity: 0 },'')
+      .to($section, 1, { y: -200 },'<')
+      ;
+
+      sectionFromGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 1, { y: 200 },'<')
+      ;
+    }
+
 
   sectionFromGsap.play();
 
