@@ -1,4 +1,5 @@
 .p-blog {
+    background-color: var(--color-bg);
     &-content{
         padding-bottom: 180px;        
         padding-left: 100px;
@@ -592,9 +593,7 @@
     }
     .index{
         &-wrap{
-            // height: 100%;
             display: flex;
-            // align-items: center;
             justify-content: center;
             padding-top: pxVw(280, 2560);
             padding-bottom: pxVw(220, 2560);
@@ -618,7 +617,6 @@
             }
         }
         &-blog{
-            // height: 80vh;
             .item{
                 max-width: 1300px;
                 padding-left: 25px;
@@ -803,7 +801,6 @@
             }
         }
         .item{
-
             padding-top: 50px;
             padding-bottom: 50px;
             border-bottom: 1px solid var(--color-grey-5);
@@ -1095,6 +1092,9 @@
                     @include desktop-note-big{
                         font-size: 14px;
                     }
+                    &:hover{
+                        color: var(--color-red);
+                    }
                 }
             }
             &-center{
@@ -1261,6 +1261,8 @@
                     width: 32px;
                     height: 32px;
                     display: block;
+                    transform: scale(1);
+                    transition: transform 0.3s linear;
                     @include desktop-normal{
                         width: 24px;
                         height: 24px; 
@@ -1273,14 +1275,55 @@
                         width: 100%;
                         height: 100%;
                     }
+                    &:hover{
+                        transform: scale(1.16);
+                        @include desktop-block{
+                            transform: scale(1); 
+                        }
+                    }
                 }
             }
 
         }
         &-img{
+            margin-bottom: 60px;
+            @include desktop-normal{
+                margin-bottom: 40px;
+            }
+            @include desktop-note-big{
+                margin-bottom: 35px;
+            }
+            // @include desktop-block{
+
+            // }
+            // @include tablet{
+
+            // }
+            // @include phone{
+
+            // }
             .item{
                 &-img{
+                    width: 100%;
+                    overflow: hidden;
+                    height: pxVw(1067,2560);
+                    @include desktop-normal{
+                      height: pxVw(800,1920);
+                    }
+                    @include desktop-note-big{
+                      height: pxVw(600,1440);
+                    }
+                    @include desktop-block{
+                      height: pxVw(427,1024);
+                    }
+                    @include tablet{
+                      height: pxVw(320,768);
+                    }
+                    @include phone{
+                      height: pxVw(156,375);
+                    }
                     img{
+                        height: 100%;
                         width: 100%;
                         object-fit: cover;
                     }

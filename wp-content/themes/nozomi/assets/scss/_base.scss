@@ -359,21 +359,58 @@ h6,
       max-width: 638px;
     }
   }
-  & > img{
-    max-width: 100%;
+
+  &> div.wp-caption {
+    width: auto !important;
+    max-width: none;
     margin-top: 100px;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
+    margin-bottom: 60px;
     @include desktop-normal{
       margin-top: 70px;
-      margin-bottom: 70px;
+      // margin-bottom: 70px;
+      margin-bottom: 30px;
     }
     @include desktop-note-big{
       margin-top: 60px;
-      margin-bottom: 60px;
+      // margin-bottom: 60px;
     }
     @include phone{
       margin-top: 45px;
-      margin-bottom: 45px;
+      // margin-bottom: 45px;
+    }
+    & > img{
+      max-width: 100%;
+    }
+    .wp-caption-text{
+      padding-top: 10px;
+      color: var(--color-grey-3);
+      font-size: 20px;
+      text-align: center;
+      @include desktop-normal{
+        font-size: 16px;
+      } 
+      @include phone{
+        font-size: 14px;
+      }
+    }
+  }
+
+  & > img{
+    max-width: 100%;
+    margin-top: 100px;
+    // margin-bottom: 100px;
+    @include desktop-normal{
+      margin-top: 70px;
+      // margin-bottom: 70px;
+    }
+    @include desktop-note-big{
+      margin-top: 60px;
+      // margin-bottom: 60px;
+    }
+    @include phone{
+      margin-top: 45px;
+      // margin-bottom: 45px;
     }
   }
   h1,h2,h3,h4,h5,h6{
@@ -439,27 +476,27 @@ h6,
     }
   }
   h5{
-    font-size: 32px;
+    font-size: 28px;
     @include desktop-normal{
-      font-size: 28px;
-    }
-    @include desktop-note-big{
       font-size: 24px;
     }
-    @include phone{
+    @include desktop-note-big{
       font-size: 22px;
+    }
+    @include phone{
+      font-size: 20px;
     }
   }
   h6{
-    font-size: 32px;
+    font-size: 24px;
     @include desktop-normal{
-      font-size: 28px;
+      font-size: 22px;
     }
     @include desktop-note-big{
-      font-size: 24px;
+      font-size: 20px;
     }
     @include phone{
-      font-size: 22px;
+      font-size: 18px;
     }
   }
 
@@ -469,15 +506,18 @@ h6,
     line-height: 150%;
     @include desktop-normal{
       font-size: 20px;
+      // padding-top: 30px;
     }
     @include desktop-note-big{
       font-size: 16px;
+      // padding-top: 25px;
     }
     @include desktop-block{
       font-size: 16px;
     }
     @include phone{
      font-size: 15px;
+    //  padding-top: 15px;
     }
   }
   ul{
@@ -489,7 +529,7 @@ h6,
     list-style-type: decimal;
     list-style-position: inside;
     padding-left: 20px;
-    color: var(--color-red);
+    // color: var(--color-red);
     font-size: 24px;
     line-height: 150%;
     @include desktop-normal{
@@ -505,7 +545,7 @@ h6,
      font-size: 15px;
     }
     li{
-      color: var(--color-red);
+      // color: var(--color-red);
     }
   }
   li{
@@ -555,30 +595,30 @@ h6,
       position: absolute;
       left: 0;
       top: 0;
-      width: 56px;
-      height: 38px;
+      width: 8px;
+      height: 100%;
       content: '';
-      background-color: transparent;
-      background-image: url('#{$assetsPath}/icons/icon-blockquote-left.svg');
+      // background-color: var(--color-red);
+      background-image: url('#{$assetsPath}/icons/icon-quote-line.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-size: contain;
     }
-    &:after{
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 56px;
-      height: 38px;
-      content: '';
-      background-color: transparent;
-      background-image: url('#{$assetsPath}/icons/icon-blockquote-right.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      background-size: contain;
-    }
+    // &:after{
+    //   position: absolute;
+    //   right: 0;
+    //   bottom: 0;
+    //   width: 56px;
+    //   height: 38px;
+    //   content: '';
+    //   background-color: transparent;
+    //   background-image: url('#{$assetsPath}/icons/icon-blockquote-right.svg');
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    //   background-attachment: scroll;
+    //   background-size: contain;
+    // }
     @include desktop-normal{
       font-size: 28px;
       margin-top: 50px;

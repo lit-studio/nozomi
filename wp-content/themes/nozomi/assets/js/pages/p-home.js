@@ -13,11 +13,19 @@ export default function () {
 
   let $body = $('body'),
   $indexSection = $body.find(".index"),
-  $indexSectionTitle = $indexSection.find(".item-title--title--js");
-  let $cursorBlock = $body.find(".cursor-dot");
-  function homeIndexFunc() {
-    console.log('index');
+  $indexSectionTitle = $indexSection.find(".item-title--title--js"),
+  $cursorBlock = $body.find(".cursor-dot"),
+  $aboutSection = $body.find('.about'),
+  $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
+  $aboutSectionImg = $aboutSectionBlock.find('img'),
+  $portfolioSection = $body.find('.portfolio'),
+  aboutSectionImgTrigger="top center",
+  $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
+  $portfolioSectionImg = $portfolioSectionblock.find('img')
+  ;
 
+  function homeIndexFunc() {
+    // console.log('index');
     const handBirdAnim = lottie.loadAnimation({
       container: document.getElementById('hand_bird'),
       renderer: "svg",
@@ -37,20 +45,15 @@ export default function () {
             handBirdAnim.play();
           } 
       },'-=2')
-  ;
-  setTimeout(function(){
-    indexSectionGsap.play();
-  }, 1);
-
-
+    ;
+    setTimeout(function(){
+      indexSectionGsap.play();
+    }, 1);
 
     const svg = document.querySelector("#demo");
     const tl = gsap.timeline();
     let pt = svg.createSVGPoint();
-
-    const ratio = 0.5625;
-    
-
+    const ratio = 0.5625;   
     
     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
     tl.reversed(true);
@@ -68,8 +71,7 @@ export default function () {
     function mouseMoveIndex(evt) {
       let newPoint = getPointIndex(evt);
       gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
-     }
-    
+     }   
 
     
     function newSizeIndex() {
@@ -94,16 +96,15 @@ export default function () {
   }
   homeIndexFunc();
 
-  let $aboutSection = $body.find('.about'),
-  $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
-  $aboutSectionImg = $aboutSectionBlock.find('img'),
-  $portfolioSection = $body.find('.portfolio'),
-  aboutSectionImgTrigger="top center",
-  $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
-  $portfolioSectionImg = $portfolioSectionblock.find('img'),
-  $parallaxBlock = $body.find('.parallax-img-block--js')
-
-  ;
+  // let $aboutSection = $body.find('.about'),
+  // $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
+  // $aboutSectionImg = $aboutSectionBlock.find('img'),
+  // $portfolioSection = $body.find('.portfolio'),
+  // aboutSectionImgTrigger="top center",
+  // $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
+  // $portfolioSectionImg = $portfolioSectionblock.find('img'),
+  // $parallaxBlock = $body.find('.parallax-img-block--js')
+  // ;
 
 
   function portfolioScaleFunc() {
@@ -238,16 +239,16 @@ export default function () {
 
 
   function controlVideos() {
-        let $videoIdLittleBg = $('.video-little-bg--js');
-        let $videoIdLittleLayout = $('.video-little--layout--js');
+        let $videoIdLittleBg = $body.find('.video-little-bg--js');
+        // let $videoIdLittleLayout = $('.video-little--layout--js');
         let videoIdLittleBgGsap =  gsap.timeline({
           paused: true,
         })
             .to($videoIdLittleBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
             // .to($videoIdLittleLayout, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
         ;
-        let $videoIdBigBg = $('.video-big-bg--js');
-        let $videoIdBigLayout = $('.video-big--layout--js');
+        let $videoIdBigBg = $body.find('.video-big-bg--js');
+        let $videoIdBigLayout = $body.find('.video-big--layout--js');
         let videoIdBigBgGsap =  gsap.timeline({
           paused: true,
         })
@@ -288,11 +289,8 @@ export default function () {
         videoIdLittleBgGsap.play();        
         if (!$cursorBlock.hasClass('video')) {
           $cursorBlock.addClass("video");
-          // console.log('cursor video');
         }
-        // console.log('first play');
         vimeoPlayerLittle.play().then(function() {
-          // the video was played
         }).catch(function(error) {
             switch (error.name) {
                 case 'PasswordError':
@@ -315,7 +313,6 @@ export default function () {
         videoIdLittleBgGsap.reverse();
         if ($cursorBlock.hasClass('video')) {
           $cursorBlock.removeClass("video");
-          // console.log('cursor video hidden');
         }
         vimeoPlayerLittle.unload().then(function() {
           // the video was played

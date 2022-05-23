@@ -24,7 +24,6 @@ import singlePortfolio from "./pages/p-single-portfolio";
   if (window.nozomiData.page === 'single-blog') singleBlog();
   if (window.nozomiData.page === 'portfolio') portfolio();
   if (window.nozomiData.page === 'single-portfolio') singlePortfolio();
-
-
+  
 }(jQuery))
 

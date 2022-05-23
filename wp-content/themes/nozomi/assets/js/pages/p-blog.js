@@ -17,6 +17,35 @@ export default function () {
     $sectionNav = $navTrigger.find('.gsap-nav--js'),
     navMobileActive,sectionFromGsap,sectionToGsap
   ;
+  let $indexSection = $body.find('.blog-img'),
+  $indexSectionBlock = $indexSection.find('.parallax-img-block--js'),
+  indexSectionImgTrigger="top center",
+  $indexSectionImg = $indexSectionBlock.find('img');
+  function indexScaleFunc() {
+    if (screen.width > 1024) {
+      indexSectionImgTrigger="top center";
+    }
+    else{
+      indexSectionImgTrigger="top 80%";
+    }
+    ScrollTrigger.create({
+      trigger: $indexSectionBlock,
+      animation: 
+      gsap
+          .timeline()
+          .fromTo(
+            $indexSectionImg,
+              { yPercent: -5,scale: 1.2, duration: 2 },
+              { yPercent: 5,scale: 1, duration: 2 }
+          ),
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      toggleActions: "play reverse none reverse",
+      markers: false
+    });
+  }
+  indexScaleFunc();
 
     if (screen.width > 1024) {
 

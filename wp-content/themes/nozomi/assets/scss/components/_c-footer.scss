@@ -357,9 +357,7 @@
 
       }
       &.current-menu-item{
-        a{
-          // color: var(--color-red);
-        }
+
       }
       a{
         color: var(--color-white);
@@ -401,6 +399,12 @@
             transform: scaleX(1);
             transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
           }
+        }
+      }
+      &.menu-item-portfolio,&.menu-item-about-us,&.menu-item-blog{
+        & > a {
+          pointer-events: all;
+          opacity:1;
         }
       }
       &.join-us{

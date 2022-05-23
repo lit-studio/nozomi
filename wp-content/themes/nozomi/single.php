@@ -152,7 +152,7 @@ get_header();
                         <div class="item">
                             <?php
                             if ($blog_image) { ?>
-                                <div class="item-img">
+                                <div class="item-img parallax-img-block--js">
                                     <img class="img"
                                          src="<?php echo $blog_image['sizes']['blog']; ?>"
                                          alt=""/>
@@ -205,13 +205,13 @@ get_header();
                                         $blog_image = get_field('image');
 
                                         if ($blog_image) { ?>
-                                            <div class="item-left">
+                                         <a class="item-left" href='<?php the_permalink(); ?>'>
                                                 <div class="item-img">
                                                     <img class="img"
                                                          src="<?php echo $blog_image['sizes']['blog_min']; ?>"
                                                          alt=""/>
                                                 </div>
-                                            </div>
+                                        </a>
                                         <?php } ?>
                                         <div class="item-right">
                                             <div class="item-right-wrap">
