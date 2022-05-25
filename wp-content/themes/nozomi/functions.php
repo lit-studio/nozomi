@@ -140,12 +140,10 @@ add_action('wp_enqueue_scripts', function () {
     if (is_page_template('page-blog.php')) $nozomiData['page'] = 'blog';
     if (is_category()) $nozomiData['page'] = 'blog';
     if (is_singular('post')) $nozomiData['page'] = 'single-blog';
-    if (is_page_template('page-join-us.php')) $nozomiData['page'] = 'join';
+    if (is_page_template('page-join-us.php')) $nozomiData['page'] = 'about';
     if (is_page_template('page-portfolio.php')) $nozomiData['page'] = 'portfolio';
     if (is_singular('portfolio')) $nozomiData['page'] = 'single-portfolio';
-//    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
-
-
+    //    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
     wp_localize_script('nozomi-script', 'nozomiData', $nozomiData);
     // dd($nozomiData['page']);
 

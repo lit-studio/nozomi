@@ -487,14 +487,14 @@
                 }
                 .item{
                     position: relative;
-                    &:hover{
+                    &.active{
                         .item-content{
                             opacity: 1;
                         }
                         img{
-                          transform: scale(1.05) rotate(-1deg);
+                            transform: scale(1.05) rotate(-1deg);
                         }
-                      }
+                    }
                     &-content{
                         position: absolute;
                         left: 0;
@@ -575,7 +575,7 @@
                             font-size: 15px; 
                         }
                         @include tablet{
-                            font-size: 146px;
+                            font-size: 14px;
                         }
                         @include phone{
                             font-size: 12px;

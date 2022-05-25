@@ -13,6 +13,7 @@ export default function () {
     $indexSectionBlock = $indexSection.find('.parallax-img-block--js'),
     indexSectionImgTrigger="top center",
     $indexSectionImg = $indexSectionBlock.find('img');
+    
     function indexScaleFunc() {
       if (screen.width > 1024) {
         indexSectionImgTrigger="top center";
@@ -57,9 +58,9 @@ export default function () {
     function shareMobile() {
 
         if (screen.width <= 1024) {
-            let $blogTopShare = $('.blog-top-share');
-            let $blogTopShareLi = $blogTopShare.find('.blog-top-share-li');
-            let $blogTopShareBtn = $blogTopShare.find('.blog-top-share-mobile--js');
+            let $blogTopShare = $('.blog-top-share'),
+                $blogTopShareLi = $blogTopShare.find('.blog-top-share-li'),
+                $blogTopShareBtn = $blogTopShare.find('.blog-top-share-mobile--js');
             $blogTopShareBtn.on("click", function () {
                 if (!$blogTopShareBtn.hasClass('close')) {
                     $blogTopShareBtn.addClass('close');
@@ -69,6 +70,15 @@ export default function () {
                     $blogTopShareLi.removeClass('open');
                 }
             });
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest($blogTopShare).length) {
+                    if ($blogTopShareBtn.hasClass('close')) {
+                        $blogTopShareBtn.removeClass('close');
+                        $blogTopShareLi.removeClass('open');
+                    } 
+                }
+                e.stopPropagation();
+              });
         }
     }
 

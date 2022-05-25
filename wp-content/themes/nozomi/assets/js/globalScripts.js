@@ -4,9 +4,6 @@ import lottie from "lottie-web";
 import header from "./components/c-header";
 import footer from "./components/c-footer";
 
-// import ScrollToPlugin from "gsap/ScrollToPlugin";
-// gsap.registerPlugin(ScrollToPlugin);
-
 export default function () {
   let $body = $('body'),
   $preloaderBlock = $body.find('.preloader--js');
@@ -30,17 +27,14 @@ export default function () {
       window.addEventListener("load", function(){
         setTimeout(function(){
           $('html,body').scrollTop(0);
-          // $preloaderBlock.fadeOut(500);
           gsap.to($preloaderBlock, 0.5, { autoAlpha: 0 },'');
       }, 500);
       });
     }
     let $window = $(window),
     $indexHome = $('.index-home'),
-    winHeight = $window.height(),
-    winHeightScreen = screen.height;
-    // console.log('winHeightScreen ' + winHeightScreen );
-    // console.log('winHeight ' + winHeight );
+    winHeight = $window.height();
+    // winHeightScreen = screen.height;
     if (winHeight > 560) {
       if (winHeight > 700) {
         $indexHome.addClass('mobile-height');

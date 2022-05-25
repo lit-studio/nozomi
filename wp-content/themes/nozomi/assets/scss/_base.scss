@@ -506,14 +506,17 @@ h6,
     line-height: 150%;
     @include desktop-normal{
       font-size: 20px;
-      // padding-top: 30px;
+      padding-top: 30px;
     }
     @include desktop-note-big{
       font-size: 16px;
-      // padding-top: 25px;
+      padding-top: 25px;
     }
     @include desktop-block{
       font-size: 16px;
+    }
+    @include tablet{
+      padding-top: 30px;
     }
     @include phone{
      font-size: 15px;
@@ -532,6 +535,7 @@ h6,
     // color: var(--color-red);
     font-size: 24px;
     line-height: 150%;
+    counter-reset: item;
     @include desktop-normal{
       font-size: 20px;
     }
@@ -546,7 +550,15 @@ h6,
     }
     li{
       // color: var(--color-red);
+      display: block;
+      &:before{
+        content: counter(item) ". "; 
+        counter-increment: item; 
+        font-weight: bold;
+        color: var(--co);
+      }
     }
+
   }
   li{
     padding-top: 16px;

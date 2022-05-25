@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger)
 export default function () {
   console.log( 'header' );
   let   $body = $("body"),
-    $window = $(window),
     $header = $(".c-header--js"),
     $logoHeader = $header.find(".c-header-logo-item"),
     $menuBtn = $header.find(".btn-menu--js"),
@@ -31,18 +30,6 @@ export default function () {
       ease: 'expo.easeOut',
     }, "-=3");
 
-    // linksAnim.reverse();
-    // let tl = gsap.timeline({ paused: true });
-
-    // tl.from($links, {
-    //   duration: 1,
-    //   opacity: 0,
-    //   yPercent: -10,
-    //   stagger: 0.1,
-    //   ease: 'power2.easeOut',
-    // }, "-=0.5");
-    
-    // tl.reverse();
     
     let logoHeaderAnim = gsap
     .timeline({
@@ -72,8 +59,6 @@ export default function () {
     menuBtnHover();
 
     function scrollHeader() {
- 
-
 
       ScrollTrigger.create({
         trigger: $headerTrigger,
@@ -119,7 +104,6 @@ export default function () {
 
 
     $menuBtn.on("click", function () {
-      // linksAnim.reversed(!linksAnim.reversed());
       linksAnim.play();
       if (!$menuBtn.hasClass('open')) {
         menuBtnAnim.playSegments([30, 63], true);
@@ -171,19 +155,12 @@ export default function () {
   
   function mouseMoveCursor(e) {
     gsap.to("#cursor", 0.8,{ x : e.clientX , y : e.clientY
-      // css: {
-      //   left: e.clientX,
-      //   top: e.clientY
-      //   // left: e.clientX + 10,
-      //   // top: e.clientY + 10
-      // }
       , ease:"power2.out"
     });
    }
 
 
   if (screen.width > 1024) {
-    // console.log('mouseMoveCursor(e)');
     window.addEventListener("mousemove", mouseMoveCursor);
   }
   if ($aboutTrigger.length > 0) {
@@ -202,6 +179,4 @@ export default function () {
     }
     burgerChange();
   }
-
-
 }

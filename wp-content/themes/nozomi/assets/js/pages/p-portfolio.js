@@ -12,7 +12,7 @@ export default function () {
     $navMobileBtnText = $navMobileBtn.find('.nav-mobile-btn-text'),
     $navMobileBlock = $navSection.find('.nav-menu--js'),
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
-    navMobileActive
+    navMobileActive,navMobileAnim
   ;
 
 
@@ -34,7 +34,7 @@ export default function () {
     navScrollFunc();
   }
   else{
-    let navMobileAnim = gsap
+    navMobileAnim = gsap
     .timeline({
       paused: true
     })
