@@ -27,6 +27,28 @@ get_header();
                             <div class="portfolios-list">
                                 <div class="item">
                                     <div class="item-wrap">
+                                        <div class="item-content">
+                                            <div class="item-content-wrap ">
+                                                <div class="item-tag">
+                                                    <div class="item-tag--tag">
+                                                        Incorpro
+                                                    </div>
+                                                </div>
+                                                <div class="item-desc">
+                                                    <div class="item-desc--desc">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis varius platea aliquam vel.
+                                                    </div>
+                                                </div>
+                                                <div class="item-services">
+                                                    <div class="item-services--service">
+                                                        Monitoring & Diagnostics
+                                                    </div>
+                                                    <div class="item-services--service">
+                                                        Treatment Selection
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="item-img">
                                             <picture class="picture">
                                                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01@mobile.jpg" media="(max-width: 768px)">
@@ -37,6 +59,28 @@ get_header();
                                 </div>
                                 <div class="item">
                                     <div class="item-wrap">
+                                        <div class="item-content">
+                                            <div class="item-content-wrap">
+                                                <div class="item-tag">
+                                                    <div class="item-tag--tag">
+                                                        Incorpro
+                                                    </div>
+                                                </div>
+                                                <div class="item-desc">
+                                                    <div class="item-desc--desc">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis varius platea aliquam vel.
+                                                    </div>
+                                                </div>
+                                                <div class="item-services">
+                                                    <div class="item-services--service">
+                                                        Monitoring & Diagnostics
+                                                    </div>
+                                                    <div class="item-services--service">
+                                                        Treatment Selection
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="item-img">
                                             <picture class="picture">
                                                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02@mobile.jpg" media="(max-width: 768px)">
@@ -47,6 +91,28 @@ get_header();
                                 </div>
                                 <div class="item">
                                     <div class="item-wrap">
+                                        <div class="item-content">
+                                            <div class="item-content-wrap">
+                                                    <div class="item-tag">
+                                                        <div class="item-tag--tag">
+                                                            Incorpro
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-desc">
+                                                        <div class="item-desc--desc">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis varius platea aliquam vel.
+                                                        </div>
+                                                    </div>
+                                                    <div class="item-services">
+                                                        <div class="item-services--service">
+                                                            Monitoring & Diagnostics
+                                                        </div>
+                                                        <div class="item-services--service">
+                                                            Treatment Selection
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
                                         <div class="item-img">
                                             <picture class="picture">
                                                     <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03@mobile.jpg" media="(max-width: 768px)">
