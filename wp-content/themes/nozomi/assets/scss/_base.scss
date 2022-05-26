@@ -225,39 +225,6 @@ h6,
 }
 
 
-//.lottie-cursor {
-//  position: fixed;
-//  pointer-events: none;
-//  user-select: none;
-//  left: 0;
-//  top: 0;
-//  z-index: 20;
-//
-//  &-icon {
-//    position: absolute;
-//    left: 0;
-//    top: 0;
-//
-//    &.hero-section {
-//      width: 120px;
-//      height: 40px;
-//    }
-//
-//    &.more-section {
-//      width: 202px;
-//      height: 40px;
-//    }
-//
-//    &.modal-section {
-//      width: 150px;
-//      height: 40px;
-//    }
-//    &.video-section {
-//      width: 120px;
-//      height: 40px;
-//    }
-//  }
-//}
 
 .btn-modal-js {
   cursor: pointer;
@@ -298,27 +265,27 @@ h6,
 
 
 
-.item-edit{
-  a{
-    color: var(--color-red);
-    text-decoration: underline;
-    font-family: var(--font-bold);
-    cursor: pointer;
-    &:hover{
-      text-decoration: none;
-    }
-  }
-  p{
-    padding-top: 20px;
-    @include phone{
-      padding-top: 15px;
-    }
-    &:first-of-type{
-      padding-top: 0;
-    }
-  }
+// .item-edit{
+//   a{
+//     color: var(--color-red);
+//     text-decoration: underline;
+//     font-family: var(--font-bold);
+//     cursor: pointer;
+//     &:hover{
+//       text-decoration: none;
+//     }
+//   }
+//   p{
+//     padding-top: 20px;
+//     @include phone{
+//       padding-top: 15px;
+//     }
+//     &:first-of-type{
+//       padding-top: 0;
+//     }
+//   }
 
-}
+// }
 
 .page-fixed{
   .c-scrollbar{
@@ -521,6 +488,9 @@ h6,
     @include phone{
      font-size: 15px;
     //  padding-top: 15px;
+    }
+    &:first-of-type{
+      padding-top: 0;
     }
   }
   ul{

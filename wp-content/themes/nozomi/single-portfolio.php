@@ -7,11 +7,11 @@ get_header();
                 <section class="index-single-portfolio">
                     <div class="index-wrap">
                         <div class="item">
-                            <div class="item-tag">
+                            <!-- <div class="item-tag">
                                 <div class="item-tag--tag">
                                     Mental Mirror
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="item-title">
                                 <div class="item-title--title">
                                     Track the most important emotional states and get instant help in a moment of stress and anxiety
@@ -39,22 +39,10 @@ get_header();
                                     <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first.jpg">
                                 </picture>
                             </div>
-                            <div class="item-screens">
-                                <div class="item-screens-wrap">
-                                    <div class="item-screens-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first-screen-01.png">
-                                    </div>
-                                    <div class="item-screens-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first-screen-02.png">
-                                    </div>
-                                    <div class="item-screens-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first-screen-03.png">
-                                    </div> 
-                                </div> 
-                            </div> 
                         </div>
                     </div>
                 </section>
+                 
                 <section class="specification"> 
                     <div class="specification-wrap">
                         <div class="specification-ul">
@@ -111,6 +99,7 @@ get_header();
                         </div>
                     </div>
                 </section>
+
                 <section class="about"> 
                     <div class="about-wrap">
                         <div class="about-top">
@@ -127,123 +116,17 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="about-bottom">
-                            <div class="item">
-                                <div class="item-img">
-                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-screen.png">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </section>
-                <section class="problem">
-                    <div class="problem-wrap">
-                        <div class="item">
-                            <div class="item-cursive">
-                                <div class="item-cursive--cursive">
-                                    Overview
-                                </div>
-                            </div>
-                            <div class="item-title">
-                                <div class="item-title--title">
-                                    The Problem
-                                </div>
-                            </div>
-                            <div class="item-desc">
-                                <div class="item-desc--desc">
-                                The world we live in is a dangerous place for our mind. It makes us feel angry, worried, sad, afraid, sometimes happy and so much more. The problem we share in common is that we are not trying to perceive these emotions in the right way, thus self-destroying ourselves.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="vision">
-                    <div class="vision-wrap">
-                        <div class="item">
-                            <div class="item-title">
-                                <div class="item-title--title">
-                                    The Vision
-                                </div>
-                            </div>
-                            <div class="item-desc">
-                                <div class="item-desc--desc">
-                                Mental Mirror gives you the ability to train your mind like you’re training your body in the gym. By using it periodically you develop the right skills to face the unpredictable world around you.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="design">
-                        <div class="design-top">
-                            <div class="design-top-wrap">
-                                <div class="design-top-row">
-                                    <div class="design-top-col design-img">
-                                        <div class="item">
-                                            <div class="item-img">
-                                                <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design.jpg">
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="design-top-col design-top-desc">
-                                        <div class="item">
-                                            <div class="item-cursive">
-                                                <div class="item-cursive--cursive">
-                                                    Phase 1
-                                                </div>
-                                            </div>
-                                            <div class="item-title">
-                                                <div class="item-title--title">
-                                                    Design 
-                                                </div>
-                                            </div>
-                                            <div class="item-desc">
-                                                <div class="item-desc--desc">
-                                                    Breathing life into the product by developing the interface that users enjoy. It’s about those little interactive touches, or micro-copy, that make users smile with surprise or appreciation.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="design-middle">
-                            <div class="design-middle-wrap">
-                                <div class="design-img">
-                                    <div class="item">
-                                        <div class="item-img">
-                                            <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design-gallery.jpg">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="design-bottom">
-                            <div class="design-img">
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design-video.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="design-slide">
-                            <div class="design-img">
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design-parallax.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </section>
                 <section class="development">
                     <div class="development-wrap">
                         <div class="development-row">
                             <div class="development-col development-img">
                                 <div class="item">
                                     <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-development.jpg">
+                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-development.png">
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -251,146 +134,103 @@ get_header();
                                 <div class="item">
                                     <div class="item-cursive">
                                         <div class="item-cursive--cursive">
-                                            Phase 2
+                                            What we did
                                         </div>
                                     </div>
                                     <div class="item-title">
                                         <div class="item-title--title">
-                                            Development
+                                            Briefing
                                         </div>
                                     </div>
                                     <div class="item-desc">
-                                        <div class="item-desc--desc">
-                                            We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines
+                                        <div class="item-desc--desc c-article-content">                                           
+                                            <p>We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines. </p>
+                                            <p>We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines. </p>
+                                            <p>We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines. </p>
                                         </div>
                                     </div>
-                                    <div class="item-technology">
-                                        <div class="item-technology-list">
-                                            <div class="item-technology-li">
-                                                <div class="item-technology-title">
-                                                    Mobile
-                                                </div>
-                                                <div class="item-technology-desc">
-                                                    React Native
-                                                </div>
-                                            </div>
-                                            <div class="item-technology-li">
-                                                <div class="item-technology-title">
-                                                Backend
-                                                </div>
-                                                <div class="item-technology-desc">
-                                                NodeJs, HBase
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="process">
-                    <div class="process-top">
-                        <div class="process-wrap">
+                
+                <section class="story">
+                    <div class="story-wrap">
+                        <div class="story-desc">
                             <div class="item">
                                 <div class="item-cursive">
                                     <div class="item-cursive--cursive">
-                                        How we did it
+                                    story behind the scenes
                                     </div>
                                 </div>
                                 <div class="item-title">
                                     <div class="item-title--title">
-                                        Process
+                                        How we organized a diverse team to boost the result
                                     </div>
                                 </div>
                                 <div class="item-desc">
-                                    <div class="item-desc--desc">
-                                        We strive for excellence in code. A language-agnostic team managed by a solid Agile & QA process. Every architectural solution is created with scalability in mind and based on the current product use-cases. With a crossplatform technologies, we achieve the highest rate of the entire audience exposure within tight deadlines
+                                    <div class="item-desc--desc c-article-content">
+                                        <p>
+                                            We sure that process is as inportant as the end result, so trying to improve it and share our thoughts in blog
+                                        </p>
                                     </div>
                                 </div>
+                                <div class="item-link">
+                                    <a href='/'
+                                        target=""
+                                        class="item-link--link">
+                                        Read the story
+                                    </a>
+                                </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="process-slider">
-                            <div class="process-slider-block">
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-slider-01.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-slider-02.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-slider-03.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-slider-04.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                 </section>
-                <section class="voice">
-                    <div class="voice-wrap">
-                        <div class="voice-row">
-                            <div class="voice-col voice-img">
-                                <div class="item">
-                                    <div class="item-img">
-                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-voice-video.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="voice-col voice-desc">
-                                <div class="item">
-                                    <div class="item-cursive">
-                                        <div class="item-cursive--cursive">
-                                        Result
-                                        </div>
-                                    </div>
-                                    <div class="item-title">
-                                        <div class="item-title--title">
-                                        Voice of the customer
-                                        </div>
-                                    </div>
-                                    <div class="item-desc">
-                                        <div class="item-desc--desc">
-                                            <p>User testing is the key part of the UX design process. It allows us to measure the effectiveness and efficiency of our design solutions by testing our assumptions on real users.</p>
-                                            <p>With product idea validatiion in mind, we focused on the target audience and ran the tests on prototypes.</p>
-                                        </div>
-                                    </div>
+
+                <section class="design">
+                    <div class="design-bottom">
+                        <div class="design-img">
+                            <div class="item">
+                                <div class="item-img">
+                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-design-video.jpg">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section class="review">
                     <div class="review-wrap">
                         <div class="review-row">
-                            <div class="review-col">
+                            <div class="review-col review-img">
+                                <div class="item">
+                                    <div class="item-img">
+                                        <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-review.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-col review-desc">
                                 <div class="item">
                                     <div class="item-cursive">
                                         <div class="item-cursive--cursive">
                                         Client’s review
                                         </div>
                                     </div>
-                                    <div class="item-wrap">
-                                        <div class="item-desc">
-                                            <div class="item-desc--desc">
-                                                Nozomi guys did the great work! This product has to become first step toward contributing to digital healthcare development.
-                                            </div>
+                                    <div class="item-autor">
+                                        <div class="item-img">
+                                            <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-autor.png">
                                         </div>
-                                        <div class="item-autor">
-                                            <div class="item-img">
-
-                                            </div>
-                                            <div class="item-name">
+                                    </div>
+                                    <div class="item-desc">
+                                        <div class="item-desc--desc c-article-content">
+                                            <p>
+                                                “I’m personally not a mentally stable person. I know how a mental state can affect a physical one. I know how hard it is to face losses, fear and depression. This product is my first step toward contributing to digital healthcare development.”
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="item-name">
                                                 <div class="item-name--name">
                                                 Client Name
                                                 </div>
@@ -398,39 +238,13 @@ get_header();
                                                 Founder and CEO of Product
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="next">
-                    <div class="next-wrap">
-                        <div class="next-desc">
-                            <div class="next-desc-wrap">
-                                <div class="item">
-                                    <div class="item-cursive">
-                                        <div class="item-cursive--cursive">
-                                            Next case
-                                        </div>
-                                    </div>
-                                    <div class="item-title">
-                                        <div class="item-title--title">
-                                            Incorpro
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="next-img">
-                            <div class="item-img">
-                                <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/case/case-first-screen-01.png">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
             </div>
         
         </div>

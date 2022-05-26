@@ -47,8 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="c-header-bg c-header-bg--js"></div>
-    <?php /*
+
     <div class="c-header-mobile c-header-mobile--js">
         <div class="c-header-mobile-wrap">
             <div class="c-header-mobile-top">
@@ -58,6 +57,7 @@
             </div>
         </div>
     </div>
-    */ ?>
+    
+    <div class="c-header-bg c-header-bg--js"></div>
 </header>
 <div class="c-header-trigger c-header-trigger--js"></div>

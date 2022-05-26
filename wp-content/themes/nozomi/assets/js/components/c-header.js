@@ -12,11 +12,15 @@ export default function () {
     $menuBtn = $header.find(".btn-menu--js"),
     $menuBg = $header.find(".c-header-bg--js"),
     $menuBlock = $header.find(".c-header-menu--js"),
+    $menuBlockMobile = $header.find(".c-header-mobile--js"),
     $headerTrigger = $header.find(".c-header-trigger--js"),
     $aboutTrigger = $body.find(".about-trigger--js"),
     menuBtn = document.querySelector(".btn-menu--js");
 
-    let $links = $menuBlock.find('.menu-item');
+    let $links = $menuBlock.find('.menu-item'),
+    $linkskMobile = $menuBlockMobile.find('.menu-item'),
+    modalMenuAnim
+    ;
     
     let linksAnim = gsap
     .timeline({
@@ -30,6 +34,17 @@ export default function () {
       ease: 'expo.easeOut',
     }, "-=3");
 
+    let linksAnimMobile = gsap
+    .timeline({
+      paused: true
+    })
+    .from($linkskMobile, {
+      duration: 1,
+      opacity: 0,
+      yPercent: -10,
+      stagger: 0.1,
+      ease: 'expo.easeOut',
+    }, "-=3");
     
     let logoHeaderAnim = gsap
     .timeline({
@@ -94,41 +109,84 @@ export default function () {
 
   function mobileMenu() {
 
-    let modalMenuAnim = gsap
-        .timeline({
-          paused: true
-        })
-        .to($menuBlock, 0.3, { autoAlpha: 1 },'')
-        .from($menuBlock, 0.3, { yPercent: -200 },'')
-        .from($menuBg, 0.3, { yPercent: -100 },'<');
 
+        if (screen.width > 1024) {
 
+          modalMenuAnim = gsap
+          .timeline({
+            paused: true
+          })
+          .to($menuBlock, 0.3, { autoAlpha: 1 },'')
+          .from($menuBlock, 0.3, { yPercent: -200 },'')
+          .from($menuBg, 0.3, { yPercent: -100 },'<');
+        }
+        else{
+          modalMenuAnim = gsap
+          .timeline({
+            paused: true
+          })
+          .to($menuBlockMobile, 0.3, { autoAlpha: 1 },'')
+          .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
+          .from($menuBg, 0.3, { yPercent: -100 },'<');
+        }
+        
     $menuBtn.on("click", function () {
-      linksAnim.play();
-      if (!$menuBtn.hasClass('open')) {
-        menuBtnAnim.playSegments([30, 63], true);
-        $menuBtn.addClass("open");
-        $header.addClass("open");
-        modalMenuAnim.play();
-        linksAnim.restart();
-        // linksAnim.play();
-        if ($header.hasClass('header-fixed')) {
-          logoHeaderAnim.reverse();
-        }
 
-      } else {
-        menuBtnAnim.playSegments([63, 30], true);
-        $menuBtn.removeClass("open");
-        $header.removeClass("open");
-        modalMenuAnim.reverse();
-        linksAnim.reverse();
-        if ($header.hasClass('header-fixed')) {
-          logoHeaderAnim.play();
-        }
-        if (screen.width < 1024) {
-          menuBtnAnim.playSegments([63, 0], true);
+      if (screen.width > 1024) {
+        linksAnim.play();
+        if (!$menuBtn.hasClass('open')) {
+          menuBtnAnim.playSegments([30, 63], true);
+          $menuBtn.addClass("open");
+          $header.addClass("open");
+          modalMenuAnim.play();
+          linksAnim.restart();
+          // linksAnim.play();
+          if ($header.hasClass('header-fixed')) {
+            logoHeaderAnim.reverse();
+          }
+  
+        } else {
+          menuBtnAnim.playSegments([63, 30], true);
+          $menuBtn.removeClass("open");
+          $header.removeClass("open");
+          modalMenuAnim.reverse();
+          // linksAnim.reverse();
+          if ($header.hasClass('header-fixed')) {
+            logoHeaderAnim.play();
+          }
+          // if (screen.width < 1024) {
+          //   menuBtnAnim.playSegments([63, 0], true);
+          // }
         }
       }
+      else{
+        linksAnimMobile.play();
+        if (!$menuBtn.hasClass('open')) {
+          menuBtnAnim.playSegments([30, 63], true);
+          $menuBtn.addClass("open");
+          $header.addClass("open");
+          modalMenuAnim.play();
+          linksAnimMobile.restart();
+          // linksAnim.play();
+          if ($header.hasClass('header-fixed')) {
+            logoHeaderAnim.reverse();
+          }
+  
+        } else {
+          menuBtnAnim.playSegments([63, 0], true);
+          $menuBtn.removeClass("open");
+          $header.removeClass("open");
+          modalMenuAnim.reverse();
+          linksAnimMobile.reverse();
+          if ($header.hasClass('header-fixed')) {
+            logoHeaderAnim.play();
+          }
+          // if (screen.width < 1024) {
+          //   menuBtnAnim.playSegments([63, 0], true);
+          // }
+        }
+      }
+
     });
 
     $(document).on('click', function(e) {

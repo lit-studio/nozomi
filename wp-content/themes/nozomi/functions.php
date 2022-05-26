@@ -142,6 +142,7 @@ add_action('wp_enqueue_scripts', function () {
     if (is_singular('post')) $nozomiData['page'] = 'single-blog';
     if (is_page_template('page-join-us.php')) $nozomiData['page'] = 'about';
     if (is_page_template('page-portfolio.php')) $nozomiData['page'] = 'portfolio';
+    if (is_page_template('page-how-we-work.php')) $nozomiData['page'] = 'how-we-work';
     if (is_singular('portfolio')) $nozomiData['page'] = 'single-portfolio';
     //    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
     wp_localize_script('nozomi-script', 'nozomiData', $nozomiData);
@@ -158,6 +159,7 @@ add_filter('body_class', function ($classes) {
     if (is_singular('post')) array_push($classes, 'p-single-blog');
     if (is_page_template('page-join-us.php')) array_push($classes, 'p-about');
     if (is_page_template('page-portfolio.php')) array_push($classes, 'p-portfolio');
+    if (is_page_template('page-how-we-work.php')) array_push($classes, 'p-how');
     if (is_singular('portfolio')) array_push($classes, 'p-single-portfolio');
 //    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
 
