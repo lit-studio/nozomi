@@ -37,7 +37,7 @@ export default function () {
             renderer: "svg",
             loop: false,
             autoplay: false,
-            path: nozomiData.rootUrl + "/assets/lottie/button_book.json"
+            path: nozomiData.rootUrl + "/assets/lottie/button_book_grey.json"
           });
     
           btnFeel.addEventListener("mouseenter", () => {
