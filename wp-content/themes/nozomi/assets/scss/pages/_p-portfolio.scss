@@ -498,76 +498,79 @@
     &-wrap{
 
     }
-    .item{
-        &-cursive{
-            &--cursive{
-                font-family: var(--font-gloria);
-                font-size: 28px;
-                line-height: 1.2;
-                color:var(--color-red);
-                @include desktop-normal{
-                font-size: 24px;
-                }
-                @include desktop-note-big{
-                font-size: 20px;
-                }
-                @include desktop-block{
-        
-                }
-                @include tablet{
-        
-                }
-                @include phone{ 
-                font-size: 16px;
-                }
-            }
-        }
-        &-title{
-            &--title{
-                font-family: var(--font-bold);
-                font-size: 64px;
-                line-height: 130%;
-                color:var(--color-grey);
-                @include desktop-normal{
-                    font-size: 54px;
-                }
-                @include desktop-note-big{
-                    font-size: 48px;
-                }
-                @include desktop-block{
-        
-                }
-                @include tablet{
-        
-                }
-                @include phone{
-                    font-size: 32px;
-                }
-            }
-        }
-        &-desc{
-            &--desc{ 
-                font-size: 24px;
-                line-height: 150%;
-                color:var(--color-grey);
-                @include desktop-normal{
+    section{
+        .item{
+            &-cursive{
+                &--cursive{
+                    font-family: var(--font-gloria);
+                    font-size: 28px;
+                    line-height: 1.2;
+                    color:var(--color-red);
+                    @include desktop-normal{
+                    font-size: 24px;
+                    }
+                    @include desktop-note-big{
                     font-size: 20px;
-                }
-                @include desktop-note-big{
+                    }
+                    @include desktop-block{
+            
+                    }
+                    @include tablet{
+            
+                    }
+                    @include phone{ 
                     font-size: 16px;
+                    }
                 }
-                @include desktop-block{
-        
+            }
+            &-title{
+                &--title{
+                    font-family: var(--font-bold);
+                    font-size: 64px;
+                    line-height: 130%;
+                    color:var(--color-grey);
+                    @include desktop-normal{
+                        font-size: 54px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 48px;
+                    }
+                    @include desktop-block{
+            
+                    }
+                    @include tablet{
+            
+                    }
+                    @include phone{
+                        font-size: 32px;
+                    }
                 }
-                @include tablet{
-        
-                }
-                @include phone{
-                    font-size: 15px;
+            }
+            &-desc{
+                &--desc{ 
+                    font-size: 24px;
+                    line-height: 150%;
+                    color:var(--color-grey);
+                    @include desktop-normal{
+                        font-size: 20px;
+                    }
+                    @include desktop-note-big{
+                        font-size: 16px;
+                    }
+                    @include desktop-block{
+            
+                    }
+                    @include tablet{
+            
+                    }
+                    @include phone{
+                        font-size: 15px;
+                    }
                 }
             }
         }
     }
+
 
     .index{
         &-wrap{
@@ -1446,5 +1449,112 @@
             }
         }
     }
+
+    .feel{
+        background-color: var(--color-beage);
+        padding-top: 120px;
+        padding-bottom: 60px;
+        @include desktop-normal{
+          padding-top: 100px;
+          padding-bottom: 40px; 
+        }
+        @include desktop-note-big{
+          padding-top: 70px;
+          padding-bottom: 53px;
+        }
+        // @include phone{
+        //   padding-bottom: 42px;
+        // }
+        &-wrap{
+          display: flex;
+          flex-wrap: nowrap;
+          max-width: 1324px;
+          margin: 0 auto;
+          @include desktop-normal{
+            max-width: 1148px;
+          }
+          @include desktop-note-big{
+            max-width: 1000px;
+          }
+          @include desktop-block{
+            padding-left: 65px;
+            padding-right: 65px;
+            max-width: 100%;
+          }
+    
+          @include middle-tablet{
+            padding-left: 25px;
+            padding-right: 25px;
+          }
+    
+          @include tablet{
+            padding-left: 25px;
+            padding-right: 25px;
+          }
+          @include phone{
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        }
+        &-item{
+          .item{
+            &-title{ 
+              &--title{
+                color: var(--color-grey);
+                font-family: var(--font-bold);
+                line-height: 125%;
+                font-size: 64px;
+                @include desktop-normal{
+                  font-size: 54px;
+                }
+                @include desktop-note-big{
+                  font-size: 48px;
+                }
+                @include phone{
+                  font-size: 32px;
+                }
+              }
+            }
+            &-btns{
+              padding-top: 40px;
+              @include desktop-note-big{
+                padding-top: 25px;
+              }
+              @include phone{
+                padding-top: 30px;
+              }
+              &-btn{
+                max-width: 246px;
+                @include desktop-normal{
+                  max-width: 224px;
+                }
+                @include desktop-note-big{
+                  max-width: 214px;
+                }
+                @include phone{
+                  max-width: 192px;
+                }
+                .btn{
+                  padding: 0;
+                  position: relative;
+                }
+                svg{
+                    &>g{
+                        &>g{
+                            &>g{
+                                &>path{
+                                    fill: var(--color-grey);
+                                }
+                            }
+                        }   
+                    }
+                }
+              }
+            }
+          }
+    
+        }
+    
+      }
 
 }

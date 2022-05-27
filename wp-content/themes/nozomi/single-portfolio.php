@@ -244,7 +244,26 @@ get_header();
                         </div>
                     </div>
                 </section>
-
+                <section class="feel">
+                    <div class="feel-wrap">
+                        <div class="feel-item">
+                            <div class="item">
+                                <div class="item-title">
+                                        <div class="item-title--title">
+                                            Feel that we should work together?
+                                        </div>
+                                    </div>
+                                <div class="item-btns">
+                                    <div class="item-btns-btn">
+                                        <a href="#" target="_blank"
+                                        class="btn btn-feel--js">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         
         </div>
