@@ -285,6 +285,7 @@ function create_portfolio()
 }
 
 add_image_size('home_1', '840', '9999', false);
+add_image_size('how', '1204', '9999', false);
 add_image_size('home_2', '2360', '9999', false);
 add_image_size('author', '144', '144', true);
 add_image_size('blog', '5120', '9999', false);
