@@ -263,7 +263,7 @@ class Shared_Counts_Admin {
 						<td>
 							<input type="text" name="shared_counts_options[fb_access_token]" value="<?php echo esc_attr( $this->settings_value( 'fb_access_token' ) ); ?>" id="shared-counts-setting-fb_access_token" class="regular-text" />
 							<p class="description">
-								<?php esc_html_e( 'If you have trouble receiving Facebook counts, you may need to setup an access token.', 'shared-counts' ); ?><br><a href="https://smashballoon.com/custom-facebook-feed/access-token/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Follow these instructions.', 'shared-counts' ); ?></a>
+								<?php esc_html_e( 'Facebook now requires an access token to receive share count data.', 'shared-counts' ); ?><br><a href="https://smashballoon.com/custom-facebook-feed/page-token/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Follow these instructions.', 'shared-counts' ); ?></a>
 							</p>
 						</td>
 					</tr>
@@ -814,19 +814,19 @@ class Shared_Counts_Admin {
 	public function sort_column_query( $query ) {
 
 		if ( is_admin() && 'shared_counts' === $query->get( 'orderby' ) ) {
-			$meta_query = array(
+			$meta_query = [
 				'relation' => 'OR',
-				array(
-					'key' => 'shared_counts_total',
-					'type' => 'NUMERIC',
+				[
+					'key'     => 'shared_counts_total',
+					'type'    => 'NUMERIC',
 					'compare' => 'NOT EXISTS',
-				),
-				array(
-					'key' => 'shared_counts_total',
-					'type' => 'NUMERIC',
+				],
+				[
+					'key'     => 'shared_counts_total',
+					'type'    => 'NUMERIC',
 					'compare' => 'EXISTS',
-				)
-			);
+				],
+			];
 			$query->set( 'orderby', 'meta_value_num date' );
 			$query->set( 'meta_query', $meta_query );
 		}
@@ -1257,11 +1257,16 @@ class Shared_Counts_Admin {
 	 */
 	public function register_dashboard_widget() {
 
-		wp_add_dashboard_widget(
-			'shared_counts_dashboard_widget',
-			esc_html__( 'Most Shared Content', 'shared-counts' ),
-			[ $this, 'dashboard_widget' ]
-		);
+		$posts = $this->dashboard_posts();
+		if( !empty( $posts ) ) {
+
+			wp_add_dashboard_widget(
+				'shared_counts_dashboard_widget',
+				esc_html__( 'Most Shared Content', 'shared-counts' ),
+				[ $this, 'dashboard_widget' ]
+			);
+
+		}
 	}
 
 	/**
@@ -1270,6 +1275,15 @@ class Shared_Counts_Admin {
 	 * @since 1.0.0
 	 */
 	public function dashboard_widget() {
+
+		echo $this->dashboard_posts(); //phpcs:ignore
+	}
+
+	/**
+	 * Dashboard Posts
+	 *
+	 */
+	public function dashboard_posts() {
 
 		$posts = get_transient( 'shared_counts_dashboard_posts' );
 
@@ -1302,14 +1316,22 @@ class Shared_Counts_Admin {
 					);
 				}
 				$posts .= '</ol>';
+			} else {
+				$posts = $this->no_posts();
 			}
 			wp_reset_postdata();
 
 			set_transient( 'shared_counts_dashboard_posts', $posts, DAY_IN_SECONDS );
-		} else {
-			echo '<!-- Shared Counts Posts: Cached -->';
 		}
 
-		echo $posts; //phpcs:ignore
+		return $posts;
+	}
+
+	/**
+	 * No Posts
+	 *
+	 */
+	public function no_posts() {
+		return '<!-- No Shared Counts posts -->';
 	}
 }

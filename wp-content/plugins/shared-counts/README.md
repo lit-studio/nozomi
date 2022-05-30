@@ -5,8 +5,8 @@
 **Contributors:** jaredatch, billerickson  
 **Tags:** sharing, share buttons, social buttons, share counts, social, facebook, linkedin, pinterest, twitter  
 **Requires at least:** 4.6  
-**Tested up to:** 5.5  
-**Stable tag:** 1.3.0  
+**Tested up to:** 6.0  
+**Stable tag:** 1.4.0  
 **Requires PHP:** 5.6
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,6 +24,11 @@ Shared Counts is a WordPress social media share buttons plugin. Sharing buttons 
 - LinkedIn Share Button
 
 Facebook, Pinterest, Yummly, and Twitter buttons support social count display and tracking.
+
+### Basic Usage
+In Settings > Shared Counts you can select where the share buttons can appear automatically (Before Content, After Content, Before & After Content). When editing a post, you can use the checkbox in the "Shared Counts" box in the right column to disable the automatic buttons on this specific post.
+
+You can use the `[shared_counts]` shortcode to manually display the buttons.
 
 ### Styling and Display
 We include many share button styling options, so you can pick the perfect look for you site. Additionally, you can automatically insert the share buttons before and/or after the post content. Want granular or manual control? No problem! You can also use the `[shared_counts]` shortcode to insert them inside your content as you see fit.

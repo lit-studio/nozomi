@@ -11,7 +11,9 @@ get_header();
                                 <?php
                                 $category = get_the_category();
                                 $firstCategory = $category[0]->cat_name;
-                                echo $firstCategory; ?>
+                                echo $firstCategory;
+
+                                ?>
                             </div>
                         </div>
                         <div class="item-title">
