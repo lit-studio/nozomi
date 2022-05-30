@@ -25,7 +25,7 @@ get_header();
                                 <img class="img" data-src="<?php echo get_template_directory_uri() ?>/assets/images/how/case-first.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/how/how-index.svg">
                             </div>
                             <div class="item-content">
-                                <div class="item-desc">
+                                <div class="item-desc c-article-content">
                                     <p>
                                         We sure that clear communication between design and engineering is crucial for any product. And only by having the same vision and goals, the amazing product can be created.  
                                     </p>
@@ -65,16 +65,19 @@ get_header();
                                 </div>
                                 <div class="work-col work-desc">
                                     <div class="item">
-                                        <div class="item-desc">
-                                            <div class="item-desc--desc c-article-content">
-                                                <p>Focus on design and emotions </p>
-
-                                                <p>It doesn’t take much digging to discover that a lot of digital health products are poorly designed and built, especially when compared with the slick experiences we’ve come to expect from other areas of our digital lives. </p>
-                                                
-                                                <p>Capabilities to launch products according to security standards </p>
-                                                
-                                                <p>Components library which  reduces time to market </p>
+                                        <div class="item-title">
+                                            <div class="item-title--title">
+                                                Focus on design and emotions 
                                             </div>
+                                        </div>
+                                        <div class="item-content c-article-content">
+                                            <p>It doesn’t take much digging to discover that a lot of digital health products are poorly designed and built, especially when compared with the slick experiences we’ve come to expect from other areas of our digital lives. </p>
+                                        </div>
+                                        <div class="item-component">
+                                            Capabilities to launch products according to security standards 
+                                        </div>
+                                        <div class="item-component">
+                                            Components library which  reduces time to market
                                         </div>
                                     </div>
                                 </div>
@@ -85,39 +88,37 @@ get_header();
 
                 <section class="process">
                     <div class="process-wrap">
-                        <div class="process-row">
-                            <div class="process-col process-desc">
-                                <div class="item">
-                                    <div class="item-cursive">
-                                        <div class="item-cursive--cursive">
-                                            Special process
-                                        </div>
+                        <div class="process-desc">
+                            <div class="item">
+                                <div class="item-cursive">
+                                    <div class="item-cursive--cursive">
+                                        Special process
                                     </div>
-                                    <div class="item-title">
-                                        <div class="item-title--title">
-                                            “Nozomi inside” - playbook
-                                        </div>
-                                    </div>
-                                    <div class="item-desc">
-                                        <div class="item-desc--desc c-article-content">
-                                            <p>
-                                                It doesn’t take much digging to discover that a lot of digital health products are poorly designed and built, especially when compared with the slick experiences we’ve come to expect from other areas of our digital lives.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="item-link">
-                                        <a href='/'
-                                            target=""
-                                            class="item-link--link">
-                                            Start journey
-                                        </a>
-                                    </div> 
                                 </div>
+                                <div class="item-title">
+                                    <div class="item-title--title">
+                                        “Nozomi inside” - playbook
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    <div class="item-desc--desc c-article-content">
+                                        <p>
+                                            It doesn’t take much digging to discover that a lot of digital health products are poorly designed and built, especially when compared with the slick experiences we’ve come to expect from other areas of our digital lives.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item-link">
+                                    <a href='/'
+                                        target=""
+                                        class="item-link--link">
+                                        Start journey
+                                    </a>
+                                </div> 
                             </div>
-                            <div class="process-col process-img">
-                                <div class="item-img">
-                                    <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/how/how-process.svg">
-                                </div>
+                        </div>
+                        <div class="process-img">
+                            <div class="item-img">
+                                <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/how/how-process.svg">
                             </div>
                         </div>
                     </div>
