@@ -22,7 +22,7 @@ get_header();
                     <div class="screen-wrap">
                         <div class="item">
                             <div class="item-img">
-                                <img class="img" data-src="<?php echo get_template_directory_uri() ?>/assets/images/how/case-first.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/how/how-index.svg">
+                                <img class="img"  src="<?php echo get_template_directory_uri() ?>/assets/images/how/how-index.png">
                             </div>
                             <div class="item-content">
                                 <div class="item-desc c-article-content">

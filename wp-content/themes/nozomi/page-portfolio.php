@@ -26,7 +26,7 @@ get_header();
                         <div class="portfolios-wrap">
                             <div class="portfolios-list">
                                 <div class="item">
-                                    <div class="item-wrap">
+                                    <a href="#"  class="item-wrap">
                                         <div class="item-content">
                                             <div class="item-content-wrap ">
                                                 <div class="item-tag">
@@ -55,10 +55,10 @@ get_header();
                                                 <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg">
                                             </picture>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="item-wrap">
+                                    <a href="" class="item-wrap">
                                         <div class="item-content">
                                             <div class="item-content-wrap">
                                                 <div class="item-tag">
@@ -87,10 +87,10 @@ get_header();
                                                 <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg">
                                             </picture>                                            
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="item">
-                                    <div class="item-wrap">
+                                    <a href="#" class="item-wrap">
                                         <div class="item-content">
                                             <div class="item-content-wrap">
                                                     <div class="item-tag">
@@ -119,7 +119,7 @@ get_header();
                                                     <img class="img picture-absolute" data-src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03.jpg" src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-03.jpg">
                                                 </picture>                                             
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
