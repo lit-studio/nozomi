@@ -367,8 +367,8 @@
         letter-spacing: 0.5px;
         padding-bottom: 3px;
         position: relative;
-        pointer-events: none;
-        opacity: 0.5;
+        // pointer-events: none;
+        // opacity: 0.5;
         @include desktop-normal{
           font-size: 18px;
         }
@@ -401,12 +401,12 @@
           }
         }
       }
-      &.menu-item-portfolio,&.menu-item-about-us,&.menu-item-blog{
-        & > a {
-          pointer-events: all;
-          opacity:1;
-        }
-      }
+      // &.menu-item-portfolio,&.menu-item-about-us,&.menu-item-blog{
+      //   & > a {
+      //     pointer-events: all;
+      //     opacity:1;
+      //   }
+      // }
       &.join-us{
         a{
           color: var(--color-red);

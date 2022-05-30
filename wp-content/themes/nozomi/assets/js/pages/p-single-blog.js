@@ -12,6 +12,7 @@ export default function () {
     $indexSection = $body.find('.blog-img'),
     $indexSectionBlock = $indexSection.find('.parallax-img-block--js'),
     indexSectionImgTrigger="top center",
+    $CopyNotice = $body.find('.c-copy--js'),
     $indexSectionImg = $indexSectionBlock.find('img');
     
     function indexScaleFunc() {
@@ -48,10 +49,16 @@ export default function () {
         document.execCommand("copy");
         $temp.remove();
     }
-
+    function copyNoticeFunc() {
+        $CopyNotice.addClass('active');
+        setTimeout(function(){
+            $CopyNotice.removeClass('active');
+        },2000);
+    }
     // copy to clipboard
     $(".copy").on("click", function () {
-        copyToClipboard(".copy-content");
+        copyToClipboard(".copy-content");    
+        copyNoticeFunc();    
         return false;
     });
 

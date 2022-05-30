@@ -508,7 +508,7 @@
                         z-index: 1;
                         justify-content: space-between;
                         opacity: 0;
-                        transition: opacity 0.3s linear;
+                        transition: opacity 0.5s linear;
                         @include desktop-note-big{
                             padding: 30px;
                         }
@@ -639,7 +639,7 @@
                             height: 100%;
                             object-fit: cover;
                             transform: scale(1) rotate(0);
-                            transition: all 0.3s linear;
+                            transition: all 0.5s linear;
 
                         }
                     }

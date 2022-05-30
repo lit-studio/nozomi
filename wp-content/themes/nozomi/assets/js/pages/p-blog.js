@@ -16,6 +16,7 @@ export default function () {
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
     $section = $navTrigger.find('.gsap-anim--js'),
     $sectionNav = $navTrigger.find('.gsap-nav--js'),
+    $navMobileBtns = $navSection.find('.nav-mobile-btns'),    
     navMobileActive,sectionFromGsap,sectionToGsap
   ;
   let $sidebarLink = $navMobileBlock.find('a');
@@ -120,9 +121,13 @@ export default function () {
       $navMobileBtnText.html(navMobileActive);
       $navMobileBtn.on("click", function () {
         navMobileAnim.play();
+        $navMobileBtns.addClass('hidden');
+
       });  
       $navMobileBg.on("click", function () {
         navMobileAnim.reverse();
+        $navMobileBtns.removeClass('hidden');
+
       });  
       $sidebarLink.on("click", function(event) {
         // console.log('click');

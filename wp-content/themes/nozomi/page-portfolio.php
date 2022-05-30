@@ -58,7 +58,7 @@ get_header();
                                                 <?php } ?>
                                                 <div class="item-desc">
                                                     <div class="item-desc--desc">
-                                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                     <?php the_title(); ?>
                                                     </div>
                                                 </div>
                                                 <?php

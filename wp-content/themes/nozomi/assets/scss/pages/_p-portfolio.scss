@@ -381,7 +381,22 @@
                     padding: 30px 20px;
                 }
                 &-wrap{
-                 max-width: 660px;
+                    max-width: 660px;
+                    @include desktop-normal{
+                        max-width: 540px;
+                    }
+                    @include desktop-note-big{
+                        max-width: 430px;
+                    }
+                    @include desktop-block{
+                        max-width: 400px;
+                    }
+                    @include tablet{
+                        max-width: 100%;
+                    }
+                    @include phone{
+
+                    }
                 }
             }
             &-tag{
