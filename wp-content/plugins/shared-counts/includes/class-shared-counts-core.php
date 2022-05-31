@@ -209,13 +209,13 @@ class Shared_Counts_Core {
 					$share_count = isset( $counts['Facebook']['total_count'] ) ? $counts['Facebook']['total_count'] : '0';
 					break;
 				case 'facebook_likes':
-					$share_count = isset( $counts['like_count'] ) ? $counts['like_count'] : '0';
+					$share_count = isset( $counts['Facebook']['like_count'] ) ? $counts['Facebook']['like_count'] : '0';
 					break;
 				case 'facebook_shares':
-					$share_count = isset( $counts['share_count'] ) ? $counts['share_count'] : '0';
+					$share_count = isset( $counts['Facebook']['share_count'] ) ? $counts['Facebook']['share_count'] : '0';
 					break;
 				case 'facebook_comments':
-					$share_count = isset( $counts['comment_count'] ) ? $counts['comment_count'] : '0';
+					$share_count = isset( $counts['Facebook']['comment_count'] ) ? $counts['Facebook']['comment_count'] : '0';
 					break;
 				case 'twitter':
 					$share_count = isset( $counts['Twitter'] ) ? $counts['Twitter'] : '0';
@@ -227,7 +227,7 @@ class Shared_Counts_Core {
 					$share_count = isset( $counts['Yummly'] ) ? $counts['Yummly'] : '0';
 					break;
 				case 'included_total':
-					$share_count = '0';
+					$share_count = 0;
 					$options     = shared_counts()->admin->options();
 					// Service total only applies to services we are displaying.
 					if ( ! empty( $options['included_services'] ) ) {
@@ -475,12 +475,12 @@ class Shared_Counts_Core {
 			$results = json_decode( wp_remote_retrieve_body( $api_response ), true );
 
 			// Update counts.
-			$share_count['Facebook']['like_count']    = isset( $results['Facebook']['like_count'] ) ? $results['Facebook']['like_count'] : $share_count['Facebook']['like_count'];
-			$share_count['Facebook']['comment_count'] = isset( $results['Facebook']['comment_count'] ) ? $results['Facebook']['comment_count'] : $share_count['Facebook']['comment_count'];
-			$share_count['Facebook']['share_count']   = isset( $results['Facebook']['share_count'] ) ? $results['Facebook']['share_count'] : $share_count['Facebook']['share_count'];
-			$share_count['Facebook']['total_count']   = isset( $results['Facebook']['total_count'] ) ? $results['Facebook']['total_count'] : $share_count['Facebook']['total_count'];
-			$share_count['Pinterest']                 = isset( $results['Pinterest'] ) ? $results['Pinterest'] : $share_count['Pinterest'];
-			$share_count['LinkedIn']                  = isset( $results['LinkedIn'] ) ? $results['LinkedIn'] : $share_count['LinkedIn'];
+			$share_count['Facebook']['like_count']    = isset( $results['Facebook']['reaction_count'] ) && $results['Facebook']['reaction_count'] > $share_count['Facebook']['like_count'] ? $results['Facebook']['reaction_count'] : $share_count['Facebook']['like_count'];
+			$share_count['Facebook']['comment_count'] = isset( $results['Facebook']['comment_count'] ) && $results['Facebook']['comment_count'] > $share_count['Facebook']['comment_count'] ? $results['Facebook']['comment_count'] : $share_count['Facebook']['comment_count'];
+			$share_count['Facebook']['share_count']   = isset( $results['Facebook']['share_count'] ) && $results['Facebook']['share_count'] > $share_count['Facebook']['share_count'] ? $results['Facebook']['share_count'] : $share_count['Facebook']['share_count'];
+			$share_count['Facebook']['total_count']   = isset( $results['Facebook']['total_count'] ) && $results['Facebook']['total_count'] > $share_count['Facebook']['total_count'] ? $results['Facebook']['total_count'] : $share_count['Facebook']['total_count'];
+			$share_count['Pinterest']                 = isset( $results['Pinterest'] ) && $results['Pinterest'] > $share_count['Pinterest'] ? $results['Pinterest'] : $share_count['Pinterest'];
+			$share_count['LinkedIn']                  = isset( $results['LinkedIn'] ) && $results['LinkedIn'] > $share_count['LinkedIn'] ? $results['LinkedIn'] : $share_count['LinkedIn'];
 		}
 
 		// Check if we also need to fetch Twitter counts.
@@ -489,7 +489,7 @@ class Shared_Counts_Core {
 		// Fetch Twitter counts if needed.
 		if ( '1' === $twitter ) {
 			$twitter_count          = $this->query_third_party_twitter_api( $global_args['url'] );
-			$share_count['Twitter'] = false !== $twitter_count ? $twitter_count : $share_count['Twitter'];
+			$share_count['Twitter'] = false !== $twitter_count && $twitter_count > $share_count['Twitter'] ? $twitter_count : $share_count['Twitter'];
 		}
 
 		// Check if we also need to fetch Yummly counts.
@@ -498,7 +498,7 @@ class Shared_Counts_Core {
 		// Fetch Yummly counts if needed.
 		if ( '1' === $yummly ) {
 			$yummly_count          = $this->query_yummly_api( $global_args['url'] );
-			$share_count['Yummly'] = false !== $yummly_count ? $yummly_count : $share_count['Yummly'];
+			$share_count['Yummly'] = false !== $yummly_count && $yummly_count > $share_count['Yummly'] ? $yummly_count : $share_count['Yummly'];
 		}
 
 		return $share_count;
@@ -630,6 +630,7 @@ class Shared_Counts_Core {
 						$token = shared_counts()->admin->settings_value( 'fb_access_token' );
 						if ( $token ) {
 							$args['access_token'] = rawurlencode( $token );
+							$args['fields'] = 'engagement';
 						}
 
 						$api_query = add_query_arg( $args, 'https://graph.facebook.com/' );
@@ -646,20 +647,13 @@ class Shared_Counts_Core {
 
 							$body = json_decode( wp_remote_retrieve_body( $api_response ) );
 
-							// Not sure why Facebook returns the data in different formats sometimes.
-							if ( isset( $body->shares ) ) {
-								$share_count['Facebook']['share_count'] = $body->shares;
-							} elseif ( isset( $body->share->share_count ) ) {
-								$share_count['Facebook']['share_count'] = $body->share->share_count;
-							}
-							if ( isset( $body->comments ) ) {
-								$share_count['Facebook']['comment_count'] = $body->comments;
-							} elseif ( isset( $body->share->comment_count ) ) {
-								$share_count['Facebook']['comment_count'] = $body->share->comment_count;
+							if ( isset( $body->engagement ) ) {
+								$share_count['Facebook']['comment_count'] = $body->engagement->comment_count;
+								$share_count['Facebook']['share_count'] = $body->engagement->share_count;
+								$share_count['Facebook']['like_count'] = $body->engagement->reaction_count;
 							}
 
-							$share_count['Facebook']['like_count']  = $share_count['Facebook']['share_count'];
-							$share_count['Facebook']['total_count'] = $share_count['Facebook']['share_count'] + $share_count['Facebook']['comment_count'];
+							$share_count['Facebook']['total_count'] = $share_count['Facebook']['share_count'] + $share_count['Facebook']['comment_count'] + $share_count['Facebook']['like_count'];
 						}
 						break;
 
@@ -684,7 +678,7 @@ class Shared_Counts_Core {
 							$raw_json = preg_replace( '/^receiveCount\((.*)\)$/', "\\1", wp_remote_retrieve_body( $api_response ) );
 							$body     = json_decode( $raw_json );
 
-							if ( isset( $body->count ) ) {
+							if ( isset( $body->count ) && $body->count > $share_count['Pinterest'] ) {
 								$share_count['Pinterest'] = $body->count;
 							}
 						}
@@ -692,12 +686,12 @@ class Shared_Counts_Core {
 
 					case 'yummly':
 						$yummly_count          = $this->query_yummly_api( $global_args['url'] );
-						$share_count['Yummly'] = false !== $yummly_count ? $yummly_count : $share_count['Yummly'];
+						$share_count['Yummly'] = false !== $yummly_count && $yummly_count > $share_count['Yummly'] ? $yummly_count : $share_count['Yummly'];
 						break;
 
 					case 'twitter':
 						$twitter_count          = $this->query_third_party_twitter_api( $global_args['url'] );
-						$share_count['Twitter'] = false !== $twitter_count ? $twitter_count : $share_count['Twitter'];
+						$share_count['Twitter'] = false !== $twitter_count && $twitter_count > $share_count['Twitter'] ? $twitter_count : $share_count['Twitter'];
 						break;
 				}
 			}
@@ -823,6 +817,11 @@ class Shared_Counts_Core {
 	 * @since 1.3.0
 	 */
 	public function shutdown_update_share_counts() {
+
+		$count_source  = shared_counts()->admin->settings_value( 'count_source' );
+		if ( 'none' === $count_source ) {
+			return;
+		}
 
 		// If fastcgi_finish_request is available, run it which will close to
 		// browsers connection but allow the processing to continue in the

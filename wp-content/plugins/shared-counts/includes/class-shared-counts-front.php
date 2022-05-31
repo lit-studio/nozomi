@@ -234,6 +234,11 @@ class Shared_Counts_Front {
 			return;
 		}
 
+		// Filter to disable email modal
+		if( apply_filters( 'shared_counts_disable_email_modal', false ) ) {
+			return;
+		}
+
 		// Check to see the email button is configured or being overriden. The
 		// filter can be used to enable the modal in use cases where the share
 		// button is manually being called.
@@ -266,7 +271,7 @@ class Shared_Counts_Front {
 		?>
 		<div id="shared-counts-modal-wrap" style="display:none;">
 			<div class="shared-counts-modal">
-				<a href="#" id="shared-counts-modal-close"><?php echo $labels['close']; // phpcs:ignore ?></a>
+				<a href="#" id="shared-counts-modal-close" aria-label="Close the share by email popup"><?php echo $labels['close']; // phpcs:ignore ?></a>
 				<div class="shared-counts-modal-header">
 					<?php
 					if ( ! empty( $labels['title_icon'] ) ) {
@@ -494,7 +499,7 @@ class Shared_Counts_Front {
 				}
 				$link['img'] = apply_filters( 'shared_counts_single_image', $link['img'], $id, $link );
 			}
-			$link['url']   = apply_filters( 'shared_counts_link_url', $link['url'] );
+			$link['url']   = apply_filters( 'shared_counts_link_url', $link['url'], $link );
 			$link['count'] = shared_counts()->core->count( $id, $type, false, $round );
 
 			switch ( $type ) {
@@ -639,7 +644,19 @@ class Shared_Counts_Front {
 				}
 			}
 
+			// Add additional attributes
+			$additional_attr = apply_filters( 'shared_counts_additional_attr', array(), $link, $id, $style );
+			if( !empty( $additional_attr ) ) {
+				$attr_output = join( ' ', $additional_attr );
+				if( !empty( $data ) )
+					$attr_output = ' ' . $attr_output;
+				$data .= $attr_output;
+			}
+
 			// Determine if we should show the count.
+			if( empty( $options['count_source'] ) || 'none' === $options['count_source'] ) {
+				$show_count = false;
+			}
 			if ( 'false' === $show_empty && 0 == $link['count'] ) { //phpcs:ignore
 				$show_count = false;
 			}

@@ -142,8 +142,10 @@ add_action('wp_enqueue_scripts', function () {
     if (is_singular('post')) $nozomiData['page'] = 'single-blog';
     if (is_page_template('page-join-us.php')) $nozomiData['page'] = 'about';
     if (is_page_template('page-portfolio.php')) $nozomiData['page'] = 'portfolio';
+    if (is_tax('portfolio_cat')) $nozomiData['page'] = 'portfolio';
     if (is_page_template('page-how-we-work.php')) $nozomiData['page'] = 'how-we-work';
     if (is_singular('portfolio')) $nozomiData['page'] = 'single-portfolio';
+
     //    if (is_page_template('page-contact.php')) $nozomiData['page'] = 'contact';
     wp_localize_script('nozomi-script', 'nozomiData', $nozomiData);
     // dd($nozomiData['page']);
@@ -159,6 +161,7 @@ add_filter('body_class', function ($classes) {
     if (is_singular('post')) array_push($classes, 'p-single-blog');
     if (is_page_template('page-join-us.php')) array_push($classes, 'p-about');
     if (is_page_template('page-portfolio.php')) array_push($classes, 'p-portfolio');
+    if (is_tax('portfolio_cat')) array_push($classes, 'p-portfolio');
     if (is_page_template('page-how-we-work.php')) array_push($classes, 'p-how');
     if (is_singular('portfolio')) array_push($classes, 'p-single-portfolio');
 //    if (is_page_template('page-contact.php')) array_push($classes, 'p-contact');
@@ -241,7 +244,17 @@ if (function_exists('acf_add_options_page')) {
 }
 remove_action('wp_head', 'wp_generator');
 
-
+register_taxonomy('portfolio_cat', array('portfolio'), [
+    'label' => '',
+    'labels' => [
+        'name' => __('Portfolio categories', 'nozomi'),
+        'singular_name' => __('Portfolio categories', 'nozomi'),
+    ],
+    'public' => true,
+    'show_in_rest'        => true,
+    'hierarchical' => true,
+    'rewrite' => true,
+]);
 add_action('init', 'create_portfolio');
 function create_portfolio()
 {
@@ -272,6 +285,7 @@ function create_portfolio()
 }
 
 add_image_size('home_1', '840', '9999', false);
+add_image_size('how', '1204', '9999', false);
 add_image_size('home_2', '2360', '9999', false);
 add_image_size('author', '144', '144', true);
 add_image_size('blog', '5120', '9999', false);
