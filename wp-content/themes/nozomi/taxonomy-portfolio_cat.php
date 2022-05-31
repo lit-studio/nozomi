@@ -38,58 +38,57 @@ get_header();
                                 the_post();
 
                                 ?>
-                                <div class="item">
-                                    <div class="item-wrap">
-                                        <div class="item-content">
-                                            <div class="item-content-wrap ">
-                                                <?php
-                                                $case_name = get_field('case_name');
+                                    <div class="item">
+                                        <a href="<?php the_permalink(); ?>" class="item-wrap">
+                                            <div class="item-content">
+                                                <div class="item-content-wrap ">
+                                                    <?php
+                                                    $case_name = get_field('case_name');
 
-                                                if ($case_name) { ?>
-                                                    <div class="item-tag">
-                                                        <div class="item-tag--tag">
-                                                            <?php echo $case_name; ?>
+                                                    if ($case_name) { ?>
+                                                        <div class="item-tag">
+                                                            <div class="item-tag--tag">
+                                                                <?php echo $case_name; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                    <div class="item-desc">
+                                                        <div class="item-desc--desc">
+                                                            <?php the_title(); ?>
                                                         </div>
                                                     </div>
-                                                <?php } ?>
-                                                <div class="item-desc">
-                                                    <div class="item-desc--desc">
-                                                   <?php the_title(); ?>
-                                                    </div>
-                                                </div>
-                                                <?php
-                                                $categories = get_the_terms(get_the_ID(), 'portfolio_cat');
-                                                if ($categories) { ?>
-                                                <div class="item-services">
-                                                    <?php foreach ($categories as $category) { ?>
-                                                        <div class="item-services--service">
-                                                        <a href="<?php echo get_term_link($category->term_id); ?>">
-                                                            <?php echo $category->name; ?>
-                                                        </a>
+                                                    <?php
+                                                    $categories = get_the_terms(get_the_ID(), 'portfolio_cat');
+                                                    if ($categories) { ?>
+                                                        <div class="item-services">
+                                                            <?php foreach ($categories as $category) { ?>
+                                                                <div class="item-services--service">
+
+                                                                    <?php echo $category->name; ?>
+
+                                                                </div>
+                                                            <?php } ?>
 
                                                         </div>
                                                     <?php } ?>
-
+                                                </div>
                                             </div>
+                                            <?php
+                                            $case_image = get_field('case_image');
+                                            $case_image_mobile = get_field('case_image_mobile');
+                                            if ($case_image || $case_image_mobile) { ?>
+                                                <div class="item-img">
+                                                    <picture class="picture">
+                                                        <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
+                                                                media="(max-width: 768px)">
+                                                        <img class="img picture-absolute"
+                                                             data-src="<?php echo $case_image['sizes']['home_2']; ?>"
+                                                             src="<?php echo $case_image['sizes']['home_2']; ?>">
+                                                    </picture>
+                                                </div>
                                             <?php } ?>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <?php
-                                    $case_image = get_field('case_image');
-                                    $case_image_mobile = get_field('case_image_mobile');
-                                    if ($case_image || $case_image_mobile) { ?>
-                                        <div class="item-img">
-                                            <picture class="picture">
-                                                <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
-                                                        media="(max-width: 768px)">
-                                                <img class="img picture-absolute"
-                                                     data-src="<?php echo $case_image['sizes']['home_2']; ?>"
-                                                     src="<?php echo $case_image['sizes']['home_2']; ?>">
-                                            </picture>
-                                        </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
                             <?php }
                             ?>
                             <?php }

@@ -43,7 +43,7 @@ get_header();
 
                                 ?>
                                 <div class="item">
-                                    <div class="item-wrap">
+                                    <a href="<?php the_permalink(); ?>" class="item-wrap">
                                         <div class="item-content">
                                             <div class="item-content-wrap ">
                                                 <?php
@@ -67,9 +67,8 @@ get_header();
                                                 <div class="item-services">
                                                     <?php foreach ($categories as $category) { ?>
                                                         <div class="item-services--service">
-                                                        <a href="<?php echo get_term_link($category->term_id); ?>">
+
                                                             <?php echo $category->name; ?>
-                                                        </a>
 
                                                         </div>
                                                     <?php } ?>
@@ -92,7 +91,7 @@ get_header();
                                             </picture>
                                         </div>
                                     <?php } ?>
-                                </div>
+                                </a>
                             </div>
                             <?php }
                             ?>
