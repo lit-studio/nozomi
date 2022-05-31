@@ -8,7 +8,7 @@ export default function () {
     $navSection = $body.find('.nav'),
     $navSectionItem = $navSection.find('.menu-item'),
     $navTrigger = $body.find('.p-blog-content'),
-    $navTriggerTablet = $body.find('.p-blog-blogs'),
+    $footer = $body.find('.c-footer'),
     $navWrap = $navSection.find('.nav-wrap'),
     $navMobileBtn = $navSection.find('.nav-mobile-btn--js'),
     $navMobileBtnText = $navMobileBtn.find('.nav-mobile-btn-text'),
@@ -94,21 +94,21 @@ export default function () {
     })
     .from($navMobileBg, 0.01, { yPercent: 100,  ease: 'linear' },'')
     .from($navMobileBg, 0.3, { opacity: 0,  ease: 'expo.easeOut' },'')
-    .from($navMobileBlock, 0.3, { yPercent: 200,  ease: 'expo.easeOut' },'<')
+    .from($navMobileBlock, 0.5, { yPercent: 100,  ease: 'expo.easeOut' },'<')
     ;
-    // function navScrollFunc() {
-    //   ScrollTrigger.create({
-    //     trigger: $navTriggerTablet,
-    //     start: "top center",
-    //     end: "bottom bottom",
-    //     pin:  $navSection,
-    //     scrub: true,
-    //     toggleActions: "play reverse none reverse",
-    //     markers: true,
-    //   });
+    function navScrollMobileFunc() {
+      ScrollTrigger.create({
+        trigger: $footer,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        toggleActions: "play reverse none reverse",
+        toggleClass: {className: "fixed", targets: ".nav"},
+        markers: false,
+      });
 
-    // }
-    // navScrollFunc();
+    }
+    navScrollMobileFunc();
     function navMobileFunc() {
 
       if ($navSectionItem.hasClass('current-menu-item')) {

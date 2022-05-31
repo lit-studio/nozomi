@@ -133,8 +133,18 @@
             justify-content: space-between;
             flex-wrap: nowrap;
             overflow: hidden;
+            @include desktop-note-big{
+                padding-top: 17px;
+            }
+            @include desktop-block{
+                padding-top: 15px;
+            }
+            @include tablet{
+                padding-top: 7px;
+            }
             @include phone{
                 flex-wrap: wrap;  
+                padding-top: 5px;
             }
             .item-img{
                 width: 100%;
@@ -241,43 +251,44 @@
         }
         .item{
             &-desc{
-                padding-top: 35px;
-
-
+                // padding-top: 35px;
+                padding-top: 127px;   
                 max-width: pxVw(1200,2560);
                 margin: 0 auto;
                 @include desktop-normal{
-                    max-width: pxVw(980,1920);
-            
+                    max-width: pxVw(980,1920);      
+                    padding-top: 132px;         
                 }
-                @include desktop-note-big{
-            
-                    max-width: pxVw(880,1440);
-            
+                @include desktop-note-big{            
+                    max-width: pxVw(880,1440);  
+                    padding-top: 110px;          
                 }
                 @include desktop-block{
-                    max-width: 100%;
-            
+                    max-width: 100%;  
+                    padding-top: 40px;           
                 }
                 @include tablet{
-            
+                    padding-top: 25px;
                 }
                 @include phone{
+                    padding-top: 105px;
             
                 }
                 &--desc{
-                    text-align: left;
+                    text-align: center;
                     p{
                         padding-top: 30px;
-                        font-size: 32px;
+                        // font-size: 32px;
                         line-height: 150%;
                         color:var(--color-grey-2);
+                        font-size: 24px;
                         @include desktop-normal{
-                            font-size: 28px;
+                            // font-size: 28px;
+                            font-size: 20px;
                         }
                         @include desktop-note-big{
-                            font-size: 24px;
-    
+                            // font-size: 24px;
+                            font-size: 16px;    
                         }
                         @include desktop-block{
                 

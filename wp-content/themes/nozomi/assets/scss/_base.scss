@@ -151,9 +151,9 @@ p {
 h1{
   font-size: 64px;
   line-height: 120%;
-  font-family: var(--font-family);
+  font-family: var(--font-bold);
   word-wrap: break-word;
-  font-weight: var(--font-w-semi);
+  // font-weight: var(--font-w-semi);
   @include desktop-note-big {
     font-size: 64px;
   }
@@ -165,9 +165,9 @@ h1{
 h2 {
   font-size: 64px;
   line-height: 120%;
-  font-family: var(--font-family);
+  font-family: var(--font-bold);
   word-wrap: break-word;
-  font-weight: var(--font-w-semi);
+  // font-weight: var(--font-w-semi);
   @include desktop-note-big {
     font-size: 64px;
   }
@@ -179,9 +179,9 @@ h2 {
 h3{
 font-size: 64px;
 line-height: 120%;
-font-family: var(--font-family);
+font-family: var(--font-bold);
 word-wrap: break-word;
-font-weight: var(--font-w-semi);
+// font-weight: var(--font-w-semi);
 @include desktop-note-big {
   font-size: 64px;
 }
@@ -195,9 +195,9 @@ font-weight: var(--font-w-semi);
 h4 {
   font-size: 64px;
   line-height: 120%;
-  font-family: var(--font-family);
+  font-family: var(--font-bold);
   word-wrap: break-word;
-  font-weight: var(--font-w-semi);
+  // font-weight: var(--font-w-semi);
   @include desktop-note-big {
     font-size: 64px;
   }
@@ -208,9 +208,9 @@ h4 {
 h5 {
   font-size: 44px;
   line-height: 130%;
-  font-family: var(--font-family);
+  font-family: var(--font-bold);
   word-wrap: break-word;
-  font-weight: var(--font-w-semi);
+  // font-weight: var(--font-w-semi);
   @include desktop-note-big {
     font-size: 24px;
     line-height: 140%;
@@ -220,7 +220,7 @@ h6,
 .title-h6 {
   font-size: 32px;
   line-height: 130%;
-  font-family: var(--font-family);
+  font-family: var(--font-bold);
   word-wrap: break-word;
 }
 
@@ -303,16 +303,7 @@ h6,
 // antispam
 .agree {display:none}
 
-// .preloader {
-//   left: 0;
-//   top: 0;
-//   position: fixed;
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: var(--color-bg);
-//   z-index: 10000;
-//   opacity: 1;
-// }
+
 
 .c-article-content{
   & > *{
@@ -497,6 +488,14 @@ h6,
     list-style-type: disc;
     list-style-position: outside;
     line-height: 160%;
+    display: block;
+    &:before{
+      content: counter(item) ". "; 
+      counter-increment: item; 
+      font-family: var(--font-bold);
+      // font-weight: bold;
+      color: var(--color-red);
+    }
   }
   ol{
     list-style-type: decimal;
@@ -524,8 +523,9 @@ h6,
       &:before{
         content: counter(item) ". "; 
         counter-increment: item; 
-        font-weight: bold;
-        color: var(--co);
+        font-family: var(--font-bold);
+        // font-weight: bold;
+        color: var(--color-red);
       }
     }
 

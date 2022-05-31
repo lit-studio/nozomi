@@ -274,22 +274,13 @@
     }
   }
   &-desc{
-    // padding-top: 20px;
-    max-width: 385px;
-    @include desktop-normal{
-      max-width: 340px;
-    }
-    @include desktop-note-big{
-      max-width: 300px;
-    }
-    @include desktop-block{
-
-    }
+    padding-right: 20px;
     @include tablet{
-      max-width: 200px;
+      max-width: 220px;
     }
     @include phone{
       max-width: 100%;
+      padding-right: 0;
     }
     .item{
       &-title{
