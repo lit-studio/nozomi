@@ -526,6 +526,16 @@ h6,
         font-family: var(--font-bold);
         // font-weight: bold;
         color: var(--color-red);
+        font-size: 18px;
+          @include desktop-normal{
+            font-size:16px;
+          }
+          @include desktop-note-big{
+            font-size: 14px;
+          }
+          @include phone{
+          font-size: 13px;
+          }
       }
     }
 
