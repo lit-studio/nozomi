@@ -1,5 +1,5 @@
 .p-portfolio {
-    background-color: var(---color-grey-6);
+    background-color: var(--color-bg);
     &-content{
         padding-bottom: 180px;        
         padding-left: 100px;
@@ -506,7 +506,8 @@
  
 }
 .p-single-portfolio{
-    background-color: var(---color-grey-6);
+    // background-color: var(---color-grey-6);
+    background-color: var(--color-bg);
     &-content{
 
     }
