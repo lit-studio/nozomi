@@ -3,6 +3,7 @@ import lottie from "lottie-web";
 
 import header from "./components/c-header";
 import footer from "./components/c-footer";
+import tab from "./components/c-tab";
 
 export default function () {
   let $body = $('body'),
@@ -47,6 +48,7 @@ export default function () {
     preloaderFunc();
     header();
     footer();
+    tab();
 
     function screenReload() {
       let widthScreen = screen.width;

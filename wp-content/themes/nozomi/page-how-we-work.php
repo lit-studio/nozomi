@@ -93,31 +93,70 @@ get_header();
                                             </div>
                                         </div>
                                     <?php } ?>
-                                    <div class="work-col work-desc">
-                                        <div class="item">
-                                            <?php if ($text_1_how_we_work) { ?>
-                                                <div class="item-title">
-                                                    <div class="item-title--title">
-                                                        <?php echo $text_1_how_we_work; ?>
+                                    <div class="work-col work-desc  work-list-gsap--js">
+                                        <?php  /*  
+                                            <div class="item">
+                                                <?php if ($text_1_how_we_work) { ?>
+                                                    <div class="item-title">
+                                                        <div class="item-title--title">
+                                                            <?php echo $text_1_how_we_work; ?>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <?php } ?>
-                                            <?php if ($text_2_how_we_work) { ?>
-                                                <div class="item-content c-article-content">
+                                                <?php } ?>
+                                                <?php if ($text_2_how_we_work) { ?>
+                                                    <div class="item-content c-article-content">
 
-                                                    <?php echo $text_2_how_we_work; ?>
+                                                        <?php echo $text_2_how_we_work; ?>
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if ($text_3_how_we_work) { ?>
+                                                    <div class="item-component">
+                                                        <?php echo $text_3_how_we_work; ?>
+                                                    </div>
+                                                <?php } ?>
+                                                <?php if ($text_4_how_we_work) { ?>
+                                                    <div class="item-component">
+                                                        <?php echo $text_4_how_we_work; ?>
+                                                    </div>
+                                                <?php } ?>
+
+                                            </div>
+                                        */ ?>
+                                        <div class="c-tab-item">
+                                            <div class="c-tab-item-wrap">
+                                                <div class="c-tab-item-title">
+                                                    <?php echo $text_1_how_we_work; ?>
                                                 </div>
-                                            <?php } ?>
-                                            <?php if ($text_3_how_we_work) { ?>
-                                                <div class="item-component">
-                                                    <?php echo $text_3_how_we_work; ?>
+                                            </div>
+                                            <div class="c-tab-item-block">
+                                                <div class="c-tab-item-desc  c-article-content">
+                                                     <?php echo $text_2_how_we_work; ?>
                                                 </div>
-                                            <?php } ?>
-                                            <?php if ($text_4_how_we_work) { ?>
-                                                <div class="item-component">
-                                                    <?php echo $text_4_how_we_work; ?>
+                                            </div>
+                                        </div>
+                                        <div class="c-tab-item">
+                                            <div class="c-tab-item-wrap">
+                                                <div class="c-tab-item-title">
+                                                <?php echo $text_3_how_we_work; ?>
                                                 </div>
-                                            <?php } ?>
+                                            </div>
+                                            <div class="c-tab-item-block">
+                                                <div class="c-tab-item-desc  c-article-content">
+                                                     <?php echo $text_2_how_we_work; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c-tab-item">
+                                            <div class="c-tab-item-wrap">
+                                                <div class="c-tab-item-title">
+                                                <?php echo $text_4_how_we_work; ?>
+                                                </div>
+                                            </div>
+                                            <div class="c-tab-item-block">
+                                                <div class="c-tab-item-desc  c-article-content">
+                                                     <?php echo $text_2_how_we_work; ?>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
