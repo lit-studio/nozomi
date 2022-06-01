@@ -17,7 +17,7 @@ export default function () {
     $section = $navTrigger.find('.gsap-anim--js'),
     $sectionNav = $navTrigger.find('.gsap-nav--js'),
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),    
-    navMobileActive,sectionFromGsap,sectionToGsap
+    navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
   ;
   let $sidebarLink = $navMobileBlock.find('a');
 
@@ -88,13 +88,13 @@ export default function () {
     });
   }
   else{
-    let navMobileAnim = gsap
+    navMobileAnim = gsap
     .timeline({
       paused: true
     })
     .from($navMobileBg, 0.01, { yPercent: 100,  ease: 'linear' },'')
     .from($navMobileBg, 0.3, { opacity: 0,  ease: 'expo.easeOut' },'')
-    .from($navMobileBlock, 0.5, { yPercent: 100,  ease: 'expo.easeOut' },'<')
+    .from($navMobileBlock, 0.3, { yPercent: 100,  ease: 'expo.easeOut' },'<')
     ;
     function navScrollMobileFunc() {
       ScrollTrigger.create({

@@ -1,18 +1,26 @@
 .p-portfolio {
     background-color: var(--color-bg);
-    &-content{
-        padding-bottom: 180px;        
+    .site{
+        @include desktop-block{
+            overflow: hidden;
+        }
+    }
+    .c-footer{
+        @include desktop-block{
+            z-index: 1000;
+        }
+    }
+    &-content{    
         padding-left: 100px;
         padding-right: 100px;
         @include desktop-normal{
             padding-left: 60px;
-            padding-right: 60px;            
-            padding-bottom: 130px;
+            padding-right: 60px;         
         }
         @include desktop-note-big{
             padding-left: 45px;
             padding-right: 45px;
-            padding-bottom: 120px;
+
         }
         @include  desktop-block{
             padding-left: 25px;
@@ -25,14 +33,24 @@
         @include phone{
             padding-left: 20px;
             padding-right: 20px;
-            padding-bottom: 115px;    
+   
         }
     }
     &-wrap{
         position: relative;
     }
-    &-porfolios{
-        display: flex;
+    &-portfolios{
+        // display: flex;
+        padding-bottom: 180px;        
+        @include desktop-normal{       
+            padding-bottom: 130px;
+        }
+        @include desktop-note-big{
+            padding-bottom: 120px;
+        }
+        @include phone{
+            padding-bottom: 115px;    
+        }
     }
     .index{
         &-wrap{
@@ -128,12 +146,16 @@
             left:0;
             top: auto;
             bottom:0;
-            display: block;
+            // display: block;
             width: 100%;
             padding-bottom: 0;
             display: flex;
             justify-content: center;   
-            z-index: 1000;   
+            align-items: flex-end;
+            z-index: 1000; 
+            &.fixed{
+                position: absolute;
+            }  
         }
 
         &-wrap{
@@ -154,12 +176,9 @@
                 width: 175px;
             }
             @include desktop-block{
-                // display: none;
                 width: 185px;
                 padding: 15px;
                 background-color: var(--color-beage);
-                // height: 48px;
-                // overflow: hidden;
                 position: absolute;
                 left: 0;
                 bottom: 0;

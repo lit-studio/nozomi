@@ -167,12 +167,9 @@
                 width: 175px;
             }
             @include desktop-block{
-                // display: none;
                 width: 185px;
                 padding: 15px;
                 background-color: var(--color-beage);
-                // height: 48px;
-                // overflow: hidden;
                 position: absolute;
                 left: 0;
                 bottom: 0;

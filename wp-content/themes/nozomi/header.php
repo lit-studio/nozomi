@@ -22,7 +22,46 @@
 </head>
 
 <body  <?php body_class(); ?>>
-<div class="preloader preloader--js"></div>
+<div class="preloader preloader--js">
+    <div class="preloader-wrap">
+        <div class="preloader-desc">
+            <div class="preloader-desc-wrap">
+                <div class="preloader-desc-left">
+                    <div class="preloader-desc-line">
+                        It’s easy to feel hopeful on a beautiful day like today.
+                    </div>
+                    <div class="preloader-desc-line">
+                        But in the end we all face difficulties.
+                    </div>
+                    <div class="preloader-desc-line">
+                        Everyone has dark days when they feel alone, lost and buried.
+                    </div>
+                    <div class="preloader-desc-line">
+                        And the most powerful things that helps us move forward is a
+                    </div>
+                </div>
+                <div class="preloader-desc-right">
+                    <div class="item-cursive">
+                        <div class="item-[cursive--cursive">
+                            hope
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preloader-bold">
+            And we want to become a hope for those who need it most
+        </div>
+        <div class="preloader-link">
+            <div class="item-link">
+                <span                   
+                    class="item-link--link">
+                    Skip Intro
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="site" class="site">
 <!-- <div id='cursor' class="cursor"></div> -->
 <header class="c-header c-header--js">

@@ -522,6 +522,9 @@
                 .c-tab-item-title{
                     opacity: 1;
                 }
+                .c-tab-item-desc{
+                    opacity: 1;
+                }
               }
               &-wrap {
                 position: relative;
@@ -548,11 +551,10 @@
               &-block{
                 height: 0;
                 overflow: hidden;
-                // font-size: 18px;
-                // line-height: 24px;
               }
               &-desc {
-
+                opacity: 0;
+                transition: opacity 0.2s linear;
               }
 
             }

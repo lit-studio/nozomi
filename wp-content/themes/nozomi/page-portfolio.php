@@ -12,7 +12,7 @@ get_header();
                 if ($title) { ?>
                     <section class="index-portfolio">
                         <div class="index-wrap">
-                            <div class="item">
+                            <div class="item gsap-anim--js">
                                 <div class="item-title">
                                     <div class="item-title--title">
                                         <?php echo $title; ?>
@@ -25,7 +25,7 @@ get_header();
                 <div class="p-portfolio-portfolios">
                     <section class="portfolios">
                         <div class="portfolios-wrap">
-                            <div class="portfolios-list">
+                            <div class="portfolios-list gsap-anim--js">
                                 <?php
 
                                 query_posts(
