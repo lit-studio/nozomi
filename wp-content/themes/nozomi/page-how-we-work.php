@@ -81,19 +81,27 @@ get_header();
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="work-content">
+                            <div class="work-content work-list-gsap--js">
                                 <div class="work-row">
                                     <?php if ($image_how_we_work) { ?>
                                         <div class="work-col work-img">
                                             <div class="item">
-                                                <div class="item-img">
+                                                <div class="item-img" data-tab='1'>
                                                     <img class="img"
                                                          src="<?php echo $image_how_we_work['sizes']['how']; ?>">
+                                                </div>
+                                                <div class="item-img" data-tab='2'>
+                                                    <img class="img"
+                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg">
+                                                </div>
+                                                <div class="item-img" data-tab='3'>
+                                                    <img class="img"
+                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg">
                                                 </div>
                                             </div>
                                         </div>
                                     <?php } ?>
-                                    <div class="work-col work-desc  work-list-gsap--js">
+                                    <div class="work-col work-desc">
                                         <?php  /*  
                                             <div class="item">
                                                 <?php if ($text_1_how_we_work) { ?>
@@ -122,7 +130,7 @@ get_header();
 
                                             </div>
                                         */ ?>
-                                        <div class="c-tab-item">
+                                        <div class="c-tab-item" data-tab='1'>
                                             <div class="c-tab-item-wrap">
                                                 <div class="c-tab-item-title">
                                                     <?php echo $text_1_how_we_work; ?>
@@ -134,7 +142,7 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="c-tab-item">
+                                        <div class="c-tab-item"  data-tab='2'>
                                             <div class="c-tab-item-wrap">
                                                 <div class="c-tab-item-title">
                                                 <?php echo $text_3_how_we_work; ?>
@@ -146,7 +154,7 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="c-tab-item">
+                                        <div class="c-tab-item"  data-tab='3'>
                                             <div class="c-tab-item-wrap">
                                                 <div class="c-tab-item-title">
                                                 <?php echo $text_4_how_we_work; ?>
