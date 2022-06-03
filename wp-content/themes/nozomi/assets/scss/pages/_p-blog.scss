@@ -40,7 +40,16 @@
     }
     &-blogs{
         display: flex;
-        padding-bottom: 180px;    
+        padding-bottom: 180px;   
+        @include desktop-normal{       
+            padding-bottom: 130px;
+        }
+        @include desktop-note-big{
+            padding-bottom: 120px;
+        }
+        @include phone{
+            padding-bottom: 115px;    
+        } 
     }
     .index{
         &-wrap{

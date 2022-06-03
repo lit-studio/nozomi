@@ -9,61 +9,61 @@
     <?php wp_head(); ?>
     <style>
         .preloader {
-        left: 0;
+        /* left: 0;
         top: 0;
         position: fixed;
         width: 100vw;
-        height: 100vh;
-        background-color: var(--color-bg);
-        z-index: 10000;
-        opacity: 1;
+        height: 100vh; */
+        /* background-color: var(--color-bg); */
+        /* z-index: 10000; */
+        /* opacity: 1; */
         }
     </style>
 </head>
 
-<body  <?php body_class(); ?>>
+<body  <?php body_class(); ?> >
+
+<div id="site" class="site">
 <div class="preloader preloader--js">
     <div class="preloader-wrap">
         <div class="preloader-desc">
-            <div class="preloader-desc-wrap">
-                <div class="preloader-desc-left">
-                    <div class="preloader-desc-line">
-                        It’s easy to feel hopeful on a beautiful day like today.
-                    </div>
-                    <div class="preloader-desc-line">
-                        But in the end we all face difficulties.
-                    </div>
-                    <div class="preloader-desc-line">
-                        Everyone has dark days when they feel alone, lost and buried.
-                    </div>
-                    <div class="preloader-desc-line">
-                        And the most powerful things that helps us move forward is a
-                    </div>
+            <div class="preloader-desc-line">
+                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                    <span>It’s easy to feel hopeful on a beautiful day like today.</span>
+                </div>  
+            </div>
+            <div class="preloader-desc-line">               
+                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                    <span>But in the end we all face difficulties.</span>
+                </div> 
+            </div>
+            <div class="preloader-desc-line">                
+                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                    <span>Everyone has dark days when they feel alone, lost and buried.</span>
                 </div>
-                <div class="preloader-desc-right">
-                    <div class="item-cursive">
-                        <div class="item-[cursive--cursive">
-                            hope
-                        </div>
-                    </div>
+            </div>
+            <div class="preloader-desc-line">
+                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                    <span>And the most powerful things that helps us move forward is a</span><span class="preloader-desc-cursive">hope</span>
                 </div>
             </div>
         </div>
         <div class="preloader-bold">
-            And we want to become a hope for those who need it most
+            <div class="preloader-bold-line preloader-bold-line--js">
+                <span>And we want to become a hope for those who need it most</span>
+            </div>            
         </div>
         <div class="preloader-link">
             <div class="item-link">
                 <span                   
-                    class="item-link--link">
+                    class="item-link--link preloader-close--js">
                     Skip Intro
                 </span>
             </div>
         </div>
     </div>
 </div>
-<div id="site" class="site">
-<!-- <div id='cursor' class="cursor"></div> -->
+<div class="preloader-bg preloader-bg--js"></div>
 <header class="c-header c-header--js">
 
     <div class="c-header-wrap">

@@ -557,3 +557,150 @@
 
 
 }
+.preloader{
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 900;
+  display: none;
+  &-wrap{
+    max-width: 860px;
+    @include desktop-normal{
+      max-width: 760px;
+    }
+    @include desktop-note-big{
+      max-width: 640px;
+    }
+    @include desktop-block{
+
+    }
+    @include tablet{
+      max-width: 100%;
+      padding-left: 100px;
+      padding-right: 65px;
+    }
+    @include phone{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  &-desc{
+    &-line{
+      color: var(--color-grey);
+      font-size: 28px;
+      line-height: 150%;
+      overflow: hidden;
+      @include desktop-normal{
+        font-size: 24px;
+      }
+      @include desktop-note-big{
+        font-size: 20px;
+      }
+      @include phone{
+        font-size: 20px;
+      }
+    }
+    &-cursive{
+      padding-left: 10px;
+      font-family: var(--font-gloria);
+      color: var(--color-red);
+    }
+    
+  }
+  &-bold{
+    padding-top: 70px;
+    color: var(--color-grey);
+    font-size: 28px;
+    line-height: 150%;
+    font-family: var(--font-bold);
+    @include desktop-normal{
+      padding-top: 50px;
+      font-size: 24px;
+    }
+    @include desktop-note-big{
+      padding-top: 45px;
+      font-size: 20px;
+    }
+    @include phone{
+      padding-top: 40px;
+      font-size: 18px;
+    }
+  }
+  &-link{
+    padding-top: 100px;
+    @include desktop-normal{
+      padding-top: 70px;
+    }
+    @include desktop-note-big{
+      padding-top: 60px;
+    }
+    @include phone{
+      padding-top: 45px;
+    }
+    .item{
+      &-link{
+        padding-top: 25px;
+        &--link{
+          cursor: pointer;
+          color: var(--color-grey-4);
+          font-size: 20px;
+          line-height: 120%;
+          font-family: var(--font-medium);
+          padding-left: 34px;
+          position: relative;
+          @include desktop-normal{
+            font-size: 18px;
+            padding-left: 30px;
+          }
+          @include desktop-note-big{
+            font-size: 15px;
+            padding-left: 28px;
+          }
+          &:hover{
+            color: var(--color-red);
+          }
+          &:before{
+            width: 24px;
+            height: 24px;
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: transparent;
+            background-image: url('#{$assetsPath}/icons/icon-link-play.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: contain;
+            @include desktop-normal{
+              width: 20px;
+              height: 20px;
+            }
+            @include desktop-note-big{
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-bg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: var(--color-bg);
+    z-index: 100;
+    display: none;
+    &.preloader-bg-hidden{
+      z-index: 0;
+    }
+  }
+}
