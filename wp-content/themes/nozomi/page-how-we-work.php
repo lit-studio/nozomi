@@ -56,13 +56,9 @@ get_header();
                 <?php
                 $title_block_how_we_work = get_field('title_block_how_we_work');
                 $title_how_we_work = get_field('title_how_we_work');
-                $image_how_we_work = get_field('image_how_we_work');
-                $text_1_how_we_work = get_field('text_1_how_we_work');
-                $text_2_how_we_work = get_field('text_2_how_we_work');
-                $text_3_how_we_work = get_field('text_3_how_we_work');
-                $text_4_how_we_work = get_field('text_4_how_we_work');
+                $quick_highlights_how_we_work = get_field('quick_highlights_how_we_work');
 
-                if ($title_block_how_we_work || $title_how_we_work || $image_how_we_work || $text_1_how_we_work || $text_2_how_we_work || $text_3_how_we_work || $text_4_how_we_work) { ?>
+                if ($title_block_how_we_work || $title_how_we_work || $quick_highlights_how_we_work) { ?>
                     <section class="work">
                         <div class="work-wrap">
                             <div class="work-top">
@@ -81,28 +77,31 @@ get_header();
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="work-content work-list-gsap--js">
-                                <div class="work-row">
-                                    <?php if ($image_how_we_work) { ?>
+                            <?php if ($quick_highlights_how_we_work) { ?>
+                                <div class="work-content work-list-gsap--js">
+                                    <div class="work-row">
+
                                         <div class="work-col work-img">
+
                                             <div class="item">
-                                                <div class="item-img" data-tab='1'>
-                                                    <img class="img"
-                                                         src="<?php echo $image_how_we_work['sizes']['how']; ?>">
-                                                </div>
-                                                <div class="item-img" data-tab='2'>
-                                                    <img class="img"
-                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-01.jpg">
-                                                </div>
-                                                <div class="item-img" data-tab='3'>
-                                                    <img class="img"
-                                                         src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/portfolio-02.jpg">
-                                                </div>
+                                                <?php $counter = 1;
+                                                while (have_rows('quick_highlights_how_we_work')) {
+                                                    the_row();
+
+                                                    $quick_highlights_how_we_work_image = get_sub_field('image');
+                                                    ?>
+                                                    <div class="item-img" data-tab='<?php echo $counter; ?>'>
+                                                        <img class="img"
+                                                             src="<?php echo $quick_highlights_how_we_work_image['sizes']['how']; ?>">
+                                                    </div>
+                                                    <?php $counter++;
+                                                } ?>
                                             </div>
+
                                         </div>
-                                    <?php } ?>
-                                    <div class="work-col work-desc">
-                                        <?php  /*  
+
+                                        <div class="work-col work-desc">
+                                            <?php /*
                                             <div class="item">
                                                 <?php if ($text_1_how_we_work) { ?>
                                                     <div class="item-title">
@@ -130,45 +129,32 @@ get_header();
 
                                             </div>
                                         */ ?>
-                                        <div class="c-tab-item" data-tab='1'>
-                                            <div class="c-tab-item-wrap">
-                                                <div class="c-tab-item-title">
-                                                    <?php echo $text_1_how_we_work; ?>
+                                            <?php $counter = 1;
+                                            while (have_rows('quick_highlights_how_we_work')) {
+                                                the_row();
+                                                $quick_highlights_how_we_work_title = get_sub_field('title');
+                                                $quick_highlights_how_we_work_text = get_sub_field('text');
+
+                                                ?>
+                                                <div class="c-tab-item" data-tab='<?php echo $counter; ?>'>
+                                                    <div class="c-tab-item-wrap">
+                                                        <div class="c-tab-item-title">
+                                                            <?php echo $quick_highlights_how_we_work_title; ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="c-tab-item-block">
+                                                        <div class="c-tab-item-desc  c-article-content">
+                                                            <?php echo $quick_highlights_how_we_work_text; ?>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="c-tab-item-block">
-                                                <div class="c-tab-item-desc  c-article-content">
-                                                     <?php echo $text_2_how_we_work; ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="c-tab-item"  data-tab='2'>
-                                            <div class="c-tab-item-wrap">
-                                                <div class="c-tab-item-title">
-                                                <?php echo $text_3_how_we_work; ?>
-                                                </div>
-                                            </div>
-                                            <div class="c-tab-item-block">
-                                                <div class="c-tab-item-desc  c-article-content">
-                                                     <?php echo $text_2_how_we_work; ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="c-tab-item"  data-tab='3'>
-                                            <div class="c-tab-item-wrap">
-                                                <div class="c-tab-item-title">
-                                                <?php echo $text_4_how_we_work; ?>
-                                                </div>
-                                            </div>
-                                            <div class="c-tab-item-block">
-                                                <div class="c-tab-item-desc  c-article-content">
-                                                     <?php echo $text_2_how_we_work; ?>
-                                                </div>
-                                            </div>
+                                                <?php $counter++;
+                                            } ?>
+
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
                         </div>
                     </section>
                 <?php } ?>
