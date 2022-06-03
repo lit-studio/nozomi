@@ -84,7 +84,7 @@
         &-portfolio{
             // height: 80vh;
             .item{
-                max-width: 1300px;
+                max-width: 1200px;
                 padding-left: 25px;
                 padding-right: 25px;
                 @include desktop-normal{
@@ -104,6 +104,7 @@
                 &-title{
                     text-align: center;
                     &--title{
+                        color: var(--color-grey);
                         font-family: var(--font-bold);
                         font-size: 98px;
                         line-height: 120%;
@@ -638,12 +639,13 @@
         }                                     
         &-single-portfolio{
             .item{
-                max-width: 1716px;
+                // max-width: 1716px;
+                max-width: 1440px;
                 padding-left: 25px;
                 padding-right: 25px;
-                @include desktop-normal{
-                    max-width: 1440px;
-                  }
+                // @include desktop-normal{
+                //     max-width: 1440px;
+                //   }
                 @include desktop-note-big{
                     max-width: 1000px;
                 }

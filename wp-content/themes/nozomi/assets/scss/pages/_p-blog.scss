@@ -103,6 +103,7 @@
                 &-title{
                     text-align: center;
                     &--title{
+                        color:  var(--color-grey);
                         font-family: var(--font-bold);
                         font-size: 98px;
                         line-height: 120%;
@@ -698,6 +699,7 @@
                 &-title{
                     text-align: center;
                     &--title{
+                        color: var(--color-grey);
                         font-family: var(--font-bold);
                         font-size: 98px;
                         line-height: 120%;
@@ -1254,7 +1256,7 @@
                     color: var(--color-grey);
                     font-size: 24px;
                     @include desktop-normal{
-                        font-size: 20spx;   
+                        font-size: 20px;   
                     }
                     @include desktop-block{
                         display: none;
