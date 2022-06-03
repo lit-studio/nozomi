@@ -112,7 +112,7 @@ export default function () {
       }
     }
 
-    preloaderFunc();
+    // preloaderFunc();
     header();
     footer();
     tab();
