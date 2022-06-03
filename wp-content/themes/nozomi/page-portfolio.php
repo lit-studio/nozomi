@@ -23,6 +23,41 @@ get_header();
                     </section>
                 <?php } ?>
                 <div class="p-portfolio-portfolios">
+                    <section class="nav">
+                        <div class="nav-wrap">
+                            <div class="nav-mobile-btns">
+                                <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
+                                </button>
+                            </div>
+                            <div class="nav-menu nav-menu--js">
+                                <?php
+                                $curr_id = get_queried_object()->term_id;
+                                $terms = get_terms('portfolio_cat');
+
+                                if ($terms && !is_wp_error($terms)) {
+                                    echo "<ul>";
+                                    ?>
+                                    <li class='menu-item menu-item-type-custom menu-item-object-custom'><a
+                                                href="<?php echo get_permalink(9); ?>">
+                                            All works</a></li>
+                                    <?php
+
+                                    foreach ($terms as $term) {
+
+                                        ?>
+                                        <li class='menu-item menu-item-type-custom menu-item-object-custom <?php if ($term->term_id == $curr_id) { ?> current-menu-item<?php } ?> '>
+                                            <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
+                                        </li>
+
+                                    <?php }
+
+                                    echo "</ul>";
+                                }
+                                ?>
+                            </div>
+                            <div class="nav-menu-bg nav-menu-bg--js"></div>
+                        </div>
+                    </section>
                     <section class="portfolios">
                         <div class="portfolios-wrap">
                             <div class="portfolios-list gsap-anim--js">
@@ -99,10 +134,10 @@ get_header();
                             wp_reset_query(); ?>
 
                         </div>
-                </div>
-                </section>
+                    </section>
+                </div> 
             </div>
-            <section class="nav">
+            <!-- <section class="nav">
                 <div class="nav-wrap">
                     <div class="nav-mobile-btns">
                         <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
@@ -136,7 +171,7 @@ get_header();
                     </div>
                     <div class="nav-menu-bg nav-menu-bg--js"></div>
                 </div>
-            </section>
+            </section> -->
         </div>
         </div>
     </main><!-- #main -->

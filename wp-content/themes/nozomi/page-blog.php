@@ -26,7 +26,43 @@ get_header();
                     </section>
                 <?php } ?>
                 <div class="p-blog-blogs">
+                    <section class="nav">
+                        <div class="nav-wrap">
+                            <div class="nav-mobile-btns">
+                                <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
+                                </button>
+                            </div>
+                            <div class="nav-menu nav-menu--js gsap-nav--js">
 
+                                <?php
+                                $curr_id = get_queried_object()->term_id;
+                                $terms = get_terms('category');
+
+                                if ($terms && !is_wp_error($terms)) {
+                                    echo "<ul>";
+                                    ?>
+                                    <li class='menu-item menu-item-type-custom menu-item-object-custom'><a
+                                                href="<?php echo get_permalink(15); ?>">All
+                                            posts</a></li>
+                                    <?php
+
+                                    foreach ($terms as $term) {
+
+                                        ?>
+                                        <li class='menu-item menu-item-type-custom menu-item-object-custom <?php if ($term->term_id == $curr_id) { ?> current-menu-item<?php } ?> '>
+                                            <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
+                                        </li>
+
+                                    <?php }
+
+                                    echo "</ul>";
+                                }
+                                ?>
+
+                            </div>
+                            <div class="nav-menu-bg nav-menu-bg--js"></div>
+                        </div>
+                    </section>
                     <section class="blogs">
                         <div class="blogs-wrap">
                             <div class="blogs-list gsap-anim--js">
@@ -127,43 +163,6 @@ get_header();
                         </div>
                     </section>
                 </div>
-                <section class="nav">
-                    <div class="nav-wrap">
-                        <div class="nav-mobile-btns">
-                            <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
-                            </button>
-                        </div>
-                        <div class="nav-menu nav-menu--js gsap-nav--js">
-
-                            <?php
-                            $curr_id = get_queried_object()->term_id;
-                            $terms = get_terms('category');
-
-                            if ($terms && !is_wp_error($terms)) {
-                                echo "<ul>";
-                                ?>
-                                <li class='menu-item menu-item-type-custom menu-item-object-custom'><a
-                                            href="<?php echo get_permalink(15); ?>">All
-                                        posts</a></li>
-                                <?php
-
-                                foreach ($terms as $term) {
-
-                                    ?>
-                                    <li class='menu-item menu-item-type-custom menu-item-object-custom <?php if ($term->term_id == $curr_id) { ?> current-menu-item<?php } ?> '>
-                                        <a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a>
-                                    </li>
-
-                                <?php }
-
-                                echo "</ul>";
-                            }
-                            ?>
-
-                        </div>
-                        <div class="nav-menu-bg nav-menu-bg--js"></div>
-                    </div>
-                </section>
             </div>
         </div>
     </main><!-- #main -->

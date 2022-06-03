@@ -5,9 +5,10 @@ export default function () {
     console.log("portfolio");
   
     let $body = $('body'),
+    $indexSection = $body.find('.index-portfolio'),
     $navSection = $body.find('.nav'),
     $navSectionItem = $navSection.find('.menu-item'),
-    $navTrigger = $body.find('.p-portfolio-content'),
+    $navTrigger = $body.find('.portfolios'),
     $footer = $body.find('.c-footer'),
     $navWrap = $navSection.find('.nav-wrap'),
     $navMobileBtn = $navSection.find('.nav-mobile-btn--js'),
@@ -17,8 +18,18 @@ export default function () {
     $section = $navTrigger.find('.gsap-anim--js'),
     $sectionNav = $navTrigger.find('.gsap-nav--js'),
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),  
+    indexSectionHeight = $indexSection.innerHeight(),
+    navHeight = $navMobileBlock.innerHeight(),
+    windowHeight = $(window).height(),
+    anchorStart = indexSectionHeight - navHeight,
+    anchorEnd = windowHeight - navHeight,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
   ;
+  console.log( windowHeight);
+  console.log(indexSectionHeight);
+  console.log(navHeight);
+  console.log(anchorStart);
+  console.log(anchorEnd);
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -70,7 +81,8 @@ export default function () {
     function navScrollFunc() {
       ScrollTrigger.create({
         trigger: $navTrigger,
-        start: "top top",
+        start: "top " + anchorStart,
+        // end: "bottom " + anchorEnd,
         end: "bottom bottom",
         pin:  $navWrap,
         scrub: true,

@@ -40,7 +40,8 @@
         position: relative;
     }
     &-portfolios{
-        // display: flex;
+        display: flex;
+        position: relative;
         padding-bottom: 180px;        
         @include desktop-normal{       
             padding-bottom: 130px;
@@ -130,7 +131,8 @@
         left: 0;
         height: 100vh;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
+        // align-items: flex-end;
         padding-bottom: 20px;
         @include desktop-normal{
             width: 240px;
@@ -331,7 +333,7 @@
     }
     .portfolios{
         width: 100%;
-        padding-top: 20px;
+        // padding-top: 20px;
         padding-left: 400px;
         @include desktop-normal{
             padding-left: 240px;

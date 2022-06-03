@@ -40,7 +40,8 @@
     }
     &-blogs{
         display: flex;
-        padding-bottom: 180px;   
+        padding-bottom: 180px;  
+        position: relative; 
         @include desktop-normal{       
             padding-bottom: 130px;
         }
@@ -127,9 +128,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 100vh;
+        // height: 100vh;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
+        // align-items: flex-end;
         padding-bottom: 20px;
         @include desktop-normal{
             width: 240px;
