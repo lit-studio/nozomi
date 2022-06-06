@@ -89,23 +89,28 @@
             z-index: 1;
             @include desktop-normal{
                 padding-top: pxVw(233, 1920);
-                padding-bottom: pxVw(134, 1920);
+                // padding-bottom: pxVw(134, 1920);
+                padding-bottom: pxVw(200, 1920);
             }
             @include desktop-note-big{
                 padding-top: pxVw(160, 1440); 
-                padding-bottom: pxVw(87, 1440);
+                // padding-bottom: pxVw(87, 1440);
+                padding-bottom: pxVw(213, 1440);
             }
             @include desktop-block{
                 padding-top: pxVw(160, 1024);
-                padding-bottom: pxVw(177, 1024);
+                // padding-bottom: pxVw(177, 1024);
+                padding-bottom: pxVw(213, 1024);
             }
             @include tablet{ 
                 padding-top: pxVw(240, 768);
-                padding-bottom: pxVw(85, 768);
+                // padding-bottom: pxVw(85, 768);
+                padding-bottom: pxVw(244, 768);
             }
             @include phone{
                 padding-top: pxVw(120, 375);
-                padding-bottom: pxVw(80, 375);
+                // padding-bottom: pxVw(80, 375);
+                padding-bottom: pxVw(92, 375);
             }
         }                                     
         &-how{
@@ -643,7 +648,7 @@
                 max-width: 1278px;
             }
             @include desktop-note-big{
-                max-width: 1065px;
+                max-width: 1130px;
             }
             @include desktop-block{
                 max-width: 100%;
