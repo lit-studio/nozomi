@@ -20,28 +20,19 @@ export default function () {
             console.log('tab');
             $tabItemThis = $(this).closest($tabItem);
             dataTab = $tabItemThis.attr('data-tab');
-            // this.className.filter('[data-tab="' + dataTab + '"]').addClass('active');
             console.log('dataTab ', dataTab);
             $tabItemContent = $tabItemThis.find(".c-tab-item-block");
-            // gsap.timeline().to($faqItemContent, 0.3, {height: 0});
-            gsap.timeline().to($('.c-tab-item-block'), 0.3, {height: 0});
-            $tabImg.removeClass("active");
-            $tabItem.removeClass("active");
-            if ($tabItemContent.height() !== 0) {
-                gsap.timeline().to($tabItemContent, 0.3, {
-                    height: 0,
-                    onUpdate: () => window.dispatchEvent(new Event('resize'))
-                });
-                $tabItemThis.removeClass("active");
-                $tabImg.filter('[data-tab="' + dataTab + '"]').removeClass("active");
-            } else {
+            if ($tabItemContent.height() == 0) {
+                gsap.timeline().to($('.c-tab-item-block'), 0.3, {height: 0});
+                $tabImg.removeClass("active");
+                $tabItem.removeClass("active");
                 gsap.timeline().to($tabItemContent, 0.3, {
                     height: "auto",
                     onUpdate: () => window.dispatchEvent(new Event('resize'))
                 });
                 $tabItemThis.addClass("active");
                 $tabImg.filter('[data-tab="' + dataTab + '"]').addClass('active');
-            }
+            } 
         });
     }
 }

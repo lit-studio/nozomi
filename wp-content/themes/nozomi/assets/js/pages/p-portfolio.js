@@ -26,10 +26,10 @@ export default function () {
     anchorStart = indexSectionHeight - navStopHeight,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
   ;
-  // console.log('navHeight ' + navHeight );
-  // console.log('navStopHeight ' + navStopHeight );
-  // console.log('anchorStart ' + anchorStart );
-  // console.log('navTriggerPath ' + navTriggerPath );
+  console.log('navHeight ' + navHeight );
+  console.log('navStopHeight ' + navStopHeight );
+  console.log('anchorStart ' + anchorStart );
+  console.log('navTriggerPath ' + navTriggerPath );
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -86,7 +86,7 @@ export default function () {
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",
-        markers: false,
+        markers: true,
       });
 
     }
