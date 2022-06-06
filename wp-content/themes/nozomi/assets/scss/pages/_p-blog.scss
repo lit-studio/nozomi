@@ -172,9 +172,6 @@
             @include desktop-normal{
                 width: 240px;
             }
-            @include desktop-normal{
-                width: 240px;
-            }
             @include desktop-note-big{
                 width: 175px;
             }
@@ -202,6 +199,18 @@
                     display: block;
                 }
             }
+            // &-stop{
+            //     height: 130px;
+            //     @include desktop-normal{
+            //         height: 120px;
+            //     }
+            //     @include desktop-note-big{
+            //         height: 100px;
+            //     }
+            //     @include desktop-block{
+
+            //     }
+            // }
             ul{
                 @include desktop-block{
                     width: 100%;
@@ -229,6 +238,7 @@
                     }
                 }
                 &:last-of-type{
+                    padding-bottom: 0;
                     @include desktop-block{
                         padding-bottom: 7px;
                     }

@@ -202,6 +202,15 @@
                     display: block;
                 }
             }
+            &-stop{
+                height: 40px;
+                @include desktop-note-big{
+                    height: 20px;
+                }
+                @include desktop-block{
+                    height: 10px;
+                }
+            }
             ul{
                 @include desktop-block{
                     width: 100%;
@@ -228,6 +237,7 @@
                     }
                 }
                 &:last-of-type{
+                    padding-bottom: 0;
                     @include desktop-block{
                         padding-bottom: 7px;
                     }

@@ -20,16 +20,16 @@ export default function () {
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),  
     indexSectionHeight = $indexSection.innerHeight(),
     navHeight = $navMobileBlock.innerHeight(),
-    windowHeight = $(window).height(),
-    anchorStart = indexSectionHeight - navHeight,
-    anchorEnd = windowHeight - navHeight,
+    navTriggerHeight = $navTrigger.height(),
+    navStopHeight = $body.find('.nav-menu-stop').height() + navHeight,
+    navTriggerPath = navTriggerHeight - navStopHeight,
+    anchorStart = indexSectionHeight - navStopHeight,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
   ;
-  console.log( windowHeight);
-  console.log(indexSectionHeight);
-  console.log(navHeight);
-  console.log(anchorStart);
-  console.log(anchorEnd);
+  // console.log('navHeight ' + navHeight );
+  // console.log('navStopHeight ' + navStopHeight );
+  // console.log('anchorStart ' + anchorStart );
+  // console.log('navTriggerPath ' + navTriggerPath );
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -82,8 +82,7 @@ export default function () {
       ScrollTrigger.create({
         trigger: $navTrigger,
         start: "top " + anchorStart,
-        // end: "bottom " + anchorEnd,
-        end: "bottom bottom",
+        end: navTriggerPath + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",

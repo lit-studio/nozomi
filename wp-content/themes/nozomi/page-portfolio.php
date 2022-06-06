@@ -30,7 +30,18 @@ get_header();
                                 </button>
                             </div>
                             <div class="nav-menu nav-menu--js">
-                                <?php
+                            <!-- <ul>
+                            <li class='menu-item menu-item-type-custom menu-item-object-custom  '>
+                                <a href="/">All works</a>
+                            </li>
+                            <li class='menu-item menu-item-type-custom menu-item-object-custom  '>
+                                <a href="/">All works</a>
+                            </li>
+                            <li class='menu-item menu-item-type-custom menu-item-object-custom  '>
+                                <a href="/">All works</a>
+                            </li>
+                            </ul> -->
+                                <?php 
                                 $curr_id = get_queried_object()->term_id;
                                 $terms = get_terms('portfolio_cat');
 
@@ -54,6 +65,7 @@ get_header();
                                     echo "</ul>";
                                 }
                                 ?>
+                                <div class="nav-menu-stop"></div>     
                             </div>
                             <div class="nav-menu-bg nav-menu-bg--js"></div>
                         </div>
