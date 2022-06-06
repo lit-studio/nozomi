@@ -1,4 +1,5 @@
 .p-about {
+    background-color: var(--color-bg);
     &-content{
 
     }
@@ -181,6 +182,10 @@
                 max-width: 33.33%;
                 display: flex;
                 justify-content: flex-start;
+                @include desktop-note-big{
+                    flex: 0 0 30%;
+                    max-width: 30%;
+                }
                 @include desktop-block{
                     flex: 0 0 25%;
                     max-width: 25%;
@@ -200,6 +205,10 @@
                 max-width: 33.33%;
                 display: flex;
                 justify-content: flex-end;
+                @include desktop-note-big{
+                    flex: 0 0 30%;
+                    max-width: 30%;
+                }
                 @include desktop-block{
                     flex: 0 0 25%;
                     max-width: 25%;
@@ -226,26 +235,31 @@
 
         }
         &-wrap{
-            max-width: 760px;
-            padding-left: 20px;
-            padding-right: 20px;
+            // max-width: 760px;
+            // padding-left: 20px;
+            // padding-right: 20px;
+            max-width: 795px;
             margin: 0 auto;
             flex: 1;
             @include desktop-normal{
-                max-width: 640px;
+                // max-width: 640px;
+                max-width: 662px;
             }
             @include desktop-note-big{
-                max-width: 580px;
+                // max-width: 580px;
+                max-width: 530px;
             }
             @include desktop-block{
-                max-width: 540px;
+                // max-width: 540px;
             }
             @include tablet{
-                max-width: 420px;
+                // max-width: 420px;
                 flex: 0 0 60%;
+                max-width: 360px;
             }
             @include phone {
-                max-width: 100%;  
+                // max-width: 100%;
+                max-width: 335px;  
                 flex: 0 0 100%;
                 order: 1;
             }
@@ -272,35 +286,24 @@
                     padding-top: 25px;
                 }
                 @include phone{
-                    padding-top: 105px;
+                    padding-top: 100px;
             
                 }
                 &--desc{
                     text-align: center;
                     p{
                         padding-top: 30px;
-                        // font-size: 32px;
                         line-height: 150%;
-                        color:var(--color-grey-2);
                         font-size: 24px;
                         @include desktop-normal{
-                            // font-size: 28px;
                             font-size: 20px;
                         }
                         @include desktop-note-big{
-                            // font-size: 24px;
                             font-size: 16px;    
                         }
-                        @include desktop-block{
-                
-                        }
-                        @include tablet{
-                
-                        }
                         @include phone{
-                        font-size: 15px;
+                            font-size: 15px;
                         }
-
                         &:first-of-type{
                             padding-top: 0;
                         }
@@ -335,7 +338,7 @@
         }
 
         &-cursive{
-        text-align: center;
+            text-align: center;
         &--cursive{
             font-family: var(--font-gloria);
             font-size: 28px;
@@ -359,8 +362,8 @@
         }
         }
         &-title{
-        text-align: center;
-        padding-top: 35px;
+            text-align: center;
+            padding-top: 35px;
         &--title{
             font-size: 64px;
             line-height: 125%;
@@ -384,29 +387,29 @@
         }
         }
         &-desc{
-        padding-top: 35px;
-        text-align: center;
-        max-width: pxVw(1200,2560);
-        margin: 0 auto;
-        @include desktop-normal{
-            max-width: pxVw(980,1920);
-    
-        }
-        @include desktop-note-big{
-    
-            max-width: pxVw(880,1440);
-    
-        }
-        @include desktop-block{
-            max-width: 100%;
-    
-        }
-        @include tablet{
-    
-        }
-        @include phone{
-    
-        }
+            padding-top: 35px;
+            text-align: center;
+            max-width: pxVw(1200,2560);
+            margin: 0 auto;
+            @include desktop-normal{
+                max-width: pxVw(980,1920);
+        
+            }
+            @include desktop-note-big{
+        
+                max-width: pxVw(880,1440);
+        
+            }
+            @include desktop-block{
+                max-width: 100%;
+        
+            }
+            @include tablet{
+        
+            }
+            @include phone{
+        
+            }
         &--desc{
             text-align: center;
             font-size: 24px;
@@ -596,11 +599,23 @@
                     &-bottom{
                         display: flex;
                         justify-content: space-between;
+                        @include phone{
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                        }
                     }
                     &-left{
-
+                        @include phone{
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                        }
                     }
                     &-socials{
+                        @include phone{
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            padding-top: 5px;
+                        }
                         &-social{
                             padding-left: 30px;
                             @include desktop-normal{
@@ -608,6 +623,9 @@
                             }
                             @include desktop-note-big{
 
+                            }
+                            @include phone{
+                                padding-left: 10px;
                             }
                             &:first-of-type{
                                 padding-left: 0;

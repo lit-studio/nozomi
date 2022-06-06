@@ -246,7 +246,7 @@
             a{
                 line-height: 1;
                 font-family: var(--font-medium);
-                color: var(--color-black);
+                color: var(--color-grey-2);
                 font-size: 20px;
                 position: relative;
                 padding-bottom: 3px;
@@ -386,6 +386,7 @@
             }
             &-wrap{
                 position: relative;
+                display: block;
             }
             &-content{
                 position: absolute;
@@ -413,6 +414,7 @@
                     padding: 30px 20px;
                 }
                 &-wrap{
+                    width: 100%;
                     max-width: 660px;
                     @include desktop-normal{
                         max-width: 540px;
@@ -435,6 +437,7 @@
                 &--tag{
                     color: var(--color-grey-2);
                     font-size: 20px;
+                    font-family: var(--font-semibold);
                     @include desktop-normal{
 
                     }
@@ -481,13 +484,16 @@
                     padding-top: 20px;
                 }
                 &--service{
+                    padding-top: 20px;
+                    text-transform: uppercase;
+                    font-family: var(--font-medium);
+                    color: var(--color-grey-3);
+
+                    font-size: 20px;
                     &:first-of-type{
                         padding-top: 0;
                     }
-                    padding-top: 20px;
-                    text-transform: uppercase;
-                    color: var(--color-grey-2);
-                    font-size: 20px;
+ 
                     @include desktop-normal{
                         font-size: 18px;
                     }
