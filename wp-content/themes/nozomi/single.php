@@ -2,10 +2,10 @@
 get_header();
 ?>
     <main id="primary" class="site-main">
-        <div class="p-single-blog-content">
+        <div class="p-single-blog-content ">
             <section class="index-blog">
                 <div class="index-wrap">
-                    <div class="item">
+                    <div class="item gsap-anim--js">
                         <div class="item-tag">
                             <div class="item-tag--tag">
                                 <?php
@@ -42,7 +42,7 @@ get_header();
             </section>
             <section class="blog">
                 <div class="blog-top">
-                    <div class="blog-top-wrap">
+                    <div class="blog-top-wrap gsap-anim--js">
                         <div class="blog-top-nav blog-top-nav-left">
                             <a class="blog-top-nav-link" href="<?php echo get_permalink(15); ?>">back to blog</a>
                         </div>
@@ -194,7 +194,7 @@ get_header();
             $featured_posts = get_field('other_posts_from_our_blog');
             if ($featured_posts): ?>
                 <section class="posts">
-                    <div class="posts-wrap">
+                    <div class="posts-wrap gsap-anim--js">
                         <div class="posts-title">
                             <div class="posts-title--title">
                                 Other posts from our blog

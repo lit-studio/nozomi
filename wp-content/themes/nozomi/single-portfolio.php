@@ -2,10 +2,10 @@
 get_header();
 ?>
     <main id="primary" class="site-main">
-        <div class="p-single-portfolio-content">
+        <div class="p-single-portfolio-contents">
             <div class="p-single-portfolio-wrap">
                 <section class="index-single-portfolio">
-                    <div class="index-wrap">
+                    <div class="index-wrap  gsap-anim--j">
                         <div class="item">
                             <!-- <div class="item-tag">
                                 <div class="item-tag--tag">
@@ -42,7 +42,7 @@ get_header();
                     <section class="screen">
                         <div class="screen-wrap">
                             <div class="item">
-                                <div class="item-img">
+                                <div class="item-img  gsap-anim--j">
                                     <picture class="picture">
                                         <source srcset="<?php echo $first_image_mobile['sizes']['home_1']; ?>"
                                                 media="(max-width: 768px)">
@@ -65,7 +65,7 @@ get_header();
 
                 if ($client_first_block || $services_first_block || $platforms_first_block || $link_first_block || $year_first_block) { ?>
                     <section class="specification">
-                        <div class="specification-wrap">
+                        <div class="specification-wrap  gsap-anim--j">
                             <div class="specification-ul">
                                 <?php
 
@@ -154,7 +154,7 @@ get_header();
                 if ($title_about_block || $text_about_block) { ?>
                     <section class="about">
                         <div class="about-wrap">
-                            <div class="about-top">
+                            <div class="about-top  gsap-anim--j">
                                 <div class="item">
                                     <div class="item-cursive">
                                         <div class="item-cursive--cursive">
@@ -179,7 +179,7 @@ get_header();
                 $text_what_we_did_block = get_field('text_what_we_did_block');
                 if ($image_what_we_did_block || $title_block_what_we_did_block || $title_what_we_did_block || $text_what_we_did_block) { ?>
                     <section class="development">
-                        <div class="development-wrap">
+                        <div class="development-wrap  gsap-anim--j">
                             <div class="development-row">
                                 <?php
                                 if ($image_what_we_did_block) { ?>
@@ -226,7 +226,7 @@ get_header();
                 if ($title_block_story_block || $title_story_block || $text_story_block || $link_story_block) { ?>
                     <section class="story">
                         <div class="story-wrap">
-                            <div class="story-desc">
+                            <div class="story-desc  gsap-anim--js">
                                 <div class="item">
                                     <?php
                                     if ($title_block_story_block) { ?>
@@ -273,7 +273,7 @@ get_header();
                 if ($image_before_block_clients_review_block) { ?>
                     <section class="design">
                         <div class="design-bottom">
-                            <div class="design-img">
+                            <div class="design-img  gsap-anim--j">
                                 <div class="item">
                                     <div class="item-img">
                                         <img class="img"
@@ -294,7 +294,7 @@ get_header();
                 $image_clients_review_block = get_field('image_client’s_review_block');
                 if ($title_block_clients_review_block || $photo_clients_review_block || $review_clients_review_block || $name_clients_review_block || $position_clients_review_block || $image_clients_review_block) { ?>
                     <section class="review">
-                        <div class="review-wrap">
+                        <div class="review-wrap  gsap-anim--j">
                             <div class="review-row">
                                 <?php
 
@@ -368,7 +368,7 @@ get_header();
                 if ($title_work_together || $link_work_together) { ?>
                     <section class="feel">
                         <div class="feel-wrap">
-                            <div class="feel-item">
+                            <div class="feel-item  gsap-anim--j">
                                 <div class="item">
                                     <?php
                                     if ($title_work_together) { ?>

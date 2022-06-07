@@ -5,7 +5,7 @@
 get_header();
 ?>
     <main id="primary" class="site-main">
-        <div class="p-about-content">
+        <div class="p-about-content ">
 
             <div class="p-about-wrap">
 
@@ -15,7 +15,7 @@ get_header();
 
                 if ($text_first) { ?>
                     <section class="index-about">
-                        <div class="index-wrap">
+                        <div class="index-wrap gsap-anim--js">
                             <div class="item">
                                 <div class="item-title">
                                     <div class="item-title--title">
@@ -32,7 +32,7 @@ get_header();
                     if ($image_1_first_block) { ?>
                         <div class="infographic-top">
                             <div class="infographic-top-img">
-                                <div class="item-img">
+                                <div class="item-img gsap-anim--js">
                                     <img class="img"
                                          src="<?php echo $image_1_first_block['sizes']['home_2']; ?>"
                                          alt=""/>
@@ -40,7 +40,7 @@ get_header();
                             </div>
                         </div>
                     <?php } ?>
-                    <div class="infographic-bottom">
+                    <div class="infographic-bottom gsap-anim--js">
                         <?php
                         $image_2_first_block = get_field('image_2_first_block');
                         if ($image_2_first_block) { ?>
@@ -78,7 +78,7 @@ get_header();
                 </section>
                 <section class="about">
                     <div class="about-top">
-                        <div class="about-top-wrap">
+                        <div class="about-top-wrap gsap-anim--js">
                             <?php
                             $titlte_1_who_we_are = get_field('titlte_1_who_we_are');
                             if ($titlte_1_who_we_are) { ?>
@@ -166,9 +166,8 @@ get_header();
                 </section>
                 <section class="values">
                     <div class="values-wrap">
-                        <div class="values-list">
+                        <div class="values-list gsap-anim--js">
                             <div class="values-col values-col-title">
-
                                 <div class="item">
                                     <?php
                                     $title_1_our_values = get_field('title_1_our_values');
@@ -235,7 +234,7 @@ get_header();
                     </div>
                 </section>
                 <section class="positions">
-                    <div class="positions-wrap">
+                    <div class="positions-wrap gsap-anim--js">
                         <?php
                         $title_open_positions = get_field('title_open_positions');
                         if ($title_open_positions) { ?>

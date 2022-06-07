@@ -823,6 +823,10 @@
         &-wrap{
             padding-left: 65px;
             padding-right: 65px;
+            @include desktop-note-big{
+                max-width: 1130px;
+                margin: 0 auto;
+            }
             @include phone{
                 // padding-left: 20px;
                 // padding-right: 20px;
@@ -833,9 +837,18 @@
         &-ul{
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            @include desktop-note-big{
+                justify-content: space-between;
+            }
             @include desktop-block{
                 justify-content: flex-start;
+            }
+            @include menu-tablet{
+                flex-wrap: wrap;
+            }
+            @include tablet{
+
             }
         }
         &-li{
@@ -845,7 +858,7 @@
                 padding-right: 84px; 
             }
             @include desktop-note-big{
-                padding-right: 87px; 
+                padding-right: 0; 
             }
             @include desktop-block{
                 padding-right: 61px;
@@ -861,6 +874,12 @@
                 padding-right: 0;
             }
             &:nth-of-type(1){
+                @include menu-tablet{
+                    flex: 0 0 180px
+                }
+                @include menu-tablet{
+                    flex: 0 0 145px
+                }
                 .item{
                     max-width: 200px;
                     @include desktop-normal{
@@ -875,7 +894,10 @@
                 }
             }
             &:nth-of-type(2){
-                @include phone{
+                // @include phone{
+                //     padding-right: 0;
+                // }
+                @include small-phone{
                     padding-right: 0;
                 }
                 .item{
@@ -892,6 +914,12 @@
                 }
             }
             &:nth-of-type(3){
+                @include menu-tablet{
+                    flex: 0 0 180px
+                }
+                @include menu-tablet{
+                    flex: 0 0 145px
+                }
                 .item{
                     max-width: 200px;
                     @include desktop-normal{
@@ -906,6 +934,12 @@
                 }
             }
             &:nth-of-type(4){
+                @include menu-tablet{
+                    flex: 0 0 180px
+                }
+                @include menu-tablet{
+                    flex: 0 0 145px
+                }
                 .item{
                     max-width: 200px;
                     @include desktop-normal{
@@ -970,6 +1004,9 @@
                 }
                 @include desktop-note-big{
                     font-size: 16px; 
+                }
+                @include phone{
+                    font-size: 15px;
                 }
             }
         }

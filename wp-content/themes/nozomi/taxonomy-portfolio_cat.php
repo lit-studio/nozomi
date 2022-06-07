@@ -11,7 +11,7 @@ get_header();
                 $title = get_field('title', 9);
                 if ($title) { ?>
                     <section class="index-portfolio">
-                        <div class="index-wrap">
+                        <div class="index-wrap gsap-anim--js">
                             <div class="item">
                                 <div class="item-title">
                                     <div class="item-title--title">
@@ -61,7 +61,7 @@ get_header();
                     </section>
                     <section class="portfolios">
                         <div class="portfolios-wrap">
-                            <div class="portfolios-list">
+                            <div class="portfolios-list gsap-anim--js">
                                 <?php
 
                                 global $query_string;

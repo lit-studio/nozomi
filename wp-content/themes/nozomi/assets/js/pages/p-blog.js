@@ -15,8 +15,8 @@ export default function () {
     $navMobileBtnText = $navMobileBtn.find('.nav-mobile-btn-text'),
     $navMobileBlock = $navSection.find('.nav-menu--js'),
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
-    $section = $navTrigger.find('.gsap-anim--js'),
-    $sectionNav = $navTrigger.find('.gsap-nav--js'),
+    $section = $body.find('.gsap-anim--js'),
+    $sectionNav = $body.find('.gsap-nav--js'),
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),    
     indexSectionHeight = $indexSection.height(),
     navHeight = $navMobileBlock.height(),
@@ -43,15 +43,15 @@ export default function () {
       .to($sectionNav, 0.5, { opacity: 0 },'')
       .to($sectionNav, 1, { y: -200 },'<')
       ;
-      sectionFromGsap = gsap
-      .timeline({
-        paused: true
-      })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($section, 1, { y: 200 },'<')
-      .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($sectionNav, 1, { y: 200 },'<')
-      ;
+      // sectionFromGsap = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($section, 1, { y: 200 },'<')
+      // .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($sectionNav, 1, { y: 200 },'<')
+      // ;
     }
     else{
 
@@ -63,17 +63,17 @@ export default function () {
       .to($section, 1, { y: -200 },'<')
       ;
 
-      sectionFromGsap = gsap
-      .timeline({
-        paused: true
-      })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($section, 1, { y: 200 },'<')
-      ;
+      // sectionFromGsap = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($section, 1, { y: 200 },'<')
+      // ;
     }
 
 
-  sectionFromGsap.play();
+  // sectionFromGsap.play();
 
   if (screen.width > 1024) {
     function navScrollFunc() {

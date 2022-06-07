@@ -5,7 +5,7 @@
 get_header();
 ?>
     <main id="primary" class="site-main">
-        <div class="p-how">
+        <div class="p-how gsap-anim--js">
             <div class="p-how-wrap">
                 <?php
                 $title = get_field('title_first_block');

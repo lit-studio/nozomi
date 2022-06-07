@@ -13,11 +13,54 @@ export default function () {
   $preloaderClose = $preloaderBlock.find('.preloader-close--js'),
   $preloaderLineWrap = $preloaderBlock.find('.preloader-desc-line .preloader-desc-line-wrap--js'),
   $preloaderDescCursive = $preloaderBlock.find('.preloader-desc-cursive'),
-  $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js')
- 
-  
-  
+  $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js'),
+  $section = $body.find('.gsap-anim--js'),
+  $sectionNav = $body.find('.gsap-nav--js'),
+  sectionFromGsap
   ;
+  if (screen.width > 1024) {
+
+
+    if($sectionNav.length > 0){
+      console.log('blog or portfolio');
+      sectionFromGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 1, { y: 200 },'<')
+      .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($sectionNav, 1, { y: 200 },'<')
+      ;
+    }
+    else{
+      console.log('not blog or portfolio');
+      sectionFromGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 1, { y: 200 },'<')
+      ;
+    }
+  }
+  else{
+    sectionFromGsap = gsap
+    .timeline({
+      paused: true
+    })
+    .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+    .from($section, 1, { y: 200 },'<')
+    ;
+  }
+  // sectionFromGsap = gsap
+  // .timeline({
+  //   paused: true
+  // })
+  // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+  // .from($section, 1, { y: 200 },'<')
+  // ;
+    sectionFromGsap.play();
 
     function preloaderFunc() {
       $body.addClass('preloader-active');
