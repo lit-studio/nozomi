@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-import lottie from "lottie-web";
 
 import header from "./components/c-header";
 import footer from "./components/c-footer";
@@ -9,9 +8,12 @@ export default function () {
   let $body = $('body'),
   $preloaderBlock = $body.find('.preloader--js'),
   $preloaderBg = $body.find('.preloader-bg--js'),
-  $preloaderLink = $preloaderBlock.find('.preloader-link'),
+  // $preloaderLink = $preloaderBlock.find('.preloader-link'),
   $preloaderClose = $preloaderBlock.find('.preloader-close--js'),
-  $preloaderLineWrap = $preloaderBlock.find('.preloader-desc-line .preloader-desc-line-wrap--js'),
+  $preloaderLineOne = $preloaderBlock.find('.preloader-desc-line-1--js'),
+  $preloaderLineTwo = $preloaderBlock.find('.preloader-desc-line-2--js'),
+  $preloaderLineThree = $preloaderBlock.find('.preloader-desc-line-3--js'),
+  $preloaderLineFour = $preloaderBlock.find('.preloader-desc-line-4--js'),
   $preloaderDescCursive = $preloaderBlock.find('.preloader-desc-cursive'),
   $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js'),
   $section = $body.find('.gsap-anim--js'),
@@ -27,9 +29,9 @@ export default function () {
       .timeline({
         paused: true
       })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 0.5, { opacity: 0 },'')
       .from($section, 1, { y: 200 },'<')
-      .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($sectionNav, 0.5, { opacity: 0 },'')
       .from($sectionNav, 1, { y: 200 },'<')
       ;
     }
@@ -39,7 +41,7 @@ export default function () {
       .timeline({
         paused: true
       })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      .from($section, 0.5, { opacity: 0 },'')
       .from($section, 1, { y: 200 },'<')
       ;
     }
@@ -49,7 +51,7 @@ export default function () {
     .timeline({
       paused: true
     })
-    .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+    .from($section, 0.5, { opacity: 0 },'')
     .from($section, 1, { y: 200 },'<')
     ;
   }
@@ -60,85 +62,109 @@ export default function () {
   // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
   // .from($section, 1, { y: 200 },'<')
   // ;
-    sectionFromGsap.play();
+
 
     function preloaderFunc() {
       $body.addClass('preloader-active');
 
-      let preloaderLineAnim = gsap
+      let preloaderGsapAnim = gsap
       .timeline({
         paused: true
       })
-      .from($preloaderLineWrap, {
-        duration: 1,
+      .from($preloaderClose, {
+        duration: 0.5,
+        opacity: 0,
+        ease: 'expo.easeOut',
+      })
+      .from($preloaderLineOne, {
+        duration:  0.5,
         opacity: 0,
         yPercent:100,
-        stagger: 0.1,
         ease: 'expo.easeOut',
-      }, "-=3");
-
-      let preloaderLineBoldAnim = gsap
-      .timeline({
-        paused: true
+      },'<')
+      .from($preloaderLineTwo, {
+        duration:  0.5,
+        opacity: 0,
+        yPercent:100,
+        ease: 'expo.easeOut',
+      })
+      .from($preloaderLineThree, {
+        duration:  0.5,
+        opacity: 0,
+        yPercent:100,
+        ease: 'expo.easeOut',
+      })
+      .from($preloaderLineFour, {
+        duration:  0.5,
+        opacity: 0,
+        yPercent:100,
+        ease: 'expo.easeOut',
+      })
+      .from($preloaderDescCursive, {
+        duration: 0.5,
+        opacity: 0,
+        xPercent:100,
+        ease: 'expo.easeOut',
       })
       .from($preloaderBoldLine, {
-        duration: 1,
+        duration:  0.5,
         opacity: 0,
         yPercent:100,
-        ease: 'expo.easeOut',
-      });
-
-      let preloaderGsapAnim =  gsap.timeline({
-        paused: true,
+        ease: 'expo.easeOut',        
+        onComplete: () => {
+          preloaderOutGsapAnim.play();
+      }
       })
-        .from($preloaderLink, 0.3, { autoAlpha: 0,
-            onComplete: () => {
-              preloaderLineAnim.play();
-            }
-          })
-        .from($preloaderDescCursive, 0.3, { xPercent: -10 },'')
-        .from($preloaderDescCursive, 0.3, { autoAlpha: 0,
-          onComplete: () => {
-            preloaderLineBoldAnim.play();
-          }
-         },'<')
       ;
+
+      // let preloaderLineBoldAnim = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($preloaderBoldLine, {
+      //   duration: 1,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'expo.easeOut',
+      // });
+
+      // let preloaderGsapAnim =  gsap.timeline({
+      //   paused: true,
+      // })
+      //   .from($preloaderLink, 0.3, { autoAlpha: 0,
+      //       onComplete: () => {
+      //         preloaderLineAnim.play();
+      //       }
+      //     })
+      //   .from($preloaderDescCursive, 0.3, { xPercent: -10 },'')
+      //   .from($preloaderDescCursive, 0.3, { autoAlpha: 0,
+      //     onComplete: () => {
+      //       preloaderLineBoldAnim.play();
+      //     }
+      //    },'<')
+      // ;
       let preloaderOutGsapAnim =  gsap.timeline({
         paused: true,
       })
         .to($preloaderBlock, 2, { yPercent: -100})
         .to($preloaderBg , 1, { autoAlpha: 0,
           onComplete: () => {
-
+            $body.removeClass('preloader-active');
             $preloaderBg.addClass('preloader-bg-hidden');
+            sectionFromGsap.play();
         }
         },'<')
       ;
       $preloaderClose.on('click', function () {
-        $body.removeClass('preloader-active');
         preloaderOutGsapAnim.play();
-        // $preloaderBg.addClass('preloader-bg-hidden');
       });
-      // window.scrollTo(0, 0);
-      // $(window).scrollTop(0);
-      // setTimeout(function(){
-      //   // $(window).scrollTop(0);
-      //   $preloaderBlock.fadeOut(1000);
-      // }, 100);
 
-      // window.addEventListener("load", function(){
-      //   $(window).scrollTop(0);
-      //   setTimeout(function(){
-      //     // $(window).scrollTop(0);
-      //     $preloaderBlock.fadeOut(1000);
-      //   }, 100);
-      // });
 
       window.addEventListener("load", function(){
         setTimeout(function(){
           $('html,body').scrollTop(0);
           preloaderGsapAnim.play();
-          // gsap.to($preloaderBlock, 0.5, { autoAlpha: 0 },'');
+
       }, 500);
       });
     }
@@ -155,7 +181,7 @@ export default function () {
       }
     }
 
-    // preloaderFunc();
+    preloaderFunc();
     header();
     footer();
     tab();
