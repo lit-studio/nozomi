@@ -567,7 +567,7 @@
   justify-content: center;
   align-items: center;
   z-index: 900;
-  display: none;
+  // display: none;
   &-wrap{
     max-width: 860px;
     @include desktop-normal{
@@ -698,7 +698,7 @@
     top: 0;
     background-color: var(--color-bg);
     z-index: 100;
-    display: none;
+    // display: none;
     &.preloader-bg-hidden{
       z-index: 0;
     }

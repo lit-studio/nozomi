@@ -28,22 +28,22 @@
     <div class="preloader-wrap">
         <div class="preloader-desc">
             <div class="preloader-desc-line">
-                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                <div class="preloader-desc-line-wrap preloader-desc-line-1--js">
                     <span>It’s easy to feel hopeful on a beautiful day like today.</span>
                 </div>  
             </div>
             <div class="preloader-desc-line">               
-                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                <div class="preloader-desc-line-wrap preloader-desc-line-2--js">
                     <span>But in the end we all face difficulties.</span>
                 </div> 
             </div>
             <div class="preloader-desc-line">                
-                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                <div class="preloader-desc-line-wrap preloader-desc-line-3--js">
                     <span>Everyone has dark days when they feel alone, lost and buried.</span>
                 </div>
             </div>
             <div class="preloader-desc-line">
-                <div class="preloader-desc-line-wrap preloader-desc-line-wrap--js">
+                <div class="preloader-desc-line-wrap preloader-desc-line-4--js">
                     <span>And the most powerful things that helps us move forward is a</span><span class="preloader-desc-cursive">hope</span>
                 </div>
             </div>
