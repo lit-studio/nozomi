@@ -40,7 +40,7 @@ get_header();
                                 if ($terms && !is_wp_error($terms)) {
                                     echo "<ul>";
                                     ?>
-                                    <li class='menu-item menu-item-type-custom menu-item-object-custom'><a
+                                    <li class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'><a
                                                 href="<?php echo get_permalink(15); ?>">All
                                             posts</a></li>
                                     <?php
