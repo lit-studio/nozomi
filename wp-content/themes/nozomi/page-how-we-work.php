@@ -5,7 +5,7 @@
 get_header();
 ?>
     <main id="primary" class="site-main">
-        <div class="p-how gsap-anim--js">
+        <div class="p-how-content">
             <div class="p-how-wrap">
                 <?php
                 $title = get_field('title_first_block');
@@ -13,9 +13,41 @@ get_header();
                     <section class="index-how">
                         <div class="index-wrap">
                             <div class="item">
-                                <div class="item-title">
-                                    <div class="item-title--title">
-                                        <?php echo $title; ?>
+                                <div class="item-wrap">
+                                    <div class="item-content gsap-anim--js">
+                                        <div class="item-content-wrap">
+                                            <div class="item-title">
+                                                <div class="item-title--title">
+                                                    <?php echo $title; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-bg papper-bg--js">
+                                        <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                                            width="100%" height="100%" viewBox="0 0 2560 1600">
+                                            <defs>
+                                                <radialGradient id="maskGradient">
+                                                    <stop offset="50%" stop-color="#fff"/>
+                                                    <stop offset="100%" stop-color="#000"/>
+                                                </radialGradient>
+                                                <mask id="theMask">
+                                                    <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
+                                                </mask>
+                                            </defs>
+                                            <?php
+                                            $bg_block_1 = get_field('bg_block_1');
+                                            $bg_hover_block_1 = get_field('bg_hover_block_1');
+                                            ?>
+                                            <image id="lines"
+                                                xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
+                                                x="0" y="0" width="100%" height="100%"/>
+                                            <g id="maskReveal" mask="url(#theMask)">
+                                                <image id="regular"
+                                                    xlink:href="<?php /*echo $bg_hover_block_1; */?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
+                                                    x="0" y="0" width="100%" height="100%"/>
+                                            </g>
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
@@ -29,8 +61,8 @@ get_header();
 
                 if ($text_first_block || $image_first_block) { ?>
                     <section class="screen">
-                        <div class="screen-wrap">
-                            <div class="item">
+                        <div class="screen-wrap ">
+                            <div class="item  gsap-anim--js">
                                 <?php
 
                                 if ($image_first_block) { ?>
@@ -60,7 +92,7 @@ get_header();
 
                 if ($title_block_how_we_work || $title_how_we_work || $quick_highlights_how_we_work) { ?>
                     <section class="work">
-                        <div class="work-wrap">
+                        <div class="work-wrap gsap-anim--j">
                             <div class="work-top">
                                 <?php if ($title_block_how_we_work) { ?>
                                     <div class="work-cursive">

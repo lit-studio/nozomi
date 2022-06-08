@@ -8,42 +8,71 @@
     }
     .index{
 
-        &-wrap{
-            display: flex;
-            justify-content: center;
-            padding-top: pxVw(410, 2560);
-            padding-bottom: pxVw(124, 2560);
+        // &-wrap{
+        //     display: flex;
+        //     justify-content: center;
+        //     padding-top: pxVw(410, 2560);
+        //     padding-bottom: pxVw(124, 2560);
+        //     position: relative;
+        //     z-index: 1;
+        //     @include desktop-normal{
+        //         padding-top: pxVw(325, 1920);
+        //         padding-bottom: pxVw(173, 1920);
+        //     }
+        //     @include desktop-note-big{
+        //         padding-top: pxVw(240, 1440); 
+        //         padding-bottom: pxVw(134, 1440);
+        //     }
+        //     @include desktop-block{
+        //         padding-top: pxVw(240, 1024);
+        //         padding-bottom: pxVw(140, 1024);
+        //     }
+        //     @include tablet{
+        //         padding-top: pxVw(300, 768);
+        //         padding-bottom: pxVw(215, 768);
+        //     }
+        //     @include phone{
+        //         padding-top: pxVw(200, 375);
+        //         padding-bottom: pxVw(106, 375);
+        //     }
+        // }
+        &-about{
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            height: 1006px;
             @include desktop-normal{
-                padding-top: pxVw(325, 1920);
-                padding-bottom: pxVw(173, 1920);
+                height: 770px;
             }
             @include desktop-note-big{
-                padding-top: pxVw(240, 1440); 
-                padding-bottom: pxVw(134, 1440);
+                height:596px;
             }
             @include desktop-block{
-                padding-top: pxVw(240, 1024);
-                padding-bottom: pxVw(140, 1024);
+                height:603px;
             }
             @include tablet{
-                padding-top: pxVw(300, 768);
-                padding-bottom: pxVw(215, 768);
+                height:890px;
             }
             @include phone{
-                padding-top: pxVw(200, 375);
-                padding-bottom: pxVw(106, 375);
+                height:620px;
             }
-        }
-        &-about{
-            background-color: transparent;
-            background-image: url('#{$assetsPath}/images/about/about-values.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: cover;
-            position: relative;
+            // // min-height: 100vh;
+            // min-height: 800px;
+            // height: 100vh;
+            // width: 100%;
+            // @include desktop-normal{
+            //   min-height: 680px;
+            // }
+            // @include desktop-note-big{
+            //   min-height: 560px;
+            // }
+            // @include desktop-block{
+            //   min-height: 720px;
+            // }
+            // @include phone{
+            //   // min-height: 480px;
+            //   min-height: 550px;
+            //   height: auto;
+            // }
             &:after{
                 position: absolute;
                 left: 0;
@@ -70,45 +99,207 @@
                   height: pxVw(160,375); 
                 }
                 
-              }
-            .item{
-                max-width: 1530px;
-                padding-left: 25px;
-                padding-right: 25px;
-                @include desktop-normal{
-                    max-width: 1200px;
-                  }
-                @include desktop-note-big{
-                    max-width: 950px;
-                }
-                @include tablet{
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    max-width: 678px;
-                }
-                @include phone{
-                    max-width: 375px;
-                }
-                &-title{
-                    text-align: center;
-                    &--title{
-                        color: var(--color-grey);
-                        font-family: var(--font-bold);
-                        font-size: 98px;
-                        line-height: 120%;
-                        @include desktop-normal{
-                            font-size: 76px;
-                        }
-                        @include desktop-note-big{
-                            font-size: 62px;
-                        }
-                        @include phone{
-                            font-size: 40px;
-                        }
-                    }
-                }
             }
+            // .item{
+            //     max-width: 1530px;
+            //     padding-left: 25px;
+            //     padding-right: 25px;
+            //     @include desktop-normal{
+            //         max-width: 1200px;
+            //       }
+            //     @include desktop-note-big{
+            //         max-width: 950px;
+            //     }
+            //     @include tablet{
+            //         padding-left: 20px;
+            //         padding-right: 20px;
+            //         max-width: 678px;
+            //     }
+            //     @include phone{
+            //         max-width: 375px;
+            //     }
+            //     &-title{
+            //         text-align: center;
+            //         &--title{
+            //             color: var(--color-grey);
+            //             font-family: var(--font-bold);
+            //             font-size: 98px;
+            //             line-height: 120%;
+            //             @include desktop-normal{
+            //                 font-size: 76px;
+            //             }
+            //             @include desktop-note-big{
+            //                 font-size: 62px;
+            //             }
+            //             @include phone{
+            //                 font-size: 40px;
+            //             }
+            //         }
+            //     }
+            // }
+            .item{
+                &-wrap{
+                //   width: 100%;
+                //   height: 100%;
+                //   min-height: 800px;
+                //   height: 100vh;
+                //   position: relative;
+                //   @include desktop-normal{
+                //     min-height: 680px;
+                //   }
+                //   @include desktop-note-big{
+                //     min-height: 560px;
+                //   }
+                //   @include desktop-block{
+                //     min-height: 720px;
+                //   }
+                //   @include phone{
+                //     min-height: 550px;
+                //     height: auto;
+                //   }
+
+                }
+                
+                &-content{
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: flex-start;
+                  z-index: 1;
+                //   padding-left: 20px;
+                //   padding-right: 20px;
+                //   @include tablet{
+                //     padding-left: 10px;
+                //     padding-right: 10px;
+                //   }
+                //   @include phone{ 
+                //     padding-left: 20px;
+                //     padding-right: 20px;
+                //   }
+                  &-wrap{
+                    max-width: 1320px;
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    // flex-direction: column;
+                    // justify-content: space-between;
+                    justify-content: center;
+                    align-items: center;
+                    // height: 100%;
+                    padding-top: pxVw(410, 2560);
+                    padding-bottom: pxVw(124, 2560);
+                    position: relative;
+                    @include desktop-normal{
+                        padding-top: pxVw(325, 1920);
+                        padding-bottom: pxVw(173, 1920);
+                        // max-width: 985px;
+                        max-width: 1100px;
+                    }
+                    @include desktop-note-big{
+                        padding-top: pxVw(240, 1440); 
+                        padding-bottom: pxVw(134, 1440);
+                        // max-width: 775px;
+                        max-width: 850px;
+                    }
+                    @include desktop-block{
+                        padding-top: pxVw(240, 1024);
+                        padding-bottom: pxVw(140, 1024);
+                    }
+                    @include middle-tablet{
+                        max-width: 638px;
+                      }
+                    @include tablet{
+                        padding-top: pxVw(300, 768);
+                        padding-bottom: pxVw(215, 768);
+                    }
+                    @include phone{
+                        padding-top: pxVw(200, 375);
+                        padding-bottom: pxVw(106, 375);
+                        max-width: 335px;
+                    }
+                    // @include desktop-normal{
+                    //   max-width: 985px;
+                    // }
+                    // @include desktop-note-big{
+                    //   // max-width: 790px;
+                    //   max-width: 775px;
+                    // }
+                    // @include middle-tablet{
+                    //   max-width: 638px;
+                    // }
+                    // @include phone{
+                    //   max-width: 335px;
+                    // }
+          
+                  }
+                }          
+                &-title{
+                  display: block;
+                  &--title{
+                    font-family: var(--font-bold);
+                    font-size: 98px;
+                    color: var(--color-grey);
+                    @include desktop-normal{
+                      font-size: 76px;
+                    }     
+                    @include desktop-note-big{
+                      // font-size: 62px;
+                      font-size: 58px;
+                    }
+                    @include desktop-block{
+          
+                    }
+                    @include tablet{
+                  
+                    }
+                    @include phone{
+                      font-size: 40px;
+                    }
+                  }
+                }
+                &-bg{
+                  width: 100%;
+                  height: 100%;
+                  position: relative;
+                  #demo {
+                    position: absolute;
+                  }
+                  &:after{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    content: '';
+                    height: pxVw(288,2560); 
+                    background: -moz-linear-gradient(top,  rgba(229,229,229,0) 0%, rgba(229,229,229,0) 1%, rgba(242, 240, 237, 1) 100%); 
+                    background: -webkit-linear-gradient(top,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%); 
+                    background: linear-gradient(to bottom,  rgba(229,229,229,0) 0%,rgba(229,229,229,0) 1%,rgba(242, 240, 237, 1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#F2F0ED',GradientType=0 );
+                    @include desktop-normal{
+                      height: pxVw(288,1920); 
+                    }
+                    @include desktop-note-big{
+                      height: pxVw(160,1440); 
+                    }
+                    @include desktop-block{
+                      height: pxVw(160,1024); 
+                    }
+                    @include tablet{
+                      height: pxVw(160,768);
+                    }
+                    @include phone{
+                      height: pxVw(160,375); 
+                    }
+                    
+                  }
+                }
+              }
         }
+
     }
     .infographic{
         background-color: var(--color-bg);

@@ -28,7 +28,7 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-bg">
+                            <div class="item-bg papper-bg--js">
                                 <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
                                      width="100%" height="100%" viewBox="0 0 2560 1600">
                                     <defs>

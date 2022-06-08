@@ -21,15 +21,21 @@ export default function () {
     indexSectionHeight = $indexSection.height(),
     navHeight = $navMobileBlock.height(),
     navTriggerHeight = $navTrigger.height(),
+    windowHeight =  $(window).height(),
     navStopHeight = navHeight,
     navTriggerPath = navTriggerHeight - navStopHeight,
-    anchorStart = indexSectionHeight - navStopHeight,
+    anchorStart = indexSectionHeight- navStopHeight,
+    anchorEnd = windowHeight - navStopHeight,
+    // navTriggerPath = navTriggerHeight - navStopHeight,
+    // anchorStart = indexSectionHeight - navStopHeight,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
   ;
+    console.log('windowHeight ' +  windowHeight );
   // console.log('navHeight ' + navHeight );
-  // console.log('navStopHeight ' + navStopHeight );
+  console.log('navTriggerHeight ' + navTriggerHeight );
+  console.log('navStopHeight ' + navStopHeight );
   // console.log('anchorStart ' + anchorStart );
-  // console.log('navTriggerPath ' + navTriggerPath );
+  console.log('navTriggerPath ' + navTriggerPath );
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -73,13 +79,14 @@ export default function () {
     }
 
 
-  // sectionFromGsap.play();
+ 
 
   if (screen.width > 1024) {
     function navScrollFunc() {
       ScrollTrigger.create({
         trigger: $navTrigger,
         start: "top " + anchorStart,
+        // end: "bottom " + anchorStart,
         end: navTriggerPath + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,

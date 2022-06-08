@@ -13,6 +13,7 @@ export default function () {
 
   let $body = $('body'),
   $indexSection = $body.find(".index"),
+  // $indexPapperBg = $body.find(".papper-bg--js"),
   $indexSectionTitle = $indexSection.find(".item-title--title--js"),
   $cursorBlock = $body.find(".cursor-dot"),
   $aboutSection = $body.find('.about'),
@@ -23,6 +24,54 @@ export default function () {
   $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
   $portfolioSectionImg = $portfolioSectionblock.find('img')
   ;
+  // if($indexPapperBg.length > 0){
+  //   function indexPapperFunc() {
+  //     const svg = document.querySelector("#demo");
+  //     const tl = gsap.timeline();
+  //     let pt = svg.createSVGPoint();
+  //     const ratio = 0.5625;   
+      
+  //     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
+  //     tl.reversed(true);
+      
+  //     function mouseHandlerIndex() {
+  //       tl.reversed(!tl.reversed());
+  //     }
+      
+  //     function getPointIndex(evt){
+  //       pt.x = evt.clientX; 
+  //       pt.y = evt.clientY;
+  //       return pt.matrixTransform(svg.getScreenCTM().inverse());
+  //     }
+      
+  //     function mouseMoveIndex(evt) {
+  //       let newPoint = getPointIndex(evt);
+  //       gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
+  //      }   
+  
+      
+  //     function newSizeIndex() {
+  //       let w = window.innerWidth ;
+  //       let h = window.innerHeight;
+  //       if (w > h * (16/9) ) {
+  //         gsap.set("#demo", { attr: { width: w, height: w * ratio } });
+  //       } else {
+  //         gsap.set("#demo", { attr: { width: h / ratio, height: h } });
+  //       }
+  //       let data = svg.getBoundingClientRect();
+  //       gsap.set("#demo", {x:w/2 - data.width/2});
+  //       gsap.set("#demo", {y:h/2 - data.height/2});
+  //     }
+      
+  //     window.addEventListener("mousedown", mouseHandlerIndex);
+  //     window.addEventListener("mouseup", mouseHandlerIndex);
+  //     window.addEventListener("mousemove", mouseMoveIndex);
+      
+  //     newSizeIndex();
+  //     window.addEventListener("resize", newSizeIndex);
+  //   }
+  //   indexPapperFunc()
+  // }
 
   function homeIndexFunc() {
     // console.log('index');
@@ -50,49 +99,49 @@ export default function () {
       indexSectionGsap.play();
     }, 1);
 
-    const svg = document.querySelector("#demo");
-    const tl = gsap.timeline();
-    let pt = svg.createSVGPoint();
-    const ratio = 0.5625;   
+    // const svg = document.querySelector("#demo");
+    // const tl = gsap.timeline();
+    // let pt = svg.createSVGPoint();
+    // const ratio = 0.5625;   
     
-    tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
-    tl.reversed(true);
+    // tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
+    // tl.reversed(true);
     
-    function mouseHandlerIndex() {
-      tl.reversed(!tl.reversed());
-    }
+    // function mouseHandlerIndex() {
+    //   tl.reversed(!tl.reversed());
+    // }
     
-    function getPointIndex(evt){
-      pt.x = evt.clientX; 
-      pt.y = evt.clientY;
-      return pt.matrixTransform(svg.getScreenCTM().inverse());
-    }
+    // function getPointIndex(evt){
+    //   pt.x = evt.clientX; 
+    //   pt.y = evt.clientY;
+    //   return pt.matrixTransform(svg.getScreenCTM().inverse());
+    // }
     
-    function mouseMoveIndex(evt) {
-      let newPoint = getPointIndex(evt);
-      gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
-     }   
+    // function mouseMoveIndex(evt) {
+    //   let newPoint = getPointIndex(evt);
+    //   gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
+    //  }   
 
     
-    function newSizeIndex() {
-      let w = window.innerWidth ;
-      let h = window.innerHeight;
-      if (w > h * (16/9) ) {
-        gsap.set("#demo", { attr: { width: w, height: w * ratio } });
-      } else {
-        gsap.set("#demo", { attr: { width: h / ratio, height: h } });
-      }
-      let data = svg.getBoundingClientRect();
-      gsap.set("#demo", {x:w/2 - data.width/2});
-      gsap.set("#demo", {y:h/2 - data.height/2});
-    }
+    // function newSizeIndex() {
+    //   let w = window.innerWidth ;
+    //   let h = window.innerHeight;
+    //   if (w > h * (16/9) ) {
+    //     gsap.set("#demo", { attr: { width: w, height: w * ratio } });
+    //   } else {
+    //     gsap.set("#demo", { attr: { width: h / ratio, height: h } });
+    //   }
+    //   let data = svg.getBoundingClientRect();
+    //   gsap.set("#demo", {x:w/2 - data.width/2});
+    //   gsap.set("#demo", {y:h/2 - data.height/2});
+    // }
     
-    window.addEventListener("mousedown", mouseHandlerIndex);
-    window.addEventListener("mouseup", mouseHandlerIndex);
-    window.addEventListener("mousemove", mouseMoveIndex);
+    // window.addEventListener("mousedown", mouseHandlerIndex);
+    // window.addEventListener("mouseup", mouseHandlerIndex);
+    // window.addEventListener("mousemove", mouseMoveIndex);
     
-    newSizeIndex();
-    window.addEventListener("resize", newSizeIndex);
+    // newSizeIndex();
+    // window.addEventListener("resize", newSizeIndex);
   }
   homeIndexFunc();
 

@@ -11,11 +11,43 @@ get_header();
                 $title = get_field('title', 9);
                 if ($title) { ?>
                     <section class="index-portfolio">
-                        <div class="index-wrap gsap-anim--js">
+                        <div class="index-wrap">
                             <div class="item">
-                                <div class="item-title">
-                                    <div class="item-title--title">
-                                        <?php echo $title; ?>
+                                <div class="item-wrap">
+                                    <div class="item-content gsap-anim--js">
+                                        <div class="item-content-wrap">
+                                            <div class="item-title">
+                                                <div class="item-title--title">
+                                                    <?php echo $title; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-bg papper-bg--js">
+                                        <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
+                                            width="100%" height="100%" viewBox="0 0 2560 1600">
+                                            <defs>
+                                                <radialGradient id="maskGradient">
+                                                    <stop offset="50%" stop-color="#fff"/>
+                                                    <stop offset="100%" stop-color="#000"/>
+                                                </radialGradient>
+                                                <mask id="theMask">
+                                                    <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
+                                                </mask>
+                                            </defs>
+                                            <?php
+                                            $bg_block_1 = get_field('bg_block_1');
+                                            $bg_hover_block_1 = get_field('bg_hover_block_1');
+                                            ?>
+                                            <image id="lines"
+                                                xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
+                                                x="0" y="0" width="100%" height="100%"/>
+                                            <g id="maskReveal" mask="url(#theMask)">
+                                                <image id="regular"
+                                                    xlink:href="<?php /*echo $bg_hover_block_1; */?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
+                                                    x="0" y="0" width="100%" height="100%"/>
+                                            </g>
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
