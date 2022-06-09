@@ -18,24 +18,43 @@ export default function () {
     $section = $body.find('.gsap-anim--js'),
     $sectionNav = $body.find('.gsap-nav--js'),
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),    
-    indexSectionHeight = $indexSection.height(),
-    navHeight = $navMobileBlock.height(),
-    navTriggerHeight = $navTrigger.height(),
-    windowHeight =  $(window).height(),
+    indexSectionHeight = $indexSection.innerHeight(),
+    navHeight = $navMobileBlock.innerHeight(),
+    navTriggerHeight = $navTrigger.innerHeight(),
+    windowHeight =  $(window).innerHeight(),
     navStopHeight = navHeight,
-    navTriggerPath = navTriggerHeight - navStopHeight,
-    anchorStart = indexSectionHeight- navStopHeight,
-    anchorEnd = windowHeight - navStopHeight,
+    anchorStart,anchorEnd,navTriggerStart,navTriggerEnd,
+    navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
+    ;
+    anchorStart = indexSectionHeight - navStopHeight;
+    anchorEnd = indexSectionHeight - navStopHeight;
+    // navTriggerEnd = navTriggerHeight - navStopHeight;
+    if (indexSectionHeight > windowHeight) {
+      // anchorStart = windowHeight - navStopHeight;
+      // anchorEnd = windowHeight - navStopHeight;
+      // navTriggerPath = navTriggerHeight - navStopHeight;
+      navTriggerStart = + navHeight;
+      navTriggerEnd = 'bottom';
+      console.log('indexSectionHeight > windowHeight');
+    }
+    else{
+      // anchorStart = indexSectionHeight - navStopHeight;
+      // anchorEnd = indexSectionHeight - navStopHeight;
+      navTriggerStart = 'top';
+      navTriggerEnd = navTriggerHeight - navStopHeight;
+      console.log('indexSectionHeight < windowHeight');
+      console.log('navTriggerEnd ' + navTriggerEnd);
+    }
+
     // navTriggerPath = navTriggerHeight - navStopHeight,
     // anchorStart = indexSectionHeight - navStopHeight,
-    navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
-  ;
+
     console.log('windowHeight ' +  windowHeight );
   // console.log('navHeight ' + navHeight );
   console.log('navTriggerHeight ' + navTriggerHeight );
   console.log('navStopHeight ' + navStopHeight );
   // console.log('anchorStart ' + anchorStart );
-  console.log('navTriggerPath ' + navTriggerPath );
+  // console.log('navTriggerPath ' + navTriggerPath );
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -85,9 +104,9 @@ export default function () {
     function navScrollFunc() {
       ScrollTrigger.create({
         trigger: $navTrigger,
-        start: "top " + anchorStart,
+        start: navTriggerStart + " " + anchorStart,
         // end: "bottom " + anchorStart,
-        end: navTriggerPath + " " + anchorStart,
+        end: navTriggerEnd + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",
