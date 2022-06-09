@@ -21,7 +21,7 @@
                         if ($button_text_footer) { ?>
                             <div class="item-btns">
                                 <div class="item-btns-btn">
-                                    <a href="https://calendly.com/remdev/meeting?month=2022-04" target="_blank"
+                                    <a href="https://calendly.com/nozomihealth" target="_blank"
                                        class="btn btn-book--js">
                                         <?php /*
                                    <a href="<?php echo $button_link_footer; ?>" target="_blank" class="btn btn-book--js">

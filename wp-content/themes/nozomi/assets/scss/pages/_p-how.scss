@@ -79,36 +79,7 @@
             }
         }
     }
-    .index{
-        &-wrap{
-            // display: flex;
-            // justify-content: center;
-            // padding-top: pxVw(318, 2560);
-            // padding-bottom: pxVw(338, 2560);
-            // position: relative;
-            // z-index: 1;
-            // @include desktop-normal{
-            //     padding-top: pxVw(233, 1920);
-            //     padding-bottom: pxVw(200, 1920);
-            // }
-            // @include desktop-note-big{
-            //     padding-top: pxVw(160, 1440); 
-            //     padding-bottom: pxVw(213, 1440);
-            // }
-            // @include desktop-block{
-            //     padding-top: pxVw(160, 1024);
-
-            //     padding-bottom: pxVw(213, 1024);
-            // }
-            // @include tablet{ 
-            //     padding-top: pxVw(240, 768);
-            //     padding-bottom: pxVw(244, 768);
-            // }
-            // @include phone{
-            //     padding-top: pxVw(120, 375);
-            //     padding-bottom: pxVw(92, 375);
-            // }
-        }                                     
+    .index{                                    
         &-how{
             position: relative;
             overflow: hidden;
@@ -123,7 +94,8 @@
                 height:603px;
             }
             @include tablet{
-                height:890px;
+                // height:890px;
+                height:880px;
             }
             @include phone{
                 height:620px;
@@ -156,30 +128,6 @@
                 
             }
             .item{
-                max-width: 1250px;
-                padding-left: 25px;
-                padding-right: 25px;
-                @include desktop-normal{
-                    max-width: 1020px;
-                }
-                @include desktop-note-big{
-                    max-width: 850px;
-                }
-                @include desktop-block{
-                    // padding-left: 65px;
-                    // padding-right: 65px;
-                    // max-width: 900px;
-                }
-                @include tablet{
-                    padding-left: 65px;
-                    padding-right: 65px;
-                    max-width: 100%;
-                }
-                @include phone{
-                    max-width: 375px;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                }
                 &-content{
                     position: absolute;
                     left: 0;
@@ -190,71 +138,43 @@
                     justify-content: center;
                     align-items: flex-start;
                     z-index: 1;
-                  //   padding-left: 20px;
-                  //   padding-right: 20px;
-                  //   @include tablet{
-                  //     padding-left: 10px;
-                  //     padding-right: 10px;
-                  //   }
-                  //   @include phone{ 
-                  //     padding-left: 20px;
-                  //     padding-right: 20px;
-                  //   }
                     &-wrap{
                       max-width: 1320px;
                       width: 100%;
                       text-align: center;
                       display: flex;
-                      // flex-direction: column;
-                      // justify-content: space-between;
                       justify-content: center;
                       align-items: center;
-                      // height: 100%;
                       padding-top: pxVw(410, 2560);
-                      padding-bottom: pxVw(124, 2560);
                       position: relative;
                       @include desktop-normal{
                           padding-top: pxVw(325, 1920);
-                          padding-bottom: pxVw(173, 1920);
-                          // max-width: 985px;
+                        //   padding-bottom: pxVw(173, 1920);
                           max-width: 1100px;
                       }
                       @include desktop-note-big{
                           padding-top: pxVw(240, 1440); 
-                          padding-bottom: pxVw(134, 1440);
-                          // max-width: 775px;
+                        //   padding-bottom: pxVw(134, 1440);
                           max-width: 850px;
                       }
                       @include desktop-block{
                           padding-top: pxVw(240, 1024);
-                          padding-bottom: pxVw(140, 1024);
+                        //   padding-bottom: pxVw(140, 1024);
                       }
                       @include middle-tablet{
                           max-width: 638px;
                         }
                       @include tablet{
                           padding-top: pxVw(300, 768);
-                          padding-bottom: pxVw(215, 768);
+                        //   padding-bottom: pxVw(208, 768);
+                        //   padding-bottom: pxVw(215, 768);
                       }
                       @include phone{
                           padding-top: pxVw(200, 375);
-                          padding-bottom: pxVw(106, 375);
+                        //   padding-bottom: pxVw(127, 375);
+                        //   padding-bottom: pxVw(106, 375);
                           max-width: 335px;
-                      }
-                      // @include desktop-normal{
-                      //   max-width: 985px;
-                      // }
-                      // @include desktop-note-big{
-                      //   // max-width: 790px;
-                      //   max-width: 775px;
-                      // }
-                      // @include middle-tablet{
-                      //   max-width: 638px;
-                      // }
-                      // @include phone{
-                      //   max-width: 335px;
-                      // }
-            
+                      }           
                     }
                   }   
                 &-title{
