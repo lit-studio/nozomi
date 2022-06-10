@@ -17,16 +17,19 @@
         position: relative;
         padding-left: 100px;
         padding-right: 100px;
-        padding-bottom: 180px;        
+        padding-bottom: 220px;
+        // padding-bottom: 180px;        
         @include desktop-normal{
             padding-left: 60px;
             padding-right: 60px;   
-            padding-bottom: 130px;      
+            // padding-bottom: 130px; 
+            padding-bottom: 180px;      
         }
         @include desktop-note-big{
             padding-left: 45px;
             padding-right: 45px;
-            padding-bottom: 120px;
+            padding-bottom: 160px;
+            // padding-bottom: 120px;
         }
         @include  desktop-block{
             padding-left: 25px;
@@ -39,7 +42,8 @@
         @include phone{
             padding-left: 20px;
             padding-right: 20px;
-            padding-bottom: 115px;    
+            // padding-bottom: 115px; 
+            padding-bottom: 145px;   
         }
         &-wrap{
             display: flex;
@@ -465,6 +469,9 @@
             }
             &:first-of-type{
                 padding-top: 0;
+            }
+            &:last-of-type{
+                padding-bottom: 0;
             }
             &-wrap{
                 position: relative;

@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <?php wp_head(); ?>
     <style>
-        .preloader {
+        /* .preloader { */
         /* left: 0;
         top: 0;
         position: fixed;
@@ -17,7 +17,7 @@
         /* background-color: var(--color-bg); */
         /* z-index: 10000; */
         /* opacity: 1; */
-        }
+        /* } */
     </style>
 </head>
 
@@ -44,7 +44,7 @@
             </div>
             <div class="preloader-desc-line">
                 <div class="preloader-desc-line-wrap preloader-desc-line-4--js">
-                    <span>And the most powerful things that helps us move forward is a</span><span class="preloader-desc-cursive">hope</span>
+                    <span>And the most powerful things that helps us move forward is a</span><span class="preloader-desc-cursive preloader-desc-cursive--js">hope</span>
                 </div>
             </div>
         </div>

@@ -20,16 +20,39 @@ export default function () {
     $navMobileBtns = $navSection.find('.nav-mobile-btns'),  
     indexSectionHeight = $indexSection.innerHeight(),
     navHeight = $navMobileBlock.innerHeight(),
-    navTriggerHeight = $navTrigger.height(),
-    navStopHeight = $body.find('.nav-menu-stop').height() + navHeight,
-    navTriggerPath = navTriggerHeight - navStopHeight,
-    anchorStart = indexSectionHeight - navStopHeight,
+    navTriggerHeight = $navTrigger.innerHeight(),
+    windowHeight =  $(window).innerHeight(),
+    navStopHeight = navHeight,
+    // navStopHeight = $body.find('.nav-menu-stop').height() + navHeight,
+    // navTriggerPath = navTriggerHeight - navStopHeight,
+    // anchorStart = indexSectionHeight - navStopHeight,
+    anchorStart,anchorEnd,navTriggerStart,navTriggerEnd,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
+
   ;
-  console.log('navHeight ' + navHeight );
+  anchorStart = indexSectionHeight - navStopHeight;
+  anchorEnd = indexSectionHeight - navStopHeight;
+
+  // console.log('navHeight ' + navHeight );
+  // console.log('navStopHeight ' + navStopHeight );
+  // console.log('anchorStart ' + anchorStart );
+  // console.log('navTriggerPath ' + navTriggerPath );
+  if (indexSectionHeight > windowHeight) {
+    navTriggerStart = + navHeight;
+    navTriggerEnd = 'bottom';
+    console.log('indexSectionHeight > windowHeight');
+  }
+  else{
+    navTriggerStart = 'top';
+    navTriggerEnd = navTriggerHeight - navStopHeight;
+    console.log('indexSectionHeight < windowHeight');
+    console.log('navTriggerEnd ' + navTriggerEnd);
+  }
+
+  console.log('windowHeight ' +  windowHeight );
+  console.log('navTriggerHeight ' + navTriggerHeight );
   console.log('navStopHeight ' + navStopHeight );
-  console.log('anchorStart ' + anchorStart );
-  console.log('navTriggerPath ' + navTriggerPath );
+
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
@@ -43,15 +66,15 @@ export default function () {
       .to($sectionNav, 0.5, { opacity: 0 },'')
       .to($sectionNav, 1, { y: -200 },'<')
       ;
-      sectionFromGsap = gsap
-      .timeline({
-        paused: true
-      })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($section, 1, { y: 200 },'<')
-      .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($sectionNav, 1, { y: 200 },'<')
-      ;
+      // sectionFromGsap = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($section, 1, { y: 200 },'<')
+      // .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($sectionNav, 1, { y: 200 },'<')
+      // ;
     }
     else{
 
@@ -63,26 +86,29 @@ export default function () {
       .to($section, 1, { y: -200 },'<')
       ;
 
-      sectionFromGsap = gsap
-      .timeline({
-        paused: true
-      })
-      .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      .from($section, 1, { y: 200 },'<')
-      ;
+      // sectionFromGsap = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+      // .from($section, 1, { y: 200 },'<')
+      // ;
     }
 
 
-  sectionFromGsap.play();
+  // sectionFromGsap.play();
 
 
 
   if (screen.width > 1024) {
-    function navScrollFunc() {
+    function navScrollFunc() { 
       ScrollTrigger.create({
         trigger: $navTrigger,
-        start: "top " + anchorStart,
-        end: navTriggerPath + " " + anchorStart,
+        // start: "top " + anchorStart,
+        // end: navTriggerPath + " " + anchorStart,
+        start: navTriggerStart + " " + anchorStart,
+        // end: "bottom " + anchorStart,
+        end: navTriggerEnd + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",

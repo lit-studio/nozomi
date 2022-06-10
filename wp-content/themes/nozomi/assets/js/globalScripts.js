@@ -1,4 +1,6 @@
 import { gsap } from "gsap";
+import {SplitText} from "../libs/gsap-shockingly-green/src/SplitText";
+gsap.registerPlugin(SplitText);
 
 import header from "./components/c-header";
 import footer from "./components/c-footer";
@@ -15,13 +17,14 @@ export default function () {
   $preloaderLineTwo = $preloaderBlock.find('.preloader-desc-line-2--js'),
   $preloaderLineThree = $preloaderBlock.find('.preloader-desc-line-3--js'),
   $preloaderLineFour = $preloaderBlock.find('.preloader-desc-line-4--js'),
-  $preloaderDescCursive = $preloaderBlock.find('.preloader-desc-cursive'),
+  // $preloaderDescCursive = $preloaderBlock.find('.preloader-desc-cursive'),
   $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js'),
   $section = $body.find('.gsap-anim--js'),
   $sectionNav = $body.find('.gsap-nav--js'),
-  sectionFromGsap
+  sectionFromGsap,preloaderOutGsapAnim,preloaderGsapAnim
   ;
 
+  
   if($indexPapperBg.length > 0){
     function indexPapperFunc() {
       console.log('papper bg');
@@ -71,8 +74,14 @@ export default function () {
     }
     indexPapperFunc()
   }
+  // sectionFromGsap = gsap
+  // .timeline({
+  //   paused: true
+  // })
+  // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
+  // .from($section, 1, { y: 200 },'<')
+  // ;
   if (screen.width > 1024) {
-
 
     if($sectionNav.length > 0){
       console.log('blog or portfolio');
@@ -92,8 +101,8 @@ export default function () {
       .timeline({
         paused: true
       })
-      .from($section, 0.5, { opacity: 0 },'')
-      .from($section, 1, { y: 200 },'<')
+      .from($section, 2, { opacity: 0 },'')
+      .from($section, 2, {  yPercent: 100, ease: 'expo.easeOut' },'<')
       ;
     }
   }
@@ -102,24 +111,40 @@ export default function () {
     .timeline({
       paused: true
     })
-    .from($section, 0.5, { opacity: 0 },'')
-    .from($section, 1, { y: 200 },'<')
+    .from($section, 2, { opacity: 0 },'')
+    .from($section, 2, { yPercent: 100, ease: 'expo.easeOut' },'<')
     ;
   }
   
-  // sectionFromGsap = gsap
-  // .timeline({
-  //   paused: true
-  // })
-  // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-  // .from($section, 1, { y: 200 },'<')
-  // ;
 
 
     function preloaderFunc() {
+
+      $('html,body').scrollTop(0);
       $body.addClass('preloader-active');
 
-      let preloaderGsapAnim = gsap
+      let qoute = $body.find(".preloader-desc-cursive--js"),
+      mySplitText = new SplitText(qoute, {
+          type: "chars",
+          charsClass: "char",
+          position: "relative"
+      }),
+      chars = mySplitText.chars,
+      charsGsapAnim = gsap
+      .timeline({
+        paused: true
+      }).from(chars, {
+        duration: 0.5,
+        opacity: 0,
+        // scale: 0,
+        // xPercent: -10,
+        // rotationX: 180,
+        // transformOrigin: "0% 50% -50",
+        ease: 'expo.easeOut',
+        stagger: 0.09
+      });
+      
+      preloaderGsapAnim = gsap
       .timeline({
         paused: true
       })
@@ -139,25 +164,22 @@ export default function () {
         opacity: 0,
         yPercent:100,
         ease: 'expo.easeOut',
-      })
+      },'-=0.1')
       .from($preloaderLineThree, {
         duration:  0.5,
         opacity: 0,
         yPercent:100,
         ease: 'expo.easeOut',
-      })
+      },'-=0.1')
       .from($preloaderLineFour, {
         duration:  0.5,
         opacity: 0,
         yPercent:100,
         ease: 'expo.easeOut',
-      })
-      .from($preloaderDescCursive, {
-        duration: 0.5,
-        opacity: 0,
-        xPercent:100,
-        ease: 'expo.easeOut',
-      })
+        onComplete: () => {
+          charsGsapAnim.play();
+      }
+      },'-=0.1')
       .from($preloaderBoldLine, {
         duration:  0.5,
         opacity: 0,
@@ -167,63 +189,161 @@ export default function () {
           preloaderOutGsapAnim.play();
       }
       })
-      ;
+      ; 
 
-      // let preloaderLineBoldAnim = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($preloaderBoldLine, {
-      //   duration: 1,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'expo.easeOut',
-      // });
-
-      // let preloaderGsapAnim =  gsap.timeline({
-      //   paused: true,
-      // })
-      //   .from($preloaderLink, 0.3, { autoAlpha: 0,
-      //       onComplete: () => {
-      //         preloaderLineAnim.play();
-      //       }
-      //     })
-      //   .from($preloaderDescCursive, 0.3, { xPercent: -10 },'')
-      //   .from($preloaderDescCursive, 0.3, { autoAlpha: 0,
-      //     onComplete: () => {
-      //       preloaderLineBoldAnim.play();
-      //     }
-      //    },'<')
-      // ;
-      let preloaderOutGsapAnim =  gsap.timeline({
+      preloaderOutGsapAnim =  gsap.timeline({
         paused: true,
       })
-        .to($preloaderBlock, 2, { yPercent: -100})
-        .to($preloaderBg , 1, { autoAlpha: 0,
-          onComplete: () => {
-            $body.removeClass('preloader-active');
-            $preloaderBg.addClass('preloader-bg-hidden');
-            sectionFromGsap.play();
+      .to($preloaderBlock, 2, { yPercent: -100,ease: 'expo.easeOut',
+        onStart: () => {
+          sectionFromGsap.play();
+      }
+      })
+      .to($preloaderBg , 0.3, { autoAlpha: 0,
+        onComplete: () => {
+          $body.removeClass('preloader-active');
+          $preloaderBg.addClass('preloader-bg-hidden');
+          // takeCookie();
+      }
+      },'<');
+
+     preloaderGsapAnim.play();
+
+      // if (getCookie('cookies')){
+      //   console.log('we have cookie');
+      //   $preloaderBlock.addClass('hidden');
+      //   preloaderOutGsapAnim =  gsap.timeline({
+      //     paused: true,
+      //   })
+      //     .to($preloaderBlock, 2, { yPercent: -100})
+      //     .to($preloaderBg , 1, { autoAlpha: 0,
+      //       onComplete: () => {
+      //         $body.removeClass('preloader-active');
+      //         $preloaderBg.addClass('preloader-bg-hidden');
+      //         sectionFromGsap.play();
+      //     }
+      //     },'<')
+      //   ;
+      //   preloaderOutGsapAnim.play();
+
+
+      // }
+      // else{
+      //   console.log('we have not cookie');    
+      //   function takeCookie(){
+      //     let d = new Date();
+      //     let cookiesDays = 7;
+      //     d.setTime(d.getTime() + (cookiesDays * 24 * 60 * 60 * 1000));
+      //     let expires = "expires=" + d.toUTCString();
+      //     document.cookie = "cookies=true" + ";" + expires + ";path=/";
+      //   }  
+
+      //   let qoute = $body.find(".preloader-desc-cursive--js"),
+      //   mySplitText = new SplitText(qoute, {
+      //       type: "chars",
+      //       charsClass: "char",
+      //       position: "relative"
+      //   }),
+      //   chars = mySplitText.chars,
+      //   charsGsapAnim = gsap
+      //   .timeline({
+      //     paused: true
+      //   }).from(chars, {
+      //     duration: 0.5,
+      //     opacity: 0,
+      //     // scale: 0,
+      //     // xPercent: -10,
+      //     // rotationX: 180,
+      //     // transformOrigin: "0% 50% -50",
+      //     ease: 'expo.easeOut',
+      //     stagger: 0.09
+      //   });
+        
+      //   preloaderGsapAnim = gsap
+      //   .timeline({
+      //     paused: true
+      //   })
+      //   .from($preloaderClose, {
+      //     duration: 0.5,
+      //     opacity: 0,
+      //     ease: 'expo.easeOut',
+      //   })
+      //   .from($preloaderLineOne, {
+      //     duration:  0.5,
+      //     opacity: 0,
+      //     yPercent:100,
+      //     ease: 'expo.easeOut',
+      //   },'<')
+      //   .from($preloaderLineTwo, {
+      //     duration:  0.5,
+      //     opacity: 0,
+      //     yPercent:100,
+      //     ease: 'expo.easeOut',
+      //   },'-=0.1')
+      //   .from($preloaderLineThree, {
+      //     duration:  0.5,
+      //     opacity: 0,
+      //     yPercent:100,
+      //     ease: 'expo.easeOut',
+      //   },'-=0.1')
+      //   .from($preloaderLineFour, {
+      //     duration:  0.5,
+      //     opacity: 0,
+      //     yPercent:100,
+      //     ease: 'expo.easeOut',
+      //     onComplete: () => {
+      //       charsGsapAnim.play();
+      //   }
+      //   },'-=0.1')
+      //   .from($preloaderBoldLine, {
+      //     duration:  0.5,
+      //     opacity: 0,
+      //     yPercent:100,
+      //     ease: 'expo.easeOut',        
+      //     onComplete: () => {
+      //       preloaderOutGsapAnim.play();
+      //   }
+      //   })
+      //   ; 
+
+      //   preloaderOutGsapAnim =  gsap.timeline({
+      //     paused: true,
+      //   })
+      //   .to($preloaderBlock, 2, { yPercent: -100})
+      //   .to($preloaderBg , 1, { autoAlpha: 0,
+      //     onComplete: () => {
+      //       $body.removeClass('preloader-active');
+      //       $preloaderBg.addClass('preloader-bg-hidden');
+      //       sectionFromGsap.play();
+      //       takeCookie();
+      //   }
+      //   },'<');
+
+      //  preloaderGsapAnim.play();
+
+      // $preloaderClose.on('click', function () {
+      //   preloaderOutGsapAnim.play();
+      // });  
+      // }
+
+      function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
         }
-        },'<')
-      ;
-      $preloaderClose.on('click', function () {
-        preloaderOutGsapAnim.play();
-      });
-
-
-      window.addEventListener("load", function(){
-        setTimeout(function(){
-          $('html,body').scrollTop(0);
-          preloaderGsapAnim.play();
-
-      }, 500);
-      });
+        return "";
+      }      
     }
     let $window = $(window),
     $indexHome = $('.index-home'),
     winHeight = $window.height();
-    // winHeightScreen = screen.height;
     if (winHeight > 560) {
       if (winHeight > 700) {
         $indexHome.addClass('mobile-height');

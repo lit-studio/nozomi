@@ -28,33 +28,22 @@ export default function () {
     ;
     anchorStart = indexSectionHeight - navStopHeight;
     anchorEnd = indexSectionHeight - navStopHeight;
-    // navTriggerEnd = navTriggerHeight - navStopHeight;
+
     if (indexSectionHeight > windowHeight) {
-      // anchorStart = windowHeight - navStopHeight;
-      // anchorEnd = windowHeight - navStopHeight;
-      // navTriggerPath = navTriggerHeight - navStopHeight;
       navTriggerStart = + navHeight;
       navTriggerEnd = 'bottom';
       console.log('indexSectionHeight > windowHeight');
     }
     else{
-      // anchorStart = indexSectionHeight - navStopHeight;
-      // anchorEnd = indexSectionHeight - navStopHeight;
       navTriggerStart = 'top';
       navTriggerEnd = navTriggerHeight - navStopHeight;
       console.log('indexSectionHeight < windowHeight');
       console.log('navTriggerEnd ' + navTriggerEnd);
     }
-
-    // navTriggerPath = navTriggerHeight - navStopHeight,
-    // anchorStart = indexSectionHeight - navStopHeight,
-
     console.log('windowHeight ' +  windowHeight );
-  // console.log('navHeight ' + navHeight );
-  console.log('navTriggerHeight ' + navTriggerHeight );
-  console.log('navStopHeight ' + navStopHeight );
-  // console.log('anchorStart ' + anchorStart );
-  // console.log('navTriggerPath ' + navTriggerPath );
+    console.log('navTriggerHeight ' + navTriggerHeight );
+    console.log('navStopHeight ' + navStopHeight );
+
   let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {

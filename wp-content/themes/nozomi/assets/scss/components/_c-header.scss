@@ -567,7 +567,6 @@
   justify-content: center;
   align-items: center;
   z-index: 900;
-  // display: none;
   &-wrap{
     max-width: 860px;
     @include desktop-normal{
@@ -594,7 +593,7 @@
       color: var(--color-grey);
       font-size: 28px;
       line-height: 150%;
-      overflow: hidden;
+      // overflow: hidden;
       @include desktop-normal{
         font-size: 24px;
       }
@@ -702,5 +701,8 @@
     &.preloader-bg-hidden{
       z-index: 0;
     }
+  }
+  &.hidden{
+    display: none;
   }
 }
