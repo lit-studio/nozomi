@@ -24,7 +24,7 @@ export default function () {
     windowHeight =  $(window).innerHeight(),
     navStopHeight = navHeight,
     anchorStart,anchorEnd,navTriggerStart,navTriggerEnd,
-    navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
+    navMobileActive,navMobileAnim,sectionToGsap
     ;
     anchorStart = indexSectionHeight - navStopHeight;
     anchorEnd = indexSectionHeight - navStopHeight;
@@ -99,7 +99,7 @@ export default function () {
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",
-        markers: true,
+        markers: false,
       });
 
     }

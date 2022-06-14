@@ -8,8 +8,8 @@ get_header();
                     <div class="index-wrap">
                         <div class="item">
                             <div class="item-wrap">
-                                <div class="item-content gsap-anim--js">
-                                    <div class="item-content-wrap">
+                                <div class="item-content">
+                                    <div class="item-content-wrap  gsap-anim--js">
                                         <div class="item-title">
                                             <div class="item-title--title">
                                                 <?php the_title(); ?>
@@ -69,7 +69,7 @@ get_header();
                     <section class="screen">
                         <div class="screen-wrap">
                             <div class="item">
-                                <div class="item-img  gsap-anim--j">
+                                <div class="item-img  gsap-anim--js">
                                     <picture class="picture">
                                         <source srcset="<?php echo $first_image_mobile['sizes']['home_1']; ?>"
                                                 media="(max-width: 768px)">

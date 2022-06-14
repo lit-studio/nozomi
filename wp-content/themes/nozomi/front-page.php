@@ -8,8 +8,8 @@ get_header();
                 <div class="index-wrap">
                     <div class="item">
                         <div class="item-wrap">
-                            <div class="item-content gsap-anim--js">
-                                <div class="item-content-wrap">
+                            <div class="item-content ">
+                                <div class="item-content-wrap gsap-anim--js">
                                     <?php
                                     $text_1_block_1 = get_field('text_1_block_1');
                                     if ($text_1_block_1) { ?>
@@ -60,7 +60,7 @@ get_header();
             </section>
 
             <section class="portfolio">
-                <div class="portfolio-wrap gsap-anim--js">
+                <div class="portfolio-wrap ">
                     <?php
                     $text_2_block_1 = get_field('text_2_block_1');
                     if ($text_2_block_1) { ?>
@@ -166,7 +166,7 @@ get_header();
             </section>
             <section class="about">
                 <div class="about-wrap">
-                    <div class="about-content gsap-anim--js">
+                    <div class="about-content">
                         <?php
                         $text_1_block_2 = get_field('text_1_block_2');
                         if ($text_1_block_2) { ?>
@@ -255,7 +255,7 @@ get_header();
                 </div>
             </section>
             <section class="work">
-                <div class="work-wrap gsap-anim--js">
+                <div class="work-wrap">
                     <div class="work-top">
                         <?php
                         $text_1_block_3 = get_field('text_1_block_3');
@@ -374,7 +374,7 @@ get_header();
             $featured_posts = get_field('select_articles');
             if ($featured_posts) { ?>
                 <section class="news">
-                    <div class="news-wrap gsap-anim--js">
+                    <div class="news-wrap">
                         <div class="news-block">
                             <div class="news-row">
                                 <?php foreach ($featured_posts as $post) {

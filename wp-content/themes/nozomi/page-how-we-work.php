@@ -92,7 +92,7 @@ get_header();
 
                 if ($title_block_how_we_work || $title_how_we_work || $quick_highlights_how_we_work) { ?>
                     <section class="work">
-                        <div class="work-wrap gsap-anim--j">
+                        <div class="work-wrap">
                             <div class="work-top">
                                 <?php if ($title_block_how_we_work) { ?>
                                     <div class="work-cursive">

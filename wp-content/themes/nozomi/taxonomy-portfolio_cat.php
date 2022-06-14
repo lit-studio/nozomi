@@ -14,8 +14,8 @@ get_header();
                         <div class="index-wrap">
                             <div class="item">
                                 <div class="item-wrap">
-                                    <div class="item-content gsap-anim--js">
-                                        <div class="item-content-wrap">
+                                    <div class="item-content ">
+                                        <div class="item-content-wrap gsap-anim--js">
                                             <div class="item-title">
                                                 <div class="item-title--title">
                                                     <?php echo $title; ?>
@@ -62,7 +62,7 @@ get_header();
                                     <button class='nav-mobile-btn nav-mobile-btn--js'><span class='nav-mobile-btn-text'>All posts</span>
                                     </button>
                                 </div>
-                                <div class="nav-menu nav-menu--js">
+                                <div class="nav-menu nav-menu--js gsap-anim--js">
                                     <?php
                                     $curr_id = get_queried_object()->term_id;
                                     $terms = get_terms('portfolio_cat');

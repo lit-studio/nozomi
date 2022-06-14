@@ -110,7 +110,7 @@ get_header();
                 </section>
                 <section class="about">
                     <div class="about-top">
-                        <div class="about-top-wrap gsap-anim--js">
+                        <div class="about-top-wrap ">
                             <?php
                             $titlte_1_who_we_are = get_field('titlte_1_who_we_are');
                             if ($titlte_1_who_we_are) { ?>
@@ -198,7 +198,7 @@ get_header();
                 </section>
                 <section class="values">
                     <div class="values-wrap">
-                        <div class="values-list gsap-anim--js">
+                        <div class="values-lists">
                             <div class="values-col values-col-title">
                                 <div class="item">
                                     <?php
@@ -267,7 +267,7 @@ get_header();
  
                 </section>
                 <section class="positions">
-                    <div class="positions-wrap gsap-anim--js">
+                    <div class="positions-wrap">
                         <?php
                         $title_open_positions = get_field('title_open_positions');
                         if ($title_open_positions) { ?>

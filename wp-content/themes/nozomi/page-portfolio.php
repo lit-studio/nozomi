@@ -15,7 +15,7 @@ get_header();
                             <div class="item">
                                 <div class="item-wrap">
                                     <div class="item-content gsap-anim--js">
-                                        <div class="item-content-wrap">
+                                        <div class="item-content-wrap  ">
                                             <div class="item-title">
                                                 <div class="item-title--title">
                                                     <?php echo $title; ?>

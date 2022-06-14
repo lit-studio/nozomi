@@ -7,8 +7,8 @@ get_header();
                 <div class="index-wrap">
                     <div class="item">
                         <div class="item-wrap">
-                            <div class="item-content gsap-anim--js">
-                                <div class="item-content-wrap">
+                            <div class="item-content">
+                                <div class="item-content-wrap  gsap-anim--js">
                                     <div class="item-tag">
                                         <div class="item-tag--tag">
                                             <?php
@@ -186,7 +186,7 @@ get_header();
 
                 if ($blog_image || $blog_image_description) { ?>
                     <div class="blog-img">
-                        <div class="item">
+                        <div class="item gsap-anim--js">
                             <?php
                             if ($blog_image) { ?>
                                 <div class="item-img parallax-img-block--js">
@@ -226,7 +226,7 @@ get_header();
             $featured_posts = get_field('other_posts_from_our_blog');
             if ($featured_posts): ?>
                 <section class="posts">
-                    <div class="posts-wrap gsap-anim--js">
+                    <div class="posts-wrap ">
                         <div class="posts-title">
                             <div class="posts-title--title">
                                 Other posts from our blog

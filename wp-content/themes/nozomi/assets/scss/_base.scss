@@ -79,20 +79,15 @@ body {
   }
   &.preloader-active{
     overflow: hidden;
+    .c-header{
+      a,button{
+        pointer-events: none!important;
+      }
+
+    }
+
   }
 }
-// #cursor{
-//   width: 7px;
-//   height: 7px;
-//   position: absolute;
-//   // transform: translate(-7px,-7px);
-//   z-index: 10000;
-//   background-color: var(--color-red);
-//   border-radius: 100%;
-//   transition: .5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, .2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
-//   user-select: none;
-//   pointer-events: none;
-// }
 a {
   color: inherit;
   text-decoration: none;
