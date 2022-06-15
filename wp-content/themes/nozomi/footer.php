@@ -1,6 +1,6 @@
 <footer class="c-footer">
     <?php
-    if (!is_page_template('page-join-us.php') && !is_page_template('page-blog.php') && !is_category()) {
+    if (!is_page_template('page-join-us.php') && !is_page_template('page-blog.php') && !is_category() && !is_singular('portfolio')) {
         ?>
         <div class="c-footer-top">
             <div class="c-footer-top-wrap">
