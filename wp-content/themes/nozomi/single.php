@@ -317,7 +317,7 @@ get_header();
         </div>
     </main><!-- #main -->
     <div class="c-copy c-copy--js">
-        <div class="c-copy-notice">Link coppied to clipboard</div>
+        <div class="c-copy-notice">Link copied to clipboard</div>
     </div>
     <div class="c-header-progress">
         <div class="c-header-progress-line c-header-progress--js"></div>

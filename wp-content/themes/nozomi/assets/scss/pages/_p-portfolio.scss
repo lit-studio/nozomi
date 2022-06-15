@@ -1141,6 +1141,9 @@
                 @include phone{
                     font-size: 15px;
                 }
+                a{
+                    text-decoration: underline;
+                }
             }
         }
 
