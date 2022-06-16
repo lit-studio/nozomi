@@ -121,14 +121,16 @@ export default function () {
           .from($menuBg, 0.3, { yPercent: -100 },'<');
         }
         else{
+
           modalMenuAnim = gsap
           .timeline({
             paused: true
           })
           .to($menuBlockMobile, 0.3, { autoAlpha: 1 },'')
-          // .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
-          .to($menuBlockMobile, 0.3, { yPercent: 0 },'')
+          .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
+          // .to($menuBlockMobile, 0.3, { yPercent: 0 },'')
           .from($menuBg, 0.3, { yPercent: -100 },'<');
+          $header.addClass('start');
         }
         
     $menuBtn.on("click", function () {

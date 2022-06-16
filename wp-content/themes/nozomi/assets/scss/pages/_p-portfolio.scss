@@ -1452,8 +1452,8 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
-                background-size: contain;
-                @include phone{
+                // background-size: contain;
+                @include desktop-block{ 
                     top: -15px;
                 }
                 // @include desktop-normal{
@@ -1475,14 +1475,14 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: scroll;
-                background-size: contain;
+                // background-size: contain;
                 // @include desktop-normal{
                 //   height: 20px;
                 // }
                 // @include desktop-note-big{
                 //   height: 18px;
                 // }
-                @include phone{
+                @include desktop-block{ 
                     bottom: -15px;
                 }
             }
@@ -1712,6 +1712,9 @@
                 margin-left: -30px;
                 margin-right: -30px;
             }
+            @include desktop-block{
+                margin: 0;
+            }
             @include tablet{
                 flex-wrap: wrap;
                 margin: 0;
@@ -1730,6 +1733,10 @@
                 padding-left: 30px;
                 padding-right: 30px;
             }
+            // @include desktop-block{
+            //     padding-left: 25px;
+            //     padding-right: 25px;
+            // }
             @include tablet{
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -1737,6 +1744,9 @@
             }
         }
         &-desc{
+            @include desktop-block{
+                padding-right: 0;
+            }
             .item{ 
                 padding-top: 155px;
                 @include desktop-normal{
@@ -1778,7 +1788,21 @@
                     }
                 }
                 &-img{
-
+                    width: 120px;
+                    height: 120px;
+                    @include desktop-normal{
+                        width: 100px;
+                        height: 100px; 
+                    }
+                    @include desktop-note-big{
+                        width: 80px;
+                        height: 80px; 
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
                 &-desc{
                     padding-top: 30px;
@@ -1789,7 +1813,16 @@
                         padding-top: 15px;
                     }
                     &--desc  {
-                    
+                        &>*{
+                            font-size: 24px;
+                            @include desktop-normal{
+                                font-size: 20px;
+                            }
+                            @include phone{
+                                font-size: 18px;
+                            }
+                        }
+
                     }
                 } 
                 &-name{
@@ -1828,6 +1861,9 @@
             }
         }
         &-img{
+            @include desktop-block{
+                padding-left: 0;
+            }
             .item{
                 &-img{
                     width: 100%;

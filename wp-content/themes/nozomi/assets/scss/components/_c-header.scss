@@ -14,6 +14,7 @@
   }
   @include desktop-block{
     padding: 28px 24px;
+
   }
   @include phone{
     padding: 20px 14px;
@@ -381,7 +382,7 @@
     opacity: 0;
     @include desktop-block{
       opacity: 1;
-      // height: pxVw(337, 1024);
+      visibility: hidden;
       height: 337px;
     }
     @include tablet{
@@ -412,7 +413,7 @@
     @include desktop-block{
       display: block;
       width: 100%;
-      transform: translateY(-100%);
+      visibility: hidden;
     }
     & ul{
       display: flex;
@@ -537,6 +538,19 @@
       }
     }
 
+
+  }
+  &.start{
+    .c-header-mobile{
+      @include desktop-block{
+        visibility: visible;
+      }
+    }
+    .c-header-bg{
+      @include desktop-block{
+        visibility: visible;
+      }
+    }
 
   }
   &.header-fixed{

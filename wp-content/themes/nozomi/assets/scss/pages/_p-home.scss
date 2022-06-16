@@ -19,7 +19,7 @@
     @include phone{
       // min-height: 480px;
       min-height: 550px;
-      height: auto;
+      // height: auto;
     }
 
     &-wrap {
@@ -45,7 +45,8 @@
         @include phone{
           // min-height: 480px;
           min-height: 550px;
-          height: auto;
+          // height: auto;
+
         }
 
       }
@@ -73,9 +74,9 @@
           max-width: 1320px;
           width: 100%;
           text-align: center;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
           height: 100%;
           @include desktop-normal{
             max-width: 985px;
@@ -96,6 +97,22 @@
 
       &-title{
         display: block;
+        padding-top: pxVw(410, 2560);
+        @include desktop-normal{
+            padding-top: pxVw(325, 1920);
+        }
+        @include desktop-note-big{
+            padding-top: pxVw(240, 1440); 
+        }
+        @include desktop-block{
+            padding-top: pxVw(240, 1024);
+        }
+        @include tablet{
+            padding-top: pxVw(300, 768);
+        }
+        @include phone{
+            padding-top: pxVw(200, 375);
+        }   
         &--title{
           font-family: var(--font-bold);
           font-size: 98px;
@@ -212,17 +229,32 @@
       }
     }
     &.mobile-height{
-      @include phone{
-
-        min-height: 700px;
-        height: auto;
+      min-height: 950px;
+      height: auto;
+      @include desktop-normal{
+        min-height: 750px;
       }
-      .item{
+      @include desktop-note-big{
+        min-height: 600px;
+      }
+      // @include phone{
+      //   min-height: 700px;
+      //   height: auto;
+      // }
+      .item{        
         &-wrap{
-          @include phone{
-            min-height: 700px;
-            height: auto;
+          min-height: 950px;
+          height: auto;
+          @include desktop-normal{
+            min-height: 750px;
           }
+          @include desktop-note-big{
+            min-height: 600px;
+          }
+          // @include phone{
+          //   min-height: 700px;
+          //   height: auto;
+          // }
         }
       }
     }

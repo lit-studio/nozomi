@@ -372,14 +372,52 @@ export default function () {
     let $window = $(window),
     $indexHome = $('.index-home'),
     winHeight = $window.height();
-    if (winHeight > 560) {
-      if (winHeight > 700) {
-        $indexHome.addClass('mobile-height');
+    // if (winHeight <= 950) {
+    //   $indexHome.addClass('mobile-height');
+    //   if (winHeight > 700) {
+    //     $indexHome.addClass('mobile-height');
+    //   }
+    //   else{
+    //     $indexHome.addClass('mobile-middle');
+    //   }
+    // }
+    if (screen.width <= 1920) {
+
+      // if (screen.width <= 640) {        
+      //   return;
+      // }
+      // if (screen.width <= 768) {
+      //   return;
+      // }
+      // if (screen.width <= 1024) {
+      //   return;
+      // }
+      if (screen.width <= 1680) {
+        if (winHeight <= 600) {
+          $indexHome.addClass('mobile-height');
+        }
       }
       else{
-        $indexHome.addClass('mobile-middle');
+        if (winHeight <= 750) {
+          $indexHome.addClass('mobile-height');
+        }
+      }
+
+    }
+    else{
+      if (winHeight <= 950) {
+        $indexHome.addClass('mobile-height');
       }
     }
+
+    // if (winHeight > 560) {
+    //   if (winHeight > 700) {
+    //     $indexHome.addClass('mobile-height');
+    //   }
+    //   else{
+    //     $indexHome.addClass('mobile-middle');
+    //   }
+    // }
 
     preloaderFunc();
     header();
