@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import VimeoPlayer from '@vimeo/player';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {DrawSVGPlugin} from "../../libs/gsap-shockingly-green/src/DrawSVGPlugin";
 import lottie from "lottie-web";
@@ -7,6 +8,8 @@ import lottie from "lottie-web";
 gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 export default function () {
+  let $body = $('body'),
+  $cursorBlock = $body.find(".cursor-dot");
     let $headerProgress = $(".c-header-progress--js");
     let $indexSingle = $(".index-single-portfolio");    
     let $imgParallaxblock = $(".parallax-img-block--js");
@@ -73,22 +76,6 @@ export default function () {
     btnLottieFeelFunc();
 
     function imgScaleFunc() {
-      // ScrollTrigger.create({
-      //   trigger: $portfolioSectionImg ,
-      //   onEnter: () => {
-      //     gsap.to($portfolioSectionImg, {
-      //       autoAlpha: 1,
-      //       duration: 1,
-      //     });
-      //     gsap.to($portfolioSectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
-      //   },
-      //   start: "top 80%",
-      //   end: "bottom top",
-      //   pin: false,
-      //   scrub: false,
-      //   toggleActions: "play none none none",
-      //   markers: false
-      // });
     ScrollTrigger.create({
       trigger: $imgParallaxblock,
       animation: 
@@ -108,4 +95,38 @@ export default function () {
   }
 
   imgScaleFunc();
+
+  function controlVideosSingle() {
+    let iframesBig = document.querySelector('.video-big--js');
+    let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
+    let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
+      id: videoIdBig,
+      width: '100%',
+      height: '100%',
+      muted:	true,
+      loop: true,
+      controls:	false,
+      quality:	false
+    });
+    vimeoPlayerBig.loadVideo(videoIdBig);
+    vimeoPlayerBig.play().then(function() {
+      // the video was played
+    }).catch(function(error) {
+        switch (error.name) {
+            case 'PasswordError':
+                // the video is password-protected and the viewer needs to enter the
+                // password first
+                break;
+    
+            case 'PrivacyError':
+                // the video is private
+                break;
+    
+            default:
+                // some other error occurred
+                break;
+        }
+    });
+  }
+  controlVideosSingle();
 }

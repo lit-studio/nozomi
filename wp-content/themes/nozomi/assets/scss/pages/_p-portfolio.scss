@@ -637,6 +637,47 @@
                     // object-fit: contain;
                 }
             }
+            &-video {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include phone {
+                  height: 100%;
+                }
+                &-bg{
+                  // opacity: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  opacity: 1;
+                }
+                &--layout {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 10;
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 1;
+                }
+                iframe {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  height: 100%!important;
+                  width: 100%!important;
+                }
+              }
 
         }
     }
@@ -991,6 +1032,47 @@
                     
                 }
             }
+            &-video {
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include phone {
+                  height: 100%;
+                }
+                &-bg{
+                  // opacity: 0;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  opacity: 1;
+                }
+                &--layout {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 10;
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  opacity: 1;
+                }
+                iframe {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  top: 0;
+                  height: 100%!important;
+                  width: 100%!important;
+                }
+              }
 
         }
     }

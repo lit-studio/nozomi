@@ -6,7 +6,7 @@ export default function () {
         let $tabImg = $tab.find(".item-img");
         let $tabItem =  $tab.find(".c-tab-item");
         let $tabItemTitile =  $tab.find(".c-tab-item-title");
-        let  $tabImgThis,$tabItemThis,$tabItemContent,dataTab;
+        let  $tabItemThis,$tabItemContent,dataTab;
         $tabItem.filter('[data-tab="1"]').addClass('active');
         $tabImg.filter('[data-tab="1"]').addClass('active');
         $tabItemContent = $tabItem.filter('[data-tab="1"]').find(".c-tab-item-block");

@@ -1,10 +1,12 @@
 import { gsap } from "gsap";
+import VimeoPlayer from '@vimeo/player';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 export default function () {
     console.log("portfolio");
   
     let $body = $('body'),
+    $cursorBlock = $body.find(".cursor-dot"),
     $indexSection = $body.find('.index-portfolio'),
     $navSection = $body.find('.nav'),
     $navSectionItem = $navSection.find('.menu-item'),
@@ -178,4 +180,180 @@ export default function () {
     }
     navMobileFunc();
   }
+  function controlVideosPortfolio() {
+
+    // let $videoIdBigBg = $body.find('.video-big-bg--js');
+    // let videoIdBigBgGsap =  gsap.timeline({
+    //   paused: true,
+    // })
+    //     .to($videoIdBigBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
+    // ;
+    
+    // let $portfoliosList = $('.portfolios-list .item');
+    // let $portfoliosListItem = $portfoliosList.find('.item');
+    let iframesBig = document.querySelector('.video-big--js');
+    let videoPlayerLayoutBig = document.querySelector('.video-big--layout--js');
+    let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
+    let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
+      id: videoIdBig,
+      width: '100%',
+      height: '100%',
+      muted:	true,
+      loop: true,
+      controls:	false,
+      quality:	false
+    });
+    vimeoPlayerBig.loadVideo(videoIdBig);
+
+if (screen.width > 1024) {
+  console.log('desk');
+  videoPlayerLayoutBig.addEventListener("mouseenter", () => {
+    // videoIdBigBgGsap.play();
+    if (!$cursorBlock.hasClass('video')) {
+      $cursorBlock.addClass("video");
+    }
+    vimeoPlayerBig.play().then(function() {
+      // the video was played
+    }).catch(function(error) {
+        switch (error.name) {
+            case 'PasswordError':
+                // the video is password-protected and the viewer needs to enter the
+                // password first
+                break;
+    
+            case 'PrivacyError':
+                // the video is private
+                break;
+    
+            default:
+                // some other error occurred
+                break;
+        }
+    });
+  });
+
+  videoPlayerLayoutBig.addEventListener("mouseleave", () => {
+    // videoIdBigBgGsap.reverse();
+    if ($cursorBlock.hasClass('video')) {
+      $cursorBlock.removeClass("video");
+    }
+    vimeoPlayerBig.unload().then(function() {
+      // the video was played
+    }).catch(function(error) {
+        switch (error.name) {
+            case 'PasswordError':
+                // the video is password-protected and the viewer needs to enter the
+                // password first
+                break;
+    
+            case 'PrivacyError':
+                // the video is private
+                break;
+    
+            default:
+                // some other error occurred
+                break;
+        }
+    });
+  });
+
+}
+else{
+  ScrollTrigger.create({
+    trigger:  iframesBig,
+    start: "top bottom",
+    end: "bottom top",
+    scrub: false,
+    toggleActions: "play reverse none reverse",
+    markers: true,
+    onEnter: () => {
+      videoIdBigBgGsap.play();
+      vimeoPlayerBig.play().then(function() {
+        // the video was played
+      }).catch(function(error) {
+          switch (error.name) {
+              case 'PasswordError':
+                  // the video is password-protected and the viewer needs to enter the
+                  // password first
+                  break;
+      
+              case 'PrivacyError':
+                  // the video is private
+                  break;
+      
+              default:
+                  // some other error occurred
+                  break;
+          }
+      });
+    },
+    onEnterBack: () => {
+      videoIdBigBgGsap.play();
+      vimeoPlayerBig.play().then(function() {
+        // the video was played
+      }).catch(function(error) {
+          switch (error.name) {
+              case 'PasswordError':
+                  // the video is password-protected and the viewer needs to enter the
+                  // password first
+                  break;
+      
+              case 'PrivacyError':
+                  // the video is private
+                  break;
+      
+              default:
+                  // some other error occurred
+                  break;
+          }
+      });
+    },
+    onLeave: () => {
+      
+      // videoIdBigBgGsap.reverse();
+      vimeoPlayerBig.unload().then(function() {
+        // the video was paused
+    }).catch(function(error) {
+        switch (error.name) {
+            case 'PasswordError':
+                break;
+    
+            case 'PrivacyError':
+
+                break;
+    
+            default:
+                // some other error occurred
+                break;
+        }
+    });
+    },
+    onLeaveBack: () => {
+      videoIdBigBgGsap.reverse();
+      vimeoPlayerBig.unload().then(function() {
+        // the video was paused
+    }).catch(function(error) {
+        switch (error.name) {
+            case 'PasswordError':
+                // the video is password-protected and the viewer needs to enter the
+                // password first
+                break;
+    
+            case 'PrivacyError':
+                // the video is private
+                break;
+    
+            default:
+                // some other error occurred
+                break;
+        }
+    });
+    },
+    markers: false
+  });
+}
+
+
+  }
+  controlVideosPortfolio();
 }

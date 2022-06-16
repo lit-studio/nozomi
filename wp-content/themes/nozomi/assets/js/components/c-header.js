@@ -128,7 +128,6 @@ export default function () {
           })
           .to($menuBlockMobile, 0.3, { autoAlpha: 1 },'')
           .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
-          // .to($menuBlockMobile, 0.3, { yPercent: 0 },'')
           .from($menuBg, 0.3, { yPercent: -100 },'<');
           $header.addClass('start');
         }
@@ -153,13 +152,9 @@ export default function () {
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           modalMenuAnim.reverse();
-          // linksAnim.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }
-          // if (screen.width < 1024) {
-          //   menuBtnAnim.playSegments([63, 0], true);
-          // }
         }
       }
       else{
@@ -170,7 +165,6 @@ export default function () {
           $header.addClass("open");
           modalMenuAnim.play();
           linksAnimMobile.restart();
-          // linksAnim.play();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.reverse();
           }
@@ -184,9 +178,6 @@ export default function () {
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }
-          // if (screen.width < 1024) {
-          //   menuBtnAnim.playSegments([63, 0], true);
-          // }
         }
       }
 

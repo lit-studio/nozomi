@@ -80,6 +80,9 @@ get_header();
                                                 data-src="<?php echo $first_image['sizes']['home_2']; ?>"
                                                 src="<?php echo $first_image['sizes']['home_2']; ?>">
                                         </picture>
+                                        <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
+               
+                                        </div>
                                     </div>
                                 </div>
                             </div>
