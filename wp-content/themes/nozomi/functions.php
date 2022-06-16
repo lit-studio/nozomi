@@ -397,3 +397,4 @@ function myprefix_unregister_tags() {
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 add_action('init', 'myprefix_unregister_tags');
+add_filter( 'big_image_size_threshold', '__return_false' );
