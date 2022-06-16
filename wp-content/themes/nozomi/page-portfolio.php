@@ -161,7 +161,7 @@ get_header();
                                                 <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
                                                     <span class="item-video--layout video-big--layout--js">
                                                         <img class="item-video-bg video-big-bg--js"
-                                                            src=""
+                                                            src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
                                                             alt=""/>
                                                     </span>
                                                 </div>

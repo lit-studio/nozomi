@@ -59,7 +59,7 @@ get_header();
                 </div>
             </section>
 
-            <section class="portfolio">
+            <section class="portfolio"> 
                 <div class="portfolio-wrap ">
                     <?php
                     $text_2_block_1 = get_field('text_2_block_1');
@@ -164,6 +164,7 @@ get_header();
 
                 </div>
             </section>
+
             <section class="about">
                 <div class="about-wrap">
                     <div class="about-content">
@@ -254,6 +255,7 @@ get_header();
                     </svg>
                 </div>
             </section>
+
             <section class="work">
                 <div class="work-wrap">
                     <div class="work-top">
@@ -370,6 +372,7 @@ get_header();
 
                 </div>
             </section>
+
             <?php
             $featured_posts = get_field('select_articles');
             if ($featured_posts) { ?>
