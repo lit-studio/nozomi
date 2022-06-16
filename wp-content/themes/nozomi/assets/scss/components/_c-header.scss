@@ -412,6 +412,7 @@
     @include desktop-block{
       display: block;
       width: 100%;
+      transform: translateY(-100%);
     }
     & ul{
       display: flex;
@@ -591,6 +592,7 @@
   }
   &-desc{
     &-line{
+      padding-top: 11px;
       color: var(--color-grey);
       font-size: 28px;
       line-height: 150%;
@@ -604,6 +606,9 @@
       @include phone{
         font-size: 20px;
       }
+    }
+    &:first-of-type{
+      padding-top: 0;
     }
     &-cursive{
       padding-left: 10px;

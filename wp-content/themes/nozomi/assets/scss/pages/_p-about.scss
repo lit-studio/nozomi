@@ -396,27 +396,27 @@
 
         &-cursive{
             text-align: center;
-        &--cursive{
-            font-family: var(--font-gloria);
-            font-size: 28px;
-            line-height: 1.2;
-            color:var(--color-red);
-            @include desktop-normal{
-            font-size: 24px;
+            &--cursive{
+                font-family: var(--font-gloria);
+                font-size: 28px;
+                line-height: 1.2;
+                color:var(--color-red);
+                @include desktop-normal{
+                font-size: 24px;
+                }
+                @include desktop-note-big{
+                font-size: 20px;
+                }
+                @include desktop-block{
+        
+                }
+                @include tablet{
+        
+                }
+                @include phone{
+                font-size: 16px;
+                }
             }
-            @include desktop-note-big{
-            font-size: 20px;
-            }
-            @include desktop-block{
-    
-            }
-            @include tablet{
-    
-            }
-            @include phone{
-            font-size: 16px;
-            }
-        }
         }
         &-title{
             text-align: center;
@@ -668,24 +668,32 @@
                         }
                     }
                     &-socials{
+                        display: inline-flex;
                         @include phone{
                             flex: 0 0 100%;
                             max-width: 100%;
                             padding-top: 5px;
                         }
                         &-social{
-                            padding-left: 30px;
+                            display: block;
+                            height: 28px;
+                            margin-left: 30px;
                             @include desktop-normal{
-
+                                height: 20px;
+                                margin-left: 20px;
                             }
                             @include desktop-note-big{
 
                             }
+                            @include desktop-block{
+                                height: 16px;
+                                margin-left: 10px;
+                            }
                             @include phone{
-                                padding-left: 10px;
+                                margin-left: 10px;
                             }
                             &:first-of-type{
-                                padding-left: 0;
+                                margin-left: 0;
                             }
                             &.telegram{
 

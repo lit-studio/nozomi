@@ -126,7 +126,8 @@ export default function () {
             paused: true
           })
           .to($menuBlockMobile, 0.3, { autoAlpha: 1 },'')
-          .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
+          // .from($menuBlockMobile, 0.3, { yPercent: -100 },'')
+          .to($menuBlockMobile, 0.3, { yPercent: 0 },'')
           .from($menuBg, 0.3, { yPercent: -100 },'<');
         }
         

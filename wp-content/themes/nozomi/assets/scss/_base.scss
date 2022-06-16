@@ -567,7 +567,8 @@ h6,
     }
   }
   strong{
-    font-weight: var(--font-w-bold);
+    // font-weight: var(--font-w-bold);
+    font-family: var(--font-bold);
   }
   em{
     font-style: italic;

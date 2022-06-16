@@ -24,7 +24,7 @@ export default function () {
   $sectionNav = $body.find('.gsap-nav--js'),
   windowHeight =  $(window).innerHeight(),
   windowHeightHalf =   windowHeight,
-  sectionFromGsap,preloaderOutGsapAnim,preloaderGsapAnim
+  sectionFromGsap,preloaderOutGsapAnim,preloaderGsapAnim,moveY
   ;
 
   
@@ -98,7 +98,7 @@ export default function () {
   }
   else{
     if (screen.width > 1024) {
-
+      moveY = 200;
       if($sectionNav.length > 0){
         console.log('blog or portfolio');
         sectionFromGsap = gsap
@@ -106,9 +106,9 @@ export default function () {
           paused: true
         })
         .from($section, 1, { opacity: 0 },'+=0.4')
-        .from($section, 1.5, { y: 200, ease: 'power1.easeOut'},'<')
+        .from($section, 1, { y:  moveY, ease: 'power1.easeOut'},'<')
         .from($sectionNav,1, { opacity: 0 },'<')
-        .from($sectionNav, 1.5, { y: 200, ease: 'power1.easeOut' },'<')
+        .from($sectionNav, 1.5, { y:  moveY, ease: 'power1.easeOut' },'<')
         ;
       }
       else{
@@ -118,17 +118,18 @@ export default function () {
           paused: true
         })
         .from($section, 1, { opacity: 0 },'+=0.4')
-        .from($section, 1.5, {  y: 200, ease: 'power1.easeOut' },'<')
+        .from($section, 1.5, {  y:  moveY, ease: 'power1.easeOut' },'<')
         ;
       }
     }
     else{
+      moveY = 100;
       sectionFromGsap = gsap
       .timeline({
         paused: true
       })
       .from($section, 1, { opacity: 0 },'+=0.4')
-      .from($section, 1.5, { y: 200, ease: 'power1.easeOut' },'<')
+      .from($section, 1.5, { y: moveY, ease: 'power1.easeOut' },'<')
       ;
     }
   }
@@ -229,7 +230,7 @@ export default function () {
           $('html,body').scrollTop(0);
           preloaderGsapAnim.play();
 
-      }, 500);
+      }, 300);
       });
      $preloaderClose.on('click', function () {
         preloaderOutGsapAnim.play();

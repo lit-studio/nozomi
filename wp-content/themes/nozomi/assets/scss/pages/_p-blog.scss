@@ -34,41 +34,70 @@
             padding-left: 25px;
             padding-right: 25px;
             position: relative;
+            padding-bottom: 0;
         }
         @include tablet{
             padding-left: 65px;
             padding-right: 65px;
         }
         @include phone{
-            padding-bottom: 115px;    
+            // padding-bottom: 115px;    
             padding-left: 20px;
             padding-right: 20px;
         } 
         &-wrap{
             display: flex;
             position: relative; 
+            @include  desktop-block{
+                padding-bottom: 120px;
+            }
+            @include tablet{
+
+            }
+            @include phone{
+                padding-bottom: 115px;    
+            } 
         }
     }
     .index{
         &-blog{
             position: relative;
             overflow: hidden;
-            height: 1006px;
+            height: 1180px;
             @include desktop-normal{
-                height: 770px;
+                height: 837px;
             }
             @include desktop-note-big{
-                height:596px;
+                height:696px;
             }
             @include desktop-block{
-                height:603px;
+
+                height:548px;
             }
             @include tablet{
-                height:890px;
+
+                height:682px;
             }
             @include phone{
-                height:620px;
+
+                height:532px;
             }
+            // height: 1006px;
+            // @include desktop-normal{
+            //     height: 770px;
+            // }
+            // @include desktop-note-big{
+            //     height:596px;
+            // }
+            // @include desktop-block{
+            //     height:603px;
+            // }
+            // @include tablet{
+            //     height:890px;
+            // }
+            // @include phone{
+            //     height:620px;
+            // }
             &:after{
                 position: absolute;
                 left: 0;
@@ -239,7 +268,8 @@
             display: flex;
             justify-content: center;   
             align-items: flex-end;
-            z-index: 1000;   
+            // z-index: 1000; 
+            z-index: 99;     
             // overflow: hidden;
             &.fixed{
                 position: absolute;
@@ -1416,11 +1446,20 @@
                 display: flex;
                 align-items: center;
                 @include desktop-block {
-                    position: fixed;
-                    right: 25px;
-                    bottom: 25px;
-                    display: block;
-                    z-index: 1;
+                    display: none;
+                }
+                &-fixed{
+                    display: none;
+                    @include desktop-block {
+                        position: fixed;
+                        right: 25px;
+                        bottom: 25px;
+                        display: block;
+                        z-index: 1;
+                    }
+                    @include phone{
+                        right: 20px;
+                    }
                 }
                 &-mobile{
                     width: 40px;
@@ -1456,6 +1495,9 @@
                     font-size: 24px;
                     @include desktop-normal{
                         font-size: 20px;   
+                    }
+                    @include desktop-note-big{
+                        font-size: 16px;    
                     }
                     @include desktop-block{
                         display: none;

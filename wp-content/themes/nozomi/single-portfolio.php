@@ -92,7 +92,7 @@ get_header();
 
                 if ($client_first_block || $services_first_block || $platforms_first_block || $link_first_block || $year_first_block) { ?>
                     <section class="specification">
-                        <div class="specification-wrap  gsap-anim--j">
+                        <div class="specification-wrap  gsap-anim--js">
                             <div class="specification-ul">
                                 <?php
 
