@@ -869,19 +869,47 @@
                         padding-bottom: 35px; 
                     }
                     &--tag{
-                        text-transform: uppercase;
-                        font-size: 20px;
-                        line-height: 150%;                        
-                        color: var(--color-grey-3);
-                        font-family: var(--font-medium);
-                        @include desktop-normal{
-                            font-size: 18px;
-                        }
-                        @include desktop-note-big{
-                            font-size: 14px;
-                        }
-                        @include phone{
-                            font-size: 13px;
+                        a{
+                            position: relative;
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            line-height: 150%;                        
+                            color: var(--color-grey-3);
+                            font-family: var(--font-medium);
+                            @include desktop-normal{
+                                font-size: 18px;
+                            }
+                            @include desktop-note-big{
+                                font-size: 14px;
+                            }
+                            @include phone{
+                                font-size: 13px;
+                            }
+                            &:after{
+                                content: '';
+                                left: 0;
+                                bottom: 0;
+                                position: absolute;
+                                height: 3px;
+                                width: 100%;
+                                background-color: transparent;
+                                background-image: url('#{$assetsPath}/icons/icon-underline.svg');
+                                background-position: left;
+                                background-repeat: no-repeat;
+                                background-attachment: scroll;
+                                background-size: cover;
+                                transform: scaleX(0);
+                                transition: transform 0.3s ease-in-out;
+                                transform-origin: right;
+                              }
+                              &:hover{
+                                  color: var(--color-red);
+                                  &:after{
+                                      transform-origin: left;
+                                      transform: scaleX(1);
+                                      transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+                                  }
+                              }
                         }
                     }
                 }

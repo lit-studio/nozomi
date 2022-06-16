@@ -1,5 +1,9 @@
 import { gsap } from "gsap";
 import {SplitText} from "../libs/gsap-shockingly-green/src/SplitText";
+import lottie from "lottie-web";
+import {DrawSVGPlugin} from "../libs/gsap-shockingly-green/src/DrawSVGPlugin";
+
+gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(SplitText);
 
 import header from "./components/c-header";
@@ -85,7 +89,14 @@ export default function () {
   // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
   // .from($section, 1, { y: 200 },'<')
   // ;
-  
+  const handBirdAnim = lottie.loadAnimation({
+    container: document.getElementById('hand_bird'),
+    renderer: "svg",
+    loop: false,
+    autoplay: false,
+    path: nozomiData.rootUrl + "/assets/lottie/hand_bird.json"
+  });
+
   if($pHome.length > 0){
     console.log('home');
     sectionFromGsap = gsap
@@ -94,6 +105,12 @@ export default function () {
     })
     .from($section, 2, { opacity: 0 },'')
     .from($section, 2, { y: windowHeightHalf, ease: 'power1.easeOut' },'<')
+    .from('.item-img-item', 1, {  autoAlpha: 0, 
+      onComplete: () => {
+        handBirdAnim.setSpeed(1.8);
+        handBirdAnim.play();
+      } 
+    },'-=1')
     ;
   }
   else{
@@ -230,7 +247,7 @@ export default function () {
           $('html,body').scrollTop(0);
           preloaderGsapAnim.play();
 
-      }, 300);
+      }, 100);
       });
      $preloaderClose.on('click', function () {
         preloaderOutGsapAnim.play();

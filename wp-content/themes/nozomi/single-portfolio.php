@@ -22,10 +22,12 @@ get_header();
                                             <div class="item-category">
                                                 <div class="item-category-wrap">
                                                     <?php foreach ($categories as $category) { ?>
-                                                        <a href="<?php echo get_term_link($category->term_id); ?>"
-                                                        class="item-category--category">
-                                                            <?php echo $category->name; ?>
-                                                        </a>
+                                                        <div class="item-category--category">
+                                                            <a href="<?php echo get_term_link($category->term_id); ?>"
+                                                            >
+                                                                <?php echo $category->name; ?>
+                                                            </a>
+                                                        </div>
                                                     <?php } ?>
                                                 </div>
                                             </div>
@@ -70,13 +72,15 @@ get_header();
                         <div class="screen-wrap">
                             <div class="item">
                                 <div class="item-img  gsap-anim--js">
-                                    <picture class="picture">
-                                        <source srcset="<?php echo $first_image_mobile['sizes']['home_1']; ?>"
-                                                media="(max-width: 768px)">
-                                        <img class="img picture-absolute"
-                                             data-src="<?php echo $first_image['sizes']['home_2']; ?>"
-                                             src="<?php echo $first_image['sizes']['home_2']; ?>">
-                                    </picture>
+                                    <div class="item-img-block parallax-img-block--js">
+                                        <picture class="picture">
+                                            <source srcset="<?php echo $first_image_mobile['sizes']['home_1']; ?>"
+                                                    media="(max-width: 768px)">
+                                            <img class="img picture-absolute"
+                                                data-src="<?php echo $first_image['sizes']['home_2']; ?>"
+                                                src="<?php echo $first_image['sizes']['home_2']; ?>">
+                                        </picture>
+                                    </div>
                                 </div>
                             </div>
                         </div>

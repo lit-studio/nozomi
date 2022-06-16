@@ -145,8 +145,8 @@
                       display: flex;
                       justify-content: center;
                       align-items: center;
-                      padding-top: pxVw(410, 2560);
                       position: relative;
+                      padding-top: pxVw(410, 2560);
                       @include desktop-normal{
                           padding-top: pxVw(325, 1920);
                         //   padding-bottom: pxVw(173, 1920);

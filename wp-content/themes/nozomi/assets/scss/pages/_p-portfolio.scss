@@ -845,23 +845,65 @@
                     &-wrap{
                         display: flex;
                         justify-content: center;
-                        color: var(--color-grey-3);
-                        text-transform: uppercase;
-                        font-size: 20px;
                         text-align: center;
-                        @include desktop-normal{
-                            font-size: 18px;
-                        }
-                        @include desktop-note-big{
-                            font-size: 14px;
-                        }
-                        @include phone{
+                        // color: var(--color-grey-3);
+                        // text-transform: uppercase;
+                        // font-size: 20px;
+                        // @include desktop-normal{
+                        //     font-size: 18px;
+                        // }
+                        // @include desktop-note-big{
+                        //     font-size: 14px;
+                        // }
+                        // @include phone{
  
-                        }
+                        // }
                     }
                     &--category{
                         padding-left: 40px;
                         padding-right: 40px;
+                        a{
+                            position: relative;
+                            text-transform: uppercase;
+                            font-size: 20px;
+                            line-height: 150%;                        
+                            color: var(--color-grey-3);
+                            font-family: var(--font-medium);
+                            @include desktop-normal{
+                                font-size: 18px;
+                            }
+                            @include desktop-note-big{
+                                font-size: 14px;
+                            }
+                            @include phone{
+                                font-size: 13px;
+                            }
+                            &:after{
+                                content: '';
+                                left: 0;
+                                bottom: 0;
+                                position: absolute;
+                                height: 3px;
+                                width: 100%;
+                                background-color: transparent;
+                                background-image: url('#{$assetsPath}/icons/icon-underline.svg');
+                                background-position: left;
+                                background-repeat: no-repeat;
+                                background-attachment: scroll;
+                                background-size: cover;
+                                transform: scaleX(0);
+                                transition: transform 0.3s ease-in-out;
+                                transform-origin: right;
+                              }
+                              &:hover{
+                                  color: var(--color-red);
+                                  &:after{
+                                      transform-origin: left;
+                                      transform: scaleX(1);
+                                      transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+                                  }
+                              }
+                        }
                     }
                     &--read{
                         padding-left: 40px;
@@ -941,6 +983,7 @@
         .item{
             position: relative;
             &-img{
+                overflow: hidden;
                 .picture{
 
                 }
@@ -1389,25 +1432,14 @@
     }
 
     .story{
-        // padding-top: 220px;
-        // padding-bottom: 220px;
-        @include desktop-normal{
-            // padding-top: 180px;
-            // padding-bottom: 180px;
-        }
-        @include desktop-note-big{
-            // padding-top: 160px; 
-            // padding-bottom: 160px;
-        }
-        @include phone{
-            // padding-top: 140px;
-            // padding-bottom: 140px;
-        }
+
+
         &-wrap{
             max-width: 1440px;
             margin: 0 auto;
             padding-left: 60px;
             padding-right: 60px;
+            padding-bottom: 30px;
             @include desktop-normal{
                 max-width: 1268px;
             }
@@ -1790,6 +1822,8 @@
                 &-img{
                     width: 120px;
                     height: 120px;
+                    border-radius: 100%;
+                    overflow: hidden;
                     @include desktop-normal{
                         width: 100px;
                         height: 100px; 
@@ -1814,8 +1848,11 @@
                     }
                     &--desc  {
                         &>*{
-                            font-size: 24px;
+                            font-size: 28px;
                             @include desktop-normal{
+                                font-size: 24px;
+                            }
+                            @include desktop-note-big{
                                 font-size: 20px;
                             }
                             @include phone{
@@ -1835,7 +1872,8 @@
                     }
                     &--name{
                         font-size: 28px;
-                        color: var(---color-grey);
+                        color: var(--color-grey);
+                        line-height: 150%;
                         @include desktop-normal{
                             font-size: 24px;
                         }
@@ -1849,6 +1887,7 @@
                     &--status{
                         font-size: 20px;
                         color: var(--color-grey-2);
+                        line-height: 150%;
                         @include desktop-normal{
                             font-size: 16px;
                         }

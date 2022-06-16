@@ -1,10 +1,7 @@
 import { gsap } from "gsap";
-import lottie from "lottie-web";
 import VimeoPlayer from '@vimeo/player';
-import {DrawSVGPlugin} from "../../libs/gsap-shockingly-green/src/DrawSVGPlugin";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
@@ -12,10 +9,7 @@ export default function () {
   console.log("home page");
 
   let $body = $('body'),
-  $indexSection = $body.find(".index"),
-  // $indexPapperBg = $body.find(".papper-bg--js"),
-  $indexSectionTitle = $indexSection.find(".item-title--title--js"),
-  $cursorBlock = $body.find(".cursor-dot"),
+   $cursorBlock = $body.find(".cursor-dot"),
   $aboutSection = $body.find('.about'),
   $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
   $aboutSectionImg = $aboutSectionBlock.find('img'),
@@ -24,137 +18,6 @@ export default function () {
   $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
   $portfolioSectionImg = $portfolioSectionblock.find('img')
   ;
-  // if($indexPapperBg.length > 0){
-  //   function indexPapperFunc() {
-  //     const svg = document.querySelector("#demo");
-  //     const tl = gsap.timeline();
-  //     let pt = svg.createSVGPoint();
-  //     const ratio = 0.5625;   
-      
-  //     tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
-  //     tl.reversed(true);
-      
-  //     function mouseHandlerIndex() {
-  //       tl.reversed(!tl.reversed());
-  //     }
-      
-  //     function getPointIndex(evt){
-  //       pt.x = evt.clientX; 
-  //       pt.y = evt.clientY;
-  //       return pt.matrixTransform(svg.getScreenCTM().inverse());
-  //     }
-      
-  //     function mouseMoveIndex(evt) {
-  //       let newPoint = getPointIndex(evt);
-  //       gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
-  //      }   
-  
-      
-  //     function newSizeIndex() {
-  //       let w = window.innerWidth ;
-  //       let h = window.innerHeight;
-  //       if (w > h * (16/9) ) {
-  //         gsap.set("#demo", { attr: { width: w, height: w * ratio } });
-  //       } else {
-  //         gsap.set("#demo", { attr: { width: h / ratio, height: h } });
-  //       }
-  //       let data = svg.getBoundingClientRect();
-  //       gsap.set("#demo", {x:w/2 - data.width/2});
-  //       gsap.set("#demo", {y:h/2 - data.height/2});
-  //     }
-      
-  //     window.addEventListener("mousedown", mouseHandlerIndex);
-  //     window.addEventListener("mouseup", mouseHandlerIndex);
-  //     window.addEventListener("mousemove", mouseMoveIndex);
-      
-  //     newSizeIndex();
-  //     window.addEventListener("resize", newSizeIndex);
-  //   }
-  //   indexPapperFunc()
-  // }
-
-  function homeIndexFunc() {
-    // console.log('index');
-    const handBirdAnim = lottie.loadAnimation({
-      container: document.getElementById('hand_bird'),
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-      path: nozomiData.rootUrl + "/assets/lottie/hand_bird.json"
-    });
-
-    let indexSectionGsap =  gsap.timeline({
-      paused: true,
-    })
-        .from($indexSectionTitle, 1, {  autoAlpha: 0, ease:"power2.easeOut" },'+=1.5')
-        .from($indexSectionTitle, 1, { yPercent: 50, ease:"power2.easeOut" },'<')
-        .from('.item-img-item', 1, {  autoAlpha: 0, 
-          onComplete: () => {
-            handBirdAnim.setSpeed(1.8);
-            handBirdAnim.play();
-          } 
-      },'-=2')
-    ;
-    setTimeout(function(){
-      indexSectionGsap.play();
-    }, 1);
-
-    // const svg = document.querySelector("#demo");
-    // const tl = gsap.timeline();
-    // let pt = svg.createSVGPoint();
-    // const ratio = 0.5625;   
-    
-    // tl.to("#masker", {duration: 2, attr:{r:2400}, ease:"power2.in"});
-    // tl.reversed(true);
-    
-    // function mouseHandlerIndex() {
-    //   tl.reversed(!tl.reversed());
-    // }
-    
-    // function getPointIndex(evt){
-    //   pt.x = evt.clientX; 
-    //   pt.y = evt.clientY;
-    //   return pt.matrixTransform(svg.getScreenCTM().inverse());
-    // }
-    
-    // function mouseMoveIndex(evt) {
-    //   let newPoint = getPointIndex(evt);
-    //   gsap.to("#masker", 0.88, {attr:{cx:newPoint.x, cy:newPoint.y}, ease:"power2.out"});
-    //  }   
-
-    
-    // function newSizeIndex() {
-    //   let w = window.innerWidth ;
-    //   let h = window.innerHeight;
-    //   if (w > h * (16/9) ) {
-    //     gsap.set("#demo", { attr: { width: w, height: w * ratio } });
-    //   } else {
-    //     gsap.set("#demo", { attr: { width: h / ratio, height: h } });
-    //   }
-    //   let data = svg.getBoundingClientRect();
-    //   gsap.set("#demo", {x:w/2 - data.width/2});
-    //   gsap.set("#demo", {y:h/2 - data.height/2});
-    // }
-    
-    // window.addEventListener("mousedown", mouseHandlerIndex);
-    // window.addEventListener("mouseup", mouseHandlerIndex);
-    // window.addEventListener("mousemove", mouseMoveIndex);
-    
-    // newSizeIndex();
-    // window.addEventListener("resize", newSizeIndex);
-  }
-  homeIndexFunc();
-
-  // let $aboutSection = $body.find('.about'),
-  // $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
-  // $aboutSectionImg = $aboutSectionBlock.find('img'),
-  // $portfolioSection = $body.find('.portfolio'),
-  // aboutSectionImgTrigger="top center",
-  // $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
-  // $portfolioSectionImg = $portfolioSectionblock.find('img'),
-  // $parallaxBlock = $body.find('.parallax-img-block--js')
-  // ;
-
 
   function portfolioScaleFunc() {
       ScrollTrigger.create({

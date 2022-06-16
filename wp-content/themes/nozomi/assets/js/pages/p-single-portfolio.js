@@ -7,7 +7,10 @@ import lottie from "lottie-web";
 gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 export default function () {
-    let     $headerProgress = $(".c-header-progress--js");
+    let $headerProgress = $(".c-header-progress--js");
+    let $indexSingle = $(".index-single-portfolio");    
+    let $imgParallaxblock = $(".parallax-img-block--js");
+    let indexSingleHeight = $indexSingle.innerHeight();
     console.log("single portfolio");
 
     if ($headerProgress.length > 0) {
@@ -69,4 +72,40 @@ export default function () {
     }
     btnLottieFeelFunc();
 
+    function imgScaleFunc() {
+      // ScrollTrigger.create({
+      //   trigger: $portfolioSectionImg ,
+      //   onEnter: () => {
+      //     gsap.to($portfolioSectionImg, {
+      //       autoAlpha: 1,
+      //       duration: 1,
+      //     });
+      //     gsap.to($portfolioSectionImg, 2, {scale: 1, ease: "Power4.easeOut"},'<');
+      //   },
+      //   start: "top 80%",
+      //   end: "bottom top",
+      //   pin: false,
+      //   scrub: false,
+      //   toggleActions: "play none none none",
+      //   markers: false
+      // });
+    ScrollTrigger.create({
+      trigger: $imgParallaxblock,
+      animation: 
+      gsap
+          .timeline()
+          .fromTo(
+            $imgParallaxblock,
+              { scale: 1.2, duration: 2 },
+              { scale: 1, duration: 2 }
+          ),
+      start: "top " + indexSingleHeight,
+      end: "bottom top",
+      scrub: true,
+      toggleActions: "play reverse none reverse",
+      markers: false
+    });
+  }
+
+  imgScaleFunc();
 }

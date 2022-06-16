@@ -11,12 +11,14 @@ get_header();
                                 <div class="item-content-wrap  gsap-anim--js">
                                     <div class="item-tag">
                                         <div class="item-tag--tag">
+                                            <a href="#">
                                             <?php
                                             $category = get_the_category();
                                             $firstCategory = $category[0]->cat_name;
                                             echo $firstCategory;
 
                                             ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="item-title">
