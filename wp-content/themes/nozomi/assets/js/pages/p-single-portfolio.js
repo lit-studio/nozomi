@@ -96,37 +96,37 @@ export default function () {
 
   imgScaleFunc();
 
-  function controlVideosSingle() {
-    let iframesBig = document.querySelector('.video-big--js');
-    let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
-    let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
-      id: videoIdBig,
-      width: '100%',
-      height: '100%',
-      muted:	true,
-      loop: true,
-      controls:	false,
-      quality:	false
-    });
-    vimeoPlayerBig.loadVideo(videoIdBig);
-    vimeoPlayerBig.play().then(function() {
-      // the video was played
-    }).catch(function(error) {
-        switch (error.name) {
-            case 'PasswordError':
-                // the video is password-protected and the viewer needs to enter the
-                // password first
-                break;
+  // function controlVideosSingle() {
+  //   let iframesBig = document.querySelector('.video-big--js');
+  //   let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
+  //   let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
+  //     id: videoIdBig,
+  //     width: '100%',
+  //     height: '100%',
+  //     muted:	true,
+  //     loop: true,
+  //     controls:	false,
+  //     quality:	false
+  //   });
+  //   vimeoPlayerBig.loadVideo(videoIdBig);
+  //   vimeoPlayerBig.play().then(function() {
+  //     // the video was played
+  //   }).catch(function(error) {
+  //       switch (error.name) {
+  //           case 'PasswordError':
+  //               // the video is password-protected and the viewer needs to enter the
+  //               // password first
+  //               break;
     
-            case 'PrivacyError':
-                // the video is private
-                break;
+  //           case 'PrivacyError':
+  //               // the video is private
+  //               break;
     
-            default:
-                // some other error occurred
-                break;
-        }
-    });
-  }
-  controlVideosSingle();
+  //           default:
+  //               // some other error occurred
+  //               break;
+  //       }
+  //   });
+  // }
+  // controlVideosSingle();
 }

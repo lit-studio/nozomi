@@ -80,9 +80,13 @@ get_header();
                                                 data-src="<?php echo $first_image['sizes']['home_2']; ?>"
                                                 src="<?php echo $first_image['sizes']['home_2']; ?>">
                                         </picture>
-                                        <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
+                                        <!-- <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
                
+                                        </div> -->
+                                        <div class="item-video">
+                                            <iframe src="https://player.vimeo.com/video/720996872?h=a5511d1aec&amp;badge=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay" frameborder="0"></iframe>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
