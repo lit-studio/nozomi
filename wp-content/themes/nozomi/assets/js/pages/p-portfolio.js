@@ -191,11 +191,11 @@ export default function () {
       videoIdBig = iframesBig[i].getAttribute('data-set-vimeo-id');
       videoPlayerLayoutBig =  iframesBig[i].querySelector('.video-big--layout--js');
       videoIdBigBg = iframesBig[i].querySelector('.video-big-bg--js')
-      videoIdBigBgGsap =  gsap.timeline({
-          paused: true,
-        })
-            .to(videoIdBigBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
-        ;
+      // videoIdBigBgGsap[i] =  gsap.timeline({
+      //     paused: true,
+      //   })
+      //       .to(videoIdBigBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
+      //   ;
       console.log('i '+ i);
       console.log('videoIdBig ' + videoIdBig);
       vimeoPlayerBig = new VimeoPlayer(iframesBig[i],{
@@ -211,8 +211,9 @@ export default function () {
       if (screen.width > 1024) {
         console.log('desk');
         videoPlayerLayoutBig.addEventListener("mouseenter", () => {
-          videoIdBigBgGsap.play();
-          // videoIdBigBg.classList.add("hover");
+          videoPlayerLayoutBig.classList.add("hover");
+          // videoIdBigBgGsap[i].play();
+          // $(this).addClass('hover')
           if (!$cursorBlock.hasClass('video')) {
             $cursorBlock.addClass("video");
           }
@@ -237,8 +238,9 @@ export default function () {
         });
 
         videoPlayerLayoutBig.addEventListener("mouseleave", () => {
-          videoIdBigBgGsap.reverse();
-          // videoIdBigBg.classList.remove("hover");
+          // videoIdBigBgGsap.reverse();
+          videoPlayerLayoutBig.classList.remove("hover");
+          // $(this).removeClass('hover')
           if ($cursorBlock.hasClass('video')) {
             $cursorBlock.removeClass("video");
           }
@@ -264,6 +266,14 @@ export default function () {
 
       }
       else{
+        if (screen.width > 768) {
+          console.log('tablet ');
+        }
+        else{
+          console.log('mobile ');
+        }
+
+        
         ScrollTrigger.create({
           trigger:  iframesBig[i],
           start: "top bottom",
@@ -272,7 +282,7 @@ export default function () {
           toggleActions: "play reverse none reverse",
           markers: true,
           onEnter: () => {
-            videoIdBigBgGsap.play();
+            // videoIdBigBgGsap.play();
             vimeoPlayerBig.play().then(function() {
               // the video was played
             }).catch(function(error) {
@@ -293,7 +303,7 @@ export default function () {
             });
           },
           onEnterBack: () => {
-            videoIdBigBgGsap.play();
+            // videoIdBigBgGsap.play();
             vimeoPlayerBig.play().then(function() {
               // the video was played
             }).catch(function(error) {
@@ -313,8 +323,7 @@ export default function () {
                 }
             });
           },
-          onLeave: () => {
-            
+          onLeave: () => {            
             // videoIdBigBgGsap.reverse();
             vimeoPlayerBig.unload().then(function() {
               // the video was paused
@@ -334,7 +343,7 @@ export default function () {
           });
           },
           onLeaveBack: () => {
-            videoIdBigBgGsap.reverse();
+            // videoIdBigBgGsap.reverse();
             vimeoPlayerBig.unload().then(function() {
               // the video was paused
           }).catch(function(error) {
