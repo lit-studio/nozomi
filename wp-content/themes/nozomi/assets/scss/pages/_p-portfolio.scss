@@ -667,7 +667,10 @@
                   align-items: center;
                   justify-content: center;
                   opacity: 1;
-                  opacity: 0;
+                  transition: opacity 0.5s linear;
+                &.hover{
+                    opacity: 0;
+                }
                 }
                 iframe {
                   position: absolute;
