@@ -6,7 +6,7 @@ gsap.registerPlugin(DrawSVGPlugin);
 
 export default function () {
   function btnLottieFooterFunc() {
-    console.log('book footer')
+    // console.log('book footer')
     let btnBook = document.querySelector(".btn-book--js");
     if (btnBook) {
       function btnBookHover() {

@@ -42,18 +42,18 @@ export default function () {
   if (indexSectionHeight > windowHeight) {
     navTriggerStart = + navHeight;
     navTriggerEnd = 'bottom';
-    console.log('indexSectionHeight > windowHeight');
+    // console.log('indexSectionHeight > windowHeight');
   }
   else{
     navTriggerStart = 'top';
     navTriggerEnd = navTriggerHeight - navStopHeight;
-    console.log('indexSectionHeight < windowHeight');
-    console.log('navTriggerEnd ' + navTriggerEnd);
+    // console.log('indexSectionHeight < windowHeight');
+    // console.log('navTriggerEnd ' + navTriggerEnd);
   }
 
-  console.log('windowHeight ' +  windowHeight );
-  console.log('navTriggerHeight ' + navTriggerHeight );
-  console.log('navStopHeight ' + navStopHeight );
+  // console.log('windowHeight ' +  windowHeight );
+  // console.log('navTriggerHeight ' + navTriggerHeight );
+  // console.log('navStopHeight ' + navStopHeight );
 
   let $sidebarLink = $navMobileBlock.find('a');
 
@@ -196,7 +196,7 @@ export default function () {
       videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
       // console.log('i '+ i);
       iframesBig[i].setAttribute('data-loop', i);
-      console.log('videoIdBig['+ i +'] ' + videoIdBig[i]);
+      // console.log('videoIdBig['+ i +'] ' + videoIdBig[i]);
       vimeoPlayerBig[i] = new VimeoPlayer(iframesBig[i],{
         id: videoIdBig[i],
         width: '100%',
@@ -328,14 +328,18 @@ export default function () {
         gsap.utils.toArray($iframesBigBox).forEach(section => {
           ScrollTrigger.create({
             trigger: section,
-            start: "top bottom",
+            start: "top center",
             end: "bottom top",
             pin: false,
             scrub: true,
             toggleActions: "play reverse none reverse",
             markers: true,
+            onToggle: self => console.log("toggled, isActive:", self.isActive),
+            // toggleClass: {targets: ".my-selector", className: "active"},
+            // onUpdate: self => {
+            //   console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+            // },
             onEnter: () => {
-
               vimeoPlayerBig[0].play().then(function() {
                 // the video was played
               }).catch(function(error) {

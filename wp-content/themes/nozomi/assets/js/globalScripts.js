@@ -32,7 +32,7 @@ export default function () {
   ;
 
   
-  console.log('windowHeightHalf' + windowHeightHalf);
+  // console.log('windowHeightHalf' + windowHeightHalf);
   if($indexPapperBg.length > 0){
     function indexPapperFunc() {
       console.log('papper bg');
@@ -156,11 +156,139 @@ export default function () {
 
     function preloaderFunc() {
 
-      $('html,body').scrollTop(0);
+      // $('html,body').scrollTop(0);
       $body.addClass('preloader-active');
 
-      let qoute = $body.find(".preloader-desc-cursive--js"),
-      mySplitText = new SplitText(qoute, {
+      let qoute = $body.find(".preloader-desc-cursive--js");
+      // mySplitText = new SplitText(qoute, {
+      //     type: "chars",
+      //     charsClass: "char",
+      //     position: "relative"
+      // }),
+      // chars = mySplitText.chars,
+      // charsGsapAnim = gsap
+      // .timeline({
+      //   paused: true
+      // }).from(chars, {
+      //   duration: 0.5,
+      //   opacity: 0,
+      //   ease: 'power1.easeOut',
+      //   stagger: 0.09
+      // });
+      
+      // preloaderGsapAnim = gsap
+      // .timeline({
+      //   paused: true
+      // })
+      // .from($preloaderClose, {
+      //   duration: 0.5,
+      //   opacity: 0,
+      //   ease: 'power1.easeOut',
+      //   onStart: () => {
+      //     $preloaderBlock.addClass('visible');
+      // }
+      // })
+      // .from($preloaderLineOne, {
+      //   duration:  0.7,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'power1.easeOut',
+      // },'<')
+      // .from($preloaderLineTwo, {
+      //   duration:  0.5,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'power1.easeOut',
+      // },'+=0.5')
+      // .from($preloaderLineThree, {
+      //   duration:  0.7,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'power1.easeOut',
+      // },'+=0.5')
+      // .from($preloaderLineFour, {
+      //   duration:  0.7,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'power1.easeOut',
+      //   onComplete: () => {
+      //     charsGsapAnim.play();
+      // }
+      // },'+=0.5')
+      // .from($preloaderBoldLine, {
+      //   duration:  0.7,
+      //   opacity: 0,
+      //   yPercent:100,
+      //   ease: 'power1.easeOut',        
+      //   onComplete: () => {
+      //     preloaderOutGsapAnim.play();
+      // }
+      // },'+=0.5')
+      // ; 
+
+      // preloaderOutGsapAnim =  gsap.timeline({
+      //   paused: true,
+      // })
+      // .to($preloaderBlock, 2, { y: - windowHeightHalf,ease: 'power1.easeOut',
+      //   onStart: () => {
+      //     sectionFromGsap.play();
+      // }
+      // })
+      // .to($preloaderBg , 0.3, { autoAlpha: 0,
+      //   onComplete: () => {
+      //     $body.removeClass('preloader-active');
+      //     $preloaderBg.addClass('preloader-bg-hidden');
+      //     // takeCookie();
+      // }
+      // },'<');
+
+      // window.addEventListener("load", function(){
+      //   setTimeout(function(){
+      //     preloaderGsapAnim.play();
+
+      // }, 100);
+      // });
+    //  $preloaderClose.on('click', function () {
+    //     preloaderOutGsapAnim.play();
+    //   }); 
+
+
+      if (getCookie('cookies')){
+        console.log('we have cookie');
+        $preloaderBlock.addClass('hidden');
+        preloaderOutGsapAnim =  gsap.timeline({
+          paused: true,
+        })
+        .to($preloaderBlock, 2, { y: - windowHeightHalf,ease: 'power1.easeOut',
+          onStart: () => {
+            sectionFromGsap.play();
+        }
+        })
+        .to($preloaderBg , 0.3, { autoAlpha: 0,
+          onComplete: () => {
+            $body.removeClass('preloader-active');
+            $preloaderBg.addClass('preloader-bg-hidden');
+        }
+        },'<');
+
+        window.addEventListener("load", function(){
+          setTimeout(function(){
+            $('html,body').scrollTop(0);
+            preloaderOutGsapAnim.play();
+  
+        }, 100);
+        });
+      }
+      else{
+        console.log('we have not cookie');    
+        function takeCookie(){
+          let d = new Date();
+          let cookiesDays = 7;
+          d.setTime(d.getTime() + (cookiesDays * 24 * 60 * 60 * 1000));
+          let expires = "expires=" + d.toUTCString();
+          document.cookie = "cookies=true" + ";" + expires + ";path=/";
+        }  
+      let  mySplitText = new SplitText(qoute, {
           type: "chars",
           charsClass: "char",
           position: "relative"
@@ -225,7 +353,6 @@ export default function () {
       }
       },'+=0.5')
       ; 
-
       preloaderOutGsapAnim =  gsap.timeline({
         paused: true,
       })
@@ -238,138 +365,25 @@ export default function () {
         onComplete: () => {
           $body.removeClass('preloader-active');
           $preloaderBg.addClass('preloader-bg-hidden');
-          // takeCookie();
+          takeCookie();
       }
       },'<');
+        window.addEventListener("load", function(){
+          setTimeout(function(){
+            $('html,body').scrollTop(0);
+            preloaderGsapAnim.play();
+  
+        }, 100);
+        });
+       $preloaderClose.on('click', function () {
+          preloaderOutGsapAnim.play();
+        }); 
 
-      window.addEventListener("load", function(){
-        setTimeout(function(){
-          $('html,body').scrollTop(0);
-          preloaderGsapAnim.play();
-
-      }, 100);
-      });
-     $preloaderClose.on('click', function () {
-        preloaderOutGsapAnim.play();
-      }); 
-
-
-      // if (getCookie('cookies')){
-      //   console.log('we have cookie');
-      //   $preloaderBlock.addClass('hidden');
-      //   preloaderOutGsapAnim =  gsap.timeline({
-      //     paused: true,
-      //   })
-      //     .to($preloaderBlock, 2, { yPercent: -100})
-      //     .to($preloaderBg , 1, { autoAlpha: 0,
-      //       onComplete: () => {
-      //         $body.removeClass('preloader-active');
-      //         $preloaderBg.addClass('preloader-bg-hidden');
-      //         sectionFromGsap.play();
-      //     }
-      //     },'<')
-      //   ;
-      //   preloaderOutGsapAnim.play();
-
-
-      // }
-      // else{
-      //   console.log('we have not cookie');    
-      //   function takeCookie(){
-      //     let d = new Date();
-      //     let cookiesDays = 7;
-      //     d.setTime(d.getTime() + (cookiesDays * 24 * 60 * 60 * 1000));
-      //     let expires = "expires=" + d.toUTCString();
-      //     document.cookie = "cookies=true" + ";" + expires + ";path=/";
-      //   }  
-
-      //   let qoute = $body.find(".preloader-desc-cursive--js"),
-      //   mySplitText = new SplitText(qoute, {
-      //       type: "chars",
-      //       charsClass: "char",
-      //       position: "relative"
-      //   }),
-      //   chars = mySplitText.chars,
-      //   charsGsapAnim = gsap
-      //   .timeline({
-      //     paused: true
-      //   }).from(chars, {
-      //     duration: 0.5,
-      //     opacity: 0,
-      //     // scale: 0,
-      //     // xPercent: -10,
-      //     // rotationX: 180,
-      //     // transformOrigin: "0% 50% -50",
-      //     ease: 'expo.easeOut',
-      //     stagger: 0.09
-      //   });
         
-      //   preloaderGsapAnim = gsap
-      //   .timeline({
-      //     paused: true
-      //   })
-      //   .from($preloaderClose, {
-      //     duration: 0.5,
-      //     opacity: 0,
-      //     ease: 'expo.easeOut',
-      //   })
-      //   .from($preloaderLineOne, {
-      //     duration:  0.5,
-      //     opacity: 0,
-      //     yPercent:100,
-      //     ease: 'expo.easeOut',
-      //   },'<')
-      //   .from($preloaderLineTwo, {
-      //     duration:  0.5,
-      //     opacity: 0,
-      //     yPercent:100,
-      //     ease: 'expo.easeOut',
-      //   },'-=0.1')
-      //   .from($preloaderLineThree, {
-      //     duration:  0.5,
-      //     opacity: 0,
-      //     yPercent:100,
-      //     ease: 'expo.easeOut',
-      //   },'-=0.1')
-      //   .from($preloaderLineFour, {
-      //     duration:  0.5,
-      //     opacity: 0,
-      //     yPercent:100,
-      //     ease: 'expo.easeOut',
-      //     onComplete: () => {
-      //       charsGsapAnim.play();
-      //   }
-      //   },'-=0.1')
-      //   .from($preloaderBoldLine, {
-      //     duration:  0.5,
-      //     opacity: 0,
-      //     yPercent:100,
-      //     ease: 'expo.easeOut',        
-      //     onComplete: () => {
-      //       preloaderOutGsapAnim.play();
-      //   }
-      //   })
-      //   ; 
+        
 
-      //   preloaderOutGsapAnim =  gsap.timeline({
-      //     paused: true,
-      //   })
-      //   .to($preloaderBlock, 2, { yPercent: -100})
-      //   .to($preloaderBg , 1, { autoAlpha: 0,
-      //     onComplete: () => {
-      //       $body.removeClass('preloader-active');
-      //       $preloaderBg.addClass('preloader-bg-hidden');
-      //       sectionFromGsap.play();
-      //       takeCookie();
-      //   }
-      //   },'<');
 
-      //  preloaderGsapAnim.play();
-
-      // $preloaderClose.on('click', function () {
-      //   preloaderOutGsapAnim.play();
-      // });  
-      // }
+      }
 
       function getCookie(cname) {
         let name = cname + "=";
@@ -389,26 +403,7 @@ export default function () {
     let $window = $(window),
     $indexHome = $('.index-home'),
     winHeight = $window.height();
-    // if (winHeight <= 950) {
-    //   $indexHome.addClass('mobile-height');
-    //   if (winHeight > 700) {
-    //     $indexHome.addClass('mobile-height');
-    //   }
-    //   else{
-    //     $indexHome.addClass('mobile-middle');
-    //   }
-    // }
     if (screen.width <= 1920) {
-
-      // if (screen.width <= 640) {        
-      //   return;
-      // }
-      // if (screen.width <= 768) {
-      //   return;
-      // }
-      // if (screen.width <= 1024) {
-      //   return;
-      // }
       if (screen.width <= 1680) {
         if (winHeight <= 600) {
           $indexHome.addClass('mobile-height');

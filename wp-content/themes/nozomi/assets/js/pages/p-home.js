@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import VimeoPlayer from '@vimeo/player';
+import lottie from "lottie-web";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
