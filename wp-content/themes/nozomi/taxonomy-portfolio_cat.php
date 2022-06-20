@@ -93,8 +93,8 @@ get_header();
                             </div>
                         </section>
                         <section class="portfolios">
-                            <div class="portfolios-wrap">
-                                <div class="portfolios-list gsap-anim--js">
+                            <div class="portfolios-wrap  gsap-anim--js">
+                                <div class="portfolios-list">
                                     <?php
 
                                     global $query_string;

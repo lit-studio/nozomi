@@ -634,28 +634,48 @@
                     width: 100%;
                     height: 100%;
                     display: block;
-                    // object-fit: contain;
                 }
             }
             &-video {
                 width: 100%;
                 position: relative;
                 overflow: hidden;
-                padding-top: 56.25%;
+                // padding-top: 56.25%;
                 height: 100%;
+                // height: 0;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                @include phone {
-                  height: 100%;
+                // padding-bottom: calc(1006 / 1960 * 100%);
+                // @include desktop-normal{
+                //     padding-bottom: calc(800 / 1560 * 100%);
+                // }
+                // @include tablet{
+                //     padding-bottom: calc(990 / 638 * 100%);
+                // }
+                &:after {
+                    content: '';
+                    display: block;
+                    height: 0;
+                    width: 100%;
+                    padding-bottom: calc(1006 / 1960 * 100%);
+                    @include desktop-normal{
+                        padding-bottom: calc(800 / 1560 * 100%);
+                    }
+                    @include tablet{
+                        padding-bottom: calc(990 / 638 * 100%);
+                    }
                 }
-                &-bg{
-                  // opacity: 0;
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  opacity: 1;
-                }
+                // @include phone {
+                //   height: 100%;
+                // }
+                // &-bg{
+                //   // opacity: 0;
+                //   width: 100%;
+                //   height: 100%;
+                //   object-fit: cover;
+                //   opacity: 1;
+                // }
                 &--layout {
                   position: absolute;
                   top: 0;
@@ -680,6 +700,35 @@
                   top: 0;
                   height: 100%!important;
                   width: 100%!important;
+                }
+                picture{
+                    display: block;    
+                    position: relative;    
+                    width: 100%;
+                    height: 100%;     
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 0;
+                        width: 100%;
+
+                        padding-bottom: calc(1006 / 1960 * 100%);
+                        @include desktop-normal{
+                            padding-bottom: calc(800 / 1560 * 100%);
+                        }
+                        @include tablet{
+                            padding-bottom: calc(990 / 638 * 100%);
+                        }
+                    }
+                }
+                img{
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
                 }
               }
 
@@ -1029,12 +1078,6 @@
             position: relative;
             &-img{
                 overflow: hidden;
-                .picture{
-
-                }
-                .img{
-                    
-                }
             }
             &-video {
                 width: 100%;

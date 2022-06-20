@@ -11,6 +11,7 @@ export default function () {
     $navSection = $body.find('.nav'),
     $navSectionItem = $navSection.find('.menu-item'),
     $navTrigger = $body.find('.portfolios'),
+    // $navTrigger = $body.find('.portfolios-list'),
     $footer = $body.find('.c-footer'),
     $navWrap = $navSection.find('.nav-wrap'),
     $navMobileBtn = $navSection.find('.nav-mobile-btn--js'),
@@ -38,22 +39,23 @@ export default function () {
   // console.log('navHeight ' + navHeight );
   // console.log('navStopHeight ' + navStopHeight );
   // console.log('anchorStart ' + anchorStart );
-  // console.log('navTriggerPath ' + navTriggerPath );
+  console.log('indexSectionHeight ' +  indexSectionHeight );
+  console.log('windowHeight ' +  windowHeight );
   if (indexSectionHeight > windowHeight) {
     navTriggerStart = + navHeight;
     navTriggerEnd = 'bottom';
-    // console.log('indexSectionHeight > windowHeight');
+    console.log('indexSectionHeight > windowHeight');
   }
   else{
     navTriggerStart = 'top';
     navTriggerEnd = navTriggerHeight - navStopHeight;
-    // console.log('indexSectionHeight < windowHeight');
-    // console.log('navTriggerEnd ' + navTriggerEnd);
+    console.log('indexSectionHeight < windowHeight');
+    console.log('navTriggerEnd ' + navTriggerEnd);
   }
 
-  // console.log('windowHeight ' +  windowHeight );
-  // console.log('navTriggerHeight ' + navTriggerHeight );
-  // console.log('navStopHeight ' + navStopHeight );
+
+  console.log('navTriggerHeight ' + navTriggerHeight );
+  console.log('navStopHeight ' + navStopHeight );
 
   let $sidebarLink = $navMobileBlock.find('a');
 
@@ -68,15 +70,7 @@ export default function () {
       .to($sectionNav, 0.5, { opacity: 0 },'')
       .to($sectionNav, 1, { y: -200 },'<')
       ;
-      // sectionFromGsap = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($section, 1, { y: 200 },'<')
-      // .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($sectionNav, 1, { y: 200 },'<')
-      // ;
+
     }
     else{
 
@@ -88,17 +82,10 @@ export default function () {
       .to($section, 1, { y: -200 },'<')
       ;
 
-      // sectionFromGsap = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($section, 1, { y: 200 },'<')
-      // ;
     }
 
 
-  // sectionFromGsap.play();
+
 
 
 
@@ -106,15 +93,13 @@ export default function () {
     function navScrollFunc() { 
       ScrollTrigger.create({
         trigger: $navTrigger,
-        // start: "top " + anchorStart,
-        // end: navTriggerPath + " " + anchorStart,
         start: navTriggerStart + " " + anchorStart,
         // end: "bottom " + anchorStart,
         end: navTriggerEnd + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",
-        markers: false,
+        markers: true,
       });
 
     }
@@ -180,6 +165,7 @@ export default function () {
     }
     navMobileFunc();
   }
+
   function controlVideosPortfolio() {
 
     let iframesBig = document.querySelectorAll('.video-big--js');

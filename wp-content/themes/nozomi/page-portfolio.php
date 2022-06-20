@@ -96,8 +96,8 @@ get_header();
                             </div>
                         </section>
                         <section class="portfolios">
-                            <div class="portfolios-wrap">
-                                <div class="portfolios-list gsap-anim--js">
+                            <div class="portfolios-wrap gsap-anim--js">
+                                <div class="portfolios-list ">
                                     <?php
 
                                     query_posts(
@@ -162,11 +162,18 @@ get_header();
                                                             <div class="item-video video--js  video-big--js"
                                                                  data-set-vimeo-id="<?php echo $case_video; ?>"
                                                                  data-set-vimeo-id-mobile="<?php echo $case_video_mobile; ?>">
-                                                    <span class="item-video--layout video-big--layout--js">
-                                                        <img class="item-video-bg video-big-bg--js"
-                                                             src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
-                                                             alt=""/>
-                                                    </span>
+                                                                <span class="item-video--layout video-big--layout--js">
+                                                                <picture class="picture">
+                                                                        <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
+                                                                                media="(max-width: 768px)">
+                                                                        <img class="img"
+                                                                            data-src="<?php echo $case_image['sizes']['home_2']; ?>"
+                                                                            src="<?php echo $case_image['sizes']['home_2']; ?>">
+                                                                    </picture>
+                                                                    <!-- <img class="item-video-bg video-big-bg--js"
+                                                                        src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
+                                                                        alt=""/> -->
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     <?php } else { ?>
