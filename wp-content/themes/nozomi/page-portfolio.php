@@ -24,15 +24,17 @@ get_header();
                                         </div>
                                     </div>
                                     <div class="item-bg papper-bg--js">
-                                        <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
-                                            width="100%" height="100%" viewBox="0 0 2560 1600">
+                                        <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                                             x="0" y="0"
+                                             width="100%" height="100%" viewBox="0 0 2560 1600">
                                             <defs>
                                                 <radialGradient id="maskGradient">
                                                     <stop offset="50%" stop-color="#fff"/>
                                                     <stop offset="100%" stop-color="#000"/>
                                                 </radialGradient>
                                                 <mask id="theMask">
-                                                    <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
+                                                    <circle id="masker" r="300" fill="url(#maskGradient)" cx="800"
+                                                            cy="450"/>
                                                 </mask>
                                             </defs>
                                             <?php
@@ -40,12 +42,12 @@ get_header();
                                             $bg_hover_block_1 = get_field('bg_hover_block_1');
                                             ?>
                                             <image id="lines"
-                                                xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
-                                                x="0" y="0" width="100%" height="100%"/>
+                                                   xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
+                                                   x="0" y="0" width="100%" height="100%"/>
                                             <g id="maskReveal" mask="url(#theMask)">
                                                 <image id="regular"
-                                                    xlink:href="<?php /*echo $bg_hover_block_1; */?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
-                                                    x="0" y="0" width="100%" height="100%"/>
+                                                       xlink:href="<?php /*echo $bg_hover_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
+                                                       x="0" y="0" width="100%" height="100%"/>
                                             </g>
                                         </svg>
                                     </div>
@@ -63,14 +65,15 @@ get_header();
                                     </button>
                                 </div>
                                 <div class="nav-menu nav-menu--js  gsap-nav--js">
-                                    <?php 
+                                    <?php
                                     $curr_id = get_queried_object()->term_id;
                                     $terms = get_terms('portfolio_cat');
 
                                     if ($terms && !is_wp_error($terms)) {
                                         echo "<ul>";
                                         ?>
-                                        <li class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'><a
+                                        <li class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'>
+                                            <a
                                                     href="<?php echo get_permalink(9); ?>">
                                                 All works</a></li>
                                         <?php
@@ -105,79 +108,93 @@ get_header();
                                     );
                                     if (have_posts()) {
 
-                                    ?>
-                                    <?php
-                                    while (have_posts()) {
-                                    the_post();
+                                        ?>
+                                        <?php
+                                        while (have_posts()) {
+                                            the_post();
 
-                                    ?>
-                                    <div class="item">
-                                        <a href="<?php the_permalink(); ?>" class="item-wrap">
-                                            <div class="item-content">
-                                                <div class="item-content-wrap ">
-                                                    <?php
-                                                    $case_name = get_field('case_name');
+                                            ?>
+                                            <div class="item">
+                                                <a href="<?php the_permalink(); ?>" class="item-wrap">
+                                                    <div class="item-content">
+                                                        <div class="item-content-wrap ">
+                                                            <?php
+                                                            $case_name = get_field('case_name');
 
-                                                    if ($case_name) { ?>
-                                                        <div class="item-tag">
-                                                            <div class="item-tag--tag">
-                                                                <?php echo $case_name; ?>
+                                                            if ($case_name) { ?>
+                                                                <div class="item-tag">
+                                                                    <div class="item-tag--tag">
+                                                                        <?php echo $case_name; ?>
+                                                                    </div>
+                                                                </div>
+                                                            <?php } ?>
+                                                            <div class="item-desc">
+                                                                <div class="item-desc--desc">
+                                                                    <?php the_title(); ?>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    <?php } ?>
-                                                    <div class="item-desc">
-                                                        <div class="item-desc--desc">
-                                                        <?php the_title(); ?>
+                                                            <?php
+                                                            $categories = get_the_terms(get_the_ID(), 'portfolio_cat');
+                                                            if ($categories) { ?>
+                                                                <div class="item-services">
+                                                                    <?php foreach ($categories as $category) { ?>
+                                                                        <div class="item-services--service">
+
+                                                                            <?php echo $category->name; ?>
+
+                                                                        </div>
+                                                                    <?php } ?>
+
+                                                                </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                     <?php
-                                                    $categories = get_the_terms(get_the_ID(), 'portfolio_cat');
-                                                    if ($categories) { ?>
-                                                    <div class="item-services">
-                                                        <?php foreach ($categories as $category) { ?>
-                                                            <div class="item-services--service">
-
-                                                                <?php echo $category->name; ?>
-
-                                                            </div>
-                                                        <?php } ?>
-
-                                                </div>
-                                                <?php } ?>
-                                            </div>
-                                        </div>
-                                        <?php
-                                        $case_image = get_field('case_image');
-                                        $case_image_mobile = get_field('case_image_mobile');
-                                        if ($case_image || $case_image_mobile) { ?>
-                                            <div class="item-img">
-                                                <picture class="picture">
-                                                    <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
-                                                            media="(max-width: 768px)">
-                                                    <img class="img picture-absolute"
-                                                        data-src="<?php echo $case_image['sizes']['home_2']; ?>"
-                                                        src="<?php echo $case_image['sizes']['home_2']; ?>">
-                                                </picture>
-                                                <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
+                                                    $case_image = get_field('case_image');
+                                                    $case_image_mobile = get_field('case_image_mobile');
+                                                    $case_video = get_field('video_id');
+                                                    $case_video_mobile = get_field('video_id_mobile');
+                                                    $video_or_image = get_field('video_or_image');
+                                                    if ($video_or_image == 'Video') { ?>
+                                                        <?php //echo $case_image['sizes']['home_1']; ?>
+                                                        <?php //echo $case_image_mobile['sizes']['home_2']; ?>
+                                                        <div class="item-img">
+                                                            <div class="item-video video--js  video-big--js"
+                                                                 data-set-vimeo-id="<?php echo $case_video; ?>"
+                                                                 data-set-vimeo-id-mobile="<?php echo $case_video_mobile; ?>">
                                                     <span class="item-video--layout video-big--layout--js">
                                                         <img class="item-video-bg video-big-bg--js"
-                                                            src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
-                                                            alt=""/>
+                                                             src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
+                                                             alt=""/>
                                                     </span>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                    </a>
-                                </div>
-                                <?php }
-                                ?>
-                                <?php }
-                                wp_reset_query(); ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php } else { ?>
+                                                        <?php if ($case_image || $case_image_mobile) { ?>
+                                                            <div class="item-img">
+                                                                <picture class="picture">
+                                                                    <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
+                                                                            media="(max-width: 768px)">
+                                                                    <img class="img picture-absolute"
+                                                                         data-src="<?php echo $case_image['sizes']['home_2']; ?>"
+                                                                         src="<?php echo $case_image['sizes']['home_2']; ?>">
+                                                                </picture>
+                                                            </div>
+                                                        <?php } ?>
+                                                    <?php } ?>
 
-                            </div>
+
+                                                </a>
+                                            </div>
+                                        <?php }
+                                        ?>
+                                    <?php }
+                                    wp_reset_query(); ?>
+
+                                </div>
                         </section>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </main><!-- #main -->
