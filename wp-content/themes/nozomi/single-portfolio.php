@@ -35,15 +35,17 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="item-bg papper-bg--js">
-                                    <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"
-                                        width="100%" height="100%" viewBox="0 0 2560 1600">
+                                    <svg id="demo" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0"
+                                         y="0"
+                                         width="100%" height="100%" viewBox="0 0 2560 1600">
                                         <defs>
                                             <radialGradient id="maskGradient">
                                                 <stop offset="50%" stop-color="#fff"/>
                                                 <stop offset="100%" stop-color="#000"/>
                                             </radialGradient>
                                             <mask id="theMask">
-                                                <circle id="masker" r="300" fill="url(#maskGradient)" cx="800" cy="450"/>
+                                                <circle id="masker" r="300" fill="url(#maskGradient)" cx="800"
+                                                        cy="450"/>
                                             </mask>
                                         </defs>
                                         <?php
@@ -51,12 +53,12 @@ get_header();
                                         $bg_hover_block_1 = get_field('bg_hover_block_1');
                                         ?>
                                         <image id="lines"
-                                            xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
-                                            x="0" y="0" width="100%" height="100%"/>
+                                               xlink:href="<?php /* echo $bg_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-grad-min.jpg"
+                                               x="0" y="0" width="100%" height="100%"/>
                                         <g id="maskReveal" mask="url(#theMask)">
                                             <image id="regular"
-                                                xlink:href="<?php /*echo $bg_hover_block_1; */?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
-                                                x="0" y="0" width="100%" height="100%"/>
+                                                   xlink:href="<?php /*echo $bg_hover_block_1; */ ?> <?php echo get_template_directory_uri() ?>/assets/images/home/fold-bg-hover-min.jpg"
+                                                   x="0" y="0" width="100%" height="100%"/>
                                         </g>
                                     </svg>
                                 </div>
@@ -66,29 +68,47 @@ get_header();
                 </section>
                 <?php
                 $first_image = get_field('image_first_block');
-                $first_image_mobile = get_field('image_mobile_first_block');
-                if ($first_image || $first_image_mobile) { ?>
+                $video_id_first_block = get_field('video_id_first_block');
+                $image_or_video_first_block = get_field('image_or_video_first_block');
+                if ($image_or_video_first_block == 'Video') { ?>
                     <section class="screen">
                         <div class="screen-wrap">
                             <div class="item">
                                 <div class="item-img  gsap-anim--js">
                                     <div class="item-img-block parallax-img-block--js">
-                                        <picture class="picture">
-                                            <source srcset="<?php echo $first_image_mobile['sizes']['home_1']; ?>"
-                                                    media="(max-width: 768px)">
-                                            <img class="img picture-absolute"
-                                                data-src="<?php echo $first_image['sizes']['home_2']; ?>"
-                                                src="<?php echo $first_image['sizes']['home_2']; ?>">
-                                        </picture>
+
                                         <div class="item-video">
-                                            <iframe src="https://player.vimeo.com/video/702928038?h=a5511d1aec&amp;badge=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay" frameborder="0"></iframe>
+                                            <iframe src="https://player.vimeo.com/video/<?php echo $video_id_first_block; ?>?h=a5511d1aec&amp;badge=0&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                                    allow="autoplay" frameborder="0"></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+                <?php } else { ?>
+                    <?php if ($first_image) { ?>
+                        <section class="screen">
+                            <div class="screen-wrap">
+                                <div class="item">
+                                    <div class="item-img  gsap-anim--js">
+                                        <div class="item-img-block parallax-img-block--js">
+                                            <picture class="picture">
+                                                <source srcset="<?php echo $first_image['sizes']['home_1']; ?>"
+                                                        media="(max-width: 768px)">
+                                                <img class="img picture-absolute"
+                                                     data-src="<?php echo $first_image['sizes']['home_2']; ?>"
+                                                     src="<?php echo $first_image['sizes']['home_2']; ?>">
+                                            </picture>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    <?php } ?>
                 <?php } ?>
+
 
                 <?php
                 $client_first_block = get_field('client_first_block');

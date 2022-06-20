@@ -145,23 +145,35 @@ get_header();
                                                 <?php
                                                 $case_image = get_field('case_image');
                                                 $case_image_mobile = get_field('case_image_mobile');
-                                                if ($case_image || $case_image_mobile) { ?>
+                                                $case_video = get_field('video_id');
+                                                $case_video_mobile = get_field('video_id_mobile');
+                                                $video_or_image = get_field('video_or_image');
+                                                if ($video_or_image == 'Video') { ?>
+                                                    <?php //echo $case_image['sizes']['home_1']; ?>
+                                                    <?php //echo $case_image_mobile['sizes']['home_2']; ?>
                                                     <div class="item-img">
-                                                        <picture class="picture">
-                                                            <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
-                                                                    media="(max-width: 768px)">
-                                                            <img class="img picture-absolute"
-                                                                data-src="<?php echo $case_image['sizes']['home_2']; ?>"
-                                                                src="<?php echo $case_image['sizes']['home_2']; ?>">
-                                                        </picture>
-                                                        <div class="item-video video--js  video-big--js" data-set-vimeo-id="702928038">
-                                                            <span class="item-video--layout video-big--layout--js">
-                                                                <img class="item-video-bg video-big-bg--js"
-                                                                    src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
-                                                                    alt=""/>
-                                                            </span>
+                                                        <div class="item-video video--js  video-big--js"
+                                                             data-set-vimeo-id="<?php echo $case_video; ?>"
+                                                             data-set-vimeo-id-mobile="<?php echo $case_video_mobile; ?>">
+                                                    <span class="item-video--layout video-big--layout--js">
+                                                        <img class="item-video-bg video-big-bg--js"
+                                                             src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
+                                                             alt=""/>
+                                                    </span>
                                                         </div>
                                                     </div>
+                                                <?php } else { ?>
+                                                    <?php if ($case_image || $case_image_mobile) { ?>
+                                                        <div class="item-img">
+                                                            <picture class="picture">
+                                                                <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"
+                                                                        media="(max-width: 768px)">
+                                                                <img class="img picture-absolute"
+                                                                     data-src="<?php echo $case_image['sizes']['home_2']; ?>"
+                                                                     src="<?php echo $case_image['sizes']['home_2']; ?>">
+                                                            </picture>
+                                                        </div>
+                                                    <?php } ?>
                                                 <?php } ?>
                                             </a>
                                         </div>

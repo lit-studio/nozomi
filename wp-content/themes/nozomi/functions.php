@@ -1,4 +1,45 @@
 <?php
+
+// Function to change "posts" to "news" in the admin side menu
+function change_post_menu_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Cases';
+    $submenu['edit.php'][5][0] = 'Cases';
+    $submenu['edit.php'][10][0] = 'Add Case';
+    echo '';
+}
+add_action( 'admin_menu', 'change_post_menu_label' );
+
+
+add_filter('custom_menu_order', function() { return true; });
+add_filter('menu_order', 'my_new_admin_menu_order');
+/**
+ * Filters WordPress' default menu order
+ */
+function my_new_admin_menu_order( $menu_order ) {
+    // define your new desired menu positions here
+    // for example, move 'upload.php' to position #9 and built-in pages to position #1
+    $new_positions = array(
+        'upload.php' => 5,
+
+    );
+    // helper function to move an element inside an array
+    function move_element(&$array, $a, $b) {
+        $out = array_splice($array, $a, 1);
+        array_splice($array, $b, 0, $out);
+    }
+    // traverse through the new positions and move
+    // the items if found in the original menu_positions
+    foreach( $new_positions as $value => $new_index ) {
+        if( $current_index = array_search( $value, $menu_order ) ) {
+            move_element($menu_order, $current_index, $new_index);
+        }
+    }
+    return $menu_order;
+};
+
+
 function remove_wordpress_version_number()
 {
     return '';
@@ -398,3 +439,5 @@ function myprefix_unregister_tags() {
 }
 add_action('init', 'myprefix_unregister_tags');
 add_filter( 'big_image_size_threshold', '__return_false' );
+
+
