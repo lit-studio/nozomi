@@ -115,7 +115,7 @@ get_header();
 
                                             ?>
                                             <div class="item">
-                                                <a href="<?php the_permalink(); ?>" class="item-wrap">
+                                                <a href="<?php the_permalink(); ?>" class="item-wrap item-wrap-trigger--js">
                                                     <div class="item-content">
                                                         <div class="item-content-wrap ">
                                                             <?php

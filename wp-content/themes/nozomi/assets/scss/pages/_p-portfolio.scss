@@ -496,7 +496,7 @@
                 // display: flex;
                 // align-items: center;
                 padding: 364px 160px 100px;
-                z-index: 1;
+                z-index: 15;
                 @include desktop-normal{
                     padding: 258px 120px 100px;
                 }
@@ -617,12 +617,12 @@
                         height: 0;
                         width: 100%;
                         // padding-bottom: calc(1440 / 2560 * 100%);
-                        padding-bottom: calc(1006 / 1960 * 100%);
+                        padding-top: calc(1006 / 1960 * 100%);
                         @include desktop-normal{
-                            padding-bottom: calc(800 / 1560 * 100%);
+                            padding-top: calc(800 / 1560 * 100%);
                         }
                         @include tablet{
-                            padding-bottom: calc(990 / 638 * 100%);
+                            padding-top: calc(990 / 638 * 100%);
                         }
                     }
                 }
@@ -640,42 +640,21 @@
                 width: 100%;
                 position: relative;
                 overflow: hidden;
-                // padding-top: 56.25%;
                 height: 100%;
-                // height: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                // padding-bottom: calc(1006 / 1960 * 100%);
-                // @include desktop-normal{
-                //     padding-bottom: calc(800 / 1560 * 100%);
-                // }
-                // @include tablet{
-                //     padding-bottom: calc(990 / 638 * 100%);
-                // }
+                display: block;
                 &:after {
                     content: '';
                     display: block;
                     height: 0;
                     width: 100%;
-                    padding-bottom: calc(1006 / 1960 * 100%);
+                    padding-top: calc(1005 / 1960 * 100%);
                     @include desktop-normal{
-                        padding-bottom: calc(800 / 1560 * 100%);
+                        padding-top: calc(800 / 1560 * 100%);
                     }
                     @include tablet{
-                        padding-bottom: calc(990 / 638 * 100%);
+                        padding-top: calc(990 / 638 * 100%);
                     }
                 }
-                // @include phone {
-                //   height: 100%;
-                // }
-                // &-bg{
-                //   // opacity: 0;
-                //   width: 100%;
-                //   height: 100%;
-                //   object-fit: cover;
-                //   opacity: 1;
-                // }
                 &--layout {
                   position: absolute;
                   top: 0;
@@ -687,10 +666,10 @@
                   align-items: center;
                   justify-content: center;
                   opacity: 1;
-                  transition: opacity 0.5s linear;
-                &.hover{
-                    opacity: 0;
-                }
+                  transition: opacity 0.3s linear;
+                  &.hover{
+                   opacity: 0;
+                  }
                 }
                 iframe {
                   position: absolute;
@@ -711,13 +690,12 @@
                         display: block;
                         height: 0;
                         width: 100%;
-
-                        padding-bottom: calc(1006 / 1960 * 100%);
+                        padding-top: calc(1006 / 1960 * 100%);
                         @include desktop-normal{
-                            padding-bottom: calc(800 / 1560 * 100%);
+                            padding-top: calc(800 / 1560 * 100%);
                         }
                         @include tablet{
-                            padding-bottom: calc(990 / 638 * 100%);
+                            padding-top: calc(990 / 638 * 100%);
                         }
                     }
                 }
