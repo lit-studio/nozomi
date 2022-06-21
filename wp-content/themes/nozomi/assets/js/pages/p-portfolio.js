@@ -173,15 +173,12 @@ export default function () {
 
   function controlVideosPortfolio() {
 
-    let iframesBig = document.querySelectorAll('.video-big--js');
-    let 
+    let iframesBig = document.querySelectorAll('.video-big--js'),
     $iframesBigBox = $('.video--js'),
     videoPlayerLayoutBig = $('.video-big--layout--js'),
     el,
     videoIdBig =[],
     vimeoPlayerBig =[];
-
-
 
       if (screen.width > 1024) {
         
@@ -305,7 +302,7 @@ export default function () {
             toggleClass: {targets: section, className: "active"},
             onEnter: () => {
               el = $iframesBigBox.filter('.active').attr('data-loop');
-              console.log('el onEnter ' + el);
+              // console.log('el onEnter ' + el);
               $iframesBigBox.filter('.active').find(videoPlayerLayoutBig).addClass('hover');
               vimeoPlayerBig[el].play().then(function() {
                 // the video was played
@@ -328,7 +325,7 @@ export default function () {
             },
             onEnterBack: () => {
               el = $iframesBigBox.filter('.active').attr('data-loop');
-              console.log('el onEnterBack ' + el);
+              // console.log('el onEnterBack ' + el);
               $iframesBigBox.filter('.active').find(videoPlayerLayoutBig).addClass('hover');
               vimeoPlayerBig[el].play().then(function() {
                 // the video was played
@@ -350,7 +347,7 @@ export default function () {
               });
             },
             onLeave: () => {         
-              console.log('el onLeave ' + el);
+              // console.log('el onLeave ' + el);
               videoPlayerLayoutBig.removeClass('hover');
               vimeoPlayerBig[el].unload().then(function() {
                 // the video was paused
@@ -370,7 +367,7 @@ export default function () {
             });
             },
             onLeaveBack: () => {
-              console.log('el onLeaveBack ' + el);
+              // console.log('el onLeaveBack ' + el);
               videoPlayerLayoutBig.removeClass('hover');
               vimeoPlayerBig[el].unload().then(function() {
                 // the video was paused
@@ -392,95 +389,7 @@ export default function () {
             });
             },
           });
-        });
-
-        // ScrollTrigger.create({
-        //   trigger:  iframesBig[i],
-        //   start: "top bottom",
-        //   end: "bottom top",
-        //   scrub: false,
-        //   toggleActions: "play reverse none reverse",
-        //   markers: true,
-        //   onEnter: () => {
-        //     vimeoPlayerBig.play().then(function() {
-        //       // the video was played
-        //     }).catch(function(error) {
-        //         switch (error.name) {
-        //             case 'PasswordError':
-        //                 // the video is password-protected and the viewer needs to enter the
-        //                 // password first
-        //                 break;
-            
-        //             case 'PrivacyError':
-        //                 // the video is private
-        //                 break;
-            
-        //             default:
-        //                 // some other error occurred
-        //                 break;
-        //         }
-        //     });
-        //   },
-        //   onEnterBack: () => {
-        //     vimeoPlayerBig.play().then(function() {
-        //       // the video was played
-        //     }).catch(function(error) {
-        //         switch (error.name) {
-        //             case 'PasswordError':
-        //                 // the video is password-protected and the viewer needs to enter the
-        //                 // password first
-        //                 break;
-            
-        //             case 'PrivacyError':
-        //                 // the video is private
-        //                 break;
-            
-        //             default:
-        //                 // some other error occurred
-        //                 break;
-        //         }
-        //     });
-        //   },
-        //   onLeave: () => {            
-        //     vimeoPlayerBig.unload().then(function() {
-        //       // the video was paused
-        //   }).catch(function(error) {
-        //       switch (error.name) {
-        //           case 'PasswordError':
-        //               break;
-          
-        //           case 'PrivacyError':
-
-        //               break;
-          
-        //           default:
-        //               // some other error occurred
-        //               break;
-        //       }
-        //   });
-        //   },
-        //   onLeaveBack: () => {
-        //     vimeoPlayerBig.unload().then(function() {
-        //       // the video was paused
-        //   }).catch(function(error) {
-        //       switch (error.name) {
-        //           case 'PasswordError':
-        //               // the video is password-protected and the viewer needs to enter the
-        //               // password first
-        //               break;
-          
-        //           case 'PrivacyError':
-        //               // the video is private
-        //               break;
-          
-        //           default:
-        //               // some other error occurred
-        //               break;
-        //       }
-        //   });
-        //   },
-
-        // });
+        });       
       }
 
  }

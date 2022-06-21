@@ -32,17 +32,17 @@ export default function () {
     if (indexSectionHeight > windowHeight) {
       navTriggerStart = + navHeight;
       navTriggerEnd = 'bottom';
-      console.log('indexSectionHeight > windowHeight');
+      // console.log('indexSectionHeight > windowHeight');
     }
     else{
       navTriggerStart = 'top';
       navTriggerEnd = navTriggerHeight - navStopHeight;
-      console.log('indexSectionHeight < windowHeight');
-      console.log('navTriggerEnd ' + navTriggerEnd);
+      // console.log('indexSectionHeight < windowHeight');
+      // console.log('navTriggerEnd ' + navTriggerEnd);
     }
-    console.log('windowHeight ' +  windowHeight );
-    console.log('navTriggerHeight ' + navTriggerHeight );
-    console.log('navStopHeight ' + navStopHeight );
+    // console.log('windowHeight ' +  windowHeight );
+    // console.log('navTriggerHeight ' + navTriggerHeight );
+    // console.log('navStopHeight ' + navStopHeight );
 
   let $sidebarLink = $navMobileBlock.find('a');
 
@@ -57,15 +57,6 @@ export default function () {
       .to($sectionNav, 0.5, { opacity: 0 },'')
       .to($sectionNav, 1, { y: -200 },'<')
       ;
-      // sectionFromGsap = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($section, 1, { y: 200 },'<')
-      // .from($sectionNav, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($sectionNav, 1, { y: 200 },'<')
-      // ;
     }
     else{
 
@@ -77,13 +68,6 @@ export default function () {
       .to($section, 1, { y: -200 },'<')
       ;
 
-      // sectionFromGsap = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-      // .from($section, 1, { y: 200 },'<')
-      // ;
     }
 
 

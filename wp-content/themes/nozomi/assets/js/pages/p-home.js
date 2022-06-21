@@ -10,17 +10,18 @@ export default function () {
   console.log("home page");
 
   let $body = $('body'),
-   $cursorBlock = $body.find(".cursor-dot"),
-  $aboutSection = $body.find('.about'),
-  $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
-  $aboutSectionImg = $aboutSectionBlock.find('img'),
-  $portfolioSection = $body.find('.portfolio'),
-  aboutSectionImgTrigger="top center",
-  $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
-  $portfolioSectionImg = $portfolioSectionblock.find('img')
-  ;
+    $cursorBlock = $body.find(".cursor-dot"),
+    $aboutSection = $body.find('.about'),
+    $aboutSectionBlock = $aboutSection.find('.parallax-img-block--js'),
+    $aboutSectionImg = $aboutSectionBlock.find('img'),
+    $portfolioSection = $body.find('.portfolio'),
+    aboutSectionImgTrigger="top center",
+    $portfolioSectionblock = $portfolioSection.find('.parallax-img-block--js'),
+    $portfolioSectionImg = $portfolioSectionblock.find('img')
+    ;
 
   function portfolioScaleFunc() {
+
       ScrollTrigger.create({
         trigger: $portfolioSectionImg ,
         onEnter: () => {
@@ -37,22 +38,23 @@ export default function () {
         toggleActions: "play none none none",
         markers: false
       });
-    ScrollTrigger.create({
-      trigger: $portfolioSectionblock,
-      animation: 
-      gsap
-          .timeline()
-          .fromTo(
-            $portfolioSectionblock,
-              { scale: 1.2, duration: 2 },
-              { scale: 1, duration: 2 }
-          ),
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true,
-      toggleActions: "play reverse none reverse",
-      markers: false
-    });
+
+      ScrollTrigger.create({
+        trigger: $portfolioSectionblock,
+        animation: 
+        gsap
+            .timeline()
+            .fromTo(
+              $portfolioSectionblock,
+                { scale: 1.2, duration: 2 },
+                { scale: 1, duration: 2 }
+            ),
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        toggleActions: "play reverse none reverse",
+        markers: false
+      });
   }
 
   portfolioScaleFunc();
@@ -80,6 +82,7 @@ export default function () {
       toggleActions: "play none none none",
       markers: false
     });
+
     ScrollTrigger.create({
       trigger: $aboutSectionBlock,
       animation: 
@@ -101,7 +104,7 @@ export default function () {
 
 
   function homePerspectiveFunc() {
-    console.log('perspective');
+    // console.log('perspective');
     const svg = document.querySelector("#demoPerspective");
     const tlPer = gsap.timeline();
     let ptPerspective = svg.createSVGPoint();
@@ -123,9 +126,7 @@ export default function () {
     function mouseMovePerspective(evt) {
       let newPointPerspective = getPointPerspective(evt);
       gsap.to("#maskerPerspective", 0.88, {attr:{cx:newPointPerspective.x, cy:newPointPerspective.y}, ease:"power2.out"});
-     }
-    
-
+     }  
     
     function newSizePerspective() {
       let wPerspective = window.innerWidth ;
@@ -152,26 +153,24 @@ export default function () {
 
 
   function controlVideos() {
-        let $videoIdLittleBg = $body.find('.video-little-bg--js');
-        // let $videoIdLittleLayout = $('.video-little--layout--js');
-        let videoIdLittleBgGsap =  gsap.timeline({
+        let $videoIdLittleBg = $body.find('.video-little-bg--js'),
+        videoIdLittleBgGsap =  gsap.timeline({
           paused: true,
         })
             .to($videoIdLittleBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
-            // .to($videoIdLittleLayout, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
-        ;
-        let $videoIdBigBg = $body.find('.video-big-bg--js');
-        let $videoIdBigLayout = $body.find('.video-big--layout--js');
-        let videoIdBigBgGsap =  gsap.timeline({
+        ,
+        $videoIdBigBg = $body.find('.video-big-bg--js');
+        // let $videoIdBigLayout = $body.find('.video-big--layout--js');
+        videoIdBigBgGsap =  gsap.timeline({
           paused: true,
         })
             .to($videoIdBigBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
             // .to($videoIdBigLayout, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
-        ;
-        let iframesLittle = document.querySelector('.video-little--js');
-        let  videoPlayerLayoutLittle = document.querySelector('.video-little--layout--js');
-        let videoIdLittle = iframesLittle.getAttribute('data-set-vimeo-id');
-        let vimeoPlayerLittle = new VimeoPlayer(iframesLittle,{
+        ,
+        iframesLittle = document.querySelector('.video-little--js'),
+        videoPlayerLayoutLittle = document.querySelector('.video-little--layout--js'),
+        videoIdLittle = iframesLittle.getAttribute('data-set-vimeo-id'),
+        vimeoPlayerLittle = new VimeoPlayer(iframesLittle,{
           id: videoIdLittle,
           width: '100%',
           height: '100%',
@@ -179,12 +178,11 @@ export default function () {
           loop: true,
           controls:	false,
           quality:	false
-        });
-
-        let iframesBig = document.querySelector('.video-big--js');
-        let videoPlayerLayoutBig = document.querySelector('.video-big--layout--js');
-        let videoIdBig = iframesBig.getAttribute('data-set-vimeo-id');
-        let vimeoPlayerBig = new VimeoPlayer(iframesBig,{
+        }),
+        iframesBig = document.querySelector('.video-big--js'),
+        videoPlayerLayoutBig = document.querySelector('.video-big--layout--js'),
+        videoIdBig = iframesBig.getAttribute('data-set-vimeo-id'),
+        vimeoPlayerBig = new VimeoPlayer(iframesBig,{
           id: videoIdBig,
           width: '100%',
           height: '100%',
@@ -248,7 +246,6 @@ export default function () {
       });
 
       videoPlayerLayoutBig.addEventListener("mouseenter", () => {
-        // console.log('second play');
         videoIdBigBgGsap.play();
         if (!$cursorBlock.hasClass('video')) {
           $cursorBlock.addClass("video");
@@ -312,7 +309,7 @@ export default function () {
         onEnter: () => {
           videoIdLittleBgGsap.play();  
           vimeoPlayerLittle.play().then(function() {
-            // the video was played
+            // the video was played 
           }).catch(function(error) {
               switch (error.name) {
                   case 'PasswordError':
@@ -396,6 +393,7 @@ export default function () {
         },
         markers: false
       });
+
       ScrollTrigger.create({
         trigger:  iframesBig,
         start: "top bottom",
@@ -497,8 +495,8 @@ export default function () {
 controlVideos();
 
 function btnLottieFunc() {
-  let btnPortfolio = document.querySelector(".btn-portfolio--js");
-  let btnAbout = document.querySelector(".btn-about--js");
+  let btnPortfolio = document.querySelector(".btn-portfolio--js"),
+  btnAbout = document.querySelector(".btn-about--js");
   if (btnPortfolio) {
     function btnPortfolioHover() {
       const btnPortfolioAnim = lottie.loadAnimation({

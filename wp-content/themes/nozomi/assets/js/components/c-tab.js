@@ -2,11 +2,11 @@ import { gsap } from "gsap";
 
 export default function () {
     if ($('.work-list-gsap--js').length > 0) {
-        let $tab = $(".work-list-gsap--js");
-        let $tabImg = $tab.find(".item-img");
-        let $tabItem =  $tab.find(".c-tab-item");
-        let $tabItemTitile =  $tab.find(".c-tab-item-title");
-        let  $tabItemThis,$tabItemContent,dataTab;
+        let $tab = $(".work-list-gsap--js"),
+        $tabImg = $tab.find(".item-img"),
+        $tabItem =  $tab.find(".c-tab-item"),
+        $tabItemTitile =  $tab.find(".c-tab-item-title"),
+        $tabItemThis,$tabItemContent,dataTab;
         $tabItem.filter('[data-tab="1"]').addClass('active');
         $tabImg.filter('[data-tab="1"]').addClass('active');
         $tabItemContent = $tabItem.filter('[data-tab="1"]').find(".c-tab-item-block");
@@ -15,9 +15,8 @@ export default function () {
             onUpdate: () => window.dispatchEvent(new Event('resize'))
         });
 
-
         $tabItemTitile.on('click', function () {
-            console.log('tab');
+            // console.log('tab');
             $tabItemThis = $(this).closest($tabItem);
             dataTab = $tabItemThis.attr('data-tab');
             console.log('dataTab ', dataTab);

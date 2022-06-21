@@ -16,13 +16,11 @@ export default function () {
   $indexPapperBg = $body.find(".papper-bg--js"),
   $preloaderBlock = $body.find('.preloader--js'),
   $preloaderBg = $body.find('.preloader-bg--js'),
-  // $preloaderLink = $preloaderBlock.find('.preloader-link'),
   $preloaderClose = $preloaderBlock.find('.preloader-close--js'),
   $preloaderLineOne = $preloaderBlock.find('.preloader-desc-line-1--js'),
   $preloaderLineTwo = $preloaderBlock.find('.preloader-desc-line-2--js'),
   $preloaderLineThree = $preloaderBlock.find('.preloader-desc-line-3--js'),
   $preloaderLineFour = $preloaderBlock.find('.preloader-desc-line-4--js'),
-  // $preloaderDescCursive = $preloaderBlock.find('.preloader-desc-cursive'),
   $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js'),
   $section = $body.find('.gsap-anim--js'),
   $sectionNav = $body.find('.gsap-nav--js'),
@@ -82,13 +80,7 @@ export default function () {
     }
     indexPapperFunc()
   }
-  // sectionFromGsap = gsap
-  // .timeline({
-  //   paused: true
-  // })
-  // .from($section, 0.5, { opacity: 0 , delay: 0.5},'')
-  // .from($section, 1, { y: 200 },'<')
-  // ;
+
   const handBirdAnim = lottie.loadAnimation({
     container: document.getElementById('hand_bird'),
     renderer: "svg",
@@ -151,208 +143,14 @@ export default function () {
     }
   }
 
-  
+  function preloaderFunc() {
+    $body.addClass('preloader-active');
 
+    let qoute = $body.find(".preloader-desc-cursive--js");
 
-    function preloaderFunc() {
-
-      // $('html,body').scrollTop(0);
-      $body.addClass('preloader-active');
-
-      let qoute = $body.find(".preloader-desc-cursive--js");
-      // mySplitText = new SplitText(qoute, {
-      //     type: "chars",
-      //     charsClass: "char",
-      //     position: "relative"
-      // }),
-      // chars = mySplitText.chars,
-      // charsGsapAnim = gsap
-      // .timeline({
-      //   paused: true
-      // }).from(chars, {
-      //   duration: 0.5,
-      //   opacity: 0,
-      //   ease: 'power1.easeOut',
-      //   stagger: 0.09
-      // });
-      
-      // preloaderGsapAnim = gsap
-      // .timeline({
-      //   paused: true
-      // })
-      // .from($preloaderClose, {
-      //   duration: 0.5,
-      //   opacity: 0,
-      //   ease: 'power1.easeOut',
-      //   onStart: () => {
-      //     $preloaderBlock.addClass('visible');
-      // }
-      // })
-      // .from($preloaderLineOne, {
-      //   duration:  0.7,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'power1.easeOut',
-      // },'<')
-      // .from($preloaderLineTwo, {
-      //   duration:  0.5,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'power1.easeOut',
-      // },'+=0.5')
-      // .from($preloaderLineThree, {
-      //   duration:  0.7,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'power1.easeOut',
-      // },'+=0.5')
-      // .from($preloaderLineFour, {
-      //   duration:  0.7,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'power1.easeOut',
-      //   onComplete: () => {
-      //     charsGsapAnim.play();
-      // }
-      // },'+=0.5')
-      // .from($preloaderBoldLine, {
-      //   duration:  0.7,
-      //   opacity: 0,
-      //   yPercent:100,
-      //   ease: 'power1.easeOut',        
-      //   onComplete: () => {
-      //     preloaderOutGsapAnim.play();
-      // }
-      // },'+=0.5')
-      // ; 
-
-      // preloaderOutGsapAnim =  gsap.timeline({
-      //   paused: true,
-      // })
-      // .to($preloaderBlock, 2, { y: - windowHeightHalf,ease: 'power1.easeOut',
-      //   onStart: () => {
-      //     sectionFromGsap.play();
-      // }
-      // })
-      // .to($preloaderBg , 0.3, { autoAlpha: 0,
-      //   onComplete: () => {
-      //     $body.removeClass('preloader-active');
-      //     $preloaderBg.addClass('preloader-bg-hidden');
-      //     // takeCookie();
-      // }
-      // },'<');
-
-      // window.addEventListener("load", function(){
-      //   setTimeout(function(){
-      //     preloaderGsapAnim.play();
-
-      // }, 100);
-      // });
-    //  $preloaderClose.on('click', function () {
-    //     preloaderOutGsapAnim.play();
-    //   }); 
-
-
-      if (getCookie('cookies')){
-        console.log('we have cookie');
-        $preloaderBlock.addClass('hidden');
-        preloaderOutGsapAnim =  gsap.timeline({
-          paused: true,
-        })
-        .to($preloaderBlock, 2, { y: - windowHeightHalf,ease: 'power1.easeOut',
-          onStart: () => {
-            sectionFromGsap.play();
-        }
-        })
-        .to($preloaderBg , 0.3, { autoAlpha: 0,
-          onComplete: () => {
-            $body.removeClass('preloader-active');
-            $preloaderBg.addClass('preloader-bg-hidden');
-        }
-        },'<');
-
-        window.addEventListener("load", function(){
-          setTimeout(function(){
-            $('html,body').scrollTop(0);
-            preloaderOutGsapAnim.play();
-  
-        }, 100);
-        });
-      }
-      else{
-        console.log('we have not cookie');    
-        function takeCookie(){
-          let d = new Date();
-          let cookiesDays = 7;
-          d.setTime(d.getTime() + (cookiesDays * 24 * 60 * 60 * 1000));
-          let expires = "expires=" + d.toUTCString();
-          document.cookie = "cookies=true" + ";" + expires + ";path=/";
-        }  
-      let  mySplitText = new SplitText(qoute, {
-          type: "chars",
-          charsClass: "char",
-          position: "relative"
-      }),
-      chars = mySplitText.chars,
-      charsGsapAnim = gsap
-      .timeline({
-        paused: true
-      }).from(chars, {
-        duration: 0.5,
-        opacity: 0,
-        ease: 'power1.easeOut',
-        stagger: 0.09
-      });
-      
-      preloaderGsapAnim = gsap
-      .timeline({
-        paused: true
-      })
-      .from($preloaderClose, {
-        duration: 0.5,
-        opacity: 0,
-        ease: 'power1.easeOut',
-        onStart: () => {
-          $preloaderBlock.addClass('visible');
-      }
-      })
-      .from($preloaderLineOne, {
-        duration:  0.7,
-        opacity: 0,
-        yPercent:100,
-        ease: 'power1.easeOut',
-      },'<')
-      .from($preloaderLineTwo, {
-        duration:  0.5,
-        opacity: 0,
-        yPercent:100,
-        ease: 'power1.easeOut',
-      },'+=0.5')
-      .from($preloaderLineThree, {
-        duration:  0.7,
-        opacity: 0,
-        yPercent:100,
-        ease: 'power1.easeOut',
-      },'+=0.5')
-      .from($preloaderLineFour, {
-        duration:  0.7,
-        opacity: 0,
-        yPercent:100,
-        ease: 'power1.easeOut',
-        onComplete: () => {
-          charsGsapAnim.play();
-      }
-      },'+=0.5')
-      .from($preloaderBoldLine, {
-        duration:  0.7,
-        opacity: 0,
-        yPercent:100,
-        ease: 'power1.easeOut',        
-        onComplete: () => {
-          preloaderOutGsapAnim.play();
-      }
-      },'+=0.5')
-      ; 
+    if (getCookie('cookies')){
+      console.log('we have cookie');
+      $preloaderBlock.addClass('hidden');
       preloaderOutGsapAnim =  gsap.timeline({
         paused: true,
       })
@@ -365,89 +163,179 @@ export default function () {
         onComplete: () => {
           $body.removeClass('preloader-active');
           $preloaderBg.addClass('preloader-bg-hidden');
-          takeCookie();
       }
       },'<');
-        window.addEventListener("load", function(){
-          setTimeout(function(){
-            $('html,body').scrollTop(0);
-            preloaderGsapAnim.play();
-  
-        }, 100);
-        });
-       $preloaderClose.on('click', function () {
+
+      window.addEventListener("load", function(){
+        setTimeout(function(){
+          $('html,body').scrollTop(0);
           preloaderOutGsapAnim.play();
-        }); 
 
-        
-        
-
-
-      }
-
-      function getCookie(cname) {
-        let name = cname + "=";
-        let ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-        return "";
-      }      
-    }
-    let $window = $(window),
-    $indexHome = $('.index-home'),
-    winHeight = $window.height();
-    if (screen.width <= 1920) {
-      if (screen.width <= 1680) {
-        if (winHeight <= 600) {
-          $indexHome.addClass('mobile-height');
-        }
-      }
-      else{
-        if (winHeight <= 750) {
-          $indexHome.addClass('mobile-height');
-        }
-      }
-
+      }, 100);
+      });
     }
     else{
-      if (winHeight <= 950) {
+      console.log('we have not cookie');    
+      function takeCookie(){
+        let d = new Date();
+        let cookiesDays = 7;
+        d.setTime(d.getTime() + (cookiesDays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = "cookies=true" + ";" + expires + ";path=/";
+      }  
+    let  mySplitText = new SplitText(qoute, {
+        type: "chars",
+        charsClass: "char",
+        position: "relative"
+    }),
+    chars = mySplitText.chars,
+    charsGsapAnim = gsap
+    .timeline({
+      paused: true
+    }).from(chars, {
+      duration: 0.5,
+      opacity: 0,
+      ease: 'power1.easeOut',
+      stagger: 0.09
+    });
+    
+    preloaderGsapAnim = gsap
+    .timeline({
+      paused: true
+    })
+    .from($preloaderClose, {
+      duration: 0.5,
+      opacity: 0,
+      ease: 'power1.easeOut',
+      onStart: () => {
+        $preloaderBlock.addClass('visible');
+    }
+    })
+    .from($preloaderLineOne, {
+      duration:  0.7,
+      opacity: 0,
+      yPercent:100,
+      ease: 'power1.easeOut',
+    },'<')
+    .from($preloaderLineTwo, {
+      duration:  0.5,
+      opacity: 0,
+      yPercent:100,
+      ease: 'power1.easeOut',
+    },'+=0.5')
+    .from($preloaderLineThree, {
+      duration:  0.7,
+      opacity: 0,
+      yPercent:100,
+      ease: 'power1.easeOut',
+    },'+=0.5')
+    .from($preloaderLineFour, {
+      duration:  0.7,
+      opacity: 0,
+      yPercent:100,
+      ease: 'power1.easeOut',
+      onComplete: () => {
+        charsGsapAnim.play();
+    }
+    },'+=0.5')
+    .from($preloaderBoldLine, {
+      duration:  0.7,
+      opacity: 0,
+      yPercent:100,
+      ease: 'power1.easeOut',        
+      onComplete: () => {
+        preloaderOutGsapAnim.play();
+    }
+    },'+=0.5')
+    ; 
+    preloaderOutGsapAnim =  gsap.timeline({
+      paused: true,
+    })
+    .to($preloaderBlock, 2, { y: - windowHeightHalf,ease: 'power1.easeOut',
+      onStart: () => {
+        sectionFromGsap.play();
+    }
+    })
+    .to($preloaderBg , 0.3, { autoAlpha: 0,
+      onComplete: () => {
+        $body.removeClass('preloader-active');
+        $preloaderBg.addClass('preloader-bg-hidden');
+        takeCookie();
+    }
+    },'<');
+      window.addEventListener("load", function(){
+        setTimeout(function(){
+          $('html,body').scrollTop(0);
+          preloaderGsapAnim.play();
+
+      }, 100);
+      });
+      $preloaderClose.on('click', function () {
+        preloaderOutGsapAnim.play();
+      }); 
+
+      
+      
+
+
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }      
+  }
+  let $window = $(window),
+  $indexHome = $body.find('.index-home'),
+  winHeight = $window.height();
+
+  if (screen.width <= 1920) {
+    if (screen.width <= 1680) {
+      if (winHeight <= 600) {
+        $indexHome.addClass('mobile-height');
+      }
+    }
+    else{
+      if (winHeight <= 750) {
         $indexHome.addClass('mobile-height');
       }
     }
 
-    // if (winHeight > 560) {
-    //   if (winHeight > 700) {
-    //     $indexHome.addClass('mobile-height');
-    //   }
-    //   else{
-    //     $indexHome.addClass('mobile-middle');
-    //   }
-    // }
-
-    preloaderFunc();
-    header();
-    footer();
-    tab();
-
-    function screenReload() {
-      let widthScreen = screen.width;
-      let  widthScreenNew;
-      window.addEventListener("resize", () => {
-        widthScreenNew = screen.width;
-
-        if (widthScreenNew !== widthScreen) {
-          location.reload();
-        }
-
-      });
+  }
+  else{
+    if (winHeight <= 950) {
+      $indexHome.addClass('mobile-height');
     }
-    screenReload();
+  }
+  preloaderFunc();
+  header();
+  footer();
+  tab();
+
+  function screenReload() {
+
+    let widthScreen = screen.width,
+    widthScreenNew;
+
+    window.addEventListener("resize", () => {
+      widthScreenNew = screen.width;
+
+      if (widthScreenNew !== widthScreen) {
+        location.reload();
+      }
+
+    });
+  }
+  screenReload();
 
 }

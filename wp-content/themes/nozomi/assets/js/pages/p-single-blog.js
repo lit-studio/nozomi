@@ -2,17 +2,18 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
 export default function () {
     let $headerProgress = $(".c-header-progress--js");
     console.log("single blog");
-    $('.blog-content-wrap p img').unwrap();
-    $('.blog-content-wrap blockquote p').contents().unwrap();
+    $body.find('.blog-content-wrap p img').unwrap();
+    $body.find('.blog-content-wrap blockquote p').contents().unwrap();
     let
     $body = $('body'),
     $indexSection = $body.find('.blog-img'),
     $indexSectionBlock = $indexSection.find('.parallax-img-block--js'),
     indexSectionImgTrigger="top center",
-    $CopyNotice = $body.find('.c-copy--js'),
+    $copyNotice = $body.find('.c-copy--js'),
     $indexSectionImg = $indexSectionBlock.find('img');
     
     function indexScaleFunc() {
@@ -50,13 +51,13 @@ export default function () {
         $temp.remove();
     }
     function copyNoticeFunc() {
-        $CopyNotice.addClass('active');
+        $copyNotice.addClass('active');
         setTimeout(function(){
-            $CopyNotice.removeClass('active');
+            $copyNotice.removeClass('active');
         },2000);
     }
     // copy to clipboard
-    $(".copy").on("click", function () {
+    $body.find(".copy").on("click", function () {
         copyToClipboard(".copy-content");    
         copyNoticeFunc();    
         return false;
@@ -65,7 +66,7 @@ export default function () {
     function shareMobile() {
 
         if (screen.width <= 1024) {
-            let $blogTopShare = $('.blog-top-share'),
+            let $blogTopShare = $body.find('.blog-top-share'),
                 $blogTopShareLi = $blogTopShare.find('.blog-top-share-li'),
                 $blogTopShareBtn = $blogTopShare.find('.blog-top-share-mobile--js');
             $blogTopShareBtn.on("click", function () {
