@@ -83,7 +83,7 @@ export default function () {
         pin:  $navWrap,
         scrub: true,
         toggleActions: "play reverse none reverse",
-        markers: true,
+        markers: false,
       });
 
     }

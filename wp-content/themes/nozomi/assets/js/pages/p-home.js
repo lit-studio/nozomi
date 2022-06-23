@@ -159,7 +159,7 @@ export default function () {
         })
             .to($videoIdLittleBg, 0.5, {  opacity: 0, ease:"expo.easeInOut" },'')
         ,
-        $videoIdBigBg = $body.find('.video-big-bg--js');
+        $videoIdBigBg = $body.find('.video-big-bg--js'),
         // let $videoIdBigLayout = $body.find('.video-big--layout--js');
         videoIdBigBgGsap =  gsap.timeline({
           paused: true,
