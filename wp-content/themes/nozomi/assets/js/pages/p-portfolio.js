@@ -28,9 +28,6 @@ export default function () {
     navTriggerH = $navTrigger.height(),
     windowHeight =  $(window).innerHeight(),
     navStopHeight = navHeight,
-    // navStopHeight = $body.find('.nav-menu-stop').height() + navHeight,
-    // navTriggerPath = navTriggerHeight - navStopHeight,
-    // anchorStart = indexSectionHeight - navStopHeight,
     anchorStart,anchorEnd,navTriggerStart,navTriggerEnd,
     navMobileActive,navMobileAnim,sectionFromGsap,sectionToGsap
 
@@ -38,11 +35,9 @@ export default function () {
   anchorStart = indexSectionHeight - navStopHeight;
   anchorEnd = indexSectionHeight - navStopHeight;
 
-  // console.log('navHeight ' + navHeight );
-  // console.log('navStopHeight ' + navStopHeight );
-  // console.log('anchorStart ' + anchorStart );
-  console.log('indexSectionHeight ' +  indexSectionHeight );
-  console.log('windowHeight ' +  windowHeight );
+
+  // console.log('indexSectionHeight ' +  indexSectionHeight );
+  // console.log('windowHeight ' +  windowHeight );
   if (indexSectionHeight > windowHeight) {
     navTriggerStart =  navHeight;
     navTriggerEnd = 'bottom';

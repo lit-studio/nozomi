@@ -6,8 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function () {
     let $headerProgress = $(".c-header-progress--js");
     console.log("single blog");
-    $body.find('.blog-content-wrap p img').unwrap();
-    $body.find('.blog-content-wrap blockquote p').contents().unwrap();
+
     let
     $body = $('body'),
     $indexSection = $body.find('.blog-img'),
@@ -15,7 +14,8 @@ export default function () {
     indexSectionImgTrigger="top center",
     $copyNotice = $body.find('.c-copy--js'),
     $indexSectionImg = $indexSectionBlock.find('img');
-    
+    $body.find('.blog-content-wrap p img').unwrap();
+    $body.find('.blog-content-wrap blockquote p').contents().unwrap();
     function indexScaleFunc() {
       if (screen.width > 1024) {
         indexSectionImgTrigger="top center";

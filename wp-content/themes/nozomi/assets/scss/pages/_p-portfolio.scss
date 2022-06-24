@@ -653,6 +653,7 @@
                     }
                     @include tablet{
                         padding-top: calc(990 / 638 * 100%);
+                        // padding-top: calc(1260 / 670 * 100%);
                     }
                 }
                 &--layout {
@@ -666,7 +667,7 @@
                   align-items: center;
                   justify-content: center;
                   opacity: 1;
-                //   transition: opacity 0.3s linear;
+                  transition: opacity 0.3s linear;
                   &.hover{
                    opacity: 0;
                   }
