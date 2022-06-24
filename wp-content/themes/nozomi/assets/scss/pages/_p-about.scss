@@ -913,11 +913,12 @@
                     }
                 }
                 &-img{
-                    max-width: 160px;
-                    height: 132px;
+                    max-width: 200px;
+                    height: 165px;
                     width: 100%;
                     @include desktop-normal{
-    
+                        max-width: 160px;
+                        height: 132px;
                     }
                     @include desktop-note-big{
                         max-width: 134px;
