@@ -140,6 +140,7 @@ export default function () {
           menuBtnAnim.playSegments([30, 63], true);
           $menuBtn.addClass("open");
           $header.addClass("open");
+          $body.addClass("open-menu");
           modalMenuAnim.play();
           linksAnim.restart();
           // linksAnim.play();
@@ -151,6 +152,7 @@ export default function () {
           menuBtnAnim.playSegments([63, 30], true);
           $menuBtn.removeClass("open");
           $header.removeClass("open");
+          $body.removeClass("open-menu");
           modalMenuAnim.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
@@ -163,6 +165,7 @@ export default function () {
           menuBtnAnim.playSegments([30, 63], true);
           $menuBtn.addClass("open");
           $header.addClass("open");
+          $body.addClass("open-menu");
           modalMenuAnim.play();
           linksAnimMobile.restart();
           if ($header.hasClass('header-fixed')) {
@@ -173,6 +176,7 @@ export default function () {
           menuBtnAnim.playSegments([63, 0], true);
           $menuBtn.removeClass("open");
           $header.removeClass("open");
+          $body.removeClass("open-menu");
           modalMenuAnim.reverse();
           linksAnimMobile.reverse();
           if ($header.hasClass('header-fixed')) {
@@ -189,6 +193,7 @@ export default function () {
           menuBtnAnim.playSegments([63, 0], true);
           $menuBtn.removeClass("open");
           $header.removeClass("open");
+          $body.removeClass("open-menu");
           modalMenuAnim.reverse();
           linksAnim.reverse();
           if ($header.hasClass('header-fixed')) {

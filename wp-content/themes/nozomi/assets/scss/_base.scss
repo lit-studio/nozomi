@@ -77,6 +77,11 @@ body {
       }
     }
   }
+  &.open-menu{
+    @include desktop-block{
+      overflow: hidden;
+    }
+  }
   &.preloader-active{
     overflow: hidden;
     .c-header{

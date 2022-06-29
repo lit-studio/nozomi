@@ -91,19 +91,21 @@ export default function () {
 
   if($pHome.length > 0){
     console.log('home');
-    sectionFromGsap = gsap
-    .timeline({
-      paused: true
-    })
-    .from($section, 2, { opacity: 0 },'')
-    .from($section, 2, { y: windowHeightHalf, ease: 'power1.easeOut' },'<')
-    .from('.item-img-item', 1, {  autoAlpha: 0, 
-      onComplete: () => {
-        handBirdAnim.setSpeed(1.8);
-        handBirdAnim.play();
-      } 
-    },'-=1')
-    ;
+    if($section.length > 0){
+      sectionFromGsap = gsap
+      .timeline({
+        paused: true
+      })
+      .from($section, 2, { opacity: 0 },'')
+      .from($section, 2, { y: windowHeightHalf, ease: 'power1.easeOut' },'<')
+      .from('.item-img-item', 1, {  autoAlpha: 0, 
+        onComplete: () => {
+          handBirdAnim.setSpeed(1.8);
+          handBirdAnim.play();
+        } 
+      },'-=1')
+      ;
+    }
   }
   else{
     if (screen.width > 1024) {

@@ -198,10 +198,10 @@
         }
         &:first-of-type{
           padding-left: 0;
-          // &>a{
-          //   pointer-events:all;
-          //   opacity:1;
-          // }
+          &>a{
+            // pointer-events:all;
+            // opacity:1;
+          }
 
         }
 
@@ -249,9 +249,6 @@
           pointer-events: none;
           opacity: 0.5;
           z-index: 0;
-          // opacity: 0;
-          // transform: translateY(-20px);
-          // transition: opacity 0.3s linear 0.3s,transform 0.3s linear 0.3s;
           @include desktop-normal{
             font-size: 18px;
           }
@@ -309,9 +306,6 @@
     @include desktop-block{
       align-items: flex-start;
     }
-    // @include tablet{
-    //   align-items: flex-start;
-    // }
     &-btn{
       display: flex;
       justify-content: center;

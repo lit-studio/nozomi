@@ -479,6 +479,13 @@
             }
             &:first-of-type{
                 padding-top: 0;
+                // .item-video--layout{
+                //     opacity: 0;
+                //     transition: none;
+                //     .picture{
+                //         display: none;
+                //     }
+                // }
             }
             &:last-of-type{
                 padding-bottom: 0;

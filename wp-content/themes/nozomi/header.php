@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#F2F0ED">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <?php /*
+       <!-- Google Tag Manager -->
+       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MT8BF9D');</script>
+    <!-- End Google Tag Manager -->
+    */ ?>
     <?php wp_head(); ?>
-    <style>
-        /* .preloader { */
-        /* left: 0;
-        top: 0;
-        position: fixed;
-        width: 100vw;
-        height: 100vh; */
-        /* background-color: var(--color-bg); */
-        /* z-index: 10000; */
-        /* opacity: 1; */
-        /* } */
-    </style>
+
 </head>
 
 <body  <?php body_class(); ?> >
-
+<?php /*
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MT8BF9D"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+*/ ?>
 <div id="site" class="site">
 <div class="preloader preloader--js">
     <div class="preloader-wrap">
