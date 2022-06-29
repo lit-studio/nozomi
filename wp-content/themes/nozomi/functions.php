@@ -4,9 +4,9 @@
 function change_post_menu_label() {
     global $menu;
     global $submenu;
-    $menu[5][0] = 'Cases';
-    $submenu['edit.php'][5][0] = 'Cases';
-    $submenu['edit.php'][10][0] = 'Add Case';
+    $menu[5][0] = 'Blog articles';
+    $submenu['edit.php'][5][0] = 'Blog articles';
+    $submenu['edit.php'][10][0] = 'Add article';
     echo '';
 }
 add_action( 'admin_menu', 'change_post_menu_label' );
@@ -300,16 +300,16 @@ add_action('init', 'create_portfolio');
 function create_portfolio()
 {
     $labels = array(
-        'name' => _x('Portfolio', 'post type general name'),
-        'singular_name' => _x('Portfolio', 'post type singular name'),
-        'add_new' => __('Add item'),
-        'add_new_item' => __('Add item'),
-        'edit_item' => __('Edit item'),
-        'new_item' => __('Add item'),
-        'view_item' => __('View item'),
-        'search_items' => __('Search Portfolio'),
-        'not_found' => __('No Portfolio found'),
-        'not_found_in_trash' => __('No Portfolio found in Trash'),
+        'name' => _x('Portfolio cases', 'post type general name'),
+        'singular_name' => _x('Portfolio cases', 'post type singular name'),
+        'add_new' => __('Add case'),
+        'add_new_item' => __('Add case'),
+        'edit_item' => __('Edit case'),
+        'new_item' => __('Add case'),
+        'view_item' => __('View case'),
+        'search_items' => __('Search cases'),
+        'not_found' => __('No cases found'),
+        'not_found_in_trash' => __('No cases found in Trash'),
         'parent_item_colon' => ''
     );
     $supports = array('title', 'editor');
@@ -330,7 +330,7 @@ add_image_size('how', '2408', '9999', false);
 add_image_size('home_2', '4720', '9999', false);
 add_image_size('author', '288', '288', true);
 add_image_size('blog', '5120', '9999', false);
-add_image_size('blog_min', '15600', '880', true);
+add_image_size('blog_min', '1560', '880', true);
 add_image_size('join_us', '1162', '1162', true);
 
 function acf_select_author_choices($field)
@@ -439,5 +439,3 @@ function myprefix_unregister_tags() {
 }
 add_action('init', 'myprefix_unregister_tags');
 add_filter( 'big_image_size_threshold', '__return_false' );
-
-
