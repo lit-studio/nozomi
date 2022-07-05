@@ -176,8 +176,7 @@ export default function () {
           height: '100%',
           muted:	true,
           loop: true,
-          controls:	false,
-          quality:	false
+          controls:	false
         }),
         iframesBig = document.querySelector('.video-big--js'),
         videoPlayerLayoutBig = document.querySelector('.video-big--layout--js'),
@@ -188,8 +187,7 @@ export default function () {
           height: '100%',
           muted:	true,
           loop: true,
-          controls:	false,
-          quality:	false
+          controls:	false
         });
         vimeoPlayerLittle.loadVideo(videoIdLittle);
         vimeoPlayerBig.loadVideo(videoIdBig);

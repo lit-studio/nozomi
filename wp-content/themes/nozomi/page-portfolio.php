@@ -170,9 +170,6 @@ get_header();
                                                                             data-src="<?php echo $case_image['sizes']['home_2']; ?>"
                                                                             src="<?php echo $case_image['sizes']['home_2']; ?>">
                                                                     </picture>
-                                                                    <!-- <img class="item-video-bg video-big-bg--js"
-                                                                        src="<?php echo get_template_directory_uri() ?>/assets/images/portfolio/pr_12.2.jpg"
-                                                                        alt=""/> -->
                                                                 </span>
                                                             </div>
                                                         </div>

@@ -198,10 +198,6 @@
         }
         &:first-of-type{
           padding-left: 0;
-          &>a{
-            // pointer-events:all;
-            // opacity:1;
-          }
 
         }
 
@@ -246,8 +242,8 @@
           font-size: 20px;
           position: relative;
           padding-bottom: 3px;
-          pointer-events: none;
-          opacity: 0.5;
+          // pointer-events: none;
+          // opacity: 0.5;
           z-index: 0;
           @include desktop-normal{
             font-size: 18px;
@@ -406,15 +402,8 @@
     position: fixed;
     top:0;
     left: 0;
-    // min-height: calc(100vh - 78px);
-    // height: 100%;
     width: 100%;
-    // justify-content: flex-end;
     z-index: 8;
-    // display: flex;
-    // overflow: hidden;
-    // visibility: hidden;
-    // opacity: 0;
     display: none;
     @include desktop-block{
       display: block;
@@ -493,8 +482,8 @@
           font-size: 20px;
           position: relative;
           padding-bottom: 3px;
-          pointer-events: none;
-          opacity: 0.5;
+          // pointer-events: none;
+          // opacity: 0.5;
           z-index: 0;
           // opacity: 0;
           // transform: translateY(-20px);

@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import VimeoPlayer from '@vimeo/player';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+
 export default function () {
     console.log("portfolio");
   
@@ -187,8 +188,7 @@ export default function () {
             height: '100%',
             muted:	true,
             loop: true,
-            controls:	false,
-            quality:	false
+            controls:	false
           });
           vimeoPlayerBig[i].loadVideo(videoIdBig[i]);
         }
@@ -200,9 +200,10 @@ export default function () {
               if (!$cursorBlock.hasClass('video')) {
                 $cursorBlock.addClass("video");
               }
+              
             }
             el = $this.find($iframesBigBox).attr('data-loop');
-            console.log('el ' + el);
+            // console.log('el ' + el);
             $itemWrapTrigger.find(videoPlayerLayoutBig).addClass('hover');
             vimeoPlayerBig[el].play().then(function() {
               // the video was played
@@ -260,8 +261,7 @@ export default function () {
               height: '100%',
               muted:	true,
               loop: true,
-              controls:	false,
-              quality:	false
+              controls:	false
             });
             vimeoPlayerBig[i].loadVideo(videoIdBig[i]);
           }
@@ -278,8 +278,7 @@ export default function () {
               height: '100%',
               muted:	true,
               loop: true,
-              controls:	false,
-              quality:	false
+              controls:	false
             });
             vimeoPlayerBig[i].loadVideo(videoIdBig[i]);
           }
