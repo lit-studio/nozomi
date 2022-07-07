@@ -12,7 +12,8 @@ import tab from "./components/c-tab";
 
 export default function () {
   let $body = $('body'),  
-  $pHome = $(".p-home"),
+  $window = $(window),
+  $pHome =  $(".p-home"),
   $indexPapperBg = $body.find(".papper-bg--js"),
   $preloaderBlock = $body.find('.preloader--js'),
   $preloaderBg = $body.find('.preloader-bg--js'),
@@ -24,14 +25,13 @@ export default function () {
   $preloaderBoldLine = $preloaderBlock.find('.preloader-bold-line--js'),
   $section = $body.find('.gsap-anim--js'),
   $sectionNav = $body.find('.gsap-nav--js'),
-  windowHeight =  $(window).innerHeight(),
+  windowHeight =  $window.innerHeight(),
   windowHeightHalf =   windowHeight,
-  sectionFromGsap,preloaderOutGsapAnim,preloaderGsapAnim,moveY
-  ;
+  sectionFromGsap,preloaderOutGsapAnim,preloaderGsapAnim,moveY,
+  $indexHome = $body.find('.index-home'),
+  winHeight = $window.height();
 
-  
-  // console.log('windowHeightHalf' + windowHeightHalf);
-  if($indexPapperBg.length > 0){
+  if(($indexPapperBg.length > 0)&&(screen.width > 640) ){
     function indexPapperFunc() {
       console.log('papper bg');
       const svg = document.querySelector("#demo");
@@ -111,7 +111,6 @@ export default function () {
     if (screen.width > 1024) {
       moveY = 200;
       if($sectionNav.length > 0){
-        console.log('blog or portfolio');
         sectionFromGsap = gsap
         .timeline({
           paused: true
@@ -123,7 +122,7 @@ export default function () {
         ;
       }
       else{
-        console.log('not blog or portfolio');
+        // console.log('not blog or portfolio');
         sectionFromGsap = gsap
         .timeline({
           paused: true
@@ -274,12 +273,8 @@ export default function () {
       });
       $preloaderClose.on('click', function () {
         preloaderOutGsapAnim.play();
-      }); 
-
+      });  
       
-      
-
-
     }
 
     function getCookie(cname) {
@@ -297,9 +292,7 @@ export default function () {
       return "";
     }      
   }
-  let $window = $(window),
-  $indexHome = $body.find('.index-home'),
-  winHeight = $window.height();
+
 
   if (screen.width <= 1920) {
     if (screen.width <= 1680) {

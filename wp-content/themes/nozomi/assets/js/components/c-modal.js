@@ -19,7 +19,7 @@ export default function () {
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");
-            console.log('modal click');
+            // console.log('modal click');
             $(this).addClass('btn-active');
             el = $(this).attr('data-modal');
             $body.addClass('open-modal');
@@ -27,20 +27,20 @@ export default function () {
             $modalBg.addClass("open");
         });
         $btnClose.on("click",function() {
-            console.log('modal close');
+            // console.log('modal close');
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");
         });
         $modalBg.on("click",function() {
-            console.log('modal close bg');
+            // console.log('modal close bg');
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");
         });
         $contactFormBtn.on("click",function() {
             setTimeout(function(){
-                console.log('site timeout');
+                // console.log('site timeout');
                 if ($contactFormChange.hasClass('sent')) {
                     console.log('modal close after submit');
                     $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');

@@ -3,11 +3,12 @@ export default function () {
 
     let $body = $('body'),
     $aboutGalleryCol = $body.find('.about-gallery-col'),
-    $hoverClick = $aboutGalleryCol.find('.item');
+    $hoverClick = $aboutGalleryCol.find('.item'),
+    $this;
   
     function hoverEvent() {
         $hoverClick.each(function () {
-          let $this = $(this);
+          $this = $(this);
           $this.hover(() => {
             $this.addClass('active');
             console.log('hover');
@@ -15,7 +16,7 @@ export default function () {
             $hoverClick.removeClass('active');
           });
         });
-      }
+    }
     function clickEvent() {
       $hoverClick.on({
         'touchstart': function() {

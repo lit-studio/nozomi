@@ -108,8 +108,6 @@ export default function () {
     scrollHeader();
 
   function mobileMenu() {
-
-
         if (screen.width > 1024) {
 
           modalMenuAnim = gsap

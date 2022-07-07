@@ -7,12 +7,13 @@ gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
+  console.log("single portfolio");
   let $body = $('body'),
   $headerProgress = $body.find(".c-header-progress--js"),
   $indexSingle = $body.find(".index-single-portfolio"),   
   $imgParallaxblock = $body.find(".parallax-img-block--js"),
   indexSingleHeight = $indexSingle.innerHeight();
-  console.log("single portfolio");
+
 
   if ($headerProgress.length > 0) {
     ScrollTrigger.create({

@@ -4,18 +4,21 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
-    let $headerProgress = $(".c-header-progress--js");
     console.log("single blog");
-
     let
     $body = $('body'),
+    $headerProgress = $body.find(".c-header-progress--js"),
     $indexSection = $body.find('.blog-img'),
     $indexSectionBlock = $indexSection.find('.parallax-img-block--js'),
     indexSectionImgTrigger="top center",
     $copyNotice = $body.find('.c-copy--js'),
-    $indexSectionImg = $indexSectionBlock.find('img');
+    $indexSectionImg = $indexSectionBlock.find('img'),
+    $blogTopShare = $body.find('.blog-top-share'),
+    $blogTopShareLi = $blogTopShare.find('.blog-top-share-li'),
+    $blogTopShareBtn = $blogTopShare.find('.blog-top-share-mobile--js');
     $body.find('.blog-content-wrap p img').unwrap();
     $body.find('.blog-content-wrap blockquote p').contents().unwrap();
+    
     function indexScaleFunc() {
       if (screen.width > 1024) {
         indexSectionImgTrigger="top center";
@@ -66,9 +69,6 @@ export default function () {
     function shareMobile() {
 
         if (screen.width <= 1024) {
-            let $blogTopShare = $body.find('.blog-top-share'),
-                $blogTopShareLi = $blogTopShare.find('.blog-top-share-li'),
-                $blogTopShareBtn = $blogTopShare.find('.blog-top-share-mobile--js');
             $blogTopShareBtn.on("click", function () {
                 if (!$blogTopShareBtn.hasClass('close')) {
                     $blogTopShareBtn.addClass('close');

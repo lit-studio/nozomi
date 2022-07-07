@@ -14,6 +14,7 @@ export default function () {
     $navMobileBtn = $navSection.find('.nav-mobile-btn--js'),
     $navMobileBtnText = $navMobileBtn.find('.nav-mobile-btn-text'),
     $navMobileBlock = $navSection.find('.nav-menu--js'),
+    $sidebarLink = $navMobileBlock.find('a'),
     $navMobileBg = $navSection.find('.nav-menu-bg--js'),
     $section = $body.find('.gsap-anim--js'),
     $sectionNav = $body.find('.gsap-nav--js'),
@@ -32,19 +33,13 @@ export default function () {
     if (indexSectionHeight > windowHeight) {
       navTriggerStart = + navHeight;
       navTriggerEnd = 'bottom';
-      // console.log('indexSectionHeight > windowHeight');
     }
     else{
       navTriggerStart = 'top';
       navTriggerEnd = navTriggerHeight - navStopHeight;
-      // console.log('indexSectionHeight < windowHeight');
-      // console.log('navTriggerEnd ' + navTriggerEnd);
     }
-    // console.log('windowHeight ' +  windowHeight );
-    // console.log('navTriggerHeight ' + navTriggerHeight );
-    // console.log('navStopHeight ' + navStopHeight );
 
-  let $sidebarLink = $navMobileBlock.find('a');
+  // let $sidebarLink = $navMobileBlock.find('a');
 
     if (screen.width > 1024) {
 
@@ -78,7 +73,6 @@ export default function () {
       ScrollTrigger.create({
         trigger: $navTrigger,
         start: navTriggerStart + " " + anchorStart,
-        // end: "bottom " + anchorStart,
         end: navTriggerEnd + " " + anchorStart,
         pin:  $navWrap,
         scrub: true,
@@ -89,7 +83,6 @@ export default function () {
     }
     navScrollFunc();
     $sidebarLink.on("click", function(event) {
-      // console.log('click');
       event.preventDefault();
       sectionToGsap.play();
       setTimeout(() => {
@@ -127,7 +120,6 @@ export default function () {
       else{
         navMobileActive = 'All posts';
       }
-      // console.log(navMobileActive);
       $navMobileBtnText.html(navMobileActive);
       $navMobileBtn.on("click", function () {
         navMobileAnim.play();
@@ -140,7 +132,6 @@ export default function () {
 
       });  
       $sidebarLink.on("click", function(event) {
-        // console.log('click');
         event.preventDefault();
         navMobileAnim.reverse();
         sectionToGsap.play();

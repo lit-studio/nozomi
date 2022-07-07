@@ -153,15 +153,17 @@ get_header();
                                                     $case_image = get_field('case_image');
                                                     $case_image_mobile = get_field('case_image_mobile');
                                                     $case_video = get_field('video_id');
-                                                    $case_video_mobile = get_field('video_id_mobile');
+                                                    // $case_video_mobile = get_field('video_id_mobile');
                                                     $video_or_image = get_field('video_or_image');
-                                                    if ($video_or_image == 'Video') { ?>
+
+                                                    if ($video_or_image == 'Video' && $case_video) { ?>
                                                         <?php //echo $case_image['sizes']['home_1']; ?>
                                                         <?php //echo $case_image_mobile['sizes']['home_2']; ?>
                                                         <div class="item-img">
                                                             <div class="item-video video--js  video-big--js"
                                                                  data-set-vimeo-id="<?php echo $case_video; ?>"
-                                                                 data-set-vimeo-id-mobile="<?php echo $case_video_mobile; ?>">
+                                                                 <?php /* data-set-vimeo-id-mobile="<?php echo $case_video_mobile; ?>" */?>
+                                                                 >
                                                                 <span class="item-video--layout video-big--layout--js">
                                                                 <picture class="picture">
                                                                         <source srcset="<?php echo $case_image_mobile['sizes']['home_1']; ?>"

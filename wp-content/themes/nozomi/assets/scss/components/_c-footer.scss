@@ -107,6 +107,17 @@
             .btn{
               padding: 0;
               position: relative;
+              @include phone{
+                width: 182px;
+                height: 42px;
+                background-color: transparent;
+                background-image: url('#{$assetsPath}/icons/btn-footer.svg');
+                background-position: left;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: contain;
+                display: block;
+              }
               // &-item{
               //   display: block;
               //   width: 100%;
@@ -429,6 +440,9 @@
             background-attachment: scroll;
             background-size: contain;
             opacity: 0;
+            @include phone{
+              display: none;
+            }
             // transition: opacity 0.3s linear;
           }
           &:hover{
