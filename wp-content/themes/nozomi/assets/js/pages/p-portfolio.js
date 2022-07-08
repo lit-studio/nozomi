@@ -145,14 +145,6 @@ export default function () {
   }
 
   function controlVideosPortfolio() {
-
-    // let iframesBig = document.querySelectorAll('.video-big--js'),
-    // $iframesBigBox = $('.video--js'),
-    // videoPlayerLayoutBig = $('.video-big--layout--js'),
-    // el,
-    // videoIdBig =[],
-    // vimeoPlayerBig =[];
-    // let c,b,d;
       if (screen.width > 1024) {
         
         for ( i = 0; i < iframesBig.length; i++) {

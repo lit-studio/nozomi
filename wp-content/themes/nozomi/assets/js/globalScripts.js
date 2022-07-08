@@ -265,11 +265,11 @@ export default function () {
     }
     },'<');
       window.addEventListener("load", function(){
-        setTimeout(function(){
-          $('html,body').scrollTop(0);
-          preloaderGsapAnim.play();
+      setTimeout(function(){
+        $('html,body').scrollTop(0);
+        preloaderGsapAnim.play();
 
-      }, 100);
+    }, 100);
       });
       $preloaderClose.on('click', function () {
         preloaderOutGsapAnim.play();
