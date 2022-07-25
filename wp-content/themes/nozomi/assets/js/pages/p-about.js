@@ -3,31 +3,31 @@ export default function () {
 
     let $body = $('body'),
     $aboutGalleryCol = $body.find('.about-gallery-col'),
-    $hoverClick = $aboutGalleryCol.find('.item'),
+    $hoverClick = $body.find('.about-gallery-col .item'),
     $this;
   
     function hoverEvent() {
-        $hoverClick.each(function () {
-          $this = $(this);
-          $this.hover(() => {
-            $this.addClass('active');
-            console.log('hover');
-          }, () => {
-            $hoverClick.removeClass('active');
-          });
+      $hoverClick.each(function () {
+        let $this = $(this);
+        $this.hover(() => {
+          $this.addClass('active');
+          // console.log('hover');
+        }, () => {
+          $hoverClick.removeClass('active');
         });
+      });
     }
     function clickEvent() {
       $hoverClick.on({
         'touchstart': function() {
           if ($(this).hasClass('active')) {
             $(this).removeClass('active');
-            console.log('hidden click');
+            // console.log('hidden click');
           }
           else{
             $hoverClick.removeClass('active');
             $(this).addClass('active');
-            console.log('add click');
+            // console.log('add click');
           }
         },
       })

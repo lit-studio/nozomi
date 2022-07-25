@@ -148,7 +148,7 @@ export default function () {
       if (screen.width > 1024) {
         
         for ( i = 0; i < iframesBig.length; i++) {
-          console.log('videoIdBig[i] ' +  i);
+          // console.log('videoIdBig[i] ' +  i);
           videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
           iframesBig[i].setAttribute('data-loop', i);
           vimeoPlayerBig[i] = new VimeoPlayer(iframesBig[i],{
@@ -212,7 +212,7 @@ export default function () {
           });
         }
 
-        console.log('desk');
+        // console.log('desk');
         $itemWrapTrigger.each(function () {
           let $this = $(this);
           $this.hover(() => {
@@ -296,7 +296,7 @@ export default function () {
               toggleClass: {targets: section, className: "active"},
               onEnter: () => {
                 el = $iframesBigBox.filter('.active').attr('data-loop');
-                console.log('el onEnter ' + el);
+                // console.log('el onEnter ' + el);
                 $iframesBigBox.filter('.active').find(videoPlayerLayoutBig).addClass('hover');
                 vimeoPlayerBig[el].play().then(function() {
                 }).catch(function(error) {
@@ -318,7 +318,7 @@ export default function () {
               },
               onEnterBack: () => {
                 el = $iframesBigBox.filter('.active').attr('data-loop');
-                console.log('el onEnterBack ' + el);
+                // console.log('el onEnterBack ' + el);
                 $iframesBigBox.filter('.active').find(videoPlayerLayoutBig).addClass('hover');
                 vimeoPlayerBig[el].play().then(function() {
                 }).catch(function(error) {
@@ -358,7 +358,7 @@ export default function () {
               });
               },
               onLeaveBack: () => {
-                console.log('el onLeaveBack ' + el);
+                // console.log('el onLeaveBack ' + el);
                 videoPlayerLayoutBig.removeClass('hover');
                 vimeoPlayerBig[el].unload().then(function() {
               }).catch(function(error) {
@@ -382,7 +382,7 @@ export default function () {
           });
         }
         else{
-          console.log('mobile');
+          // console.log('mobile');
         }
 
        

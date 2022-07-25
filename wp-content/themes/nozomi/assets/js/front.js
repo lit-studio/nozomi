@@ -15,7 +15,7 @@ import singlePortfolio from "./pages/p-single-portfolio";
 
   globalScripts();
 
-  console.log('nozomi site');
+  // console.log('nozomi site');
   if (window.nozomiData.page === 'home') home();
   if (window.nozomiData.page === 'about') about();
   if (window.nozomiData.page === 'blog') blog();

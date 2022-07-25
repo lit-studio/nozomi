@@ -5,7 +5,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 
 export default function () {
-  console.log( 'header' );
+  // console.log( 'header' );
   let   $body = $("body"),
     $header = $(".c-header--js"),
     $logoHeader = $header.find(".c-header-logo-item"),
@@ -220,7 +220,7 @@ export default function () {
   }
   if ($aboutTrigger.length > 0) {
     function burgerChange() {
-      console.log( 'start bg animation' );
+      // console.log( 'start bg animation' );
       ScrollTrigger.create({
         trigger: $aboutTrigger,
         scroller: "body",

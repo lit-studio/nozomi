@@ -33,7 +33,7 @@ export default function () {
 
   if(($indexPapperBg.length > 0)&&(screen.width > 640) ){
     function indexPapperFunc() {
-      console.log('papper bg');
+      // console.log('papper bg');
       const svg = document.querySelector("#demo");
       const tl = gsap.timeline();
       let pt = svg.createSVGPoint();
@@ -90,7 +90,7 @@ export default function () {
   });
 
   if($pHome.length > 0){
-    console.log('home');
+    // console.log('home');
     if($section.length > 0){
       sectionFromGsap = gsap
       .timeline({
@@ -150,7 +150,7 @@ export default function () {
     let qoute = $body.find(".preloader-desc-cursive--js");
 
     if (getCookie('cookies')){
-      console.log('we have cookie');
+      // console.log('we have cookie');
       $preloaderBlock.addClass('hidden');
       preloaderOutGsapAnim =  gsap.timeline({
         paused: true,
@@ -176,7 +176,7 @@ export default function () {
       });
     }
     else{
-      console.log('we have not cookie');    
+      // console.log('we have not cookie');    
       function takeCookie(){
         let d = new Date();
         let cookiesDays = 7;
