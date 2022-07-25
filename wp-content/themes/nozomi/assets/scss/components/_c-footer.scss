@@ -369,8 +369,8 @@
         letter-spacing: 0.5px;
         padding-bottom: 3px;
         position: relative;
-        pointer-events: none;
-        opacity: 0.5;
+        // pointer-events: none;
+        // opacity: 0.5;
         @include desktop-normal{
           font-size: 18px;
         }
