@@ -222,10 +222,6 @@ export default function () {
                     break;
             }
         });
-      // setTimeout(function(){
-      //     vimeoPlayerLittle.pause();
-      //     vimeoPlayerBig.pause();
-      // }, 500);
       vimeoPlayerLittle.pause();
       vimeoPlayerBig.pause();
       vimeoPlayerLittle.unload();
@@ -239,23 +235,6 @@ export default function () {
         $cursorBlock.addClass("video");
       }
       vimeoPlayerLittle.play();
-      // vimeoPlayerLittle.play().then(function() {
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
     });
 
     videoPlayerLayoutLittle.addEventListener("mouseleave", () => {
@@ -264,78 +243,22 @@ export default function () {
         $cursorBlock.removeClass("video");
       }
       vimeoPlayerLittle.unload();
-      // vimeoPlayerLittle.unload().then(function() {
-      //   // the video was played
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
     });
 
     videoPlayerLayoutBig.addEventListener("mouseenter", () => {
       videoIdBigBgGsap.play();
       if (!$cursorBlock.hasClass('video')) {
         $cursorBlock.addClass("video");
-        // console.log('cursor video1');
       }
       vimeoPlayerBig.play();
-      // vimeoPlayerBig.play().then(function() {
-      //   // the video was played
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
     });
 
     videoPlayerLayoutBig.addEventListener("mouseleave", () => {
       videoIdBigBgGsap.reverse();
       if ($cursorBlock.hasClass('video')) {
         $cursorBlock.removeClass("video");
-        // console.log('cursor video hidden1');
       }
       vimeoPlayerBig.unload();
-      // vimeoPlayerBig.unload().then(function() {
-      //   // the video was played
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
     });
 
   }
