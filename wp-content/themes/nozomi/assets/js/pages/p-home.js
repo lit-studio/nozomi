@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
 
-  console.log("home page");
+  // console.log("home page");
 
   let $body = $('body'),
     $cursorBlock = $body.find(".cursor-dot"),
@@ -205,29 +205,31 @@ export default function () {
                     break;
             }
         });
-      vimeoPlayerLittle.pause();
-      vimeoPlayerLittle.unload();
       vimeoPlayerBig.play().then(function() {
-      }).catch(function(error) {
-          switch (error.name) {
-              case 'PasswordError':
-                  // the video is password-protected and the viewer needs to enter the
-                  // password first
-                  break;
-      
-              case 'PrivacyError':
-                  // the video is private
-                  break;
-      
-              default:
-                  // some other error occurred
-                  break;
-          }
-      });
+        }).catch(function(error) {
+            switch (error.name) {
+                case 'PasswordError':
+                    // the video is password-protected and the viewer needs to enter the
+                    // password first
+                    break;
+        
+                case 'PrivacyError':
+                    // the video is private
+                    break;
+        
+                default:
+                    // some other error occurred
+                    break;
+            }
+        });
+      // setTimeout(function(){
+      //     vimeoPlayerLittle.pause();
+      //     vimeoPlayerBig.pause();
+      // }, 500);
+      vimeoPlayerLittle.pause();
       vimeoPlayerBig.pause();
+      vimeoPlayerLittle.unload();
       vimeoPlayerBig.unload();
-      // vimeoPlayerLittle.loadVideo(videoIdLittle);
-      // vimeoPlayerBig.loadVideo(videoIdBig);
 
   if (screen.width > 1024) {
     // console.log('desk');

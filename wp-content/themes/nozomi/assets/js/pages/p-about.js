@@ -1,5 +1,5 @@
 export default function () {
-    console.log("about page");
+    // console.log("about page");
 
     let $body = $('body'),
     $aboutGalleryCol = $body.find('.about-gallery-col'),

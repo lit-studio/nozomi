@@ -19,7 +19,6 @@ export default function () {
             // console.log('tab');
             $tabItemThis = $(this).closest($tabItem);
             dataTab = $tabItemThis.attr('data-tab');
-            // console.log('dataTab ', dataTab);
             $tabItemContent = $tabItemThis.find(".c-tab-item-block");
             if ($tabItemContent.height() == 0) {
                 gsap.timeline().to($('.c-tab-item-block'), 0.3, {height: 0});

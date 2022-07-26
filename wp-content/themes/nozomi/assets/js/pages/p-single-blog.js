@@ -4,7 +4,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
-    console.log("single blog");
+    // console.log("single blog");
     let
     $body = $('body'),
     $headerProgress = $body.find(".c-header-progress--js"),

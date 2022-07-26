@@ -7,7 +7,7 @@ gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default function () {
-  console.log("single portfolio");
+  // console.log("single portfolio");
   let $body = $('body'),
   $headerProgress = $body.find(".c-header-progress--js"),
   $indexSingle = $body.find(".index-single-portfolio"),   

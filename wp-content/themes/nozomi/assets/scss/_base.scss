@@ -39,10 +39,6 @@ body {
     z-index: 1000;
     user-select: none;
     pointer-events: none;
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: flex-start;
-    // background-color: #ccc;
 
     &-dot{
       width: 7px;
@@ -78,6 +74,11 @@ body {
     }
   }
   &.open-menu{
+    @include desktop-block{
+      overflow: hidden;
+    }
+  }
+  &.open-nav{
     @include desktop-block{
       overflow: hidden;
     }

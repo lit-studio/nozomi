@@ -14,7 +14,7 @@ export default function () {
 
 
     function blockModal() {
-        console.log('modal block');
+        // console.log('modal block');
         $btnModal.on("click",function() {
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
@@ -42,7 +42,7 @@ export default function () {
             setTimeout(function(){
                 // console.log('site timeout');
                 if ($contactFormChange.hasClass('sent')) {
-                    console.log('modal close after submit');
+                    // console.log('modal close after submit');
                     $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
                     $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
                     $modalBg.removeClass("open");

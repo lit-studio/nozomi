@@ -169,13 +169,17 @@
     }
     .infographic{
         background-color: var(--color-bg);
+        @include phone{
+            padding-top: 30px;
+            overflow: hidden;
+        }
         &-top{
             &-img{
                 display: flex;
                 justify-content: center;
-                @include phone{
-                    overflow: hidden;
-                }
+                // @include phone{
+                //     overflow: hidden;
+                // }
                 img{
                     width: 100%;
                     object-fit: contain;

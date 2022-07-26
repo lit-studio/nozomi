@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 export default function () {
-    console.log("blog");
+    // console.log("blog");
   
     let $body = $('body'),
     $indexSection = $body.find('.index-blog'),
