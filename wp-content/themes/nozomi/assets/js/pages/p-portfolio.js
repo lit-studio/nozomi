@@ -101,7 +101,7 @@ export default function () {
     })
     .from($navMobileBg, 0.01, { yPercent: 100,  ease: 'linear' },'')
     .from($navMobileBg, 0.3, { opacity: 0,  ease: 'expo.easeOut' },'')
-    .from($navMobileBlock, 0.3, { yPercent: 100,  ease: 'expo.easeOut' },'<')
+    .from($navMobileBlock, 0.3, { yPercent: 160,  ease: 'expo.easeOut' },'<')
     ;
     function navScrollMobileFunc() {
       ScrollTrigger.create({
