@@ -16,7 +16,11 @@
     <!-- End Google Tag Manager -->
     */ ?>
     <?php wp_head(); ?>
-
+    <?php if(is_single()) { ?>
+    <?php if(get_field('image')) { ?>
+    <meta property='og:image' content='<?php echo get_field('image')['sizes']['large']; ?>'/>
+        <?php } ?>
+    <?php } ?>
 </head>
 
 <body  <?php body_class(); ?> >

@@ -80,15 +80,17 @@ get_header();
                         <div class="blog-top-nav blog-top-nav-left">
                             <a class="blog-top-nav-link" href="<?php echo get_permalink(15); ?>">back to blog</a>
                         </div>
-                        <?php
-                        $blog_author = get_field('select_author');
 
-
-                        if ($blog_author) { ?>
                             <div class="blog-top-center">
+                                <?php
+                                $blog_author = get_field('select_author');
+
+
+                                if ($blog_author) { ?>
                                 <div class="blog-top-autor">
                                     <?php echo $blog_author; ?>
                                 </div>
+                                <?php } ?>
                                 <div class="blog-top-share">
 
                                     <div class="blog-top-share-title">
@@ -137,7 +139,7 @@ get_header();
                                     </ul>
                                 </div>
                             </div>
-                        <?php } ?>
+
                         <div class="blog-top-nav blog-top-nav-right">
                             <?php
                             $next = get_previous_post_link('%link', 'next article', false);
