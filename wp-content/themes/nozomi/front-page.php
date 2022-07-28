@@ -155,7 +155,7 @@ get_header();
                     if ($button_link_block_1 || $button_text_block_1) { ?>
                         <div class="portfolio-btns">
                             <div class="portfolio-btns-btn">
-                                <a href="https://portfolio.remdev.pro/" target='_blank'
+                                <a href="<?php echo $button_link_block_1; ?>" 
                                    class="btn btn-border btn-portfolio--js">
                                 </a>
                             </div>
@@ -201,8 +201,7 @@ get_header();
                         if ($button_link_block_2 || $button_text_block_2) { ?>
                             <div class="about-btns">
                                 <div class="about-btns-btn">
-                                    <a href="/" class="btn  btn-about--js"
-                                    >
+                                    <a href="<?php echo $button_link_block_2; ?>" class="btn  btn-about--js">
                                     </a>
                                 </div>
                             </div>

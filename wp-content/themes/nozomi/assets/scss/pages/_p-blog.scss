@@ -82,22 +82,7 @@
 
                 height:532px;
             }
-            // height: 1006px;
-            // @include desktop-normal{
-            //     height: 770px;
-            // }
-            // @include desktop-note-big{
-            //     height:596px;
-            // }
-            // @include desktop-block{
-            //     height:603px;
-            // }
-            // @include tablet{
-            //     height:890px;
-            // }
-            // @include phone{
-            //     height:620px;
-            // }
+
             &:after{
                 position: absolute;
                 left: 0;
@@ -139,15 +124,7 @@
                     &-wrap{
                       max-width: 1250px;
                       width: 100%;
-                    //   text-align: center;
-                    //   display: flex;
-                      // flex-direction: column;
-                      // justify-content: space-between;
-                    //   justify-content: center;
-                    //   align-items: center;
-                      // height: 100%;
                       padding-top: pxVw(410, 2560);
-                    //   padding-bottom: pxVw(124, 2560);
                       position: relative;
                       @include desktop-normal{
                           padding-top: pxVw(325, 1920);
@@ -314,18 +291,7 @@
                     display: block;
                 }
             }
-            // &-stop{
-            //     height: 130px;
-            //     @include desktop-normal{
-            //         height: 120px;
-            //     }
-            //     @include desktop-note-big{
-            //         height: 100px;
-            //     }
-            //     @include desktop-block{
 
-            //     }
-            // }
             ul{
                 @include desktop-block{
                     width: 100%;
@@ -394,6 +360,16 @@
                   transform: scaleX(0);
                   transition: transform 0.3s ease-in-out;
                   transform-origin: right;
+                  @include desktop-block{
+                    left: auto;
+                    bottom: auto;
+                    position: relative;
+                    height: 3px;
+                    width: 100px;
+                    margin: 0 auto;
+                    display: block;
+                    margin-top: 3px;
+                  }
                 }
                 &:hover{
                     color: var(--color-red);
@@ -430,27 +406,30 @@
                     line-height: 1;
                     font-family: var(--font-medium);
                     font-size: 12px;
-
-                    padding-bottom: 3px;
+                    // padding-bottom: 3px;
                     z-index: 0;
                     text-transform: uppercase;
+                    display: block;  
                     &:after{
                         content: '';
-                        left: 0;
-                        bottom: 0;
-                        position: absolute;
+                        // left: 0;
+                        // bottom: 0;
+                        // position: absolute;
+                        position: relative;
                         height: 3px;
-                        width: 100%;
+                        // width: 100%;
+                        width: 100px;
+                        margin: 0 auto;
+                        display: block;
+                        margin-top: 3px;
                         background-color: transparent;
                         background-image: url('#{$assetsPath}/icons/icon-underline.svg');
                         background-position: left;
                         background-repeat: no-repeat;
                         background-attachment: scroll;
                         background-size: cover;
-                        // transform: scaleX(0);
                         transition: transform 0.3s ease-in-out;
                         transform-origin: right;
-                        // transform-origin: left;
                         transform: scaleX(1);
                         transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
                     }

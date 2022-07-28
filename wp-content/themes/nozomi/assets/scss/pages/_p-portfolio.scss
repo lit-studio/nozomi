@@ -321,16 +321,6 @@
                     flex: 0 0 100%;
                     max-width: 100%;
                     padding-bottom: 30px;
-                    // &.current-menu-item, &.active{
-                    //     &>a{
-                    //         color: var(--color-red);
-                    //         &:after{
-                    //             transform-origin: left;
-                    //             transform: scaleX(1);
-                    //             transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
-                    //         }
-                    //     }
-                    // }
                 }
                 &:last-of-type{
                     padding-bottom: 0;
@@ -373,6 +363,16 @@
                   transform: scaleX(0);
                   transition: transform 0.3s ease-in-out;
                   transform-origin: right;
+                  @include desktop-block{
+                    left: auto;
+                    bottom: auto;
+                    position: relative;
+                    height: 3px;
+                    width: 100px;
+                    margin: 0 auto;
+                    display: block;
+                    margin-top: 3px;
+                  }
                 }
                 &:hover{
                     color: var(--color-red);
@@ -392,6 +392,9 @@
                     position: relative;
                     z-index: 20;
                 }
+                &.hidden{
+                   opacity: 0;
+                }
             }
             &-btn{
                 border: 0 none;
@@ -406,27 +409,30 @@
                     line-height: 1;
                     font-family: var(--font-medium);
                     font-size: 12px;
-
-                    padding-bottom: 3px;
+                    // padding-bottom: 3px;
                     z-index: 0;
                     text-transform: uppercase;
+                    display: block;
                     &:after{
                         content: '';
-                        left: 0;
-                        bottom: 0;
-                        position: absolute;
+                        // left: 0;
+                        // bottom: 0;
+                        // position: absolute;
+                        position: relative;
                         height: 3px;
-                        width: 100%;
+                        // width: 100%;
+                        width: 100px;
+                        margin: 0 auto;
+                        display: block;
+                        margin-top: 3px;
                         background-color: transparent;
                         background-image: url('#{$assetsPath}/icons/icon-underline.svg');
                         background-position: left;
                         background-repeat: no-repeat;
                         background-attachment: scroll;
                         background-size: cover;
-                        // transform: scaleX(0);
                         transition: transform 0.3s ease-in-out;
                         transform-origin: right;
-                        // transform-origin: left;
                         transform: scaleX(1);
                         transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
                     }
@@ -949,6 +955,7 @@
                             line-height: 150%;                        
                             color: var(--color-grey-3);
                             font-family: var(--font-medium);
+                            padding-bottom: 3px;
                             @include desktop-normal{
                                 font-size: 18px;
                             }
