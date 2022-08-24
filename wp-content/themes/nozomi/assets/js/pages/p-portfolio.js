@@ -116,6 +116,7 @@ export default function () {
 
     }
     navScrollMobileFunc();
+
     function navMobileFunc() {
       if ($navSectionItem.hasClass('current-menu-item')) {
         navMobileActive = $navMobileBlock.find('.current-menu-item a').text();
@@ -128,6 +129,7 @@ export default function () {
         navMobileAnim.play();
         $navMobileBtns.addClass('hidden');
         $body.addClass('open-nav');
+
       });  
       $navMobileBg.on("click", function () {
         $body.removeClass('open-nav');

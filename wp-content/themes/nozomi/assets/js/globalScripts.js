@@ -31,7 +31,7 @@ export default function () {
   $indexHome = $body.find('.index-home'),
   winHeight = $window.height();
 
-  if(($indexPapperBg.length > 0)&&(screen.width > 640) ){
+  if(($indexPapperBg.length > 0)&&($(window).width() > 640) ){
     function indexPapperFunc() {
       // console.log('papper bg');
       const svg = document.querySelector("#demo");
@@ -108,7 +108,7 @@ export default function () {
     }
   }
   else{
-    if (screen.width > 1024) {
+    if ($(window).width() > 1024) {
       moveY = 200;
       if($sectionNav.length > 0){
         sectionFromGsap = gsap
@@ -294,8 +294,8 @@ export default function () {
   }
 
 
-  if (screen.width <= 1920) {
-    if (screen.width <= 1680) {
+  if ($(window).width() <= 1920) {
+    if ($(window).width() <= 1680) {
       if (winHeight <= 600) {
         $indexHome.addClass('mobile-height');
       }

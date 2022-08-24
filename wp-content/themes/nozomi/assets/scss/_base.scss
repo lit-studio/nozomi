@@ -81,6 +81,8 @@ body {
   &.open-nav{
     @include desktop-block{
       overflow: hidden;
+      touch-action: none;
+      -ms-touch-action: none;
     }
   }
   &.preloader-active{
