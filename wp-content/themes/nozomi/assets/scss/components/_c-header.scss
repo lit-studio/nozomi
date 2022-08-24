@@ -388,10 +388,8 @@
       height: 337px;
     }
     @include tablet{
-      // height: pxVw(337, 768);
     }
     @include phone{
-      // height: pxVw(280, 375);
       height: 324px;
     }
     &.open{
@@ -718,7 +716,8 @@
   }
   &-bg{
     position: fixed;
-    width: 100vw;
+    width: 100%;
+    // width: 100vw;
     height: 100vh;
     left: 0;
     top: 0;

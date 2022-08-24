@@ -47,7 +47,7 @@ export default function () {
 
   let $sidebarLink = $navMobileBlock.find('a');
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
 
     sectionToGsap = gsap
     .timeline({
@@ -72,7 +72,7 @@ export default function () {
 
   }
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
     function navScrollFunc() { 
       ScrollTrigger.create({
         trigger: $navTrigger,
@@ -148,7 +148,7 @@ export default function () {
   }
 
   function controlVideosPortfolio() {
-      if (screen.width > 1024) {        
+      if ($(window).width() > 1024) {        
         for ( i = 0; i < iframesBig.length; i++) {
           videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
           iframesBig[i].setAttribute('data-loop', i);
@@ -203,7 +203,7 @@ export default function () {
 
       }
       else{
-        if (screen.width > 768) {
+        if ($(window).width() > 768) {
           for ( var i = 0; i < iframesBig.length; i++) {
             videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
             iframesBig[i].setAttribute('data-loop', i);

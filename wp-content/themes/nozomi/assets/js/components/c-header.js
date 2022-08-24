@@ -108,7 +108,7 @@ export default function () {
     scrollHeader();
 
   function mobileMenu() {
-        if (screen.width > 1024) {
+        if ($(window).width() > 1024) {
 
           modalMenuAnim = gsap
           .timeline({
@@ -132,7 +132,7 @@ export default function () {
         
     $menuBtn.on("click", function () {
 
-      if (screen.width > 1024) {
+      if ($(window).width() > 1024) {
         linksAnim.play();
         if (!$menuBtn.hasClass('open')) {
           menuBtnAnim.playSegments([30, 63], true);
@@ -141,7 +141,6 @@ export default function () {
           $body.addClass("open-menu");
           modalMenuAnim.play();
           linksAnim.restart();
-          // linksAnim.play();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.reverse();
           }

@@ -319,12 +319,12 @@ export default function () {
 
   function screenReload() {
 
-    let widthScreen = screen.width,
+    let widthScreen = $(window).width(),
     widthScreenNew;
-
+    // console.log('widthScreen ' + widthScreen);
     window.addEventListener("resize", () => {
-      widthScreenNew = screen.width;
-
+      widthScreenNew = $(window).width();
+      // console.log('widthScreenNew ' + widthScreenNew);
       if (widthScreenNew !== widthScreen) {
         location.reload();
       }

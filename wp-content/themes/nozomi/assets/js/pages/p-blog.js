@@ -41,7 +41,7 @@ export default function () {
 
   // let $sidebarLink = $navMobileBlock.find('a');
 
-    if (screen.width > 1024) {
+    if ($(window).width() > 1024) {
 
       sectionToGsap = gsap
       .timeline({
@@ -68,7 +68,7 @@ export default function () {
 
  
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
     function navScrollFunc() {
       ScrollTrigger.create({
         trigger: $navTrigger,

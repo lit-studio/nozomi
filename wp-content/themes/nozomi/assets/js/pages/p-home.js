@@ -60,7 +60,7 @@ export default function () {
   portfolioScaleFunc();
 
   function aboutScaleFunc() {
-    if (screen.width > 1024) {
+    if ($(window).width() > 1024) {
       aboutSectionImgTrigger="top center";
     }
     else{
@@ -102,7 +102,7 @@ export default function () {
   }
   aboutScaleFunc();
 
-  if (screen.width > 640) {
+  if ($(window).width() > 640) {
     function homePerspectiveFunc() {
 
       const svg = document.querySelector("#demoPerspective");
@@ -227,7 +227,7 @@ export default function () {
       vimeoPlayerLittle.unload();
       vimeoPlayerBig.unload();
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
     // console.log('desk');
     videoPlayerLayoutLittle.addEventListener("mouseenter", () => {
       videoIdLittleBgGsap.play();        

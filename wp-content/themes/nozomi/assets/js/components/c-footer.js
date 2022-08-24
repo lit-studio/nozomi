@@ -5,7 +5,7 @@ import {DrawSVGPlugin} from "../../libs/gsap-shockingly-green/src/DrawSVGPlugin"
 gsap.registerPlugin(DrawSVGPlugin);
 
 export default function () {
-  if (screen.width > 640) {
+  if ($(window).width() > 640) {
     function btnLottieFooterFunc() {
       // console.log('book footer')
       let btnBook = document.querySelector(".btn-book--js");

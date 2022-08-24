@@ -804,7 +804,7 @@
     }
 
 
-    .index{                                   
+    .index{                                 
         &-single-portfolio{
             position: relative;
             overflow: hidden;
@@ -1325,7 +1325,7 @@
     .about{
         padding-top: 220px;
         padding-bottom: 220px;
-        @include desktop-normal{
+         @include desktop-normal{
             padding-top: 180px;
             padding-bottom: 180px;
         }
@@ -1446,11 +1446,15 @@
                 max-width: 1560px;
             }
             @include desktop-note-big{
-                max-width: 1050px;
-                padding-left: 25px;
-                padding-right: 25px;
+                // max-width: 1050px;
+                // padding-left: 25px;
+                // padding-right: 25px;
+                max-width: 1024px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
             @include desktop-block{
+                max-width: 100%;
                 // padding-left: 30px;
                 // padding-right: 30px;
             }
@@ -1552,8 +1556,6 @@
     }
 
     .story{
-
-
         &-wrap{
             max-width: 1440px;
             margin: 0 auto;
@@ -1765,19 +1767,6 @@
     }
 
     .design{
-        // padding-top: 220px;
-        // @include desktop-normal{
-        //     padding-top: 180px;
-        // }
-        // @include desktop-note-big{
-        //     padding-top: 270px;
-        // }
-        // @include desktop-block{
-        //     padding-top: 160px;
-        // }
-        // @include phone{
-        //     padding-top: 140px;
-        // }
         &-row{
             display: flex;
             flex-wrap: nowrap;
@@ -1820,7 +1809,7 @@
             padding-top: 140px;
             padding-bottom: 140px;
         }
-        &-wrap{
+          &-wrap{
             max-width: 1880px;
             margin: 0 auto;
             padding-left: 60px;
@@ -1896,26 +1885,28 @@
             }
         }
         &-desc{
+            display: flex;
+            align-items: center;
             @include desktop-block{
                 padding-right: 0;
             }
             .item{ 
-                padding-top: 155px;
-                @include desktop-normal{
-                    padding-top: 130px;
-                }
-                @include desktop-note-big{
-                    padding-top: 43px;
-                }
-                @include desktop-block{
-                    padding-top: 35px;
-                }
-                @include tablet{
-                    padding-top: 60px;
-                }
-                @include phone{
-                    padding-top: 50px;
-                }
+                // padding-top: 155px;
+                // @include desktop-normal{
+                //     padding-top: 130px;
+                // }
+                // @include desktop-note-big{
+                //     padding-top: 43px;
+                // }
+                // @include desktop-block{
+                //     padding-top: 35px;
+                // }
+                // @include tablet{
+                //     padding-top: 60px;
+                // }
+                // @include phone{
+                //     padding-top: 50px;
+                // }
                 &-cursive{
                     &--cursive{
                     
@@ -2048,9 +2039,6 @@
           padding-top: 70px;
           padding-bottom: 53px;
         }
-        // @include phone{
-        //   padding-bottom: 42px;
-        // }
         &-wrap{
           display: flex;
           flex-wrap: nowrap;
@@ -2141,6 +2129,7 @@
     
         }
     
-      }
+    
+    }
 
 }
