@@ -111,14 +111,8 @@ export default function () {
       });
 
     }
-    navScrollMobileFunc();
-    
-    // function dontScrollFunc() {
-    //   $(document).on('touchmove',function(e){
-    //     e.preventDefault();
-    //     console.log('dontScrollFunc');
-    //   });
-    // }
+    navScrollMobileFunc();    
+
     function navMobileFunc() {
 
       if ($navSectionItem.hasClass('current-menu-item')) {
@@ -131,7 +125,7 @@ export default function () {
       $navMobileBtn.on("click", function () {
         navMobileAnim.play();
         $navMobileBtns.addClass('hidden');
-        // dontScrollFunc();
+
       });  
       $navMobileBg.on("click", function () {
         navMobileAnim.reverse();

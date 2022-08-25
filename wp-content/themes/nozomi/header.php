@@ -84,12 +84,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="c-header-menu c-header-menu--js">
                     <?php  wp_nav_menu(array('theme_location' => 'primary', 'fallback_cb' => '', 'items_wrap' => '<ul>%3$s</ul>', 'container' => ''));  ?>
                 </div>
-                <div class="c-header-btns">
-                    <div class="c-header-btns-btn">
-                        <button class="btn btn-menu btn-menu--js">
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -106,4 +100,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <div class="c-header-bg c-header-bg--js"></div>
 </header>
+<div class="c-header-btnsn">
+    <div class="c-header-btnsn-btn">
+        <button class="btn btn-menu btn-menu--js">
+        </button>
+    </div>
+</div>
 <div class="c-header-trigger c-header-trigger--js"></div>

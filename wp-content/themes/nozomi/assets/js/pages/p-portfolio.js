@@ -103,19 +103,37 @@ export default function () {
     .from($navMobileBg, 0.3, { opacity: 0,  ease: 'expo.easeOut' },'')
     .from($navMobileBlock, 0.3, { yPercent: 160,  ease: 'expo.easeOut' },'<')
     ;
-    function navScrollMobileFunc() {
-      ScrollTrigger.create({
-        trigger: $footer,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        toggleActions: "play reverse none reverse",
-        toggleClass: {className: "fixed", targets: ".nav"},
-        markers: false,
-      });
-
+    if ($(window).width() > 640) {
+      function navScrollMobileFunc() {
+        ScrollTrigger.create({
+          trigger: $footer,
+          start: "-20px bottom",
+          end: "bottom top",
+          scrub: true,
+          toggleActions: "play reverse none reverse",
+          toggleClass: {className: "fixed", targets: ".nav"},
+          markers: false,
+        });  
+      }
+      navScrollMobileFunc();
     }
-    navScrollMobileFunc();
+    else{
+      function navScrollMobileFunc() {
+        ScrollTrigger.create({
+          trigger: $footer,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          toggleActions: "play reverse none reverse",
+          toggleClass: {className: "fixed", targets: ".nav"},
+          markers: false,
+        });  
+      }
+      navScrollMobileFunc();
+    }
+
+
+
 
     function navMobileFunc() {
       if ($navSectionItem.hasClass('current-menu-item')) {

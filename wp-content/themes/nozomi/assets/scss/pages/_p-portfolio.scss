@@ -1509,13 +1509,13 @@
             display: flex;
             align-items: center;
             .item{
-                padding-top: 170px;
-                @include desktop-normal{
-                    padding-top: 90px;
-                }
-                @include desktop-note-big{
-                    padding-top: 20px;
-                }
+                // padding-top: 170px;
+                // @include desktop-normal{
+                //     padding-top: 90px;
+                // }
+                // @include desktop-note-big{
+                //     padding-top: 20px;
+                // }
                 @include tablet{
                     padding-top: 60px;
                 }
@@ -1543,6 +1543,8 @@
             }
         }
         &-img{
+            display: flex;
+            align-items: center;
             .item{
                 &-img{
                     width: 100%;
@@ -1902,12 +1904,12 @@
                 // @include desktop-block{
                 //     padding-top: 35px;
                 // }
-                // @include tablet{
-                //     padding-top: 60px;
-                // }
-                // @include phone{
-                //     padding-top: 50px;
-                // }
+                @include tablet{
+                    padding-top: 60px;
+                }
+                @include phone{
+                    padding-top: 50px;
+                }
                 &-cursive{
                     &--cursive{
                     

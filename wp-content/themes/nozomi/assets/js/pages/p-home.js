@@ -273,91 +273,18 @@ export default function () {
       onEnter: () => {
         videoIdLittleBgGsap.play();  
         vimeoPlayerLittle.play();
-        // vimeoPlayerLittle.play().then(function() {
-        //   // the video was played 
-        // }).catch(function(error) {
-        //     switch (error.name) {
-        //         case 'PasswordError':
-        //             // the video is password-protected and the viewer needs to enter the
-        //             // password first
-        //             break;
-        
-        //         case 'PrivacyError':
-        //             // the video is private
-        //             break;
-        
-        //         default:
-        //             // some other error occurred
-        //             break;
-        //     }
-        // });
       },
       onEnterBack: () => {
         videoIdLittleBgGsap.play();  
         vimeoPlayerLittle.play();
-        // vimeoPlayerLittle.play().then(function() {
-        //   // the video was played
-        // }).catch(function(error) {
-        //     switch (error.name) {
-        //         case 'PasswordError':
-        //             // the video is password-protected and the viewer needs to enter the
-        //             // password first
-        //             break;
-        
-        //         case 'PrivacyError':
-        //             // the video is private
-        //             break;
-        
-        //         default:
-        //             // some other error occurred
-        //             break;
-        //     }
-        // });
       },
       onLeave: () => {
         videoIdLittleBgGsap.reverse();
         vimeoPlayerLittle.unload();
-        // vimeoPlayerLittle.unload().then(function() {
-        //   // the video was paused
-        // }).catch(function(error) {
-        //     switch (error.name) {
-        //         case 'PasswordError':
-        //             // the video is password-protected and the viewer needs to enter the
-        //             // password first
-        //             break;
-        
-        //         case 'PrivacyError':
-        //             // the video is private
-        //             break;
-        
-        //         default:
-        //             // some other error occurred
-        //             break;
-        //     }
-        // });
       },
       onLeaveBack: () => {
         videoIdLittleBgGsap.reverse();
         vimeoPlayerLittle.unload();
-      //   vimeoPlayerLittle.unload().then(function() {
-      //     // the video was paused
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
-
       },
       markers: false
     });
@@ -372,91 +299,19 @@ export default function () {
       onEnter: () => {
         videoIdBigBgGsap.play();
         vimeoPlayerBig.play();
-        // vimeoPlayerBig.play().then(function() {
-        //   // the video was played
-        // }).catch(function(error) {
-        //     switch (error.name) {
-        //         case 'PasswordError':
-        //             // the video is password-protected and the viewer needs to enter the
-        //             // password first
-        //             break;
-        
-        //         case 'PrivacyError':
-        //             // the video is private
-        //             break;
-        
-        //         default:
-        //             // some other error occurred
-        //             break;
-        //     }
-        // });
       },
       onEnterBack: () => {
         videoIdBigBgGsap.play();
         vimeoPlayerBig.play();
-        // vimeoPlayerBig.play().then(function() {
-        //   // the video was played
-        // }).catch(function(error) {
-        //     switch (error.name) {
-        //         case 'PasswordError':
-        //             // the video is password-protected and the viewer needs to enter the
-        //             // password first
-        //             break;
-        
-        //         case 'PrivacyError':
-        //             // the video is private
-        //             break;
-        
-        //         default:
-        //             // some other error occurred
-        //             break;
-        //     }
-        // });
       },
       onLeave: () => {
         
         videoIdBigBgGsap.reverse();
         vimeoPlayerBig.unload();
-      //   vimeoPlayerBig.unload().then(function() {
-      //     // the video was paused
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
       },
       onLeaveBack: () => {
         videoIdBigBgGsap.reverse();
         vimeoPlayerBig.unload();
-      //   vimeoPlayerBig.unload().then(function() {
-      //     // the video was paused
-      // }).catch(function(error) {
-      //     switch (error.name) {
-      //         case 'PasswordError':
-      //             // the video is password-protected and the viewer needs to enter the
-      //             // password first
-      //             break;
-      
-      //         case 'PrivacyError':
-      //             // the video is private
-      //             break;
-      
-      //         default:
-      //             // some other error occurred
-      //             break;
-      //     }
-      // });
       },
       markers: false
     });

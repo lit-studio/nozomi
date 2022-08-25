@@ -9,17 +9,17 @@ export default function () {
   let   $body = $("body"),
     $header = $(".c-header--js"),
     $logoHeader = $header.find(".c-header-logo-item"),
-    $menuBtn = $header.find(".btn-menu--js"),
+    $menuBtn = $body.find(".btn-menu--js"),
     $menuBg = $header.find(".c-header-bg--js"),
     $menuBlock = $header.find(".c-header-menu--js"),
     $menuBlockMobile = $header.find(".c-header-mobile--js"),
     $headerTrigger = $header.find(".c-header-trigger--js"),
     $aboutTrigger = $body.find(".about-trigger--js"),
-    menuBtn = document.querySelector(".btn-menu--js");
+    menuBtn = document.querySelector(".btn-menu");
 
     let $links = $menuBlock.find('.menu-item'),
     $linkskMobile = $menuBlockMobile.find('.menu-item'),
-    modalMenuAnim
+    modalMenuAnim,modalMenuAnimMob
     ;
     
     let linksAnim = gsap
@@ -51,6 +51,8 @@ export default function () {
       paused: true
     })
     .to($logoHeader, 0.3, { yPercent: -300, ease: "linear" });
+
+
 
     const menuBtnAnim = lottie.loadAnimation({
       container: menuBtn,
@@ -120,7 +122,7 @@ export default function () {
         }
         else{
 
-          modalMenuAnim = gsap
+          modalMenuAnimMob = gsap
           .timeline({
             paused: true
           })
@@ -133,6 +135,7 @@ export default function () {
     $menuBtn.on("click", function () {
 
       if ($(window).width() > 1024) {
+        console.log('btn click');
         linksAnim.play();
         if (!$menuBtn.hasClass('open')) {
           menuBtnAnim.playSegments([30, 63], true);
@@ -163,7 +166,7 @@ export default function () {
           $menuBtn.addClass("open");
           $header.addClass("open");
           $body.addClass("open-menu");
-          modalMenuAnim.play();
+          modalMenuAnimMob.play();
           linksAnimMobile.restart();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.reverse();
@@ -174,7 +177,7 @@ export default function () {
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           $body.removeClass("open-menu");
-          modalMenuAnim.reverse();
+          modalMenuAnimMob.reverse();
           linksAnimMobile.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
@@ -185,18 +188,24 @@ export default function () {
     });
 
     $(document).on('click', function(e) {
-      if (!$(e.target).closest(".c-header--js").length) {
+      
+      if (!$(e.target).closest(".c-header--js").length && (!$(e.target).closest(".c-header-btnsn").length)) {
         if ($menuBtn.hasClass('open')) {
           menuBtnAnim.playSegments([63, 0], true);
           $menuBtn.removeClass("open");
           $header.removeClass("open");
           $body.removeClass("open-menu");
-          modalMenuAnim.reverse();
           linksAnim.reverse();
           if ($header.hasClass('header-fixed')) {
             logoHeaderAnim.play();
           }
 
+        }
+        if ($(window).width() > 1024) {
+          modalMenuAnim.reverse();
+        }
+        else{
+          modalMenuAnimMob.reverse();
         }
       }
       e.stopPropagation();
@@ -233,4 +242,6 @@ export default function () {
     }
     burgerChange();
   }
+
+
 }

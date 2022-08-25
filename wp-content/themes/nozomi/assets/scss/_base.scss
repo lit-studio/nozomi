@@ -74,8 +74,13 @@ body {
     }
   }
   &.open-menu{
-    @include desktop-block{
-      overflow: hidden;
+    // @include desktop-block{
+    //   overflow: hidden;
+    //   touch-action: none;
+    //   -ms-touch-action: none;
+    // }
+    .c-header{
+      transform: translateY(0);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
     }
   }
   &.open-nav{
@@ -87,6 +92,8 @@ body {
   }
   &.preloader-active{
     overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
     .c-header{
       a,button{
         pointer-events: none!important;
