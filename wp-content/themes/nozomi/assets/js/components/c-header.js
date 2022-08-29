@@ -61,6 +61,7 @@ export default function () {
       autoplay: false,
       path: nozomiData.rootUrl + "/assets/lottie/btn_menu.json"
     });
+
     function menuBtnHover() {
       $menuBtn.hover(() => {
         if (!$menuBtn.hasClass('open')) {
@@ -226,6 +227,7 @@ export default function () {
   if (screen.width > 1024) {
     window.addEventListener("mousemove", mouseMoveCursor);
   }
+  
   if ($aboutTrigger.length > 0) {
     function burgerChange() {
       // console.log( 'start bg animation' );

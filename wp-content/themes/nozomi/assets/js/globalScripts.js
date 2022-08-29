@@ -293,46 +293,76 @@ export default function () {
     }      
   }
 
-
-  if ($(window).width() <= 1920) {
-    if ($(window).width() <= 1680) {
-      if (winHeight <= 600) {
-        $indexHome.addClass('mobile-height');
+  function indexHeightFunc() {
+    if ($(window).width() <= 1920) {
+      if ($(window).width() <= 1680) {
+        if (winHeight <= 600) {
+          $indexHome.addClass('mobile-height');
+        }
       }
+      else{
+        if (winHeight <= 750) {
+          $indexHome.addClass('mobile-height');
+        }
+      }
+  
     }
     else{
-      if (winHeight <= 750) {
+      if (winHeight <= 950) {
         $indexHome.addClass('mobile-height');
       }
     }
+  }
 
-  }
-  else{
-    if (winHeight <= 950) {
-      $indexHome.addClass('mobile-height');
-    }
-  }
+
   preloaderFunc();
   header();
   footer();
   tab();
+  indexHeightFunc();
 
   function screenReload() {
-
     let widthScreen = $(window).width(),
-    // let widthScreen = screen.width,
     widthScreenNew;
-    // console.log('widthс ' + widthScreen);
+    if (widthScreen <= 1024) {
+      if (widthScreen <= 640) {
+        $body.addClass('mobile');
+      }
+      else{
+        $body.addClass('tablet');
+      }
+    }
+    else{
+      $body.addClass('desktop');
+    }
     window.addEventListener("resize", () => {
       widthScreenNew = $(window).width();
-      // widthScreenNew = screen.width;
-      // console.log('widthScreenNew ' + widthScreenNew);
       if (widthScreenNew !== widthScreen) {
-        location.reload();
-      }
-
+        if (widthScreenNew <= 1024) {
+          if (widthScreenNew <= 640) {
+            if (!$body.hasClass('mobile')) {   
+              location.reload();
+            }
+            return;
+          }
+          else{
+            if (!$body.hasClass('tablet')) {   
+              location.reload();
+            }
+            return;
+          }
+        }
+        else{
+          if (!$body.hasClass('desktop')) {   
+            location.reload();
+          }
+          return;
+        }
+     }
+     
     });
   }
+
   screenReload();
 
 }
