@@ -127,15 +127,11 @@
                       padding-top: pxVw(410, 2560);
                       position: relative;
                       @include desktop-normal{
-                          padding-top: pxVw(325, 1920);
-                        //   padding-bottom: pxVw(173, 1920);
-                          // max-width: 985px;
-                          max-width: 900px;
+                        padding-top: pxVw(325, 1920);
+                        max-width: 900px;
                       }
                       @include desktop-note-big{
                           padding-top: pxVw(240, 1440); 
-                        //   padding-bottom: pxVw(134, 1440);
-                          // max-width: 775px;
                           max-width: 780px;
                       }
                       @include desktop-block{
@@ -150,9 +146,10 @@
                         //   padding-bottom: pxVw(215, 768);
                       }
                       @include phone{
-                          padding-top: pxVw(200, 375);
-                        //   padding-bottom: pxVw(106, 375);
-                          max-width: 335px;
+                        padding-top: 200px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        max-width: 375px;
                       }
             
                     }
@@ -787,18 +784,12 @@
                     align-items: flex-start;
                     z-index: 1;
                     &-wrap{
-                        //   max-width: 1320px;
-                        max-width: 1560px;
+                         max-width: 1560px;
                         width: 100%;
                         padding-top: pxVw(280, 2560);
-                        //   padding-top: pxVw(410, 2560);
-                        //   padding-bottom: pxVw(124, 2560);
                         position: relative;
                       @include desktop-normal{
                         padding-top: pxVw(200 , 1920);
-                        //   padding-top: pxVw(325, 1920);
-                        //   padding-bottom: pxVw(173, 1920);
-                        // max-width: 1100px;
                         max-width: 1148px;
                       }
                       @include desktop-note-big{
@@ -827,9 +818,6 @@
                       }
                       @include phone{
                         padding-top: pxVw(120, 375);
-                        //   padding-top: pxVw(200, 375);
-                        //   padding-bottom: pxVw(106, 375);
-                        //   max-width: 335px;
                           padding-left: 20px;
                           padding-right: 20px;
                       }            

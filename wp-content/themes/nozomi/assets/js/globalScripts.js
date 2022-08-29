@@ -325,8 +325,8 @@ export default function () {
     let widthScreen = $(window).width(),
     widthScreenNew;
     if (widthScreen <= 1024) {
-      if (widthScreen <= 640) {
-        $body.addClass('mobile');
+      if (widthScreen <= 768) {
+        $body.addClass('portrait-tablet');
       }
       else{
         $body.addClass('tablet');
@@ -339,8 +339,8 @@ export default function () {
       widthScreenNew = $(window).width();
       if (widthScreenNew !== widthScreen) {
         if (widthScreenNew <= 1024) {
-          if (widthScreenNew <= 640) {
-            if (!$body.hasClass('mobile')) {   
+          if (widthScreenNew <= 768) {
+            if (!$body.hasClass('portrait-tablet')) {   
               location.reload();
             }
             return;

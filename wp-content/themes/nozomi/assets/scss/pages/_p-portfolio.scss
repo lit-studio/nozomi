@@ -122,7 +122,6 @@
                     align-items: flex-start;
                     z-index: 1;
                     &-wrap{
-
                     max-width: 1100px;
                       width: 100%;
                       padding-top: pxVw(410, 2560);
@@ -146,8 +145,10 @@
                           padding-top: pxVw(300, 768);
                       }
                       @include phone{
-                          padding-top: pxVw(200, 375);
-                          max-width: 335px;
+                          padding-top: 200px;
+                          padding-left: 20px;
+                          padding-right: 20px;
+                          max-width: 375px;
                       }
            
                     }
