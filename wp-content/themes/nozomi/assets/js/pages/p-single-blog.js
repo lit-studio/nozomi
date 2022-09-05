@@ -68,7 +68,7 @@ export default function () {
 
     function shareMobile() {
 
-        if (screen.width <= 1024) {
+        if ($(window).width() <= 1024) {
             $blogTopShareBtn.on("click", function () {
                 if (!$blogTopShareBtn.hasClass('close')) {
                     $blogTopShareBtn.addClass('close');

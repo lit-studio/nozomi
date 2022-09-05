@@ -19,7 +19,6 @@ export default function () {
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");
-            // console.log('modal click');
             $(this).addClass('btn-active');
             el = $(this).attr('data-modal');
             $body.addClass('open-modal');
@@ -27,13 +26,11 @@ export default function () {
             $modalBg.addClass("open");
         });
         $btnClose.on("click",function() {
-            // console.log('modal close');
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");
         });
         $modalBg.on("click",function() {
-            // console.log('modal close bg');
             $body.removeClass('open-modal').find($btnModal).removeClass('btn-active');
             $windowModal.removeClass('show-modal').find($modalBlock).removeClass('open');
             $modalBg.removeClass("open");

@@ -47,7 +47,7 @@ export default function () {
 
   let $sidebarLink = $navMobileBlock.find('a');
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
 
     sectionToGsap = gsap
     .timeline({
@@ -72,7 +72,7 @@ export default function () {
 
   }
 
-  if (screen.width > 1024) {
+  if ($(window).width() > 1024) {
     function navScrollFunc() { 
       ScrollTrigger.create({
         trigger: $navTrigger,
@@ -103,19 +103,38 @@ export default function () {
     .from($navMobileBg, 0.3, { opacity: 0,  ease: 'expo.easeOut' },'')
     .from($navMobileBlock, 0.3, { yPercent: 160,  ease: 'expo.easeOut' },'<')
     ;
-    function navScrollMobileFunc() {
-      ScrollTrigger.create({
-        trigger: $footer,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-        toggleActions: "play reverse none reverse",
-        toggleClass: {className: "fixed", targets: ".nav"},
-        markers: false,
-      });
-
+    if ($(window).width() > 640) {
+      function navScrollMobileFunc() {
+        ScrollTrigger.create({
+          trigger: $footer,
+          start: "-20px bottom",
+          end: "bottom top",
+          scrub: true,
+          toggleActions: "play reverse none reverse",
+          toggleClass: {className: "fixed", targets: ".nav"},
+          markers: false,
+        });  
+      }
+      navScrollMobileFunc();
     }
-    navScrollMobileFunc();
+    else{
+      function navScrollMobileFunc() {
+        ScrollTrigger.create({
+          trigger: $footer,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+          toggleActions: "play reverse none reverse",
+          toggleClass: {className: "fixed", targets: ".nav"},
+          markers: false,
+        });  
+      }
+      navScrollMobileFunc();
+    }
+
+
+
+
     function navMobileFunc() {
       if ($navSectionItem.hasClass('current-menu-item')) {
         navMobileActive = $navMobileBlock.find('.current-menu-item a').text();
@@ -128,6 +147,7 @@ export default function () {
         navMobileAnim.play();
         $navMobileBtns.addClass('hidden');
         $body.addClass('open-nav');
+
       });  
       $navMobileBg.on("click", function () {
         $body.removeClass('open-nav');
@@ -148,7 +168,7 @@ export default function () {
   }
 
   function controlVideosPortfolio() {
-      if (screen.width > 1024) {        
+      if ($(window).width() > 1024) {        
         for ( i = 0; i < iframesBig.length; i++) {
           videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
           iframesBig[i].setAttribute('data-loop', i);
@@ -203,7 +223,7 @@ export default function () {
 
       }
       else{
-        if (screen.width > 768) {
+        if ($(window).width() > 768) {
           for ( var i = 0; i < iframesBig.length; i++) {
             videoIdBig[i] = iframesBig[i].getAttribute('data-set-vimeo-id');
             iframesBig[i].setAttribute('data-loop', i);

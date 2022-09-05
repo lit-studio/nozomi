@@ -349,7 +349,13 @@
       letter-spacing: 0.5px;
       padding-bottom: 10px;
       // flex: 0 0 33%;
-      // max-width: 230px;  
+      // max-width: 230px; 
+      &.not-active{
+        a{
+        pointer-events: none;
+        opacity: 0.5;
+        }
+      } 
       &:first-of-type{
         padding-left: 0;
         &>a{

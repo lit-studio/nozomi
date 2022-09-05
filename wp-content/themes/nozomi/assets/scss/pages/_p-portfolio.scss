@@ -122,7 +122,6 @@
                     align-items: flex-start;
                     z-index: 1;
                     &-wrap{
-
                     max-width: 1100px;
                       width: 100%;
                       padding-top: pxVw(410, 2560);
@@ -146,8 +145,10 @@
                           padding-top: pxVw(300, 768);
                       }
                       @include phone{
-                          padding-top: pxVw(200, 375);
-                          max-width: 335px;
+                          padding-top: 200px;
+                          padding-left: 20px;
+                          padding-right: 20px;
+                          max-width: 375px;
                       }
            
                     }
@@ -403,6 +404,7 @@
                 position: relative;
                 width: 100%;
                 padding: 15px;
+                margin: 0;
                 &-text{
                     color: var(--color-red);
                     position: relative;
@@ -804,7 +806,7 @@
     }
 
 
-    .index{                                   
+    .index{                                 
         &-single-portfolio{
             position: relative;
             overflow: hidden;
@@ -1325,7 +1327,7 @@
     .about{
         padding-top: 220px;
         padding-bottom: 220px;
-        @include desktop-normal{
+         @include desktop-normal{
             padding-top: 180px;
             padding-bottom: 180px;
         }
@@ -1446,11 +1448,15 @@
                 max-width: 1560px;
             }
             @include desktop-note-big{
-                max-width: 1050px;
-                padding-left: 25px;
-                padding-right: 25px;
+                // max-width: 1050px;
+                // padding-left: 25px;
+                // padding-right: 25px;
+                max-width: 1024px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
             @include desktop-block{
+                max-width: 100%;
                 // padding-left: 30px;
                 // padding-right: 30px;
             }
@@ -1504,13 +1510,13 @@
             display: flex;
             align-items: center;
             .item{
-                padding-top: 170px;
-                @include desktop-normal{
-                    padding-top: 90px;
-                }
-                @include desktop-note-big{
-                    padding-top: 20px;
-                }
+                // padding-top: 170px;
+                // @include desktop-normal{
+                //     padding-top: 90px;
+                // }
+                // @include desktop-note-big{
+                //     padding-top: 20px;
+                // }
                 @include tablet{
                     padding-top: 60px;
                 }
@@ -1538,6 +1544,8 @@
             }
         }
         &-img{
+            display: flex;
+            align-items: center;
             .item{
                 &-img{
                     width: 100%;
@@ -1552,8 +1560,6 @@
     }
 
     .story{
-
-
         &-wrap{
             max-width: 1440px;
             margin: 0 auto;
@@ -1765,19 +1771,6 @@
     }
 
     .design{
-        // padding-top: 220px;
-        // @include desktop-normal{
-        //     padding-top: 180px;
-        // }
-        // @include desktop-note-big{
-        //     padding-top: 270px;
-        // }
-        // @include desktop-block{
-        //     padding-top: 160px;
-        // }
-        // @include phone{
-        //     padding-top: 140px;
-        // }
         &-row{
             display: flex;
             flex-wrap: nowrap;
@@ -1820,7 +1813,7 @@
             padding-top: 140px;
             padding-bottom: 140px;
         }
-        &-wrap{
+          &-wrap{
             max-width: 1880px;
             margin: 0 auto;
             padding-left: 60px;
@@ -1896,20 +1889,22 @@
             }
         }
         &-desc{
+            display: flex;
+            align-items: center;
             @include desktop-block{
                 padding-right: 0;
             }
             .item{ 
-                padding-top: 155px;
-                @include desktop-normal{
-                    padding-top: 130px;
-                }
-                @include desktop-note-big{
-                    padding-top: 43px;
-                }
-                @include desktop-block{
-                    padding-top: 35px;
-                }
+                // padding-top: 155px;
+                // @include desktop-normal{
+                //     padding-top: 130px;
+                // }
+                // @include desktop-note-big{
+                //     padding-top: 43px;
+                // }
+                // @include desktop-block{
+                //     padding-top: 35px;
+                // }
                 @include tablet{
                     padding-top: 60px;
                 }
@@ -2048,9 +2043,6 @@
           padding-top: 70px;
           padding-bottom: 53px;
         }
-        // @include phone{
-        //   padding-bottom: 42px;
-        // }
         &-wrap{
           display: flex;
           flex-wrap: nowrap;
@@ -2141,6 +2133,7 @@
     
         }
     
-      }
+    
+    }
 
 }

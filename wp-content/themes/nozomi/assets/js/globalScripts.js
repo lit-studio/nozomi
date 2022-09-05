@@ -31,7 +31,7 @@ export default function () {
   $indexHome = $body.find('.index-home'),
   winHeight = $window.height();
 
-  if(($indexPapperBg.length > 0)&&(screen.width > 640) ){
+  if(($indexPapperBg.length > 0)&&($(window).width() > 640) ){
     function indexPapperFunc() {
       // console.log('papper bg');
       const svg = document.querySelector("#demo");
@@ -108,7 +108,7 @@ export default function () {
     }
   }
   else{
-    if (screen.width > 1024) {
+    if ($(window).width() > 1024) {
       moveY = 200;
       if($sectionNav.length > 0){
         sectionFromGsap = gsap
@@ -293,44 +293,76 @@ export default function () {
     }      
   }
 
-
-  if (screen.width <= 1920) {
-    if (screen.width <= 1680) {
-      if (winHeight <= 600) {
-        $indexHome.addClass('mobile-height');
+  function indexHeightFunc() {
+    if ($(window).width() <= 1920) {
+      if ($(window).width() <= 1680) {
+        if (winHeight <= 600) {
+          $indexHome.addClass('mobile-height');
+        }
       }
+      else{
+        if (winHeight <= 750) {
+          $indexHome.addClass('mobile-height');
+        }
+      }
+  
     }
     else{
-      if (winHeight <= 750) {
+      if (winHeight <= 950) {
         $indexHome.addClass('mobile-height');
       }
     }
+  }
 
-  }
-  else{
-    if (winHeight <= 950) {
-      $indexHome.addClass('mobile-height');
-    }
-  }
+
   preloaderFunc();
   header();
   footer();
   tab();
+  indexHeightFunc();
 
   function screenReload() {
-
-    let widthScreen = screen.width,
+    let widthScreen = $(window).width(),
     widthScreenNew;
-
-    window.addEventListener("resize", () => {
-      widthScreenNew = screen.width;
-
-      if (widthScreenNew !== widthScreen) {
-        location.reload();
+    if (widthScreen <= 1024) {
+      if (widthScreen <= 768) {
+        $body.addClass('portrait-tablet');
       }
-
+      else{
+        $body.addClass('tablet');
+      }
+    }
+    else{
+      $body.addClass('desktop');
+    }
+    window.addEventListener("resize", () => {
+      widthScreenNew = $(window).width();
+      if (widthScreenNew !== widthScreen) {
+        if (widthScreenNew <= 1024) {
+          if (widthScreenNew <= 768) {
+            if (!$body.hasClass('portrait-tablet')) {   
+              location.reload();
+            }
+            return;
+          }
+          else{
+            if (!$body.hasClass('tablet')) {   
+              location.reload();
+            }
+            return;
+          }
+        }
+        else{
+          if (!$body.hasClass('desktop')) {   
+            location.reload();
+          }
+          return;
+        }
+     }
+     
     });
   }
+
   screenReload();
 
 }

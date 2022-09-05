@@ -96,10 +96,9 @@
                         // padding-bottom: pxVw(215, 768);
                     }
                     @include phone{
-                        padding-top: pxVw(200, 375);
-                        // padding-bottom: pxVw(127 , 375);
-                        // padding-bottom: pxVw(106, 375);
-                        max-width: 335px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        max-width: 375px;
                     }
          
                   }

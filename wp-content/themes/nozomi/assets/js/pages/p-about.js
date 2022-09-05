@@ -32,7 +32,7 @@ export default function () {
         },
       })
     }
-    if (screen.width > 1024) {
+    if ($(window).width() > 1024) {
       hoverEvent();
     }
     else{
